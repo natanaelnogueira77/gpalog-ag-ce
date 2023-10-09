@@ -1,0 +1,3291 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-09-15 13:04-0300\n"
+"PO-Revision-Date: 2023-09-15 13:05-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: src\n"
+"X-Poedit-SearchPath-1: resources\n"
+"X-Poedit-SearchPathExcluded-0: resources/views/themes\n"
+
+#: resources/views/admin/index.php:3
+#, php-format
+msgid "Administrador | %s"
+msgstr "Administrador | %s"
+
+#: resources/views/admin/index.php:9
+msgid "Painel do Administrador"
+msgstr "Painel do Administrador"
+
+#: resources/views/admin/index.php:10
+msgid "Relatórios e gerenciamento do sistema"
+msgstr "Relatórios e gerenciamento do sistema"
+
+#: resources/views/admin/index.php:22
+msgid "Informações da Aplicação"
+msgstr "Informações da Aplicação"
+
+#: resources/views/admin/index.php:27
+#, php-format
+msgid "Versão: <strong>%s</strong>"
+msgstr "Versão: <strong>%s</strong>"
+
+#: resources/views/admin/index.php:44
+#, php-format
+msgid "%s do sistema"
+msgstr "%s do sistema"
+
+#: resources/views/admin/index.php:57
+#, php-format
+msgid "Ver %s"
+msgstr "Ver %s"
+
+#: resources/views/admin/index.php:77 resources/views/admin/users/index.php:20
+#: src/Data/MenuData.php:40 src/Data/MenuData.php:45
+msgid "Usuários"
+msgstr "Usuários"
+
+#: resources/views/admin/index.php:86 resources/views/admin/users/index.php:37
+msgid "Nível de Usuário"
+msgstr "Nível de Usuário"
+
+#: resources/views/admin/index.php:88 resources/views/admin/users/index.php:39
+msgid "Todos os Usuários"
+msgstr "Todos os Usuários"
+
+#: resources/views/admin/index.php:115
+msgid "Configurações do Sistema"
+msgstr "Configurações do Sistema"
+
+#: resources/views/admin/index.php:124
+msgid "Tema"
+msgstr "Tema"
+
+#: resources/views/admin/index.php:125
+msgid "Escolha o tema de cores do sistema."
+msgstr "Escolha o tema de cores do sistema."
+
+#: resources/views/admin/index.php:130
+msgid "Escolha o tema de cores do sistema..."
+msgstr "Escolha o tema de cores do sistema..."
+
+#: resources/views/admin/index.php:132
+msgid "Tema Claro"
+msgstr "Tema Claro"
+
+#: resources/views/admin/index.php:135
+msgid "Tema Escuro"
+msgstr "Tema Escuro"
+
+#: resources/views/admin/index.php:143
+msgid "Imagem de Fundo (Login)"
+msgstr "Imagem de Fundo (Login)"
+
+#: resources/views/admin/index.php:144
+msgid "Escolha a imagem que ficará de fundo na página de login."
+msgstr "Escolha a imagem que ficará de fundo na página de login."
+
+#: resources/views/admin/index.php:156 resources/views/admin/index.php:183
+#: resources/views/admin/index.php:208
+msgid "Escolher Imagem"
+msgstr "Escolher Imagem"
+
+#: resources/views/admin/index.php:160 resources/views/admin/index.php:187
+#: resources/views/admin/index.php:212
+msgid "Remover Imagem"
+msgstr "Remover Imagem"
+
+#: resources/views/admin/index.php:170
+msgid "Logo"
+msgstr "Logo"
+
+#: resources/views/admin/index.php:171
+msgid "Escolha a imagem que ficará como logo do sistema."
+msgstr "Escolha a imagem que ficará como logo do sistema."
+
+#: resources/views/admin/index.php:195
+msgid "Ícone (Tamanho Recomendado: 512 x 512)"
+msgstr "Ícone (Tamanho Recomendado: 512 x 512)"
+
+#: resources/views/admin/index.php:196
+msgid "Escolha a imagem que ficará como ícone do sistema."
+msgstr "Escolha a imagem que ficará como ícone do sistema."
+
+#: resources/views/admin/index.php:221
+msgid "Salvar Configurações"
+msgstr "Salvar Configurações"
+
+#: resources/views/admin/index.php:240 resources/views/admin/users/index.php:75
+msgid "Deseja realmente excluir este usuário?"
+msgstr "Deseja realmente excluir este usuário?"
+
+#: resources/views/admin/users/index.php:3
+#, php-format
+msgid "Usuários | %s"
+msgstr "Usuários | %s"
+
+#: resources/views/admin/users/index.php:9
+msgid "Lista de Usuários"
+msgstr "Lista de Usuários"
+
+#: resources/views/admin/users/index.php:10
+msgid "Segue abaixo a lista de usuários do sistema"
+msgstr "Segue abaixo a lista de usuários do sistema"
+
+#: resources/views/admin/users/index.php:26
+#: resources/views/admin/users/save.php:9
+#: resources/views/admin/users/save.php:144 src/Data/MenuData.php:50
+msgid "Cadastrar Usuário"
+msgstr "Cadastrar Usuário"
+
+#: resources/views/admin/users/save.php:3
+#, php-format
+msgid "Editar Usuário | %s"
+msgstr "Editar Usuário | %s"
+
+#: resources/views/admin/users/save.php:3
+#, php-format
+msgid "Cadastrar Usuário | %s"
+msgstr "Cadastrar Usuário | %s"
+
+#: resources/views/admin/users/save.php:9
+#, php-format
+msgid "Editar Usuário \"%s\""
+msgstr "Editar Usuário \"%s\""
+
+#: resources/views/admin/users/save.php:11
+msgid ""
+"Preencha os dados abaixo para alterar o usuário, e então clique em "
+"\"Atualizar Usuário\""
+msgstr ""
+"Preencha os dados abaixo para alterar o usuário, e então clique em "
+"\"Atualizar Usuário\""
+
+#: resources/views/admin/users/save.php:12
+msgid ""
+"Preencha os dados abaixo para cadastrar um usuário, e então clique em "
+"\"Cadastrar Usuário\""
+msgstr ""
+"Preencha os dados abaixo para cadastrar um usuário, e então clique em "
+"\"Cadastrar Usuário\""
+
+#: resources/views/admin/users/save.php:24 resources/views/user/edit.php:21
+msgid "Informações da Conta"
+msgstr "Informações da Conta"
+
+#: resources/views/admin/users/save.php:32 resources/views/user/edit.php:33
+#: resources/views/user/operations/components/save-modal.php:179
+#: resources/views/user/providers/components/save-modal.php:17
+#: src/App/Controllers/Admin/UsersController.php:227
+#: src/App/Controllers/User/ProductsController.php:148
+#: src/App/Controllers/User/ProductsController.php:256
+#: src/App/Controllers/User/ProvidersController.php:135
+#: src/App/Controllers/User/ProvidersController.php:226
+msgid "Nome"
+msgstr "Nome"
+
+#: resources/views/admin/users/save.php:33
+msgid "Digite o nome e sobrenome."
+msgstr "Digite o nome e sobrenome."
+
+#: resources/views/admin/users/save.php:37 resources/views/user/edit.php:38
+msgid "Informe um nome..."
+msgstr "Informe um nome..."
+
+#: resources/views/admin/users/save.php:44
+#: resources/views/auth/reset-password.php:24
+#: resources/views/components/expired-session.php:47
+#: resources/views/user/edit.php:64
+#: src/App/Controllers/Admin/UsersController.php:228
+msgid "Email"
+msgstr "Email"
+
+#: resources/views/admin/users/save.php:45
+msgid "Digite um email válido."
+msgstr "Digite um email válido."
+
+#: resources/views/admin/users/save.php:49 resources/views/user/edit.php:69
+msgid "Informe um email..."
+msgstr "Informe um email..."
+
+#: resources/views/admin/users/save.php:58
+msgid "Nível do Usuário"
+msgstr "Nível do Usuário"
+
+#: resources/views/admin/users/save.php:59
+msgid "Escolha o nível do usuário."
+msgstr "Escolha o nível do usuário."
+
+#: resources/views/admin/users/save.php:64
+#: resources/views/user/conference/single-input.php:132
+#: resources/views/user/operations/components/save-modal.php:26
+msgid "Selecionar..."
+msgstr "Selecionar..."
+
+#: resources/views/admin/users/save.php:78
+msgid "Número de Matrícula"
+msgstr "Número de Matrícula"
+
+#: resources/views/admin/users/save.php:79
+msgid "O número de matrícula será usado para o operador entrar."
+msgstr "O número de matrícula será usado para o operador entrar."
+
+#: resources/views/admin/users/save.php:84
+msgid "Informe o número de matrícula..."
+msgstr "Informe o número de matrícula..."
+
+#: resources/views/admin/users/save.php:94 resources/views/user/edit.php:79
+msgid "Deseja alterar a senha?"
+msgstr "Deseja alterar a senha?"
+
+#: resources/views/admin/users/save.php:99 resources/views/user/edit.php:84
+#: src/App/Controllers/User/OperationsController.php:101
+#: src/App/Controllers/User/OperationsController.php:228
+#: src/App/Controllers/User/OperationsController.php:229
+#: src/App/Controllers/User/OperationsController.php:230
+#: src/App/Controllers/User/OperationsController.php:231
+#: src/App/Controllers/User/OperationsController.php:232
+#: src/App/Controllers/User/OperationsController.php:233
+#: src/App/Controllers/User/StorageController.php:70
+#: src/App/Controllers/User/StreetsController.php:97
+#: src/App/Controllers/User/StreetsController.php:185
+msgid "Sim"
+msgstr "Sim"
+
+#: resources/views/admin/users/save.php:107 resources/views/user/edit.php:90
+#: src/App/Controllers/User/OperationsController.php:102
+#: src/App/Controllers/User/OperationsController.php:228
+#: src/App/Controllers/User/OperationsController.php:229
+#: src/App/Controllers/User/OperationsController.php:230
+#: src/App/Controllers/User/OperationsController.php:231
+#: src/App/Controllers/User/OperationsController.php:232
+#: src/App/Controllers/User/OperationsController.php:233
+#: src/App/Controllers/User/StorageController.php:70
+#: src/App/Controllers/User/StreetsController.php:98
+#: src/App/Controllers/User/StreetsController.php:185
+msgid "Não"
+msgstr "Não"
+
+#: resources/views/admin/users/save.php:118
+#: resources/views/auth/operator-login.php:42
+#: resources/views/components/expired-session.php:54
+#: resources/views/user/edit.php:100
+msgid "Senha"
+msgstr "Senha"
+
+#: resources/views/admin/users/save.php:119
+msgid "Digite a nova senha de acesso à conta."
+msgstr "Digite a nova senha de acesso à conta."
+
+#: resources/views/admin/users/save.php:124 resources/views/user/edit.php:106
+msgid "Digite uma senha..."
+msgstr "Digite uma senha..."
+
+#: resources/views/admin/users/save.php:130 resources/views/user/edit.php:112
+msgid "Confirmar Senha"
+msgstr "Confirmar Senha"
+
+#: resources/views/admin/users/save.php:131
+msgid "Digite novamente a nova senha de acesso à conta."
+msgstr "Digite novamente a nova senha de acesso à conta."
+
+#: resources/views/admin/users/save.php:136 resources/views/user/edit.php:118
+msgid "Digite novamente a senha..."
+msgstr "Digite novamente a senha..."
+
+#: resources/views/admin/users/save.php:144
+msgid "Atualizar Usuário"
+msgstr "Atualizar Usuário"
+
+#: resources/views/admin/users/save.php:146
+#: resources/views/components/expired-session.php:63
+#: resources/views/error/index.php:11
+#: resources/views/user/conference/input-products.php:30
+#: resources/views/user/conference/input.php:11
+#: resources/views/user/conference/output.php:24
+#: resources/views/user/conference/single-input.php:57
+#: resources/views/user/edit.php:127
+#: resources/views/user/input-output-history/components/export-modal.php:21
+#: resources/views/user/operations/components/save-modal.php:166
+#: resources/views/user/operations/components/save-modal.php:193
+#: resources/views/user/products/components/import-modal.php:30
+#: resources/views/user/products/components/save-modal.php:194
+#: resources/views/user/providers/components/import-modal.php:28
+#: resources/views/user/providers/components/save-modal.php:31
+#: resources/views/user/streets/components/save-modal.php:133
+msgid "Voltar"
+msgstr "Voltar"
+
+#: resources/views/auth/login.php:3
+#, php-format
+msgid "Entrar | %s"
+msgstr "Entrar | %s"
+
+#: resources/views/auth/login.php:23 resources/views/auth/login.php:49
+#: resources/views/auth/operator-login.php:52
+#: resources/views/components/expired-session.php:61 src/Data/MenuData.php:113
+msgid "Entrar"
+msgstr "Entrar"
+
+#: resources/views/auth/login.php:27
+msgid "Área de Operação"
+msgstr "Área de Operação"
+
+#: resources/views/auth/login.php:33 resources/views/auth/reset-password.php:25
+#: resources/views/web/contact.php:65 resources/views/web/contact.php:66
+msgid "Digite seu email"
+msgstr "Digite seu email"
+
+#: resources/views/auth/login.php:41 resources/views/auth/operator-login.php:44
+msgid "Digite sua senha"
+msgstr "Digite sua senha"
+
+#: resources/views/auth/login.php:53
+msgid "Esqueceu a senha?"
+msgstr "Esqueceu a senha?"
+
+#: resources/views/auth/operator-login.php:31
+msgid "Número da Matrícula"
+msgstr "Número da Matrícula"
+
+#: resources/views/auth/operator-login.php:34
+msgid "Digite o número da matrícula"
+msgstr "Digite o número da matrícula"
+
+#: resources/views/auth/reset-password.php:3
+#, php-format
+msgid "Redefinir Senha | %s"
+msgstr "Redefinir Senha | %s"
+
+#: resources/views/auth/reset-password.php:19
+#: resources/views/emails/reset-password.php:14
+#: src/App/Controllers/Auth/ResetPasswordController.php:30
+msgid "Redefinir Senha"
+msgstr "Redefinir Senha"
+
+#: resources/views/auth/reset-password.php:35
+#: resources/views/user/conference/single-input.php:51
+#: resources/views/web/contact.php:91
+msgid "Enviar"
+msgstr "Enviar"
+
+#: resources/views/auth/reset-password.php:42
+msgid "Nova Senha"
+msgstr "Nova Senha"
+
+#: resources/views/auth/reset-password.php:43
+msgid "Digite sua nova senha"
+msgstr "Digite sua nova senha"
+
+#: resources/views/auth/reset-password.php:51
+msgid "Confirmar Nova Senha"
+msgstr "Confirmar Nova Senha"
+
+#: resources/views/auth/reset-password.php:54
+msgid "Digite novamente a nova senha"
+msgstr "Digite novamente a nova senha"
+
+#: resources/views/auth/reset-password.php:61
+msgid "Redefinir"
+msgstr "Redefinir"
+
+#: resources/views/components/data-table-buttons.php:3
+msgid "Filtrar"
+msgstr "Filtrar"
+
+#: resources/views/components/data-table-buttons.php:6
+msgid "Limpar"
+msgstr "Limpar"
+
+#: resources/views/components/data-table-filters.php:5
+msgid "Mostrar"
+msgstr "Mostrar"
+
+#: resources/views/components/data-table-filters.php:13
+msgid "Linhas"
+msgstr "Linhas"
+
+#: resources/views/components/data-table-filters.php:20
+msgid "Buscar por"
+msgstr "Buscar por"
+
+#: resources/views/components/data-table.php:39
+msgid "Nenhum dado correspondente foi encontrado!"
+msgstr "Nenhum dado correspondente foi encontrado!"
+
+#: resources/views/components/expired-session.php:42
+msgid "Sessão expirada, faça login"
+msgstr "Sessão expirada, faça login"
+
+#: resources/views/components/expired-session.php:49
+msgid "Informe seu email..."
+msgstr "Informe seu email..."
+
+#: resources/views/components/expired-session.php:55
+msgid "Informe sua senha..."
+msgstr "Informe sua senha..."
+
+#: resources/views/components/media-library.php:84
+#, php-format
+msgid "Tamanho máximo permitido: %sMB"
+msgstr "Tamanho máximo permitido: %sMB"
+
+#: resources/views/components/media-library.php:138
+#, php-format
+msgid ""
+"A extensão do arquivo que você selecionou não é permitida aqui! Extensões "
+"permitidas: %s"
+msgstr ""
+"A extensão do arquivo que você selecionou não é permitida aqui! Extensões "
+"permitidas: %s"
+
+#: resources/views/components/media-library.php:167
+#, php-format
+msgid "O arquivo que você tentou enviar é maior do que %sMB!"
+msgstr "O arquivo que você tentou enviar é maior do que %sMB!"
+
+#: resources/views/components/media-library.php:212
+msgid "Lamentamos, mas houve uma falha na leitura do arquivo!"
+msgstr "Lamentamos, mas houve uma falha na leitura do arquivo!"
+
+#: resources/views/components/media-library.php:231
+#, php-format
+msgid ""
+"A extensão do arquivo que você tentou enviar não é permitida aqui! Extensões "
+"permitidas: %s"
+msgstr ""
+"A extensão do arquivo que você tentou enviar não é permitida aqui! Extensões "
+"permitidas: %s"
+
+#: resources/views/components/media-library.php:419
+#: resources/views/components/media-library.php:422
+#: resources/views/components/pagination.php:19
+msgid "Anterior"
+msgstr "Anterior"
+
+#: resources/views/components/media-library.php:454
+#: resources/views/components/media-library.php:457
+#: resources/views/components/pagination.php:46
+msgid "Próxima"
+msgstr "Próxima"
+
+#: resources/views/components/media-library.php:491
+#: resources/views/components/media-library.php:503
+msgid "Biblioteca de Mídia"
+msgstr "Biblioteca de Mídia"
+
+#: resources/views/components/media-library.php:498
+msgid "Upload de Arquivos"
+msgstr "Upload de Arquivos"
+
+#: resources/views/components/media-library.php:515
+msgid "Clique para selecionar ou"
+msgstr "Clique para selecionar ou"
+
+#: resources/views/components/media-library.php:516
+msgid "arraste o(s) arquivo(s)"
+msgstr "arraste o(s) arquivo(s)"
+
+#: resources/views/components/media-library.php:535
+msgid "Pesquisar..."
+msgstr "Pesquisar..."
+
+#: resources/views/components/media-library.php:552
+msgid "Escolher"
+msgstr "Escolher"
+
+#: resources/views/components/media-library.php:555
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#: resources/views/components/pagination.php:6
+#, php-format
+msgid "Mostrando %s à %s de %s resultado(s)"
+msgstr "Mostrando %s à %s de %s resultado(s)"
+
+#: resources/views/components/tinymce.php:27
+#: resources/views/components/tinymce.php:32
+msgid "Erro de HTTP: "
+msgstr "Erro de HTTP: "
+
+#: resources/views/components/tinymce.php:39
+msgid "JSON Inválido: "
+msgstr "JSON Inválido: "
+
+#: resources/views/components/tinymce.php:47
+msgid "O upload da imagem falhou! Código: "
+msgstr "O upload da imagem falhou! Código: "
+
+#: resources/views/emails/reset-password.php:15
+#, php-format
+msgid ""
+"Recebemos uma tentativa de recuperação de senha do site \"%s\" para este e-"
+"mail. \n"
+"        Caso não tenha solicitado, desconsidere esse e-mail. Caso contrário, "
+"clique no link de verificação abaixo:"
+msgstr ""
+"Recebemos uma tentativa de recuperação de senha do site \"%s\" para este e-"
+"mail. \n"
+"        Caso não tenha solicitado, desconsidere esse e-mail. Caso contrário, "
+"clique no link de verificação abaixo:"
+
+#: resources/views/emails/reset-password.php:21
+msgid "Clique aqui para redefinir a senha"
+msgstr "Clique aqui para redefinir a senha"
+
+#: resources/views/emails/user-register.php:14
+#, php-format
+msgid "Olá, %s!"
+msgstr "Olá, %s!"
+
+#: resources/views/emails/user-register.php:15
+msgid "Aqui estão os seus dados de cadastro:"
+msgstr "Aqui estão os seus dados de cadastro:"
+
+#: resources/views/emails/user-register.php:17
+msgid "Nome:"
+msgstr "Nome:"
+
+#: resources/views/emails/user-register.php:18
+msgid "Email:"
+msgstr "Email:"
+
+#: resources/views/emails/user-register.php:19
+msgid "Senha:"
+msgstr "Senha:"
+
+#: resources/views/user/conference/index.php:3
+#, php-format
+msgid "Operação | %s"
+msgstr "Operação | %s"
+
+#: resources/views/user/conference/index.php:8
+msgid "Operação"
+msgstr "Operação"
+
+#: resources/views/user/conference/index.php:10
+#: resources/views/user/conference/input.php:8
+#: resources/views/user/conference/single-input.php:8
+msgid "Entrada"
+msgstr "Entrada"
+
+#: resources/views/user/conference/index.php:11
+#: resources/views/user/conference/output.php:8
+msgid "Saída"
+msgstr "Saída"
+
+#: resources/views/user/conference/index.php:12
+#: resources/views/user/conference/input.php:12 src/Data/MenuData.php:109
+msgid "Sair"
+msgstr "Sair"
+
+#: resources/views/user/conference/input-products.php:3
+#: resources/views/user/conference/input.php:3
+#: resources/views/user/conference/single-input.php:3
+#, php-format
+msgid "Entrada | %s"
+msgstr "Entrada | %s"
+
+#: resources/views/user/conference/input-products.php:8
+#: resources/views/user/products/index.php:20
+#: src/App/Controllers/User/ProductsController.php:273 src/Data/MenuData.php:70
+msgid "Produtos"
+msgstr "Produtos"
+
+#: resources/views/user/conference/input-products.php:12
+#: resources/views/user/conference/input.php:17
+#: resources/views/user/conference/single-input.php:12
+#: src/App/Controllers/Admin/UsersController.php:226
+msgid "ID"
+msgstr "ID"
+
+#: resources/views/user/conference/input-products.php:13
+#: resources/views/user/conference/input.php:18
+#: resources/views/user/conference/single-input.php:13
+#: resources/views/user/outputs/components/pdf.php:89
+msgid "OC"
+msgstr "OC"
+
+#: resources/views/user/conference/input-products.php:14
+#: resources/views/user/conference/input.php:19
+#: resources/views/user/conference/single-input.php:14
+#: resources/views/user/operations/components/save-modal.php:150
+#: src/App/Controllers/User/InputOutputHistoryController.php:118
+#: src/App/Controllers/User/InputOutputHistoryController.php:285
+#: src/App/Controllers/User/OperationsController.php:145
+#: src/App/Controllers/User/OperationsController.php:221
+#: src/App/Controllers/User/OutputsController.php:183
+msgid "Placa"
+msgstr "Placa"
+
+#: resources/views/user/conference/input-products.php:16
+#: resources/views/user/conference/input.php:21
+#: resources/views/user/conference/single-input.php:16
+msgid "Data"
+msgstr "Data"
+
+#: resources/views/user/conference/input-products.php:37
+#: resources/views/user/conference/output.php:67
+#: resources/views/user/conference/single-input.php:80
+#: resources/views/user/input-output-history/components/input-pdf.php:112
+#: resources/views/user/input-output-history/components/output-pdf.php:132
+#: resources/views/user/outputs/components/pdf.php:90
+#: resources/views/user/products/components/save-modal.php:30
+msgid "Nome do Produto"
+msgstr "Nome do Produto"
+
+#: resources/views/user/conference/input-products.php:41
+#: resources/views/user/conference/single-input.php:93
+msgid "Qtde. CX Físico"
+msgstr "Qtde. CX Físico"
+
+#: resources/views/user/conference/input-products.php:45
+#: resources/views/user/outputs/index.php:68
+#: src/App/Controllers/User/InputOutputHistoryController.php:311
+#: src/App/Controllers/User/OutputsController.php:193
+#: src/App/Controllers/User/ProductsController.php:261
+msgid "Código EAN"
+msgstr "Código EAN"
+
+#: resources/views/user/conference/input.php:20
+#: resources/views/user/operations/components/save-modal.php:18
+#: src/App/Controllers/User/InputOutputHistoryController.php:119
+#: src/App/Controllers/User/InputOutputHistoryController.php:312
+#: src/App/Controllers/User/OperationsController.php:146
+#: src/App/Controllers/User/OperationsController.php:223
+#: src/App/Controllers/User/OutputsController.php:194
+#: src/App/Controllers/User/ProductsController.php:147
+msgid "Fornecedor"
+msgstr "Fornecedor"
+
+#: resources/views/user/conference/input.php:22
+msgid "Ação"
+msgstr "Ação"
+
+#: resources/views/user/conference/input.php:36
+msgid "Ir Conf."
+msgstr "Ir Conf."
+
+#: resources/views/user/conference/output.php:3
+#, php-format
+msgid "Saída | %s"
+msgstr "Saída | %s"
+
+#: resources/views/user/conference/output.php:16
+#: resources/views/user/conference/single-input.php:49
+#: resources/views/user/outputs/index.php:49
+msgid "Buscar"
+msgstr "Buscar"
+
+#: resources/views/user/conference/output.php:18
+msgid "Inserir"
+msgstr "Inserir"
+
+#: resources/views/user/conference/output.php:20
+msgid "Inserir Placa"
+msgstr "Inserir Placa"
+
+#: resources/views/user/conference/output.php:22
+#: resources/views/user/input-output-history/components/output-pdf.php:59
+msgid "Baixar Etiqueta"
+msgstr "Baixar Etiqueta"
+
+#: resources/views/user/conference/output.php:31
+#: resources/views/user/input-output-history/components/export-modal.php:12
+#: resources/views/user/input-output-history/components/input-pdf.php:104
+#: resources/views/user/input-output-history/components/output-pdf.php:104
+#: resources/views/user/input-output-history/index.php:39
+#: resources/views/user/outputs/index.php:38
+msgid "Ordem de Serviço"
+msgstr "Ordem de Serviço"
+
+#: resources/views/user/conference/output.php:47
+#: resources/views/user/input-output-history/components/input-pdf.php:80
+#: resources/views/user/input-output-history/components/output-pdf.php:80
+#: src/App/Controllers/User/InputOutputHistoryController.php:302
+#: src/App/Controllers/User/OutputsController.php:184
+msgid "Número do Pallet"
+msgstr "Número do Pallet"
+
+#: resources/views/user/conference/output.php:63
+#: resources/views/user/conference/single-input.php:63
+msgid "Código de Barras"
+msgstr "Código de Barras"
+
+#: resources/views/user/conference/output.php:71
+#: resources/views/user/input-output-history/components/output-pdf.php:136
+#: src/App/Controllers/User/InputOutputHistoryController.php:328
+#: src/App/Controllers/User/OutputsController.php:210
+msgid "Placa de Carregamento"
+msgstr "Placa de Carregamento"
+
+#: resources/views/user/conference/output.php:86
+#: resources/views/user/input-output-history/components/output-pdf.php:140
+#: src/App/Controllers/User/InputOutputHistoryController.php:329
+#: src/App/Controllers/User/OutputsController.php:211
+msgid "Doca"
+msgstr "Doca"
+
+#: resources/views/user/conference/single-input.php:32
+msgid "Você tem certeza que deseja finalizar?"
+msgstr "Você tem certeza que deseja finalizar?"
+
+#: resources/views/user/conference/single-input.php:34
+msgid "Incluir Produto"
+msgstr "Incluir Produto"
+
+#: resources/views/user/conference/single-input.php:36
+msgid "Ver Produtos"
+msgstr "Ver Produtos"
+
+#: resources/views/user/conference/single-input.php:40
+msgid "Finalizar Conferência"
+msgstr "Finalizar Conferência"
+
+#: resources/views/user/conference/single-input.php:54
+msgid "Confirmar"
+msgstr "Confirmar"
+
+#: resources/views/user/conference/single-input.php:89
+#: resources/views/user/input-output-history/components/input-pdf.php:116
+#: resources/views/user/input-output-history/components/output-pdf.php:108
+#: src/App/Controllers/User/InputOutputHistoryController.php:309
+#: src/App/Controllers/User/OutputsController.php:191
+#: src/App/Controllers/User/ProductsController.php:260
+msgid "Embalagem"
+msgstr "Embalagem"
+
+#: resources/views/user/conference/single-input.php:109
+msgid "Qtde. Unidade"
+msgstr "Qtde. Unidade"
+
+#: resources/views/user/conference/single-input.php:113
+msgid "Qtde. Plts Fechados"
+msgstr "Qtde. Plts Fechados"
+
+#: resources/views/user/conference/single-input.php:128
+#: resources/views/user/outputs/components/pdf.php:92
+#: resources/views/user/outputs/index.php:72
+msgid "Serviço"
+msgstr "Serviço"
+
+#: resources/views/user/conference/single-input.php:153
+msgid "Altura Plt"
+msgstr "Altura Plt"
+
+#: resources/views/user/edit.php:3
+#, php-format
+msgid "Editar Conta | %s"
+msgstr "Editar Conta | %s"
+
+#: resources/views/user/edit.php:9
+msgid "Editar Conta"
+msgstr "Editar Conta"
+
+#: resources/views/user/edit.php:10
+msgid "Edite os detalhes de sua conta logo abaixo"
+msgstr "Edite os detalhes de sua conta logo abaixo"
+
+#: resources/views/user/edit.php:23
+msgid ""
+"Preencha os campos abaixo para editar os dados de sua conta. Então, clique "
+"em \"Salvar\"."
+msgstr ""
+"Preencha os campos abaixo para editar os dados de sua conta. Então, clique "
+"em \"Salvar\"."
+
+#: resources/views/user/edit.php:34
+msgid "Digite o seu nome e sobrenome."
+msgstr "Digite o seu nome e sobrenome."
+
+#: resources/views/user/edit.php:45
+msgid "Apelido"
+msgstr "Apelido"
+
+#: resources/views/user/edit.php:46
+msgid "Digite um apelido seu."
+msgstr "Digite um apelido seu."
+
+#: resources/views/user/edit.php:54
+msgid "Informe um apelido..."
+msgstr "Informe um apelido..."
+
+#: resources/views/user/edit.php:65
+msgid "Digite um email válido seu."
+msgstr "Digite um email válido seu."
+
+#: resources/views/user/edit.php:101
+msgid "Digite a nova senha de acesso à sua conta."
+msgstr "Digite a nova senha de acesso à sua conta."
+
+#: resources/views/user/edit.php:113
+msgid "Digite novamente a nova senha de acesso à sua conta."
+msgstr "Digite novamente a nova senha de acesso à sua conta."
+
+#: resources/views/user/edit.php:125
+msgid "Atualizar"
+msgstr "Atualizar"
+
+#: resources/views/user/index.php:3
+#, php-format
+msgid "Painel do Usuário | %s"
+msgstr "Painel do Usuário | %s"
+
+#: resources/views/user/index.php:9
+msgid "Painel do Usuário"
+msgstr "Painel do Usuário"
+
+#: resources/views/user/index.php:10
+msgid "Informações sobre sua atividade no sistema"
+msgstr "Informações sobre sua atividade no sistema"
+
+#: resources/views/user/input-output-history/components/export-modal.php:6
+#: resources/views/user/input-output-history/components/export-modal.php:20
+#: resources/views/user/input-output-history/index.php:28
+#: resources/views/user/operations/index.php:33
+#: resources/views/user/outputs/index.php:28
+#: resources/views/user/products/index.php:39
+#: resources/views/user/providers/index.php:39
+#: resources/views/user/storage/index.php:28
+#: resources/views/user/streets/index.php:33
+msgid "Exportar Excel"
+msgstr "Exportar Excel"
+
+#: resources/views/user/input-output-history/components/export-modal.php:14
+#: resources/views/user/input-output-history/index.php:41
+#: resources/views/user/outputs/index.php:47
+msgid "Digite a ordem de serviço..."
+msgstr "Digite a ordem de serviço..."
+
+#: resources/views/user/input-output-history/components/input-pdf.php:59
+#: resources/views/user/input-output-history/components/input-pdf.php:72
+#, php-format
+msgid "Etiqueta de Entrada"
+msgstr "Etiqueta de Entrada"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:75
+#: resources/views/user/input-output-history/components/output-pdf.php:75
+msgid "Informações do Pallet"
+msgstr "Informações do Pallet"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:84
+#: src/App/Controllers/User/InputOutputHistoryController.php:303
+#: src/App/Controllers/User/OutputsController.php:185
+msgid "Data de Entrada"
+msgstr "Data de Entrada"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:88
+msgid "Horário de Entrada"
+msgstr "Horário de Entrada"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:92
+#: resources/views/user/input-output-history/components/output-pdf.php:92
+#: resources/views/user/outputs/components/pdf.php:86
+#: resources/views/user/outputs/index.php:69
+#: src/App/Controllers/User/StreetsController.php:130
+msgid "Rua"
+msgstr "Rua"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:96
+#: resources/views/user/input-output-history/components/output-pdf.php:96
+#: resources/views/user/outputs/components/pdf.php:87
+#: resources/views/user/outputs/index.php:70
+#: src/App/Controllers/User/InputOutputHistoryController.php:318
+#: src/App/Controllers/User/OutputsController.php:200
+msgid "Posição"
+msgstr "Posição"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:100
+#: resources/views/user/input-output-history/components/output-pdf.php:100
+#: resources/views/user/outputs/components/pdf.php:88
+#: resources/views/user/outputs/index.php:71
+#: resources/views/user/products/components/save-modal.php:149
+#: src/App/Controllers/User/InputOutputHistoryController.php:319
+#: src/App/Controllers/User/OutputsController.php:201
+#: src/App/Controllers/User/ProductsController.php:265
+msgid "Altura"
+msgstr "Altura"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:108
+#: resources/views/user/input-output-history/components/output-pdf.php:128
+msgid "Código do Produto"
+msgstr "Código do Produto"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:120
+#: resources/views/user/input-output-history/components/output-pdf.php:112
+#: src/App/Controllers/User/InputOutputHistoryController.php:313
+#: src/App/Controllers/User/OutputsController.php:195
+msgid "Quantidade de Caixas Físicas"
+msgstr "Quantidade de Caixas Físicas"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:124
+#: resources/views/user/input-output-history/components/output-pdf.php:116
+#: src/App/Controllers/User/InputOutputHistoryController.php:314
+#: src/App/Controllers/User/OutputsController.php:196
+msgid "Quantidade de Unidades"
+msgstr "Quantidade de Unidades"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:128
+#: resources/views/user/input-output-history/components/output-pdf.php:120
+#: resources/views/user/operations/components/save-modal.php:46
+#: src/App/Controllers/User/InputOutputHistoryController.php:315
+#: src/App/Controllers/User/OutputsController.php:197
+msgid "Tipo de Serviço"
+msgstr "Tipo de Serviço"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:132
+#: resources/views/user/input-output-history/components/output-pdf.php:124
+#: src/App/Controllers/User/InputOutputHistoryController.php:316
+#: src/App/Controllers/User/OutputsController.php:198
+msgid "Altura do Pallet"
+msgstr "Altura do Pallet"
+
+#: resources/views/user/input-output-history/components/input-pdf.php:146
+msgid "Não houve nenhuma entrada de pallet!"
+msgstr "Não houve nenhuma entrada de pallet!"
+
+#: resources/views/user/input-output-history/components/output-pdf.php:72
+#, php-format
+msgid "Baixa de Etiqueta - %s"
+msgstr "Baixa de Etiqueta - %s"
+
+#: resources/views/user/input-output-history/components/output-pdf.php:84
+#: src/App/Controllers/User/InputOutputHistoryController.php:322
+#: src/App/Controllers/User/OutputsController.php:204
+msgid "Data de Saída"
+msgstr "Data de Saída"
+
+#: resources/views/user/input-output-history/components/output-pdf.php:88
+msgid "Horário de Saída"
+msgstr "Horário de Saída"
+
+#: resources/views/user/input-output-history/components/output-pdf.php:154
+msgid "Não houve nenhuma saída de pallet!"
+msgstr "Não houve nenhuma saída de pallet!"
+
+#: resources/views/user/input-output-history/index.php:3
+#, php-format
+msgid "Histórico de Entradas e Saídas | %s"
+msgstr "Histórico de Entradas e Saídas | %s"
+
+#: resources/views/user/input-output-history/index.php:9
+msgid "Histórico de Entrada e Saídas"
+msgstr "Histórico de Entrada e Saídas"
+
+#: resources/views/user/input-output-history/index.php:10
+msgid ""
+"Veja abaixo o histórico de operação de entradas e saídas. Você pode gerar o "
+"PDF das etiquetas de entrada ou de saída."
+msgstr ""
+"Veja abaixo o histórico de operação de entradas e saídas. Você pode gerar o "
+"PDF das etiquetas de entrada ou de saída."
+
+#: resources/views/user/input-output-history/index.php:20
+msgid "Conferências"
+msgstr "Conferências"
+
+#: resources/views/user/operations/components/save-modal.php:8
+msgid "Complete os campos abaixo para dar entrada / editar uma operação."
+msgstr "Complete os campos abaixo para dar entrada / editar uma operação."
+
+#: resources/views/user/operations/components/save-modal.php:20
+msgid "Selecione o fornecedor, ou cadastre um novo, clicando em \"Cadastrar\"."
+msgstr ""
+"Selecione o fornecedor, ou cadastre um novo, clicando em \"Cadastrar\"."
+
+#: resources/views/user/operations/components/save-modal.php:38
+msgid "Cadastrar"
+msgstr "Cadastrar"
+
+#: resources/views/user/operations/components/save-modal.php:48
+msgid "Selecione o(s) tipo(s) de serviço para essa operação."
+msgstr "Selecione o(s) tipo(s) de serviço para essa operação."
+
+#: resources/views/user/operations/components/save-modal.php:54
+#: src/Models/ConferenceInput.php:137 src/Models/Operation.php:172
+#: src/Models/Pallet.php:249
+msgid "Paletização"
+msgstr "Paletização"
+
+#: resources/views/user/operations/components/save-modal.php:58
+#: src/Models/ConferenceInput.php:138 src/Models/Operation.php:173
+#: src/Models/Pallet.php:250
+msgid "Retrabalho"
+msgstr "Retrabalho"
+
+#: resources/views/user/operations/components/save-modal.php:62
+#: resources/views/user/storage/index.php:9
+#: resources/views/user/storage/index.php:20
+#: src/App/Controllers/User/StorageController.php:80 src/Data/MenuData.php:80
+#: src/Models/ConferenceInput.php:139 src/Models/Operation.php:174
+#: src/Models/Pallet.php:251
+msgid "Armazenagem"
+msgstr "Armazenagem"
+
+#: resources/views/user/operations/components/save-modal.php:66
+#: src/Models/ConferenceInput.php:140 src/Models/Operation.php:175
+#: src/Models/Pallet.php:252
+msgid "Importado"
+msgstr "Importado"
+
+#: resources/views/user/operations/components/save-modal.php:75
+#: src/App/Controllers/User/OperationsController.php:224
+msgid "Senha de Carregamento"
+msgstr "Senha de Carregamento"
+
+#: resources/views/user/operations/components/save-modal.php:77
+msgid "Digite a senha de carregamento referente à operação."
+msgstr "Digite a senha de carregamento referente à operação."
+
+#: resources/views/user/operations/components/save-modal.php:81
+msgid "Informe a senha de carregamento..."
+msgstr "Informe a senha de carregamento..."
+
+#: resources/views/user/operations/components/save-modal.php:88
+#: src/App/Controllers/User/OperationsController.php:225
+msgid "Senha de G.A"
+msgstr "Senha de G.A"
+
+#: resources/views/user/operations/components/save-modal.php:90
+msgid "Digite a senha de G.A referente à operação."
+msgstr "Digite a senha de G.A referente à operação."
+
+#: resources/views/user/operations/components/save-modal.php:94
+msgid "Informe a senha de G.A..."
+msgstr "Informe a senha de G.A..."
+
+#: resources/views/user/operations/components/save-modal.php:110
+msgid "Tem TR?"
+msgstr "Tem TR?"
+
+#: resources/views/user/operations/components/save-modal.php:112
+msgid "Se houver TR, marque a caixa ao lado."
+msgstr "Se houver TR, marque a caixa ao lado."
+
+#: resources/views/user/operations/components/save-modal.php:122
+#: src/App/Controllers/User/OperationsController.php:226
+msgid "Número do Pedido / TR / OC"
+msgstr "Número do Pedido / TR / OC"
+
+#: resources/views/user/operations/components/save-modal.php:124
+msgid ""
+"Digite o número do pedido referente à operação. Esta será a ordem de serviço."
+msgstr ""
+"Digite o número do pedido referente à operação. Esta será a ordem de serviço."
+
+#: resources/views/user/operations/components/save-modal.php:128
+msgid "Informe o número do pedido..."
+msgstr "Informe o número do pedido..."
+
+#: resources/views/user/operations/components/save-modal.php:137
+#: src/App/Controllers/User/OperationsController.php:227
+msgid "Nota Fiscal"
+msgstr "Nota Fiscal"
+
+#: resources/views/user/operations/components/save-modal.php:139
+msgid "Digite a nota fiscal referente à operação."
+msgstr "Digite a nota fiscal referente à operação."
+
+#: resources/views/user/operations/components/save-modal.php:143
+msgid "Informe o número da nota fiscal..."
+msgstr "Informe o número da nota fiscal..."
+
+#: resources/views/user/operations/components/save-modal.php:152
+msgid "Digite a placa do veículo referente à operação."
+msgstr "Digite a placa do veículo referente à operação."
+
+#: resources/views/user/operations/components/save-modal.php:156
+msgid "Informe a placa do veículo..."
+msgstr "Informe a placa do veículo..."
+
+#: resources/views/user/operations/components/save-modal.php:165
+#: resources/views/user/operations/components/save-modal.php:192
+#: resources/views/user/products/components/save-modal.php:193
+#: resources/views/user/providers/components/save-modal.php:30
+#: resources/views/user/streets/components/save-modal.php:132
+msgid "Salvar"
+msgstr "Salvar"
+
+#: resources/views/user/operations/components/save-modal.php:172
+#: resources/views/user/providers/index.php:27
+#: resources/views/user/providers/index.php:127
+msgid "Cadastrar Fornecedor"
+msgstr "Cadastrar Fornecedor"
+
+#: resources/views/user/operations/components/save-modal.php:180
+#: resources/views/user/providers/components/save-modal.php:18
+msgid "Digite o nome do fornecedor."
+msgstr "Digite o nome do fornecedor."
+
+#: resources/views/user/operations/components/save-modal.php:185
+#: resources/views/user/providers/components/save-modal.php:23
+msgid "Digite o nome do fornecedor..."
+msgstr "Digite o nome do fornecedor..."
+
+#: resources/views/user/operations/components/save-modal.php:194
+msgid "Fechar"
+msgstr "Fechar"
+
+#: resources/views/user/operations/index.php:3
+#, php-format
+msgid "Operações | %s"
+msgstr "Operações | %s"
+
+#: resources/views/user/operations/index.php:9
+msgid "Lista de Operações"
+msgstr "Lista de Operações"
+
+#: resources/views/user/operations/index.php:10
+msgid "Segue abaixo a lista de operações do sistema"
+msgstr "Segue abaixo a lista de operações do sistema"
+
+#: resources/views/user/operations/index.php:20
+#: src/App/Controllers/User/OperationsController.php:238
+#: src/Data/MenuData.php:60
+msgid "Operações"
+msgstr "Operações"
+
+#: resources/views/user/operations/index.php:27
+#: resources/views/user/operations/index.php:137
+#, php-format
+msgid "Dar Entrada"
+msgstr "Dar Entrada"
+
+#: resources/views/user/operations/index.php:77
+msgid "Deseja realmente excluir esta operação?"
+msgstr "Deseja realmente excluir esta operação?"
+
+#: resources/views/user/operations/index.php:105
+#, php-format
+msgid "Editar Operação - %s"
+msgstr "Editar Operação - %s"
+
+#: resources/views/user/outputs/components/pdf.php:55
+msgid "Saída de Pallets"
+msgstr "Saída de Pallets"
+
+#: resources/views/user/outputs/components/pdf.php:63
+#, php-format
+msgid "Saída de Pallets - OC %s"
+msgstr "Saída de Pallets - OC %s"
+
+#: resources/views/user/outputs/components/pdf.php:66
+msgid "Informações da Saída"
+msgstr "Informações da Saída"
+
+#: resources/views/user/outputs/components/pdf.php:71
+#: src/App/Controllers/User/InputOutputHistoryController.php:320
+#: src/App/Controllers/User/OutputsController.php:180
+#: src/App/Controllers/User/OutputsController.php:202
+msgid "ID de Separação"
+msgstr "ID de Separação"
+
+#: resources/views/user/outputs/components/pdf.php:75
+msgid "Data de Separação"
+msgstr "Data de Separação"
+
+#: resources/views/user/outputs/components/pdf.php:79
+msgid "Horário de Separação"
+msgstr "Horário de Separação"
+
+#: resources/views/user/outputs/components/pdf.php:85
+#: resources/views/user/outputs/index.php:66
+msgid "Nº do Pallet"
+msgstr "Nº do Pallet"
+
+#: resources/views/user/outputs/components/pdf.php:91
+#: resources/views/user/products/components/save-modal.php:72
+msgid "EAN"
+msgstr "EAN"
+
+#: resources/views/user/outputs/index.php:3
+#, php-format
+msgid "Saídas | %s"
+msgstr "Saídas | %s"
+
+#: resources/views/user/outputs/index.php:9
+msgid "Saídas de Pallet"
+msgstr "Saídas de Pallet"
+
+#: resources/views/user/outputs/index.php:10
+msgid ""
+"Selecione uma ordem de serviço para fazer separação de pallets para saída"
+msgstr ""
+"Selecione uma ordem de serviço para fazer separação de pallets para saída"
+
+#: resources/views/user/outputs/index.php:20
+#: src/App/Controllers/User/OutputsController.php:217 src/Data/MenuData.php:85
+msgid "Saídas"
+msgstr "Saídas"
+
+#: resources/views/user/outputs/index.php:40
+msgid ""
+"Digite o número da ordem de serviço para ter a relação dos pallets, e clique "
+"em \"Buscar\"."
+msgstr ""
+"Digite o número da ordem de serviço para ter a relação dos pallets, e clique "
+"em \"Buscar\"."
+
+#: resources/views/user/outputs/index.php:67
+#: src/App/Controllers/User/InputOutputHistoryController.php:310
+#: src/App/Controllers/User/OutputsController.php:192
+msgid "Produto"
+msgstr "Produto"
+
+#: resources/views/user/outputs/index.php:98
+msgid "Gerar Lista de Separação"
+msgstr "Gerar Lista de Separação"
+
+#: resources/views/user/products/components/import-modal.php:6
+#: resources/views/user/products/index.php:33
+msgid "Importar Produtos"
+msgstr "Importar Produtos"
+
+#: resources/views/user/products/components/import-modal.php:13
+#: resources/views/user/providers/components/import-modal.php:13
+msgid "Importar Arquivo CSV"
+msgstr "Importar Arquivo CSV"
+
+#: resources/views/user/products/components/import-modal.php:15
+msgid ""
+"Importe um arquivo CSV com as colunas na seguinte ordem: nome do fornecedor, "
+"ID do fornecedor, \n"
+"                                    ID do produto, nome do produto, código "
+"EMB FB, código DUN14, código EAN, comprimento do produto, \n"
+"                                    largura do produto, altura do produto, "
+"base do produto, peso do produto e PLU."
+msgstr ""
+"Importe um arquivo CSV com as colunas na seguinte ordem: nome do fornecedor, "
+"ID do fornecedor, \n"
+"                                    ID do produto, nome do produto, código "
+"EMB FB, código DUN14, código EAN, comprimento do produto, \n"
+"                                    largura do produto, altura do produto, "
+"base do produto, peso do produto e PLU."
+
+#: resources/views/user/products/components/import-modal.php:28
+#: resources/views/user/providers/components/import-modal.php:26
+msgid "Importar"
+msgstr "Importar"
+
+#: resources/views/user/products/components/save-modal.php:8
+msgid "Complete os campos abaixo para criar/editar um produto."
+msgstr "Complete os campos abaixo para criar/editar um produto."
+
+#: resources/views/user/products/components/save-modal.php:18
+#: src/App/Controllers/User/ProductsController.php:259
+msgid "ID do Produto"
+msgstr "ID do Produto"
+
+#: resources/views/user/products/components/save-modal.php:20
+msgid "Digite o ID do produto."
+msgstr "Digite o ID do produto."
+
+#: resources/views/user/products/components/save-modal.php:24
+msgid "Informe o ID do produto..."
+msgstr "Informe o ID do produto..."
+
+#: resources/views/user/products/components/save-modal.php:32
+msgid "Digite o nome do produto."
+msgstr "Digite o nome do produto."
+
+#: resources/views/user/products/components/save-modal.php:36
+msgid "Informe o nome do produto..."
+msgstr "Informe o nome do produto..."
+
+#: resources/views/user/products/components/save-modal.php:45
+#: src/App/Controllers/User/ProductsController.php:257
+msgid "ID do Fornecedor"
+msgstr "ID do Fornecedor"
+
+#: resources/views/user/products/components/save-modal.php:47
+msgid "Digite o ID do fornecedor referente ao produto."
+msgstr "Digite o ID do fornecedor referente ao produto."
+
+#: resources/views/user/products/components/save-modal.php:51
+msgid "Informe o ID do fornecedor..."
+msgstr "Informe o ID do fornecedor..."
+
+#: resources/views/user/products/components/save-modal.php:57
+#: src/App/Controllers/User/ProductsController.php:258
+msgid "Nome do Fornecedor"
+msgstr "Nome do Fornecedor"
+
+#: resources/views/user/products/components/save-modal.php:59
+msgid "Digite o nome do fornecedor referente ao produto."
+msgstr "Digite o nome do fornecedor referente ao produto."
+
+#: resources/views/user/products/components/save-modal.php:63
+msgid "Informe o nome do fornecedor..."
+msgstr "Informe o nome do fornecedor..."
+
+#: resources/views/user/products/components/save-modal.php:74
+msgid "Digite o código EAN do produto."
+msgstr "Digite o código EAN do produto."
+
+#: resources/views/user/products/components/save-modal.php:78
+msgid "Digite o código EAN..."
+msgstr "Digite o código EAN..."
+
+#: resources/views/user/products/components/save-modal.php:84
+msgid "Dun14"
+msgstr "Dun14"
+
+#: resources/views/user/products/components/save-modal.php:86
+msgid "Digite o código Dun14 do produto."
+msgstr "Digite o código Dun14 do produto."
+
+#: resources/views/user/products/components/save-modal.php:90
+msgid "Digite o código Dun14..."
+msgstr "Digite o código Dun14..."
+
+#: resources/views/user/products/components/save-modal.php:96
+#: src/App/Controllers/User/ProductsController.php:268
+msgid "PLU"
+msgstr "PLU"
+
+#: resources/views/user/products/components/save-modal.php:98
+msgid "Digite o código PLU do produto."
+msgstr "Digite o código PLU do produto."
+
+#: resources/views/user/products/components/save-modal.php:102
+msgid "Digite o código PLU..."
+msgstr "Digite o código PLU..."
+
+#: resources/views/user/products/components/save-modal.php:107
+msgid "Medidas"
+msgstr "Medidas"
+
+#: resources/views/user/products/components/save-modal.php:111
+msgid "Emb Fb"
+msgstr "Emb Fb"
+
+#: resources/views/user/products/components/save-modal.php:113
+msgid "Digite o número de embalagem do produto."
+msgstr "Digite o número de embalagem do produto."
+
+#: resources/views/user/products/components/save-modal.php:117
+msgid "Digite o Emb Fb..."
+msgstr "Digite o Emb Fb..."
+
+#: resources/views/user/products/components/save-modal.php:123
+#: src/App/Controllers/User/ProductsController.php:263
+msgid "Comprimento"
+msgstr "Comprimento"
+
+#: resources/views/user/products/components/save-modal.php:125
+msgid "Digite o comprimento do produto, em centímetros."
+msgstr "Digite o comprimento do produto, em centímetros."
+
+#: resources/views/user/products/components/save-modal.php:129
+msgid "Digite o comprimento..."
+msgstr "Digite o comprimento..."
+
+#: resources/views/user/products/components/save-modal.php:135
+#: src/App/Controllers/User/ProductsController.php:264
+msgid "Largura"
+msgstr "Largura"
+
+#: resources/views/user/products/components/save-modal.php:137
+msgid "Digite a largura do produto, em centímetros."
+msgstr "Digite a largura do produto, em centímetros."
+
+#: resources/views/user/products/components/save-modal.php:141
+msgid "Digite a largura..."
+msgstr "Digite a largura..."
+
+#: resources/views/user/products/components/save-modal.php:151
+msgid "Digite a altura do produto, em centímetros."
+msgstr "Digite a altura do produto, em centímetros."
+
+#: resources/views/user/products/components/save-modal.php:155
+msgid "Digite a altura..."
+msgstr "Digite a altura..."
+
+#: resources/views/user/products/components/save-modal.php:161
+#: src/App/Controllers/User/ProductsController.php:152
+#: src/App/Controllers/User/ProductsController.php:266
+msgid "Base"
+msgstr "Base"
+
+#: resources/views/user/products/components/save-modal.php:163
+msgid "Digite a base do produto."
+msgstr "Digite a base do produto."
+
+#: resources/views/user/products/components/save-modal.php:167
+msgid "Digite a base..."
+msgstr "Digite a base..."
+
+#: resources/views/user/products/components/save-modal.php:173
+#: src/App/Controllers/User/ProductsController.php:153
+#: src/App/Controllers/User/ProductsController.php:267
+msgid "Peso"
+msgstr "Peso"
+
+#: resources/views/user/products/components/save-modal.php:175
+msgid "Digite o peso do produto, em quilos."
+msgstr "Digite o peso do produto, em quilos."
+
+#: resources/views/user/products/components/save-modal.php:180
+msgid "Digite o peso..."
+msgstr "Digite o peso..."
+
+#: resources/views/user/products/index.php:3
+#, php-format
+msgid "Produtos | %s"
+msgstr "Produtos | %s"
+
+#: resources/views/user/products/index.php:9
+msgid "Lista de Produtos"
+msgstr "Lista de Produtos"
+
+#: resources/views/user/products/index.php:10
+msgid "Segue abaixo a lista de produtos do sistema"
+msgstr "Segue abaixo a lista de produtos do sistema"
+
+#: resources/views/user/products/index.php:27
+#: resources/views/user/products/index.php:127
+msgid "Cadastrar Produto"
+msgstr "Cadastrar Produto"
+
+#: resources/views/user/products/index.php:81
+msgid "Deseja realmente excluir este produto?"
+msgstr "Deseja realmente excluir este produto?"
+
+#: resources/views/user/products/index.php:109
+#: resources/views/user/streets/index.php:107
+#, php-format
+msgid "Editar Produto - %s"
+msgstr "Editar Produto - %s"
+
+#: resources/views/user/providers/components/import-modal.php:6
+#: resources/views/user/providers/index.php:33
+msgid "Importar Fornecedores"
+msgstr "Importar Fornecedores"
+
+#: resources/views/user/providers/components/import-modal.php:15
+msgid ""
+"Importe um arquivo CSV com apenas uma coluna contendo o nome do fornecedor."
+msgstr ""
+"Importe um arquivo CSV com apenas uma coluna contendo o nome do fornecedor."
+
+#: resources/views/user/providers/components/save-modal.php:8
+msgid "Complete os campos abaixo para criar/editar um fornecedor."
+msgstr "Complete os campos abaixo para criar/editar um fornecedor."
+
+#: resources/views/user/providers/index.php:3
+#, php-format
+msgid "Fornecedores | %s"
+msgstr "Fornecedores | %s"
+
+#: resources/views/user/providers/index.php:9
+msgid "Lista de Fornecedores"
+msgstr "Lista de Fornecedores"
+
+#: resources/views/user/providers/index.php:10
+msgid "Segue abaixo a lista de fornecedores do sistema"
+msgstr "Segue abaixo a lista de fornecedores do sistema"
+
+#: resources/views/user/providers/index.php:20
+#: src/App/Controllers/User/ProvidersController.php:231
+#: src/Data/MenuData.php:75
+msgid "Fornecedores"
+msgstr "Fornecedores"
+
+#: resources/views/user/providers/index.php:81
+msgid "Deseja realmente excluir este fornecedor?"
+msgstr "Deseja realmente excluir este fornecedor?"
+
+#: resources/views/user/providers/index.php:109
+#, php-format
+msgid "Editar Fornecedor - %s"
+msgstr "Editar Fornecedor - %s"
+
+#: resources/views/user/storage/index.php:3
+#, php-format
+msgid "Armazenagem | %s"
+msgstr "Armazenagem | %s"
+
+#: resources/views/user/storage/index.php:10
+msgid "Veja abaixo como está o armazenamento atualmente"
+msgstr "Veja abaixo como está o armazenamento atualmente"
+
+#: resources/views/user/storage/index.php:38
+#: resources/views/user/streets/index.php:20
+#: src/App/Controllers/User/StreetsController.php:190 src/Data/MenuData.php:65
+msgid "Ruas"
+msgstr "Ruas"
+
+#: resources/views/user/storage/index.php:39
+msgid "Armazenamento"
+msgstr "Armazenamento"
+
+#: resources/views/user/storage/index.php:40
+#: src/App/Controllers/User/StorageController.php:71
+msgid "Livre"
+msgstr "Livre"
+
+#: resources/views/user/storage/index.php:41
+#: src/App/Controllers/User/StorageController.php:72
+msgid "Ocupado"
+msgstr "Ocupado"
+
+#: resources/views/user/storage/index.php:42
+#: src/App/Controllers/User/StorageController.php:73
+msgid "Total"
+msgstr "Total"
+
+#: resources/views/user/storage/index.php:48
+#, php-format
+msgid "Rua %s"
+msgstr "Rua %s"
+
+#: resources/views/user/storage/index.php:65
+#, php-format
+msgid "Capacidade Total: %s"
+msgstr "Capacidade Total: %s"
+
+#: resources/views/user/storage/index.php:65
+msgid "Bloqueio"
+msgstr "Bloqueio"
+
+#: resources/views/user/storage/index.php:79
+msgid "Totais"
+msgstr "Totais"
+
+#: resources/views/user/storage/index.php:81
+#, php-format
+msgid "Total Para Armazenagem: %s"
+msgstr "Total Para Armazenagem: %s"
+
+#: resources/views/user/streets/components/save-modal.php:8
+msgid "Complete os campos abaixo para criar/editar uma rua."
+msgstr "Complete os campos abaixo para criar/editar uma rua."
+
+#: resources/views/user/streets/components/save-modal.php:24
+msgid "Tem Limite?"
+msgstr "Tem Limite?"
+
+#: resources/views/user/streets/components/save-modal.php:26
+msgid ""
+"Se a rua não tiver limite de capacidade (rua de bloqueio), marque a caixa ao "
+"lado."
+msgstr ""
+"Se a rua não tiver limite de capacidade (rua de bloqueio), marque a caixa ao "
+"lado."
+
+#: resources/views/user/streets/components/save-modal.php:37
+#: src/App/Controllers/User/InputOutputHistoryController.php:317
+#: src/App/Controllers/User/OutputsController.php:199
+#: src/App/Controllers/User/StorageController.php:64
+#: src/App/Controllers/User/StreetsController.php:178
+msgid "Número da Rua"
+msgstr "Número da Rua"
+
+#: resources/views/user/streets/components/save-modal.php:39
+msgid "Digite o número da rua."
+msgstr "Digite o número da rua."
+
+#: resources/views/user/streets/components/save-modal.php:43
+msgid "Informe o número da rua..."
+msgstr "Informe o número da rua..."
+
+#: resources/views/user/streets/components/save-modal.php:50
+#: src/App/Controllers/User/StorageController.php:65
+#: src/App/Controllers/User/StreetsController.php:179
+msgid "Posição Inicial"
+msgstr "Posição Inicial"
+
+#: resources/views/user/streets/components/save-modal.php:52
+msgid "Digite a primeira posição da rua."
+msgstr "Digite a primeira posição da rua."
+
+#: resources/views/user/streets/components/save-modal.php:56
+msgid "Informe a posição inicial..."
+msgstr "Informe a posição inicial..."
+
+#: resources/views/user/streets/components/save-modal.php:63
+#: src/App/Controllers/User/StorageController.php:66
+#: src/App/Controllers/User/StreetsController.php:180
+msgid "Posição Final"
+msgstr "Posição Final"
+
+#: resources/views/user/streets/components/save-modal.php:65
+msgid "Digite a última posição da rua."
+msgstr "Digite a última posição da rua."
+
+#: resources/views/user/streets/components/save-modal.php:69
+msgid "Informe a posição final..."
+msgstr "Informe a posição final..."
+
+#: resources/views/user/streets/components/save-modal.php:78
+#: src/App/Controllers/User/StorageController.php:67
+#: src/App/Controllers/User/StreetsController.php:133
+#: src/App/Controllers/User/StreetsController.php:181
+msgid "Altura Máxima"
+msgstr "Altura Máxima"
+
+#: resources/views/user/streets/components/save-modal.php:80
+msgid "Digite a altura máxima da rua."
+msgstr "Digite a altura máxima da rua."
+
+#: resources/views/user/streets/components/save-modal.php:84
+msgid "Informe a altura máxima..."
+msgstr "Informe a altura máxima..."
+
+#: resources/views/user/streets/components/save-modal.php:91
+#: src/App/Controllers/User/StorageController.php:68
+#: src/App/Controllers/User/StreetsController.php:134
+#: src/App/Controllers/User/StreetsController.php:182
+msgid "Perfil"
+msgstr "Perfil"
+
+#: resources/views/user/streets/components/save-modal.php:93
+msgid "Digite o perfil da rua, em metros."
+msgstr "Digite o perfil da rua, em metros."
+
+#: resources/views/user/streets/components/save-modal.php:97
+msgid "Informe o perfil da rua..."
+msgstr "Informe o perfil da rua..."
+
+#: resources/views/user/streets/components/save-modal.php:104
+#: src/App/Controllers/User/StreetsController.php:135
+msgid "Capacidade Máxima"
+msgstr "Capacidade Máxima"
+
+#: resources/views/user/streets/components/save-modal.php:106
+msgid "Digite a capacidade máxima de pallets para essa rua."
+msgstr "Digite a capacidade máxima de pallets para essa rua."
+
+#: resources/views/user/streets/components/save-modal.php:110
+msgid "Informe a capacidade máxima da rua..."
+msgstr "Informe a capacidade máxima da rua..."
+
+#: resources/views/user/streets/components/save-modal.php:118
+#: src/App/Controllers/User/StorageController.php:69
+#: src/App/Controllers/User/StreetsController.php:136
+#: src/App/Controllers/User/StreetsController.php:184
+msgid "Observações"
+msgstr "Observações"
+
+#: resources/views/user/streets/components/save-modal.php:120
+msgid "É opcional, uma observação da rua."
+msgstr "É opcional, uma observação da rua."
+
+#: resources/views/user/streets/components/save-modal.php:125
+msgid "Descreva as observações da rua..."
+msgstr "Descreva as observações da rua..."
+
+#: resources/views/user/streets/index.php:3
+#, php-format
+msgid "Ruas | %s"
+msgstr "Ruas | %s"
+
+#: resources/views/user/streets/index.php:9
+msgid "Lista de Ruas"
+msgstr "Lista de Ruas"
+
+#: resources/views/user/streets/index.php:10
+msgid "Segue abaixo a lista de ruas do sistema"
+msgstr "Segue abaixo a lista de ruas do sistema"
+
+#: resources/views/user/streets/index.php:27
+#: resources/views/user/streets/index.php:126
+msgid "Cadastrar Rua"
+msgstr "Cadastrar Rua"
+
+#: resources/views/user/streets/index.php:74
+msgid "Deseja realmente excluir esta rua?"
+msgstr "Deseja realmente excluir esta rua?"
+
+#: resources/views/web/contact.php:3
+#, php-format
+msgid "Contato | %s"
+msgstr "Contato | %s"
+
+#: resources/views/web/contact.php:11 src/Data/MenuData.php:23
+msgid "Contato"
+msgstr "Contato"
+
+#: resources/views/web/contact.php:15
+msgid ""
+"Para entrar em contato conosco para maiores esclarecimentos, preencha o "
+"formulário abaixo com seu \n"
+"                nome, email, assunto e mensagem e clique em \"Enviar\". Seu "
+"feedback é altamente apreciado."
+msgstr ""
+"Para entrar em contato conosco para maiores esclarecimentos, preencha o "
+"formulário abaixo com seu \n"
+"                nome, email, assunto e mensagem e clique em \"Enviar\". Seu "
+"feedback é altamente apreciado."
+
+#: resources/views/web/contact.php:27
+msgid "Entre em Contato"
+msgstr "Entre em Contato"
+
+#: resources/views/web/contact.php:38 resources/views/web/contact.php:39
+msgid "Qual é o assunto?"
+msgstr "Qual é o assunto?"
+
+#: resources/views/web/contact.php:51 resources/views/web/contact.php:52
+msgid "Digite seu nome"
+msgstr "Digite seu nome"
+
+#: resources/views/web/contact.php:79 resources/views/web/contact.php:80
+msgid "Digite sua mensagem"
+msgstr "Digite sua mensagem"
+
+#: resources/views/web/contact.php:100
+msgid "Envie-nos sua dúvida a qualquer hora!"
+msgstr "Envie-nos sua dúvida a qualquer hora!"
+
+#: src/App/Controllers/Admin/AdminController.php:52
+msgid "Configurações atualizadas com sucesso!"
+msgstr "Configurações atualizadas com sucesso!"
+
+#: src/App/Controllers/Admin/TemplateController.php:38
+#: src/App/Controllers/User/TemplateController.php:38
+#: src/App/Controllers/Web/TemplateController.php:29
+msgid "Aguarde, carregando..."
+msgstr "Aguarde, carregando..."
+
+#: src/App/Controllers/Admin/TemplateController.php:54
+#: src/App/Controllers/User/TemplateController.php:54
+#: src/App/Controllers/Web/TemplateController.php:36
+msgid "Linguagens"
+msgstr "Linguagens"
+
+#: src/App/Controllers/Admin/TemplateController.php:57
+#: src/App/Controllers/User/TemplateController.php:57
+#: src/App/Controllers/Web/TemplateController.php:39
+msgid "Português"
+msgstr "Português"
+
+#: src/App/Controllers/Admin/UsersController.php:59
+msgid "Você se Registrou com Sucesso!"
+msgstr "Você se Registrou com Sucesso!"
+
+#: src/App/Controllers/Admin/UsersController.php:72
+#, php-format
+msgid ""
+"O usuário \"%s\" foi cadastrado com sucesso! Porém não foi possível enviar "
+"uma notificação no email dele."
+msgstr ""
+"O usuário \"%s\" foi cadastrado com sucesso! Porém não foi possível enviar "
+"uma notificação no email dele."
+
+#: src/App/Controllers/Admin/UsersController.php:77
+#, php-format
+msgid "O usuário \"%s\" foi criado com sucesso!"
+msgstr "O usuário \"%s\" foi criado com sucesso!"
+
+#: src/App/Controllers/Admin/UsersController.php:88
+#: src/App/Controllers/Admin/UsersController.php:102
+#: src/App/Controllers/Admin/UsersController.php:250
+msgid "Nenhum usuário foi encontrado!"
+msgstr "Nenhum usuário foi encontrado!"
+
+#: src/App/Controllers/Admin/UsersController.php:138
+#, php-format
+msgid "Os dados do usuário \"%s\" foram alterados com sucesso!"
+msgstr "Os dados do usuário \"%s\" foram alterados com sucesso!"
+
+#: src/App/Controllers/Admin/UsersController.php:200
+#: src/App/Controllers/Admin/UsersController.php:203
+#: src/App/Controllers/Admin/UsersController.php:225
+#: src/App/Controllers/User/InputOutputHistoryController.php:88
+#: src/App/Controllers/User/InputOutputHistoryController.php:91
+#: src/App/Controllers/User/InputOutputHistoryController.php:117
+#: src/App/Controllers/User/OperationsController.php:107
+#: src/App/Controllers/User/OperationsController.php:110
+#: src/App/Controllers/User/OperationsController.php:144
+#: src/App/Controllers/User/ProductsController.php:120
+#: src/App/Controllers/User/ProductsController.php:123
+#: src/App/Controllers/User/ProductsController.php:146
+#: src/App/Controllers/User/ProvidersController.php:108
+#: src/App/Controllers/User/ProvidersController.php:111
+#: src/App/Controllers/User/ProvidersController.php:134
+#: src/App/Controllers/User/StreetsController.php:103
+#: src/App/Controllers/User/StreetsController.php:106
+#: src/App/Controllers/User/StreetsController.php:129
+msgid "Ações"
+msgstr "Ações"
+
+#: src/App/Controllers/Admin/UsersController.php:206
+msgid "Editar Usuário"
+msgstr "Editar Usuário"
+
+#: src/App/Controllers/Admin/UsersController.php:212
+msgid "Excluir Usuário"
+msgstr "Excluir Usuário"
+
+#: src/App/Controllers/Admin/UsersController.php:229
+msgid "Criado em"
+msgstr "Criado em"
+
+#: src/App/Controllers/Admin/UsersController.php:253
+msgid "Não foi possível excluir o usuário!"
+msgstr "Não foi possível excluir o usuário!"
+
+#: src/App/Controllers/Admin/UsersController.php:257
+#, php-format
+msgid "O usuário \"%s\" foi excluído com sucesso."
+msgstr "O usuário \"%s\" foi excluído com sucesso."
+
+#: src/App/Controllers/Auth/AuthController.php:29
+#: src/App/Controllers/Auth/OperatorLoginController.php:28
+#, php-format
+msgid "Seja bem-vindo(a), %s!"
+msgstr "Seja bem-vindo(a), %s!"
+
+#: src/App/Controllers/Auth/AuthController.php:40
+#: src/App/Controllers/Auth/AuthController.php:63
+#: src/App/Controllers/Auth/OperatorLoginController.php:35
+msgid "Usuário e/ou senha inválidos!"
+msgstr "Usuário e/ou senha inválidos!"
+
+#: src/App/Controllers/Auth/OperatorLoginController.php:40
+#, php-format
+msgid "Entrar - Operação | %s"
+msgstr "Entrar - Operação | %s"
+
+#: src/App/Controllers/Auth/ResetPasswordController.php:40
+#, php-format
+msgid "Um email foi enviado para %s. Verifique para poder redefinir sua senha."
+msgstr ""
+"Um email foi enviado para %s. Verifique para poder redefinir sua senha."
+
+#: src/App/Controllers/Auth/ResetPasswordController.php:65
+msgid "A chave de verificação é inválida!"
+msgstr "A chave de verificação é inválida!"
+
+#: src/App/Controllers/Auth/ResetPasswordController.php:80
+msgid "A senha foi redefinida com sucesso!"
+msgstr "A senha foi redefinida com sucesso!"
+
+#: src/App/Controllers/ErrorController.php:13
+msgid "Lamentamos, mas ocorreu um erro inesperado. Clique abaixo para voltar."
+msgstr "Lamentamos, mas ocorreu um erro inesperado. Clique abaixo para voltar."
+
+#: src/App/Controllers/MediaLibraryController.php:55
+msgid "Nenhum arquivo foi escolhido!"
+msgstr "Nenhum arquivo foi escolhido!"
+
+#: src/App/Controllers/MediaLibraryController.php:77
+msgid "Lamentamos, mas parece que ocorreu um erro no upload do seu arquivo."
+msgstr "Lamentamos, mas parece que ocorreu um erro no upload do seu arquivo."
+
+#: src/App/Controllers/MediaLibraryController.php:81
+msgid "O arquivo foi carregado com sucesso!"
+msgstr "O arquivo foi carregado com sucesso!"
+
+#: src/App/Controllers/MediaLibraryController.php:87
+msgid "Nenhum nome de arquivo foi declarado!"
+msgstr "Nenhum nome de arquivo foi declarado!"
+
+#: src/App/Controllers/MediaLibraryController.php:100
+msgid "O arquivo foi excluído com sucesso."
+msgstr "O arquivo foi excluído com sucesso."
+
+#: src/App/Controllers/User/ConferenceController.php:63
+#: src/App/Controllers/User/ConferenceController.php:198
+#: src/App/Controllers/User/InputOutputHistoryController.php:148
+#: src/App/Controllers/User/InputOutputHistoryController.php:190
+msgid "A conferência não foi encontrada!"
+msgstr "A conferência não foi encontrada!"
+
+#: src/App/Controllers/User/ConferenceController.php:66
+#: src/App/Controllers/User/ConferenceController.php:201
+msgid "Esta conferência já foi finalizada!"
+msgstr "Esta conferência já foi finalizada!"
+
+#: src/App/Controllers/User/ConferenceController.php:133
+#, php-format
+msgid ""
+"A entrada do produto \"%s\" na conferência de ID %s foi feita com sucesso!"
+msgstr ""
+"A entrada do produto \"%s\" na conferência de ID %s foi feita com sucesso!"
+
+#: src/App/Controllers/User/ConferenceController.php:147
+msgid "Não há pallets para serem armazenados!"
+msgstr "Não há pallets para serem armazenados!"
+
+#: src/App/Controllers/User/ConferenceController.php:155
+#, php-format
+msgid "A conferência de ID %s foi finalizada com sucesso!"
+msgstr "A conferência de ID %s foi finalizada com sucesso!"
+
+#: src/App/Controllers/User/ConferenceController.php:286
+msgid "O pallet foi expedido com sucesso!"
+msgstr "O pallet foi expedido com sucesso!"
+
+#: src/App/Controllers/User/EditController.php:49
+msgid "Seus dados foram atualizados com sucesso!"
+msgstr "Seus dados foram atualizados com sucesso!"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:97
+msgid "Gerar Etiquetas de Entrada"
+msgstr "Gerar Etiquetas de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:102
+msgid "Gerar Etiquetas de Saída"
+msgstr "Gerar Etiquetas de Saída"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:120
+#: src/App/Controllers/User/OperationsController.php:147
+msgid "Nº da Ocorrência"
+msgstr "Nº da Ocorrência"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:121
+#: src/App/Controllers/User/OperationsController.php:148
+msgid "Nº do Pedido"
+msgstr "Nº do Pedido"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:122
+#: src/App/Controllers/User/InputOutputHistoryController.php:330
+#: src/App/Controllers/User/OutputsController.php:212
+msgid "Status"
+msgstr "Status"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:151
+#: src/App/Controllers/User/InputOutputHistoryController.php:193
+msgid "Esta conferência ainda não foi finalizada!"
+msgstr "Esta conferência ainda não foi finalizada!"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:159
+#, php-format
+msgid "Etiqueta de Entrada - %s"
+msgstr "Etiqueta de Entrada - %s"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:201
+#, php-format
+msgid "Etiqueta de Saída - %s"
+msgstr "Etiqueta de Saída - %s"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:286
+#: src/App/Controllers/User/OperationsController.php:222
+#: src/App/Controllers/User/OutputsController.php:181
+msgid "ADM"
+msgstr "ADM"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:287
+msgid "Operador que Iniciou"
+msgstr "Operador que Iniciou"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:288
+msgid "Data de Início"
+msgstr "Data de Início"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:291
+msgid "Hora de Início"
+msgstr "Hora de Início"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:294
+msgid "Operador que Finalizou"
+msgstr "Operador que Finalizou"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:295
+msgid "Data de Término"
+msgstr "Data de Término"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:298
+msgid "Hora de Término"
+msgstr "Hora de Término"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:301
+msgid "Status da Conferência"
+msgstr "Status da Conferência"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:306
+#: src/App/Controllers/User/OutputsController.php:188
+msgid "Hora de Entrada"
+msgstr "Hora de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:321
+#: src/App/Controllers/User/OutputsController.php:203
+msgid "Operador que fez Saída"
+msgstr "Operador que fez Saída"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:325
+#: src/App/Controllers/User/OutputsController.php:207
+msgid "Hora de Saída"
+msgstr "Hora de Saída"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:335
+msgid "Histórico de Conferências"
+msgstr "Histórico de Conferências"
+
+#: src/App/Controllers/User/OperationsController.php:26
+#: src/App/Controllers/User/OperationsController.php:54
+#: src/App/Controllers/User/OperationsController.php:170
+#: src/App/Controllers/User/OperationsController.php:184
+msgid "Nenhuma operação foi encontrada!"
+msgstr "Nenhuma operação foi encontrada!"
+
+#: src/App/Controllers/User/OperationsController.php:47
+#, php-format
+msgid "A operação de ID %s foi criada com sucesso!"
+msgstr "A operação de ID %s foi criada com sucesso!"
+
+#: src/App/Controllers/User/OperationsController.php:63
+#, php-format
+msgid "Os dados da operação de ID %s foram alterados com sucesso!"
+msgstr "Os dados da operação de ID %s foram alterados com sucesso!"
+
+#: src/App/Controllers/User/OperationsController.php:118
+msgid "Liberar Para Conferência"
+msgstr "Liberar Para Conferência"
+
+#: src/App/Controllers/User/OperationsController.php:125
+msgid "Editar Operação"
+msgstr "Editar Operação"
+
+#: src/App/Controllers/User/OperationsController.php:131
+msgid "Excluir Operação"
+msgstr "Excluir Operação"
+
+#: src/App/Controllers/User/OperationsController.php:149
+msgid "Liberado para Conferência?"
+msgstr "Liberado para Conferência?"
+
+#: src/App/Controllers/User/OperationsController.php:173
+msgid "Não foi possível excluir a operação!"
+msgstr "Não foi possível excluir a operação!"
+
+#: src/App/Controllers/User/OperationsController.php:177
+#, php-format
+msgid "A operação de ID %s foi excluída com sucesso."
+msgstr "A operação de ID %s foi excluída com sucesso."
+
+#: src/App/Controllers/User/OperationsController.php:187
+msgid "A operação já foi liberada para conferência!"
+msgstr "A operação já foi liberada para conferência!"
+
+#: src/App/Controllers/User/OperationsController.php:203
+#, php-format
+msgid ""
+"A operação de ID %s foi liberada para conferência com sucesso. O ID gerado "
+"da conferência é %s."
+msgstr ""
+"A operação de ID %s foi liberada para conferência com sucesso. O ID gerado "
+"da conferência é %s."
+
+#: src/App/Controllers/User/OperationsController.php:228
+msgid "Possui TR?"
+msgstr "Possui TR?"
+
+#: src/App/Controllers/User/OperationsController.php:229
+msgid "Paletização?"
+msgstr "Paletização?"
+
+#: src/App/Controllers/User/OperationsController.php:230
+msgid "Retrabalho?"
+msgstr "Retrabalho?"
+
+#: src/App/Controllers/User/OperationsController.php:231
+msgid "Armazenagem?"
+msgstr "Armazenagem?"
+
+#: src/App/Controllers/User/OperationsController.php:232
+msgid "Importado?"
+msgstr "Importado?"
+
+#: src/App/Controllers/User/OperationsController.php:233
+msgid "Conferência Liberada?"
+msgstr "Conferência Liberada?"
+
+#: src/App/Controllers/User/OutputsController.php:30
+msgid "A operação desta ordem de serviço não foi conferida ainda!"
+msgstr "A operação desta ordem de serviço não foi conferida ainda!"
+
+#: src/App/Controllers/User/OutputsController.php:32
+msgid "A conferência dessa operação ainda não foi finalizada!"
+msgstr "A conferência dessa operação ainda não foi finalizada!"
+
+#: src/App/Controllers/User/OutputsController.php:34
+msgid "Não foi encontrado nenhum pallet para separação!"
+msgstr "Não foi encontrado nenhum pallet para separação!"
+
+#: src/App/Controllers/User/OutputsController.php:51
+#: src/App/Controllers/User/OutputsController.php:93
+msgid "A operação não foi encontrada!"
+msgstr "A operação não foi encontrada!"
+
+#: src/App/Controllers/User/OutputsController.php:56
+msgid "Você precisa selecionar ao menos um pallet para separação!"
+msgstr "Você precisa selecionar ao menos um pallet para separação!"
+
+#: src/App/Controllers/User/OutputsController.php:78
+msgid "Os pallets selecionados foram separados para saída com sucesso!"
+msgstr "Os pallets selecionados foram separados para saída com sucesso!"
+
+#: src/App/Controllers/User/OutputsController.php:96
+msgid "A saída não foi encontrada!"
+msgstr "A saída não foi encontrada!"
+
+#: src/App/Controllers/User/OutputsController.php:104
+#, php-format
+msgid "Saída de Pallets - ID %s"
+msgstr "Saída de Pallets - ID %s"
+
+#: src/App/Controllers/User/OutputsController.php:182
+msgid "ID de Operação"
+msgstr "ID de Operação"
+
+#: src/App/Controllers/User/ProductsController.php:21
+#: src/App/Controllers/User/ProductsController.php:49
+#: src/App/Controllers/User/ProductsController.php:65
+#: src/Models/ConferenceInputForm.php:58
+msgid "Nenhum produto foi encontrado!"
+msgstr "Nenhum produto foi encontrado!"
+
+#: src/App/Controllers/User/ProductsController.php:42
+#, php-format
+msgid "O produto \"%s\" foi cadastrado com sucesso!"
+msgstr "O produto \"%s\" foi cadastrado com sucesso!"
+
+#: src/App/Controllers/User/ProductsController.php:58
+#, php-format
+msgid "Os dados do produto \"%s\" foram alterados com sucesso!"
+msgstr "Os dados do produto \"%s\" foram alterados com sucesso!"
+
+#: src/App/Controllers/User/ProductsController.php:68
+msgid "Não foi possível excluir o produto!"
+msgstr "Não foi possível excluir o produto!"
+
+#: src/App/Controllers/User/ProductsController.php:72
+#, php-format
+msgid "O produto \"%s\" foi excluído com sucesso."
+msgstr "O produto \"%s\" foi excluído com sucesso."
+
+#: src/App/Controllers/User/ProductsController.php:127
+msgid "Editar Produto"
+msgstr "Editar Produto"
+
+#: src/App/Controllers/User/ProductsController.php:133
+msgid "Excluir Produto"
+msgstr "Excluir Produto"
+
+#: src/App/Controllers/User/ProductsController.php:149
+msgid "Comp."
+msgstr "Comp."
+
+#: src/App/Controllers/User/ProductsController.php:150
+msgid "Lar."
+msgstr "Lar."
+
+#: src/App/Controllers/User/ProductsController.php:151
+msgid "Alt."
+msgstr "Alt."
+
+#: src/App/Controllers/User/ProductsController.php:192
+#: src/App/Controllers/User/ProvidersController.php:174
+msgid "Nenhum arquivo foi selecionado!"
+msgstr "Nenhum arquivo foi selecionado!"
+
+#: src/App/Controllers/User/ProductsController.php:195
+#: src/App/Controllers/User/ProvidersController.php:177
+msgid "O arquivo precisa ser um excel CSV!"
+msgstr "O arquivo precisa ser um excel CSV!"
+
+#: src/App/Controllers/User/ProductsController.php:233
+#: src/App/Controllers/User/ProvidersController.php:203
+#, php-format
+msgid "Linha %s: "
+msgstr "Linha %s: "
+
+#: src/App/Controllers/User/ProductsController.php:235
+#: src/App/Controllers/User/ProvidersController.php:205
+#, php-format
+msgid "Houveram erros no excel! %s"
+msgstr "Houveram erros no excel! %s"
+
+#: src/App/Controllers/User/ProductsController.php:240
+#: src/App/Controllers/User/ProvidersController.php:210
+#, php-format
+msgid "Todos os %s registros foram importados com sucesso!"
+msgstr "Todos os %s registros foram importados com sucesso!"
+
+#: src/App/Controllers/User/ProductsController.php:262
+msgid "Código Dun14"
+msgstr "Código Dun14"
+
+#: src/App/Controllers/User/ProvidersController.php:21
+#: src/App/Controllers/User/ProvidersController.php:49
+#: src/App/Controllers/User/ProvidersController.php:65
+msgid "Nenhum fornecedor foi encontrado!"
+msgstr "Nenhum fornecedor foi encontrado!"
+
+#: src/App/Controllers/User/ProvidersController.php:42
+#, php-format
+msgid "O fornecedor \"%s\" foi cadastrado com sucesso!"
+msgstr "O fornecedor \"%s\" foi cadastrado com sucesso!"
+
+#: src/App/Controllers/User/ProvidersController.php:58
+#, php-format
+msgid "Os dados do fornecedor \"%s\" foram alterados com sucesso!"
+msgstr "Os dados do fornecedor \"%s\" foram alterados com sucesso!"
+
+#: src/App/Controllers/User/ProvidersController.php:68
+msgid "Não foi possível excluir o fornecedor!"
+msgstr "Não foi possível excluir o fornecedor!"
+
+#: src/App/Controllers/User/ProvidersController.php:72
+#, php-format
+msgid "O fornecedor \"%s\" foi excluído com sucesso."
+msgstr "O fornecedor \"%s\" foi excluído com sucesso."
+
+#: src/App/Controllers/User/ProvidersController.php:115
+msgid "Editar Fornecedor"
+msgstr "Editar Fornecedor"
+
+#: src/App/Controllers/User/ProvidersController.php:121
+msgid "Excluir Fornecedor"
+msgstr "Excluir Fornecedor"
+
+#: src/App/Controllers/User/StorageController.php:70
+#: src/App/Controllers/User/StreetsController.php:185
+msgid "Rua de Bloqueio?"
+msgstr "Rua de Bloqueio?"
+
+#: src/App/Controllers/User/StreetsController.php:21
+#: src/App/Controllers/User/StreetsController.php:49
+#: src/App/Controllers/User/StreetsController.php:158
+msgid "Nenhuma rua foi encontrada!"
+msgstr "Nenhuma rua foi encontrada!"
+
+#: src/App/Controllers/User/StreetsController.php:42
+#, php-format
+msgid "A rua \"%s\" foi criada com sucesso!"
+msgstr "A rua \"%s\" foi criada com sucesso!"
+
+#: src/App/Controllers/User/StreetsController.php:58
+#, php-format
+msgid "Os dados da rua \"%s\" foram alterados com sucesso!"
+msgstr "Os dados da rua \"%s\" foram alterados com sucesso!"
+
+#: src/App/Controllers/User/StreetsController.php:110
+msgid "Editar Rua"
+msgstr "Editar Rua"
+
+#: src/App/Controllers/User/StreetsController.php:116
+msgid "Excluir Rua"
+msgstr "Excluir Rua"
+
+#: src/App/Controllers/User/StreetsController.php:131
+msgid "Pos. Inicial"
+msgstr "Pos. Inicial"
+
+#: src/App/Controllers/User/StreetsController.php:132
+msgid "Pos. Final"
+msgstr "Pos. Final"
+
+#: src/App/Controllers/User/StreetsController.php:137
+msgid "Bloqueio?"
+msgstr "Bloqueio?"
+
+#: src/App/Controllers/User/StreetsController.php:161
+msgid "Não foi possível excluir a rua!"
+msgstr "Não foi possível excluir a rua!"
+
+#: src/App/Controllers/User/StreetsController.php:165
+#, php-format
+msgid "A rua \"%s\" foi excluída com sucesso."
+msgstr "A rua \"%s\" foi excluída com sucesso."
+
+#: src/App/Controllers/User/StreetsController.php:183
+msgid "Capacidade Máxima de Pallets"
+msgstr "Capacidade Máxima de Pallets"
+
+#: src/App/Controllers/Web/ContactController.php:24
+msgid "Sua mensagem foi enviada com sucesso!"
+msgstr "Sua mensagem foi enviada com sucesso!"
+
+#: src/App/Middlewares/ADMUserMiddleware.php:13
+msgid "Você precisa estar autenticado como ADM para acessar essa área!"
+msgstr "Você precisa estar autenticado como ADM para acessar essa área!"
+
+#: src/App/Middlewares/AdminMiddleware.php:13
+msgid ""
+"Você precisa estar autenticado como administrador para acessar essa área!"
+msgstr ""
+"Você precisa estar autenticado como administrador para acessar essa área!"
+
+#: src/App/Middlewares/OperatorMiddleware.php:13
+msgid "Você precisa estar autenticado como operador para acessar essa área!"
+msgstr "Você precisa estar autenticado como operador para acessar essa área!"
+
+#: src/App/Middlewares/UserMiddleware.php:12
+msgid "Você precisa estar autenticado para acessar essa área!"
+msgstr "Você precisa estar autenticado para acessar essa área!"
+
+#: src/Data/MenuData.php:18
+msgid "Início"
+msgstr "Início"
+
+#: src/Data/MenuData.php:32
+msgid "Painéis"
+msgstr "Painéis"
+
+#: src/Data/MenuData.php:37 src/Data/MenuData.php:100
+msgid "Painel Principal"
+msgstr "Painel Principal"
+
+#: src/Data/MenuData.php:55
+msgid "GPA Log"
+msgstr "GPA Log"
+
+#: src/Data/MenuData.php:90
+msgid "Histórico de Entrada e Saída"
+msgstr "Histórico de Entrada e Saída"
+
+#: src/Data/MenuData.php:103
+msgid "Editar meus Dados"
+msgstr "Editar meus Dados"
+
+#: src/Data/MenuData.php:106
+msgid "Voltar ao Início"
+msgstr "Voltar ao Início"
+
+#: src/Models/Conference.php:52
+msgid "O ID de operação é obrigatório!"
+msgstr "O ID de operação é obrigatório!"
+
+#: src/Models/Conference.php:55
+msgid "O ADM é obrigatório!"
+msgstr "O ADM é obrigatório!"
+
+#: src/Models/Conference.php:58 src/Models/Pallet.php:108
+msgid "O status é obrigatório!"
+msgstr "O status é obrigatório!"
+
+#: src/Models/Conference.php:59 src/Models/Pallet.php:109
+msgid "O status é inválido!"
+msgstr "O status é inválido!"
+
+#: src/Models/Conference.php:65
+msgid "O usuário que iniciou a conferência é obrigatório!"
+msgstr "O usuário que iniciou a conferência é obrigatório!"
+
+#: src/Models/Conference.php:68
+msgid "A data de início é obrigatória!"
+msgstr "A data de início é obrigatória!"
+
+#: src/Models/Conference.php:69
+msgid "A data de início deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
+msgstr "A data de início deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
+
+#: src/Models/Conference.php:76
+msgid "O usuário que finalizou a conferência é obrigatório!"
+msgstr "O usuário que finalizou a conferência é obrigatório!"
+
+#: src/Models/Conference.php:79
+msgid "A data de término é obrigatória!"
+msgstr "A data de término é obrigatória!"
+
+#: src/Models/Conference.php:80
+msgid "A data de término deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
+msgstr "A data de término deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
+
+#: src/Models/Conference.php:198
+msgid "Aguardando"
+msgstr "Aguardando"
+
+#: src/Models/Conference.php:199
+msgid "Iniciada"
+msgstr "Iniciada"
+
+#: src/Models/Conference.php:200
+msgid "Finalizada"
+msgstr "Finalizada"
+
+#: src/Models/ConferenceInput.php:52 src/Models/Pallet.php:70
+msgid "O ID de conferência é obrigatório!"
+msgstr "O ID de conferência é obrigatório!"
+
+#: src/Models/ConferenceInput.php:55
+msgid "O ID do usuário é obrigatório!"
+msgstr "O ID do usuário é obrigatório!"
+
+#: src/Models/ConferenceInput.php:58 src/Models/Pallet.php:73
+#: src/Models/Product.php:54
+msgid "O ID do produto é obrigatório!"
+msgstr "O ID do produto é obrigatório!"
+
+#: src/Models/ConferenceInput.php:61 src/Models/ConferenceInputForm.php:30
+#: src/Models/Pallet.php:79
+msgid "A embalagem é obrigatória!"
+msgstr "A embalagem é obrigatória!"
+
+#: src/Models/ConferenceInput.php:64 src/Models/ConferenceInput.php:67
+#: src/Models/Pallet.php:82
+msgid "A quantidade de caixas físicas é obrigatório!"
+msgstr "A quantidade de caixas físicas é obrigatório!"
+
+#: src/Models/ConferenceInput.php:70 src/Models/Pallet.php:85
+msgid "A quantidade de unidades é obrigatório!"
+msgstr "A quantidade de unidades é obrigatório!"
+
+#: src/Models/ConferenceInput.php:73 src/Models/ConferenceInputForm.php:42
+#: src/Models/Pallet.php:88
+msgid "O tipo de serviço é obrigatório!"
+msgstr "O tipo de serviço é obrigatório!"
+
+#: src/Models/ConferenceInput.php:74 src/Models/Pallet.php:89
+msgid "O tipo de serviço é inválido!"
+msgstr "O tipo de serviço é inválido!"
+
+#: src/Models/ConferenceInput.php:77 src/Models/Pallet.php:92
+msgid "A altura do pallet é obrigatória!"
+msgstr "A altura do pallet é obrigatória!"
+
+#: src/Models/ConferenceInput.php:80 src/Models/ConferenceInputForm.php:24
+#: src/Models/ConferenceInputForm.php:33
+msgid "O código de barras é obrigatório!"
+msgstr "O código de barras é obrigatório!"
+
+#: src/Models/ConferenceInput.php:81
+#, php-format
+msgid "O código de barras deve conter no máximo %s caractéres!"
+msgstr "O código de barras deve conter no máximo %s caractéres!"
+
+#: src/Models/ConferenceInputForm.php:36
+msgid "A quantidade de caixas no físico é obrigatória!"
+msgstr "A quantidade de caixas no físico é obrigatória!"
+
+#: src/Models/ConferenceInputForm.php:39
+msgid "A quantidade de pallets fechados é obrigatória!"
+msgstr "A quantidade de pallets fechados é obrigatória!"
+
+#: src/Models/ConferenceInputForm.php:45
+msgid "A altura é obrigatória!"
+msgstr "A altura é obrigatória!"
+
+#: src/Models/ConferenceOutputForm.php:33 src/Models/OutputForm.php:16
+msgid "A ordem de serviço é obrigatória!"
+msgstr "A ordem de serviço é obrigatória!"
+
+#: src/Models/ConferenceOutputForm.php:40
+msgid "O número do pallet é obrigatório!"
+msgstr "O número do pallet é obrigatório!"
+
+#: src/Models/ConferenceOutputForm.php:47 src/Models/Pallet.php:130
+msgid "A placa de carregamento é obrigatória!"
+msgstr "A placa de carregamento é obrigatória!"
+
+#: src/Models/ConferenceOutputForm.php:50 src/Models/Pallet.php:134
+msgid "A doca é obrigatória!"
+msgstr "A doca é obrigatória!"
+
+#: src/Models/ConferenceOutputForm.php:64
+msgid "Nenhuma ordem de serviço foi encontrada!"
+msgstr "Nenhuma ordem de serviço foi encontrada!"
+
+#: src/Models/ConferenceOutputForm.php:79
+msgid "Nenhum pallet foi encontrado!"
+msgstr "Nenhum pallet foi encontrado!"
+
+#: src/Models/ConferenceOutputForm.php:82
+msgid "Esse pallet ainda não foi separado para saída!"
+msgstr "Esse pallet ainda não foi separado para saída!"
+
+#: src/Models/ConferenceOutputForm.php:85
+msgid "Esse pallet não pertence à esse ID de separação!"
+msgstr "Esse pallet não pertence à esse ID de separação!"
+
+#: src/Models/Config.php:45 src/Models/UserMeta.php:40
+msgid "O metadado é obrigatório!"
+msgstr "O metadado é obrigatório!"
+
+#: src/Models/Config.php:46 src/Models/UserMeta.php:41
+#, php-format
+msgid "O metadado deve conter no máximo %s caractéres!"
+msgstr "O metadado deve conter no máximo %s caractéres!"
+
+#: src/Models/Config.php:53
+msgid "A imagem de fundo do login é obrigatória!"
+msgstr "A imagem de fundo do login é obrigatória!"
+
+#: src/Models/Config.php:55
+msgid "A imagem de fundo não é uma imagem válida!"
+msgstr "A imagem de fundo não é uma imagem válida!"
+
+#: src/Models/Config.php:59
+msgid "O logo é obrigatório!"
+msgstr "O logo é obrigatório!"
+
+#: src/Models/Config.php:61
+msgid "O logo não é uma imagem válida!"
+msgstr "O logo não é uma imagem válida!"
+
+#: src/Models/Config.php:65
+msgid "O ícone é obrigatório!"
+msgstr "O ícone é obrigatório!"
+
+#: src/Models/Config.php:67
+msgid "O ícone não é uma imagem válida!"
+msgstr "O ícone não é uma imagem válida!"
+
+#: src/Models/Config.php:71
+msgid "O tema é obrigatório!"
+msgstr "O tema é obrigatório!"
+
+#: src/Models/Config.php:73
+msgid "O tema é inválido!"
+msgstr "O tema é inválido!"
+
+#: src/Models/ContactForm.php:19 src/Models/Product.php:43
+#: src/Models/Provider.php:37 src/Models/User.php:60 src/Models/UserForm.php:26
+msgid "O nome é obrigatório!"
+msgstr "O nome é obrigatório!"
+
+#: src/Models/ContactForm.php:20
+#, php-format
+msgid "O nome precisa ter no máximo %s caractéres!"
+msgstr "O nome precisa ter no máximo %s caractéres!"
+
+#: src/Models/ContactForm.php:23 src/Models/ForgotPasswordForm.php:17
+#: src/Models/LoginForm.php:17 src/Models/SocialUser.php:45
+#: src/Models/User.php:64 src/Models/UserForm.php:30
+msgid "O email é obrigatório!"
+msgstr "O email é obrigatório!"
+
+#: src/Models/ContactForm.php:24 src/Models/ForgotPasswordForm.php:18
+#: src/Models/LoginForm.php:18 src/Models/SocialUser.php:46
+#: src/Models/User.php:65 src/Models/UserForm.php:31
+msgid "O email é inválido!"
+msgstr "O email é inválido!"
+
+#: src/Models/ContactForm.php:25 src/Models/ForgotPasswordForm.php:19
+#: src/Models/SocialUser.php:47
+#, php-format
+msgid "O email precisa ter no máximo %s caractéres!"
+msgstr "O email precisa ter no máximo %s caractéres!"
+
+#: src/Models/ContactForm.php:28
+msgid "O assunto é obrigatório!"
+msgstr "O assunto é obrigatório!"
+
+#: src/Models/ContactForm.php:29
+#, php-format
+msgid "O assunto precisa ter no máximo %s caractéres!"
+msgstr "O assunto precisa ter no máximo %s caractéres!"
+
+#: src/Models/ContactForm.php:32
+msgid "O corpo da mensagem é obrigatório!"
+msgstr "O corpo da mensagem é obrigatório!"
+
+#: src/Models/ContactForm.php:33
+#, php-format
+msgid "A mensagem precisa ter no máximo %s caractéres!"
+msgstr "A mensagem precisa ter no máximo %s caractéres!"
+
+#: src/Models/ForgotPasswordForm.php:31
+msgid "O email não foi encontrado!"
+msgstr "O email não foi encontrado!"
+
+#: src/Models/ForgotPasswordForm.php:35
+msgid ""
+"Uma requisição já foi enviada para este email! Espere 1 hora para poder "
+"enviar outra."
+msgstr ""
+"Uma requisição já foi enviada para este email! Espere 1 hora para poder "
+"enviar outra."
+
+#: src/Models/LoginForm.php:21 src/Models/OperatorLoginForm.php:20
+#: src/Models/ResetPasswordForm.php:17 src/Models/User.php:69
+#: src/Models/UserForm.php:38
+msgid "A senha é obrigatória!"
+msgstr "A senha é obrigatória!"
+
+#: src/Models/LoginForm.php:33
+msgid "Este email não foi encontrado!"
+msgstr "Este email não foi encontrado!"
+
+#: src/Models/LoginForm.php:38
+msgid "A senha está incorreta!"
+msgstr "A senha está incorreta!"
+
+#: src/Models/Operation.php:53 src/Models/Output.php:39
+#: src/Models/Provider.php:34 src/Models/SocialUser.php:36
+#: src/Models/Street.php:43
+msgid "O usuário é obrigatório!"
+msgstr "O usuário é obrigatório!"
+
+#: src/Models/Operation.php:56
+msgid "O fornecedor é obrigatório!"
+msgstr "O fornecedor é obrigatório!"
+
+#: src/Models/Operation.php:59
+msgid "O número da ocorrência é obrigatório!"
+msgstr "O número da ocorrência é obrigatório!"
+
+#: src/Models/Operation.php:60
+#, php-format
+msgid "O número da ocorrência deve conter no máximo %s caractéres!"
+msgstr "O número da ocorrência deve conter no máximo %s caractéres!"
+
+#: src/Models/Operation.php:63
+msgid "A senha de G.A é obrigatória!"
+msgstr "A senha de G.A é obrigatória!"
+
+#: src/Models/Operation.php:64
+#, php-format
+msgid "A senha de G.A deve conter no máximo %s caractéres!"
+msgstr "A senha de G.A deve conter no máximo %s caractéres!"
+
+#: src/Models/Operation.php:67
+msgid "O número do pedido/TR é obrigatório!"
+msgstr "O número do pedido/TR é obrigatório!"
+
+#: src/Models/Operation.php:68
+#, php-format
+msgid "O número do pedido deve conter no máximo %s caractéres!"
+msgstr "O número do pedido deve conter no máximo %s caractéres!"
+
+#: src/Models/Operation.php:71
+msgid "O número da nota fiscal é obrigatório!"
+msgstr "O número da nota fiscal é obrigatório!"
+
+#: src/Models/Operation.php:72
+#, php-format
+msgid "A nota fiscal deve conter no máximo %s caractéres!"
+msgstr "A nota fiscal deve conter no máximo %s caractéres!"
+
+#: src/Models/Operation.php:75
+msgid "A placa é obrigatória!"
+msgstr "A placa é obrigatória!"
+
+#: src/Models/Operation.php:76 src/Models/Product.php:44
+#: src/Models/Provider.php:38 src/Models/User.php:61 src/Models/UserForm.php:27
+#, php-format
+msgid "O nome deve conter no máximo %s caractéres!"
+msgstr "O nome deve conter no máximo %s caractéres!"
+
+#: src/Models/Operation.php:81
+msgid "Pelo menos um serviço precisa ser escolhido!"
+msgstr "Pelo menos um serviço precisa ser escolhido!"
+
+#: src/Models/Operation.php:87
+msgid "A senha de carregamento informada já está em uso! Tente outra."
+msgstr "A senha de carregamento informada já está em uso! Tente outra."
+
+#: src/Models/Operation.php:94
+msgid "O número do pedido/TR informado já está em uso! Tente outro."
+msgstr "O número do pedido/TR informado já está em uso! Tente outro."
+
+#: src/Models/Operation.php:115
+msgid "Você não pode excluir uma operação vinculada à uma conferência!"
+msgstr "Você não pode excluir uma operação vinculada à uma conferência!"
+
+#: src/Models/OperatorLoginForm.php:17
+msgid "O número da matrícula é obrigatório!"
+msgstr "O número da matrícula é obrigatório!"
+
+#: src/Models/OperatorLoginForm.php:33 src/Models/OperatorLoginForm.php:34
+msgid "O número da matrícula ou a senha estão incorretos!"
+msgstr "O número da matrícula ou a senha estão incorretos!"
+
+#: src/Models/OperatorLoginForm.php:37
+msgid "Essa conta não possui permissão para entrar nessa área!"
+msgstr "Essa conta não possui permissão para entrar nessa área!"
+
+#: src/Models/Output.php:42
+msgid "A operação é obrigatória!"
+msgstr "A operação é obrigatória!"
+
+#: src/Models/Output.php:50
+msgid "Você não pode excluir uma ordem de saída vinculada à um pallet!"
+msgstr "Você não pode excluir uma ordem de saída vinculada à um pallet!"
+
+#: src/Models/OutputForm.php:17
+#, php-format
+msgid "A ordem de serviço precisa ter no máximo %s caractéres!"
+msgstr "A ordem de serviço precisa ter no máximo %s caractéres!"
+
+#: src/Models/OutputForm.php:29
+msgid "Nenhuma operação foi encontrada a partir dessa ordem de serviço!"
+msgstr "Nenhuma operação foi encontrada a partir dessa ordem de serviço!"
+
+#: src/Models/Pallet.php:76
+msgid "O usuário que alocou é obrigatório!"
+msgstr "O usuário que alocou é obrigatório!"
+
+#: src/Models/Pallet.php:95 src/Models/Street.php:46
+msgid "O número da rua é obrigatório!"
+msgstr "O número da rua é obrigatório!"
+
+#: src/Models/Pallet.php:98
+msgid "A posição da rua é obrigatório!"
+msgstr "A posição da rua é obrigatório!"
+
+#: src/Models/Pallet.php:101
+msgid "A altura da rua é obrigatória!"
+msgstr "A altura da rua é obrigatória!"
+
+#: src/Models/Pallet.php:104
+msgid "O código é obrigatório!"
+msgstr "O código é obrigatório!"
+
+#: src/Models/Pallet.php:105
+#, php-format
+msgid "O código deve conter no máximo %s caractéres!"
+msgstr "O código deve conter no máximo %s caractéres!"
+
+#: src/Models/Pallet.php:115
+msgid "O ID de separação é obrigatório!"
+msgstr "O ID de separação é obrigatório!"
+
+#: src/Models/Pallet.php:123
+msgid "O usuário que liberou é obrigatório!"
+msgstr "O usuário que liberou é obrigatório!"
+
+#: src/Models/Pallet.php:126
+msgid "A data de saída é obrigatória!"
+msgstr "A data de saída é obrigatória!"
+
+#: src/Models/Pallet.php:127
+msgid "A data de saída deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
+msgstr "A data de saída deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
+
+#: src/Models/Pallet.php:131
+#, php-format
+msgid "A placa de carregamento deve conter no máximo %s caractéres!"
+msgstr "A placa de carregamento deve conter no máximo %s caractéres!"
+
+#: src/Models/Pallet.php:135
+#, php-format
+msgid "A doca deve conter no máximo %s caractéres!"
+msgstr "A doca deve conter no máximo %s caractéres!"
+
+#: src/Models/Pallet.php:264
+msgid "Alocado"
+msgstr "Alocado"
+
+#: src/Models/Pallet.php:265
+msgid "Separado"
+msgstr "Separado"
+
+#: src/Models/Pallet.php:266
+msgid "Liberado"
+msgstr "Liberado"
+
+#: src/Models/Product.php:47
+msgid "O ID do fornecedor é obrigatório!"
+msgstr "O ID do fornecedor é obrigatório!"
+
+#: src/Models/Product.php:50
+msgid "O nome do fornecedor é obrigatório!"
+msgstr "O nome do fornecedor é obrigatório!"
+
+#: src/Models/Product.php:51
+#, php-format
+msgid "O nome do fornecedor deve conter no máximo %s caractéres!"
+msgstr "O nome do fornecedor deve conter no máximo %s caractéres!"
+
+#: src/Models/Product.php:57
+#, php-format
+msgid "O código EAN deve conter no máximo %s caractéres!"
+msgstr "O código EAN deve conter no máximo %s caractéres!"
+
+#: src/Models/Product.php:60
+#, php-format
+msgid "O código Dun14 deve conter no máximo %s caractéres!"
+msgstr "O código Dun14 deve conter no máximo %s caractéres!"
+
+#: src/Models/Product.php:63
+#, php-format
+msgid "O código PLU deve conter no máximo %s caractéres!"
+msgstr "O código PLU deve conter no máximo %s caractéres!"
+
+#: src/Models/ResetPasswordForm.php:18 src/Models/User.php:70
+#: src/Models/UserForm.php:39
+#, php-format
+msgid "A senha deve conter no mínimo %s caractéres!"
+msgstr "A senha deve conter no mínimo %s caractéres!"
+
+#: src/Models/ResetPasswordForm.php:21 src/Models/UserForm.php:42
+msgid "A confirmação de senha é obrigatória!"
+msgstr "A confirmação de senha é obrigatória!"
+
+#: src/Models/ResetPasswordForm.php:22 src/Models/UserForm.php:43
+msgid "As senhas não correspondem!"
+msgstr "As senhas não correspondem!"
+
+#: src/Models/SocialUser.php:39
+msgid "O ID da rede social é obrigatório!"
+msgstr "O ID da rede social é obrigatório!"
+
+#: src/Models/SocialUser.php:42
+msgid "O nome da rede social é obrigatório!"
+msgstr "O nome da rede social é obrigatório!"
+
+#: src/Models/SocialUser.php:52
+msgid "O nome da rede social é inválido!"
+msgstr "O nome da rede social é inválido!"
+
+#: src/Models/SocialUser.php:57 src/Models/User.php:80
+#: src/Models/UserForm.php:51
+msgid "O email informado já está em uso! Tente outro."
+msgstr "O email informado já está em uso! Tente outro."
+
+#: src/Models/Street.php:49
+#, php-format
+msgid "A observação deve conter no máximo %s caractéres!"
+msgstr "A observação deve conter no máximo %s caractéres!"
+
+#: src/Models/Street.php:55
+msgid "A posição inicial é obrigatória!"
+msgstr "A posição inicial é obrigatória!"
+
+#: src/Models/Street.php:58
+msgid "A posição final é obrigatória!"
+msgstr "A posição final é obrigatória!"
+
+#: src/Models/Street.php:61
+msgid "A altura máxima é obrigatória!"
+msgstr "A altura máxima é obrigatória!"
+
+#: src/Models/Street.php:64
+msgid "O perfil é obrigatório!"
+msgstr "O perfil é obrigatório!"
+
+#: src/Models/Street.php:67
+msgid "A capacidade máxima é obrigatória!"
+msgstr "A capacidade máxima é obrigatória!"
+
+#: src/Models/User.php:57 src/Models/UserForm.php:23
+msgid "O tipo de usuário é obrigatório!"
+msgstr "O tipo de usuário é obrigatório!"
+
+#: src/Models/User.php:66 src/Models/UserForm.php:32
+#, php-format
+msgid "O email deve conter no máximo %s caractéres!"
+msgstr "O email deve conter no máximo %s caractéres!"
+
+#: src/Models/User.php:73
+msgid "O apelido é obrigatório!"
+msgstr "O apelido é obrigatório!"
+
+#: src/Models/User.php:74
+#, php-format
+msgid "O apelido deve conter no máximo %s caractéres!"
+msgstr "O apelido deve conter no máximo %s caractéres!"
+
+#: src/Models/User.php:86
+msgid "O apelido informado já está em uso! Tente outro."
+msgstr "O apelido informado já está em uso! Tente outro."
+
+#: src/Models/User.php:115
+msgid ""
+"Vai por mim, isso vai dar ruim! Você não pode excluir o administrador do "
+"sistema."
+msgstr ""
+"Vai por mim, isso vai dar ruim! Você não pode excluir o administrador do "
+"sistema."
+
+#: src/Models/User.php:118
+msgid "Você não pode excluir um usuário vinculado à uma rede social!"
+msgstr "Você não pode excluir um usuário vinculado à uma rede social!"
+
+#: src/Models/User.php:121
+msgid "Você não pode excluir um usuário com dados armazenados!"
+msgstr "Você não pode excluir um usuário com dados armazenados!"
+
+#: src/Models/UserForm.php:57
+msgid "O número de matrícula é obrigatório!"
+msgstr "O número de matrícula é obrigatório!"
+
+#: src/Models/UserForm.php:59
+#, php-format
+msgid "O número de matrícula deve conter no máximo %s caractéres!"
+msgstr "O número de matrícula deve conter no máximo %s caractéres!"
+
+#: src/Models/UserForm.php:62 src/Models/UserMeta.php:66
+msgid "O número de matrícula informado já está em uso! Tente outro."
+msgstr "O número de matrícula informado já está em uso! Tente outro."
+
+#: src/Models/UserMeta.php:48
+msgid "A linguagem é obrigatória!"
+msgstr "A linguagem é obrigatória!"
+
+#: src/Models/UserMeta.php:52 src/Models/UserMeta.php:58
+msgid "A data da última alteração de senha é obrigatória!"
+msgstr "A data da última alteração de senha é obrigatória!"
+
+#: src/Models/UserMeta.php:54
+msgid ""
+"A data da última alteração de senha deve seguir o padrão dd/mm/aaaa hh:mm:ss!"
+msgstr ""
+"A data da última alteração de senha deve seguir o padrão dd/mm/aaaa hh:mm:ss!"
+
+#: src/Models/UserMeta.php:60
+msgid "O número de matrícula precisa ter 20 caractéres ou menos!"
+msgstr "O número de matrícula precisa ter 20 caractéres ou menos!"
+
+#: src/Models/UserType.php:34
+msgid "O nome no singular é obrigatório!"
+msgstr "O nome no singular é obrigatório!"
+
+#: src/Models/UserType.php:35
+#, php-format
+msgid "O nome no singular deve conter no máximo %s caractéres!"
+msgstr "O nome no singular deve conter no máximo %s caractéres!"
+
+#: src/Models/UserType.php:38
+msgid "O nome no plural é obrigatório!"
+msgstr "O nome no plural é obrigatório!"
+
+#: src/Models/UserType.php:39
+#, php-format
+msgid "O nome no plural deve conter no máximo %s caractéres!"
+msgstr "O nome no plural deve conter no máximo %s caractéres!"
+
+#: src/Models/UserType.php:58
+msgid "Você não pode excluir um tipo de usuário vinculado à um usuário!"
+msgstr "Você não pode excluir um tipo de usuário vinculado à um usuário!"
+
+#: src/Utils/ErrorMessages.php:10
+msgid "A requisição não pôde ser processada devido a algum erro do cliente!"
+msgstr "A requisição não pôde ser processada devido a algum erro do cliente!"
+
+#: src/Utils/ErrorMessages.php:12
+msgid "Você não tem permissão de acessar!"
+msgstr "Você não tem permissão de acessar!"
+
+#: src/Utils/ErrorMessages.php:14
+msgid "A página ou recurso não pôde ser encontrado!"
+msgstr "A página ou recurso não pôde ser encontrado!"
+
+#: src/Utils/ErrorMessages.php:16
+msgid "O método utilizado não é permitido para essa URL!"
+msgstr "O método utilizado não é permitido para essa URL!"
+
+#: src/Utils/ErrorMessages.php:18
+msgid "O seu pedido foi recebido pelo servidor, mas não pôde ser processado!"
+msgstr "O seu pedido foi recebido pelo servidor, mas não pôde ser processado!"
+
+#: src/Utils/ErrorMessages.php:20
+msgid "Lamentamos, mas houve algum erro interno de servidor!"
+msgstr "Lamentamos, mas houve algum erro interno de servidor!"
+
+#: src/Utils/ErrorMessages.php:23 src/Utils/ErrorMessages.php:28
+msgid "Lamentamos, mas houve algum erro na requisição!"
+msgstr "Lamentamos, mas houve algum erro na requisição!"
+
+#: src/Utils/ErrorMessages.php:33
+msgid "Erros de validação! Verifique os campos."
+msgstr "Erros de validação! Verifique os campos."
+
+#: src/Utils/ErrorMessages.php:38
+msgid "Lamentamos, mas o excel não pôde ser gerado!"
+msgstr "Lamentamos, mas o excel não pôde ser gerado!"
+
+#: src/Utils/ErrorMessages.php:43
+msgid "Lamentamos, mas o PDF não pôde ser gerado!"
+msgstr "Lamentamos, mas o PDF não pôde ser gerado!"
+
+#~ msgid "Visitas"
+#~ msgstr "Visitas"
+
+#, fuzzy
+#~| msgid "Segue abaixo a lista de ruas do sistema"
+#~ msgid "Gerencie as visitas cadastradas no sistema."
+#~ msgstr "Segue abaixo a lista de ruas do sistema"
+
+#, fuzzy
+#~| msgid "Lista de Ruas"
+#~ msgid "Lista de Visitas"
+#~ msgstr "Lista de Ruas"
+
+#, fuzzy
+#~| msgid "Cadastrar Rua"
+#~ msgid "Cadastrar Visita"
+#~ msgstr "Cadastrar Rua"
+
+#, fuzzy
+#~| msgid "Entre em Contato"
+#~ msgid "Modelos de Contrato"
+#~ msgstr "Entre em Contato"
+
+#~ msgid "Gerencie os modelos de contrato cadastrados no sistema."
+#~ msgstr "Gerencie os modelos de contrato cadastrados no sistema."
+
+#~ msgid "Lista de Modelos de Contrato"
+#~ msgstr "Lista de Modelos de Contrato"
+
+#, fuzzy
+#~| msgid "Entre em Contato"
+#~ msgid "Criar Modelo de Contrato"
+#~ msgstr "Entre em Contato"
+
+#~ msgid "Modelos de Recibo"
+#~ msgstr "Modelos de Recibo"
+
+#~ msgid "Gerencie os modelos de recibo cadastrados no sistema."
+#~ msgstr "Gerencie os modelos de recibo cadastrados no sistema."
+
+#, fuzzy
+#~| msgid "Lista de Produtos"
+#~ msgid "Lista de Modelos de Recibo"
+#~ msgstr "Lista de Produtos"
+
+#~ msgid "Criar Modelo de Recibo"
+#~ msgstr "Criar Modelo de Recibo"
+
+#~ msgid "Endereços"
+#~ msgstr "Endereços"
+
+#~ msgid "Gerencie os endereços cadastrados no sistema."
+#~ msgstr "Gerencie os endereços cadastrados no sistema."
+
+#, fuzzy
+#~| msgid "Lista de Operações"
+#~ msgid "Lista de Endereços"
+#~ msgstr "Lista de Operações"
+
+#~ msgid "Assessorias"
+#~ msgstr "Assessorias"
+
+#~ msgid "Gerencie as assessorias cadastrados no sistema."
+#~ msgstr "Gerencie as assessorias cadastrados no sistema."
+
+#, fuzzy
+#~| msgid "Lista de Usuários"
+#~ msgid "Lista de Assessorias"
+#~ msgstr "Lista de Usuários"
+
+#~ msgid "Buffets"
+#~ msgstr "Buffets"
+
+#~ msgid "Gerencie os buffets cadastrados no sistema."
+#~ msgstr "Gerencie os buffets cadastrados no sistema."
+
+#, fuzzy
+#~| msgid "Lista de Ruas"
+#~ msgid "Lista de Buffets"
+#~ msgstr "Lista de Ruas"
+
+#, fuzzy
+#~| msgid "Tipo de Serviço"
+#~ msgid "Tipos de Evento"
+#~ msgstr "Tipo de Serviço"
+
+#~ msgid "Gerencie os tipos de evento cadastrados no sistema."
+#~ msgstr "Gerencie os tipos de evento cadastrados no sistema."
+
+#, fuzzy
+#~| msgid "Lista de Produtos"
+#~ msgid "Lista de Tipos de Evento"
+#~ msgstr "Lista de Produtos"
+
+#~ msgid "Origens"
+#~ msgstr "Origens"
+
+#~ msgid "Gerencie as origens cadastradas no sistema."
+#~ msgstr "Gerencie as origens cadastradas no sistema."
+
+#, fuzzy
+#~| msgid "Lista de Operações"
+#~ msgid "Lista de Origens"
+#~ msgstr "Lista de Operações"
+
+#~ msgid "Regiões"
+#~ msgstr "Regiões"
+
+#~ msgid "Gerencie as regiões cadastradas no sistema."
+#~ msgstr "Gerencie as regiões cadastradas no sistema."
+
+#, fuzzy
+#~| msgid "Lista de Operações"
+#~ msgid "Lista de Regiões"
+#~ msgstr "Lista de Operações"
+
+#~ msgid "Itens Adicionais"
+#~ msgstr "Itens Adicionais"
+
+#, fuzzy
+#~| msgid "Lista de Usuários"
+#~ msgid "Lista de Itens Adicionais"
+#~ msgstr "Lista de Usuários"
+
+#, fuzzy
+#~| msgid "Relatórios e gerenciamento do sistema"
+#~ msgid "Veja os relatórios gerais do sistema."
+#~ msgstr "Relatórios e gerenciamento do sistema"
+
+#, fuzzy
+#~| msgid "Salvar Configurações"
+#~ msgid "Configurações"
+#~ msgstr "Salvar Configurações"
+
+#, fuzzy
+#~| msgid "Ver Produtos"
+#~ msgid "Ver Parâmetros"
+#~ msgstr "Ver Produtos"
+
+#~ msgid "Inglês"
+#~ msgstr "Inglês"
+
+#~ msgid "Espanhol"
+#~ msgstr "Espanhol"
+
+#, php-format
+#~ msgid "Painel %s"
+#~ msgstr "Painel %s"
+
+#~ msgid "Lamentamos, mas ocorreu um erro na requisição!"
+#~ msgstr "Lamentamos, mas ocorreu um erro na requisição!"
+
+#, php-format
+#~ msgid "etiqueta-de-entrada-%s"
+#~ msgstr "etiqueta-de-entrada-%s"
+
+#, php-format
+#~ msgid "etiqueta-de-saida-%s"
+#~ msgstr "etiqueta-de-saida-%s"
+
+#~ msgid "operacoes"
+#~ msgstr "operacoes"
+
+#, php-format
+#~ msgid "saida-de-pallets-%s"
+#~ msgstr "saida-de-pallets-%s"
+
+#~ msgid "saidas"
+#~ msgstr "saidas"
+
+#~ msgid "produtos"
+#~ msgstr "produtos"
+
+#~ msgid "fornecedores"
+#~ msgstr "fornecedores"
+
+#~ msgid "armazenagem"
+#~ msgstr "armazenagem"
+
+#~ msgid "ruas"
+#~ msgstr "ruas"
+
+#~ msgid "Digite um apelido."
+#~ msgstr "Digite um apelido."
+
+#~ msgid "OS"
+#~ msgstr "OS"
+
+#~ msgid "Número de Ocorrência"
+#~ msgstr "Número de Ocorrência"
+
+#~ msgid "Digite o número de ocorrência referente à operação."
+#~ msgstr "Digite o número de ocorrência referente à operação."
+
+#~ msgid "Informe o número de ocorrência..."
+#~ msgstr "Informe o número de ocorrência..."
+
+#~ msgid "Número de Senha"
+#~ msgstr "Número de Senha"
+
+#~ msgid "Digite o número de senha referente à operação."
+#~ msgstr "Digite o número de senha referente à operação."
+
+#~ msgid "Informe o número de senha..."
+#~ msgstr "Informe o número de senha..."
+
+#~ msgid "O número de senha é obrigatório!"
+#~ msgstr "O número de senha é obrigatório!"
+
+#, php-format
+#~ msgid "O número de senha deve conter no máximo %s caractéres!"
+#~ msgstr "O número de senha deve conter no máximo %s caractéres!"
+
+#, fuzzy
+#~| msgid "Número do Pedido/TR"
+#~ msgid "Número do Pedido/TR/OS"
+#~ msgstr "Número do Pedido/TR"
+
+#~ msgid "Incluir?"
+#~ msgstr "Incluir?"
+
+#~ msgid "O pallet não foi encontrado!"
+#~ msgstr "O pallet não foi encontrado!"
+
+#~ msgid "Este pallet ainda não foi liberado!"
+#~ msgstr "Este pallet ainda não foi liberado!"
+
+#, php-format
+#~ msgid "etiqueta-%s"
+#~ msgstr "etiqueta-%s"
+
+#, php-format
+#~ msgid "Principal | %s"
+#~ msgstr "Principal | %s"
+
+#~ msgid "O valor é obrigatório!"
+#~ msgstr "O valor é obrigatório!"
+
+#, php-format
+#~ msgid "O nome precisa ter %s caractéres ou menos!"
+#~ msgstr "O nome precisa ter %s caractéres ou menos!"
+
+#, php-format
+#~ msgid "O assunto precisa ter %s caractéres ou menos!"
+#~ msgstr "O assunto precisa ter %s caractéres ou menos!"
+
+#, php-format
+#~ msgid "A mensagem precisa ter %s caractéres ou menos!"
+#~ msgstr "A mensagem precisa ter %s caractéres ou menos!"
+
+#, fuzzy
+#~| msgid "Erros de validação! Verifique os campos."
+#~ msgid "Erros de validação! Verifique os campos!"
+#~ msgstr "Erros de validação! Verifique os campos."
+
+#~ msgid "Módulo GTG"
+#~ msgstr "Módulo GTG"
+
+#~ msgid "Esse código é inválido!"
+#~ msgstr "Esse código é inválido!"
+
+#~ msgid "O teste do ReCaptcha falhou! Tente novamente."
+#~ msgstr "O teste do ReCaptcha falhou! Tente novamente."
+
+#~ msgid "Nenhum dado foi adicionado para a geração do excel!"
+#~ msgstr "Nenhum dado foi adicionado para a geração do excel!"
+
+#~ msgid "O HTML é necessário!"
+#~ msgstr "O HTML é necessário!"
+
+#~ msgid ""
+#~ "Ocorreu um erro inesperado enquanto você executava essa ação! Informe ao "
+#~ "administrador."
+#~ msgstr ""
+#~ "Ocorreu um erro inesperado enquanto você executava essa ação! Informe ao "
+#~ "administrador."
+
+#~ msgid "Erros de validação! Verifique os dados!"
+#~ msgstr "Erros de validação! Verifique os dados!"
+
+#~ msgid "Digite seu Email"
+#~ msgstr "Digite seu Email"
+
+#~ msgid "Senha é obrigatória!"
+#~ msgstr "Senha é obrigatória!"
+
+#~ msgid "Este Email é inválido!"
+#~ msgstr "Este Email é inválido!"
+
+#~ msgid "Este Email já está em uso! Tente outro."
+#~ msgstr "Este Email já está em uso! Tente outro."
+
+#~ msgid "Você precisa completar o teste do ReCaptcha!"
+#~ msgstr "Você precisa completar o teste do ReCaptcha!"
+
+#~ msgid "Versão:"
+#~ msgstr "Versão:"
