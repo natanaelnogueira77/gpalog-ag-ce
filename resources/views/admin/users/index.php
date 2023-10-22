@@ -2,10 +2,8 @@
     $this->layout("themes/architect-ui/_theme", [
         'title' => sprintf(_('Usuários | %s'), $appData['app_name'])
     ]);
-?>
 
-<?php 
-    $this->insert('themes/architect-ui/components/title', [
+    $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Lista de Usuários'),
         'subtitle' => _('Segue abaixo a lista de usuários do sistema'),
         'icon' => 'pe-7s-users',
@@ -31,7 +29,7 @@
 
     <div class="card-body">
         <form id="filters">
-            <?php $this->insert('components/data-table-filters', ['formId' => 'filters']); ?>
+            <?php $this->insert('_components/data-table-filters', ['formId' => 'filters']); ?>
             <div class="form-row"> 
                 <div class="form-group col-md-4 col-sm-6">
                     <label><?= _('Nível de Usuário') ?></label>
@@ -59,30 +57,8 @@
     </div>
 </div>
 
-<?php $this->start('scripts'); ?>
-<script>
-    $(function () {
-        const app = new App();
-        const table = $("#users");
-        const filters_form = $("#filters");
-
-        const dataTable = app.table(table, table.data('action'));
-        dataTable.defaultParams(app.objectifyForm(filters_form)).filtersForm(filters_form)
-        .setMsgFunc((msg) => app.showMessage(msg.message, msg.type)).loadOnChange().addAction((table) => {
-            table.find("[data-act=delete]").click(function () {
-                var data = $(this).data();
-
-                if(confirm(<?php echo json_encode(_('Deseja realmente excluir este usuário?')) ?>)) {
-                    app.callAjax({
-                        url: data.action,
-                        type: data.method,
-                        success: function (response) {
-                            dataTable.load();
-                        }
-                    });
-                }
-            });
-        }).load();
-    });
-</script>
-<?php $this->end(); ?>
+<?php 
+    $this->start('scripts'); 
+    $this->insert('admin/users/_scripts/index.js');
+    $this->end(); 
+?>

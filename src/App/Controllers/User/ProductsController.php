@@ -141,14 +141,14 @@ class ProductsController extends TemplateController
 
         $this->APIResponse([
             'content' => [
-                'table' => $this->getView('components/data-table', [
+                'table' => $this->getView('_components/data-table', [
                     'headers' => [
                         'actions' => ['text' => _('Ações')],
                         'prov_name' => ['text' => _('Fornecedor'), 'sort' => true],
                         'name' => ['text' => _('Nome'), 'sort' => true],
-                        'p_length' => ['text' => _('Comp.'), 'sort' => true],
-                        'p_width' => ['text' => _('Lar.'), 'sort' => true],
-                        'p_height' => ['text' => _('Alt.'), 'sort' => true],
+                        'p_length' => ['text' => _('Comprimento'), 'sort' => true],
+                        'p_width' => ['text' => _('Largura'), 'sort' => true],
+                        'p_height' => ['text' => _('Altura'), 'sort' => true],
                         'p_base' => ['text' => _('Base'), 'sort' => true],
                         'p_weight' => ['text' => _('Peso'), 'sort' => true]
                     ],
@@ -158,7 +158,7 @@ class ProductsController extends TemplateController
                     ],
                     'data' => $content
                 ]),
-                'pagination' => $this->getView('components/pagination', [
+                'pagination' => $this->getView('_components/pagination', [
                     'pages' => $pages,
                     'currPage' => $page,
                     'results' => $count,

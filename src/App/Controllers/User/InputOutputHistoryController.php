@@ -42,7 +42,7 @@ class InputOutputHistoryController extends TemplateController
             $filters['search'] = [
                 'term' => $data['search'],
                 'columns' => [
-                    "{$tnOperation}.occurrence_number", 
+                    "{$tnOperation}.loading_password", 
                     "{$tnOperation}.invoice_number", 
                     "{$tnOperation}.plate"
                 ]
@@ -60,7 +60,7 @@ class InputOutputHistoryController extends TemplateController
         ])->get($filters, "
             {$tnConference}.*,
             {$tnOperation}.plate,
-            {$tnOperation}.occurrence_number,
+            {$tnOperation}.loading_password,
             {$tnOperation}.order_number,
             {$tnProvider}.name AS provider_name
         ")->paginate($limit, $page)->sort([$order => $orderType]);
@@ -78,7 +78,7 @@ class InputOutputHistoryController extends TemplateController
                 $content[] = [
                     'plate' => $conference->plate,
                     'provider_name' => $conference->provider_name,
-                    'occurrence_number' => $conference->occurrence_number,
+                    'loading_password' => $conference->loading_password,
                     'order_number' => $conference->order_number,
                     'c_status' => "<div class=\"badge badge-{$stColors[$conference->c_status]}\">" . $conference->getStatus() . "</div>",
                     'actions' => "
@@ -112,12 +112,12 @@ class InputOutputHistoryController extends TemplateController
 
         $this->APIResponse([
             'content' => [
-                'table' => $this->getView('components/data-table', [
+                'table' => $this->getView('_components/data-table', [
                     'headers' => [
                         'actions' => ['text' => _('Ações')],
                         'plate' => ['text' => _('Placa'), 'sort' => true],
                         'provider_name' => ['text' => _('Fornecedor'), 'sort' => true],
-                        'occurrence_number' => ['text' => _('Nº da Ocorrência'), 'sort' => true],
+                        'loading_password' => ['text' => _('Senha de Carregamento'), 'sort' => true],
                         'order_number' => ['text' => _('Nº do Pedido'), 'sort' => true],
                         'c_status' => ['text' => _('Status'), 'sort' => true]
                     ],
@@ -127,7 +127,7 @@ class InputOutputHistoryController extends TemplateController
                     ],
                     'data' => $content
                 ]),
-                'pagination' => $this->getView('components/pagination', [
+                'pagination' => $this->getView('_components/pagination', [
                     'pages' => $pages,
                     'currPage' => $page,
                     'results' => $count,
@@ -163,7 +163,7 @@ class InputOutputHistoryController extends TemplateController
         header('Content-Disposition: attachment');
         header("filename: {$filename}");
 
-        $html = $this->getView('user/input-output-history/components/input-pdf', [
+        $html = $this->getView('user/input-output-history/_components/input-pdf', [
             'dbPallets' => $dbPallets,
             'dbOperation' => $dbConference->operation(),
             'logo' => url((new Config())->getMeta(Config::KEY_LOGO))
@@ -205,7 +205,7 @@ class InputOutputHistoryController extends TemplateController
         header('Content-Disposition: attachment');
         header("filename: {$filename}");
 
-        $html = $this->getView('user/input-output-history/components/output-pdf', [
+        $html = $this->getView('user/input-output-history/_components/output-pdf', [
             'dbPallets' => $dbPallets,
             'dbOperation' => $dbConference->operation(),
             'logo' => url((new Config())->getMeta(Config::KEY_LOGO))
@@ -262,17 +262,16 @@ class InputOutputHistoryController extends TemplateController
             t6.created_at AS p_created_at,
             t6.code AS p_code,
             t6.package AS p_package,
-            t6.physic_boxes_amount AS p_physic_boxes_amount,
+            t6.start_boxes_amount AS p_start_boxes_amount,
+            t6.start_units_amount AS p_start_units_amount,
+            t6.boxes_amount AS p_boxes_amount,
             t6.units_amount AS p_units_amount,
             t6.service_type AS p_service_type,
             t6.pallet_height AS p_pallet_height,
             t6.street_number AS p_street_number,
             t6.position AS p_position,
             t6.height AS p_height,
-            t6.sai_id AS p_sai_id,
             t6.release_date AS p_release_date,
-            t6.load_plate AS p_load_plate,
-            t6.dock AS p_dock,
             t6.p_status AS p_p_status,
             t7.name AS release_user_name,
             t8.name AS product_name,
@@ -310,14 +309,15 @@ class InputOutputHistoryController extends TemplateController
                     _('Produto') => $dbConference->product_name ?? '---',
                     _('Código EAN') => $dbConference->product_ean ?? '---',
                     _('Fornecedor') => $dbConference->product_prov_name ?? '---',
-                    _('Quantidade de Caixas Físicas') => $dbConference->p_physic_boxes_amount ?? '---',
+                    _('Quantidade de Caixas Físicas Inicial') => $dbConference->p_start_boxes_amount ?? '---',
+                    _('Quantidade de Caixas Físicas') => $dbConference->p_boxes_amount ?? '---',
+                    _('Quantidade de Unidades Inicial') => $dbConference->p_start_units_amount ?? '---',
                     _('Quantidade de Unidades') => $dbConference->p_units_amount ?? '---',
                     _('Tipo de Serviço') => $dbConference->p_service_type ? Pallet::getServiceTypes()[$dbConference->p_service_type] : '---',
                     _('Altura do Pallet') => $dbConference->p_pallet_height ?? '---',
                     _('Número da Rua') => $dbConference->p_street_number ?? '---',
                     _('Posição') => $dbConference->p_position ?? '---',
                     _('Altura') => $dbConference->p_height ?? '---',
-                    _('ID de Separação') => $dbConference->p_sai_id ?? '---',
                     _('Operador que fez Saída') => $dbConference->release_user_name ?? '---',
                     _('Data de Saída') => $dbConference->p_release_date 
                         ? $this->getDateTime($dbConference->p_release_date)->format('d/m/Y') 
@@ -325,8 +325,6 @@ class InputOutputHistoryController extends TemplateController
                     _('Hora de Saída') => $dbConference->p_release_date 
                         ? $this->getDateTime($dbConference->p_release_date)->format('H:i:s') 
                         : '--:--:--',
-                    _('Placa de Carregamento') => $dbConference->p_load_plate ?? '---',
-                    _('Doca') => $dbConference->p_dock ?? '---',
                     _('Status') => $dbConference->p_p_status ? Pallet::getStates()[$dbConference->p_p_status] : '---'
                 ];
             }

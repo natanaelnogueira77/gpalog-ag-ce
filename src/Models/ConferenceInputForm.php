@@ -12,8 +12,8 @@ class ConferenceInputForm extends Model
     public bool $has_started = false;
     public bool $has_product = false;
     public bool $is_completed = false;
-    public ?int $physic_boxes_amount = null;
-    public ?int $closed_plts_amount = null;
+    public ?int $boxes_amount = null;
+    public ?int $pallets_amount = null;
     public ?int $service_type = null;
     public ?float $pallet_height = null;
 
@@ -32,10 +32,10 @@ class ConferenceInputForm extends Model
                 'barcode' => [
                     [self::RULE_REQUIRED, 'message' => _('O código de barras é obrigatório!')]
                 ],
-                'physic_boxes_amount' => [
+                'boxes_amount' => [
                     [self::RULE_REQUIRED, 'message' => _('A quantidade de caixas no físico é obrigatória!')]
                 ],
-                'closed_plts_amount' => [
+                'pallets_amount' => [
                     [self::RULE_REQUIRED, 'message' => _('A quantidade de pallets fechados é obrigatória!')]
                 ],
                 'service_type' => [

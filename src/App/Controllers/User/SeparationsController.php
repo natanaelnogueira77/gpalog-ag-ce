@@ -11,7 +11,7 @@ use Src\Models\Pallet;
 use Src\Models\Product;
 use Src\Models\Provider;
 use Src\Models\Separation;
-use Src\Models\SeparationEAN;
+use Src\Models\SeparationItem;
 use Src\Models\User;
 use Src\Utils\ErrorMessages;
 
@@ -21,7 +21,8 @@ class SeparationsController extends TemplateController
     {
         $this->addData();
         $this->render('user/separations/index', [
-            'amountTypes' => SeparationEAN::getAmountTypes(),
+            'amountTypes' => SeparationItem::getAmountTypes(),
+            'states' => Separation::getStates(),
             'dbConference' => $dbConference,
             'dbPallets' => $dbPallets
         ]);
@@ -29,10 +30,18 @@ class SeparationsController extends TemplateController
 
     public function store(array $data): void 
     {
-        $dbSeparationEANs = (new SeparationEAN())->get(['raw' => 'sep_id IS NULL'])->fetch(true);
-        if(!$dbSeparationEANs) {
+        if(!$dbSeparationItems = (new SeparationItem())->get(['raw' => 'sep_id IS NULL'])->fetch(true)) {
             $this->setMessage('error', _('Não há nenhum produto para separação!'))->APIResponse([], 404);
             return;
+        }
+
+        foreach($dbSeparationItems as $dbSeparationItem) {
+            if($dbSeparationItem->needsFromTo()) {
+                $this->setMessage(
+                    'error', _('Esta separação ainda possui ao menos um item que precisa de um de para!')
+                )->APIResponse([], 422);
+                return;
+            }
         }
 
         $dbSeparation = (new Separation())->loadData(['adm_usu_id' => $this->session->getAuth()->id]);
@@ -41,12 +50,12 @@ class SeparationsController extends TemplateController
             return;
         }
 
-        foreach($dbSeparationEANs as $dbSeparationEAN) {
-            $dbSeparationEAN->sep_id = $dbSeparation->id;
-            $dbSeparationEAN->setAsListed();
+        foreach($dbSeparationItems as $dbSeparationItem) {
+            $dbSeparationItem->sep_id = $dbSeparation->id;
+            $dbSeparationItem->setAsListed();
         }
 
-        if(!SeparationEAN::saveMany($dbSeparationEANs)) {
+        if(!SeparationItem::saveMany($dbSeparationItems)) {
             $this->setMessage('error', ErrorMessages::requisition())->APIResponse([], 422);
             return;
         }
@@ -73,6 +82,10 @@ class SeparationsController extends TemplateController
             ];
         }
 
+        if($data['separation_status']) {
+            $filters['s_status'] = $data['separation_status'];
+        }
+
         $separations = (new Separation())->get($filters)->paginate($limit, $page)->sort([$order => $orderType]);
         $count = $separations->count();
         $pages = ceil($count / $limit);
@@ -97,18 +110,22 @@ class SeparationsController extends TemplateController
                             </button>
                             <div tabindex=\"-1\" role=\"menu\" aria-hidden=\"true\" class=\"dropdown-menu\">
                                 <h6 tabindex=\"-1\" class=\"dropdown-header\">" . _('Ações') . "</h6>
+                                <a href=\"{$this->getRoute('user.separations.getOperatorPDF', $params)}\" 
+                                    type=\"button\" tabindex=\"0\" class=\"dropdown-item\" target=\"_blank\">
+                                    " . _('Gerar PDF de Separação') . "
+                                </a>
                                 " . (
                                     !$separation->hasNotSeparatedEANs() 
-                                    ? "<a href=\"{$this->getRoute('user.separations.getPDF', $params)}\" 
+                                    ? "<a href=\"{$this->getRoute('user.separations.getUpdatedPDF', $params)}\" 
                                         type=\"button\" tabindex=\"0\" class=\"dropdown-item\" target=\"_blank\">
-                                        " . _('Gerar PDF') . "
+                                        " . _('Gerar PDF Atualizado') . "
                                     </a>" 
                                     : '' 
                                 ) . "
                                 <button type=\"button\" tabindex=\"0\" class=\"dropdown-item\" 
                                     data-act=\"show\" data-method=\"get\" data-separation-id=\"{$separation->id}\" 
                                     data-action=\"{$this->getRoute('user.separations.getSeparationTable', $params)}\">
-                                    " . _('Ver Lista') . "
+                                    " . _('Ver Lista de Separação') . "
                                 </button>
                             </div>
                         </div>
@@ -119,7 +136,7 @@ class SeparationsController extends TemplateController
 
         $this->APIResponse([
             'content' => [
-                'table' => $this->getView('components/data-table', [
+                'table' => $this->getView('_components/data-table', [
                     'headers' => [
                         'actions' => ['text' => _('Ações')],
                         'adm_usu_id' => ['text' => _('ADM'), 'sort' => false],
@@ -134,7 +151,7 @@ class SeparationsController extends TemplateController
                     ],
                     'data' => $content
                 ]),
-                'pagination' => $this->getView('components/pagination', [
+                'pagination' => $this->getView('_components/pagination', [
                     'pages' => $pages,
                     'currPage' => $page,
                     'results' => $count,
@@ -144,7 +161,46 @@ class SeparationsController extends TemplateController
         ], 200);
     }
 
-    public function getPDF(array $data): void 
+    public function getOperatorPDF(array $data): void 
+    {
+        $data = array_merge($data, filter_input_array(INPUT_GET, FILTER_DEFAULT));
+        $this->addData();
+
+        if(!$dbSeparation = (new Separation())->findById(intval($data['separation_id']))) {
+            $this->session->setFlash('error', _('A separação não foi encontrada!'));
+            $this->redirect('user.separations.index');
+        }
+
+        if($dbSeparationItems = $dbSeparation->separationItems()) {
+            $dbSeparationItems = SeparationItem::withProduct($dbSeparationItems);
+            $dbSeparationItems = SeparationItem::withPallets($dbSeparationItems);
+            $dbSeparationItems = SeparationItem::withPallet($dbSeparationItems);
+        }
+
+        $filename = sprintf(_('Lista de Separação - ID %s'), $dbSeparation->id) . '.pdf';
+
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment');
+        header("filename: {$filename}");
+
+        $html = $this->getView('user/separations/_components/separation-pdf', [
+            'dbSeparation' => $dbSeparation,
+            'dbSeparationItems' => $dbSeparationItems,
+            'logo' => url((new Config())->getMeta(Config::KEY_LOGO))
+        ]);
+
+        $PDFRender = new PDFRender();
+        if(!$PDFRender->loadHtml($html)->setPaper('A4', 'portrait')->render()) {
+            $this->session->setFlash('error', ErrorMessages::pdf());
+            $this->redirect('user.separations.index');
+        }
+
+        $dompdf = $PDFRender->getDompdf();
+        $dompdf->stream($filename, ['Attachment' => false]);
+    }
+
+    public function getUpdatedPDF(array $data): void 
     {
         $data = array_merge($data, filter_input_array(INPUT_GET, FILTER_DEFAULT));
         $this->addData();
@@ -157,9 +213,10 @@ class SeparationsController extends TemplateController
             $this->redirect('user.separations.index');
         }
 
-        if($dbSeparationEANs = $dbSeparation->separationEANs()) {
-            $dbSeparationEANs = SeparationEAN::withPallet($dbSeparationEANs);
-            $dbSeparationEANs = SeparationEAN::withProduct($dbSeparationEANs);
+        if($dbSeparationItems = $dbSeparation->separationItems()) {
+            $dbSeparationItems = SeparationItem::withPallet($dbSeparationItems);
+            $dbSeparationItems = SeparationItem::withPallets($dbSeparationItems);
+            $dbSeparationItems = SeparationItem::withProduct($dbSeparationItems);
         }
 
         $filename = sprintf(_('Lista de Separação - ID %s'), $dbSeparation->id) . '.pdf';
@@ -169,9 +226,9 @@ class SeparationsController extends TemplateController
         header('Content-Disposition: attachment');
         header("filename: {$filename}");
 
-        $html = $this->getView('user/separations/components/details-pdf', [
+        $html = $this->getView('user/separations/_components/updated-pdf', [
             'dbSeparation' => $dbSeparation,
-            'dbSeparationEANs' => $dbSeparationEANs,
+            'dbSeparationItems' => $dbSeparationItems,
             'logo' => url((new Config())->getMeta(Config::KEY_LOGO))
         ]);
 
@@ -216,7 +273,7 @@ class SeparationsController extends TemplateController
             t4.created_at AS p_created_at,
             t4.code AS p_code,
             t4.package AS p_package,
-            t4.physic_boxes_amount AS p_physic_boxes_amount,
+            t4.boxes_amount AS p_boxes_amount,
             t4.units_amount AS p_units_amount,
             t4.service_type AS p_service_type,
             t4.pallet_height AS p_pallet_height,
@@ -252,7 +309,7 @@ class SeparationsController extends TemplateController
                     _('Produto') => $dbOutput->product_name ?? '---',
                     _('Código EAN') => $dbOutput->product_ean ?? '---',
                     _('Fornecedor') => $dbOutput->product_prov_name ?? '---',
-                    _('Quantidade de Caixas Físicas') => $dbOutput->p_physic_boxes_amount ?? '---',
+                    _('Quantidade de Caixas Físicas') => $dbOutput->p_boxes_amount ?? '---',
                     _('Quantidade de Unidades') => $dbOutput->p_units_amount ?? '---',
                     _('Tipo de Serviço') => Pallet::getServiceTypes()[$dbOutput->p_service_type],
                     _('Altura do Pallet') => $dbOutput->p_pallet_height ?? '---',
@@ -286,19 +343,21 @@ class SeparationsController extends TemplateController
     public function getSeparationTable(array $data): void 
     {
         $data = array_merge($data, filter_input_array(INPUT_GET, FILTER_DEFAULT));
-        $dbSeparationEANs = (new SeparationEAN())->get(
+        $dbSeparationItems = (new SeparationItem())->get(
             isset($data['separation_id']) ? ['sep_id' => $data['separation_id']] : ['raw' => 'sep_id IS NULL']
         )->fetch(true);
-        if(!$dbSeparationEANs) {
+        if(!$dbSeparationItems) {
             $this->setMessage('error', _('Não há nenhum produto para separação!'))->APIResponse([], 404);
             return;
         }
 
-        $dbSeparationEANs = SeparationEAN::withProduct($dbSeparationEANs);
+        $dbSeparationItems = SeparationItem::withPallet($dbSeparationItems);
+        $dbSeparationItems = SeparationItem::withProduct($dbSeparationItems);
+        $dbSeparationItems = SeparationItem::withPallets($dbSeparationItems);
 
         $this->APIResponse([
-            'content' => $this->getView('user/separations/components/list', [
-                'dbSeparationEANs' => $dbSeparationEANs
+            'content' => $this->getView('user/separations/_components/list', [
+                'dbSeparationItems' => $dbSeparationItems
             ]),
             'save' => [
                 'action' => $this->getRoute('user.separations.store'),

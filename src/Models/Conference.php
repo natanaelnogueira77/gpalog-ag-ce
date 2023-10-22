@@ -254,13 +254,15 @@ class Conference extends DBModel
 
         $dbPallets = [];
         foreach($conferenceInputs as $conferenceInput) {
-            for($i = 1; $i <= $conferenceInput->closed_plts_amount; $i++) {
+            for($i = 1; $i <= $conferenceInput->pallets_amount; $i++) {
                 $dbPallets[] = (new Pallet())->loadData([
                     'con_id' => $this->id, 
                     'pro_id' => $conferenceInput->pro_id, 
                     'store_usu_id' => $this->start_usu_id, 
                     'package' => $conferenceInput->package, 
-                    'physic_boxes_amount' => $conferenceInput->physic_boxes_amount, 
+                    'start_boxes_amount' => $conferenceInput->boxes_amount, 
+                    'start_units_amount' => $conferenceInput->units_amount, 
+                    'boxes_amount' => $conferenceInput->boxes_amount, 
                     'units_amount' => $conferenceInput->units_amount, 
                     'service_type' => $conferenceInput->service_type, 
                     'pallet_height' => $conferenceInput->pallet_height

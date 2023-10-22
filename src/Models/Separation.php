@@ -5,17 +5,19 @@ namespace Src\Models;
 use DateTime;
 use GTG\MVC\DB\DBModel;
 use Src\Models\Pallet;
-use Src\Models\SeparationEAN;
+use Src\Models\SeparationItem;
 use Src\Models\User;
 
 class Separation extends DBModel 
 {
     const S_WAITING = 1;
-    const S_IN_LOADING = 2;
+    const S_IN_SEPARATION = 2;
+    const S_IN_EXPEDITION_CONFERENCE = 3;
+    const S_IN_LOADING = 4;
 
     public ?User $ADMUser = null;
     public ?User $loadingUser = null;
-    public ?array $separationEANs = null;
+    public ?array $separationItems = null;
 
     public static function tableName(): string 
     {
@@ -57,7 +59,7 @@ class Separation extends DBModel
 
     public function destroy(): bool 
     {
-        if((new SeparationEAN())->get(['sep_id' => $this->id])->count()) {
+        if((new SeparationItem())->get(['sep_id' => $this->id])->count()) {
             $this->addError('destroy', _('Você não pode excluir uma ordem de separação vinculada à um EAN!'));
             return false;
         }
@@ -76,10 +78,10 @@ class Separation extends DBModel
         return $this->loadingUser;
     }
 
-    public function separationEANs(array $filters = [], string $columns = '*'): ?array
+    public function separationItems(array $filters = [], string $columns = '*'): ?array
     {
-        $this->separationEANs = $this->hasMany(SeparationEAN::class, 'sep_id', 'id', $filters, $columns)->fetch(true);
-        return $this->separationEANs;
+        $this->separationItems = $this->hasMany(SeparationItem::class, 'sep_id', 'id', $filters, $columns)->fetch(true);
+        return $this->separationItems;
     }
 
     public static function withADMUser(array $objects, array $filters = [], string $columns = '*'): array
@@ -108,13 +110,13 @@ class Separation extends DBModel
         );
     }
 
-    public static function withSeparationEAN(array $objects, array $filters = [], string $columns = '*'): array
+    public static function withSeparationItem(array $objects, array $filters = [], string $columns = '*'): array
     {
         return self::withHasMany(
             $objects, 
-            SeparationEAN::class, 
+            SeparationItem::class, 
             'sep_id', 
-            'separationEAN', 
+            'separationItem', 
             'id', 
             $filters, 
             $columns
@@ -145,6 +147,8 @@ class Separation extends DBModel
     {
         return [
             self::S_WAITING => _('Aguardando'),
+            self::S_IN_SEPARATION => _('Em Separação'),
+            self::S_IN_EXPEDITION_CONFERENCE => _('Em Conferência de Expedição'),
             self::S_IN_LOADING => _('Em Carregamento')
         ];
     }
@@ -158,7 +162,9 @@ class Separation extends DBModel
     {
         return [
             self::S_WAITING => 'warning',
-            self::S_IN_LOADING => 'primary'
+            self::S_IN_SEPARATION => 'info',
+            self::S_IN_EXPEDITION_CONFERENCE => 'primary',
+            self::S_IN_LOADING => 'success'
         ];
     }
 
@@ -169,9 +175,9 @@ class Separation extends DBModel
 
     public function hasNotSeparatedEANs(): bool 
     {
-        if($this->separationEANs()) {
-            foreach($this->separationEANs as $separationEAN) {
-                if(!$separationEAN->isSeparated() && !$separationEAN->isChecked()) {
+        if($this->separationItems()) {
+            foreach($this->separationItems as $separationItem) {
+                if(!$separationItem->isSeparated() && !$separationItem->isChecked() && !$separationItem->isFinished()) {
                     return true;
                 }
             }
@@ -182,9 +188,9 @@ class Separation extends DBModel
 
     public function hasNotCheckedEANs(): bool 
     {
-        if($this->separationEANs()) {
-            foreach($this->separationEANs as $separationEAN) {
-                if(!$separationEAN->isChecked()) {
+        if($this->separationItems()) {
+            foreach($this->separationItems as $separationItem) {
+                if(!$separationItem->isChecked() && !$separationItem->isFinished()) {
                     return true;
                 }
             }
@@ -199,6 +205,18 @@ class Separation extends DBModel
         return $this;
     }
 
+    public function setAsInSeparation(): self 
+    {
+        $this->s_status = self::S_IN_SEPARATION;
+        return $this;
+    }
+    
+    public function setAsInExpeditionConference(): self 
+    {
+        $this->s_status = self::S_IN_EXPEDITION_CONFERENCE;
+        return $this;
+    }
+
     public function setAsInLoading(): self 
     {
         $this->s_status = self::S_IN_LOADING;
@@ -208,6 +226,16 @@ class Separation extends DBModel
     public function isWaiting(): bool 
     {
         return $this->s_status == self::S_WAITING;
+    }
+
+    public function isInSeparation(): bool 
+    {
+        return $this->s_status == self::S_IN_SEPARATION;
+    }
+
+    public function isInExpeditionConference(): bool 
+    {
+        return $this->s_status == self::S_IN_EXPEDITION_CONFERENCE;
     }
 
     public function isInLoading(): bool 

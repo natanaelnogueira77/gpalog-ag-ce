@@ -68,12 +68,6 @@ $app->router->delete('/{user_id}', 'UsersController:delete', 'admin.users.delete
 $app->router->get('/criar', 'UsersController:create', 'admin.users.create');
 $app->router->get('/list', 'UsersController:list', 'admin.users.list');
 
-$app->router->namespace('Src\App\Controllers\Web');
-
-$app->router->group('contato');
-$app->router->get('/', 'ContactController:index', 'contact.index');
-$app->router->post('/', 'ContactController:index', 'contact.index');
-
 $app->router->namespace('Src\App\Controllers\User');
 
 $app->router->group('u', \Src\App\Middlewares\ADMUserMiddleware::class);
@@ -124,17 +118,24 @@ $app->router->get('/export', 'ProvidersController:export', 'user.providers.expor
 
 $app->router->group('u/armazenagem', \Src\App\Middlewares\ADMUserMiddleware::class);
 $app->router->get('/', 'StorageController:index', 'user.storage.index');
+$app->router->get('/{street_id}/pallets', 'StorageController:getStreetPallets', 'user.storage.getStreetPallets');
 $app->router->get('/export', 'StorageController:export', 'user.storage.export');
 
 $app->router->group('u/separacao', \Src\App\Middlewares\ADMUserMiddleware::class);
 $app->router->get('/', 'SeparationsController:index', 'user.separations.index');
 $app->router->post('/', 'SeparationsController:store', 'user.separations.store');
-$app->router->post('/ean', 'SeparationEANsController:store', 'user.separationEANs.store');
-$app->router->get('/ean/{se_id}', 'SeparationEANsController:show', 'user.separationEANs.show');
-$app->router->put('/ean/{se_id}', 'SeparationEANsController:update', 'user.separationEANs.update');
-$app->router->delete('/ean/{se_id}', 'SeparationEANsController:delete', 'user.separationEANs.delete');
-$app->router->get('/ean/list', 'SeparationEANsController:list', 'user.separationEANs.list');
-$app->router->get('/separacao/{separation_id}', 'SeparationsController:getPDF', 'user.separations.getPDF');
+$app->router->post('/ean', 'SeparationItemsController:store', 'user.separationItems.store');
+$app->router->get('/ean/{se_id}', 'SeparationItemsController:show', 'user.separationItems.show');
+$app->router->put('/ean/{se_id}', 'SeparationItemsController:update', 'user.separationItems.update');
+$app->router->delete('/ean/{se_id}', 'SeparationItemsController:delete', 'user.separationItems.delete');
+
+$app->router->get('/ean/{se_id}/pallets-list', 'SeparationItemsController:palletsList', 'user.separationItems.palletsList');
+$app->router->post('/ean/{se_id}/add-pallet/{pallet_id}', 'SeparationItemsController:addPallet', 'user.separationItems.addPallet');
+$app->router->delete('/ean/{se_id}/remove-pallet/{pallet_id}', 'SeparationItemsController:removePallet', 'user.separationItems.removePallet');
+
+$app->router->get('/ean/list', 'SeparationItemsController:list', 'user.separationItems.list');
+$app->router->get('/separacao/{separation_id}/operator-pdf', 'SeparationsController:getOperatorPDF', 'user.separations.getOperatorPDF');
+$app->router->get('/separacao/{separation_id}/updated-pdf', 'SeparationsController:getUpdatedPDF', 'user.separations.getUpdatedPDF');
 $app->router->get('/list', 'SeparationsController:list', 'user.separations.list');
 $app->router->get('/tabela', 'SeparationsController:getSeparationTable', 'user.separations.getSeparationTable');
 $app->router->get('/export', 'SeparationsController:export', 'user.separations.export');

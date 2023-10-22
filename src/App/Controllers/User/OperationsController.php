@@ -79,7 +79,7 @@ class OperationsController extends TemplateController
         if($data['search']) {
             $filters['search'] = [
                 'term' => $data['search'],
-                'columns' => ['occurrence_number', 'invoice_number', 'plate']
+                'columns' => ['loading_password', 'invoice_number', 'plate']
             ];
         }
 
@@ -95,7 +95,7 @@ class OperationsController extends TemplateController
                 $content[] = [
                     'plate' => $operation->plate,
                     'for_id' => $operation->provider->name,
-                    'occurrence_number' => $operation->occurrence_number,
+                    'loading_password' => $operation->loading_password,
                     'order_number' => $operation->order_number,
                     'has_conference' => $operation->conference 
                         ? "<div class=\"badge badge-success\">" . _('Sim') . "</div>"
@@ -119,6 +119,7 @@ class OperationsController extends TemplateController
                                         </button>
                                     "
                                 ) . "
+                                <div class=\"dropdown-divider\"></div>
                                 <button type=\"button\" tabindex=\"0\" class=\"dropdown-item\" 
                                     data-act=\"edit\" data-method=\"get\" data-operation-id=\"{$operation->id}\" 
                                     data-action=\"{$this->getRoute('user.operations.show', $params)}\">
@@ -139,12 +140,12 @@ class OperationsController extends TemplateController
 
         $this->APIResponse([
             'content' => [
-                'table' => $this->getView('components/data-table', [
+                'table' => $this->getView('_components/data-table', [
                     'headers' => [
                         'actions' => ['text' => _('Ações')],
                         'plate' => ['text' => _('Placa'), 'sort' => true],
                         'for_id' => ['text' => _('Fornecedor'), 'sort' => true],
-                        'occurrence_number' => ['text' => _('Nº da Ocorrência'), 'sort' => true],
+                        'loading_password' => ['text' => _('Senha de Carregamento'), 'sort' => true],
                         'order_number' => ['text' => _('Nº do Pedido'), 'sort' => true],
                         'has_conference' => ['text' => _('Liberado para Conferência?'), 'sort' => false]
                     ],
@@ -154,7 +155,7 @@ class OperationsController extends TemplateController
                     ],
                     'data' => $content
                 ]),
-                'pagination' => $this->getView('components/pagination', [
+                'pagination' => $this->getView('_components/pagination', [
                     'pages' => $pages,
                     'currPage' => $page,
                     'results' => $count,
@@ -221,8 +222,8 @@ class OperationsController extends TemplateController
                     _('Placa') => $dbOperation->plate,
                     _('ADM') => $dbOperation->user->name,
                     _('Fornecedor') => $dbOperation->provider->name,
-                    _('Senha de Carregamento') => $dbOperation->occurrence_number,
-                    _('Senha de G.A') => $dbOperation->password_number,
+                    _('Senha de Carregamento') => $dbOperation->loading_password,
+                    _('Senha de G.A') => $dbOperation->ga_password,
                     _('Número do Pedido / TR / OC') => $dbOperation->order_number,
                     _('Nota Fiscal') => $dbOperation->invoice_number,
                     _('Possui TR?') => $dbOperation->hasTR() ? _('Sim') : _('Não'),

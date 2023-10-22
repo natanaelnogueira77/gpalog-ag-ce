@@ -63,7 +63,7 @@
                     </small>
                     <?php else: ?>
                     <input type="hidden" name="amount" value="<?= $CEF->amount ?>">
-                    <?= $CEF->amount ?> (<?= $CEF->amount == $CEF->separationEAN->sep_amount ? _('OK') : _('Diferença') ?>)
+                    <?= $CEF->amount ?> (<?= $CEF->amount == $CEF->separationItem->separation_amount ? _('OK') : _('Diferença') ?>)
                     <?php endif; ?>
                 </td>
             </tr>

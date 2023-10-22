@@ -2,10 +2,8 @@
     $this->layout("themes/architect-ui/_theme", [
         'title' => sprintf(_('Editar Conta | %s'), $appData['app_name'])
     ]);
-?>
-
-<?php 
-    $this->insert('themes/architect-ui/components/title', [
+    
+    $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Editar Conta'),
         'subtitle' => _('Edite os detalhes de sua conta logo abaixo'),
         'icon' => 'pe-7s-user',
@@ -130,24 +128,8 @@
     </div>
 </form>
 
-<?php $this->start('scripts'); ?>
-<script>
-    $(function () {
-        const app = new App();
-
-        app.form($("#save-user"), function (response) {
-            if(response.link) window.location.href = response.link;
-        });
-
-        $("input[name$='update_password']").change(function(){
-            if($('#update_password1').is(':checked')) {
-                $("#password").show('fast');
-            }
-
-            if($('#update_password2').is(':checked')) {
-                $("#password").hide('fast');
-            }
-        });
-    });
-</script>
-<?php $this->end(); ?>
+<?php 
+    $this->start('scripts'); 
+    $this->insert('user/_scripts/edit.js');
+    $this->end(); 
+?>

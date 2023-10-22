@@ -17,7 +17,7 @@ class StorageController extends TemplateController
         if($dbStreets = (new Street())->get()->fetch(true)) {
             $dbStreets = Street::getGroupedBy($dbStreets, 'street_number');
             $dbPalletCounts = (new Pallet())->get([
-                'in' => ['p_status' => [Pallet::PS_STORED, Pallet::PS_SEPARATED]]
+                'p_status' => Pallet::PS_STORED
             ], 'street_number, COUNT(*) as pallets_count')->group('street_number')->fetch('count');
             if($dbPalletCounts) {
                 foreach($dbPalletCounts as $dbPalletCount) {
@@ -28,10 +28,33 @@ class StorageController extends TemplateController
 
         $this->render('user/storage/index', [
             'dbStreets' => $dbStreets,
-            'storageCapacity' => $dbStreets ? array_sum(array_map(fn($s) => $s->max_plts, $dbStreets)) : 0,
-            'freeAmount' => $dbStreets ? array_sum(array_map(fn($s) => $s->max_plts - $s->allocateds, $dbStreets)) : 0,
+            'storageCapacity' => $dbStreets ? array_sum(array_map(fn($s) => $s->max_pallets, $dbStreets)) : 0,
+            'freeAmount' => $dbStreets ? array_sum(array_map(fn($s) => $s->max_pallets - $s->allocateds, $dbStreets)) : 0,
             'allocatedAmount' => $dbStreets ? array_sum(array_map(fn($s) => $s->allocateds, $dbStreets)) : 0
         ]);
+    }
+
+    public function getStreetPallets(array $data): void 
+    {
+        $data = array_merge($data, filter_input_array(INPUT_GET, FILTER_DEFAULT));
+        if(!$dbStreet = (new Street())->findById(intval($data['street_id']))) {
+            $this->setMessage('error', _('Nenhuma rua foi encontrada!'))->APIResponse([], 200);
+            return;
+        }
+
+        $dbPallets = (new Pallet())->get([
+            'street_number' => $dbStreet->street_number,
+            'p_status' => Pallet::PS_STORED
+        ])->order('position, height')->fetch(true);
+        if($dbPallets) {
+            $dbPallets = Pallet::withProduct($dbPallets);
+        }
+
+        $this->APIResponse([
+            'content' => $this->getView('user/storage/_components/pallets-list-table', [
+                'pallets' => $dbPallets
+            ])
+        ], 200);
     }
 
     public function export(array $data): void 
@@ -43,7 +66,7 @@ class StorageController extends TemplateController
         if($dbStreets = (new Street())->get()->fetch(true)) {
             $dbStreets = Street::getGroupedBy($dbStreets, 'street_number');
             $dbPalletCounts = (new Pallet())->get([
-                'in' => ['p_status' => [Pallet::PS_STORED, Pallet::PS_SEPARATED]]
+                'p_status' => Pallet::PS_STORED
             ], 'street_number, COUNT(*) as pallets_count')->group('street_number')->fetch('count');
             if($dbPalletCounts) {
                 foreach($dbPalletCounts as $dbPalletCount) {
@@ -56,9 +79,9 @@ class StorageController extends TemplateController
             $total = 0;
 
             foreach($dbStreets as $dbStreet) {
-                $free += $dbStreet->max_plts - $dbStreet->allocateds;
+                $free += $dbStreet->max_pallets - $dbStreet->allocateds;
                 $busy += $dbStreet->allocateds;
-                $total += $dbStreet->max_plts;
+                $total += $dbStreet->max_pallets;
 
                 $excelData[] = [
                     _('Número da Rua') => $dbStreet->street_number ?? '---',
@@ -68,9 +91,9 @@ class StorageController extends TemplateController
                     _('Perfil') => $dbStreet->profile ?? '---',
                     _('Observações') => $dbStreet->obs ?? '---',
                     _('Rua de Bloqueio?') => $dbStreet->isLimitless() ? _('Sim') : _('Não'),
-                    _('Livre') => $dbStreet->max_plts - $dbStreet->allocateds ?? 0,
+                    _('Livre') => $dbStreet->max_pallets - $dbStreet->allocateds ?? 0,
                     _('Ocupado') => $dbStreet->allocateds ?? 0,
-                    _('Total') => $dbStreet->max_plts ?? 0
+                    _('Total') => $dbStreet->max_pallets ?? 0
                 ];
             }
 

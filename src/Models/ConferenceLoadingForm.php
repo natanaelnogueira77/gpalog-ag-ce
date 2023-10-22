@@ -35,6 +35,8 @@ class ConferenceLoadingForm extends Model
                         $model->addError('sep_id', _('Este ID de separação não foi gerado!'));
                     } elseif(!$model->hasError('sep_id') && $model->separation->hasNotCheckedEANs()) {
                         $model->addError('sep_id', _('Este ID de separação ainda tem EANs para serem conferidos!'));
+                    } elseif(!$model->hasError('sep_id') && $model->separation->isInLoading()) {
+                        $model->addError('sep_id', _('Este ID de separação já está em carregamento!'));
                     }
                 }
             ]

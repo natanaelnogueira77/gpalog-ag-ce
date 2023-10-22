@@ -91,7 +91,7 @@ class StreetsController extends TemplateController
                     'end_position' => $street->end_position ?? '---',
                     'max_height' => $street->max_height ?? '---',
                     'profile' => $street->profile ?? '---',
-                    'max_plts' => $street->max_plts ?? '---',
+                    'max_pallets' => $street->max_pallets ?? '---',
                     'obs' => $street->obs ?? '---',
                     'is_limitless' => $street->isLimitless() 
                         ? "<div class=\"badge badge-success\">" . _('Sim') . "</div>"
@@ -124,15 +124,15 @@ class StreetsController extends TemplateController
 
         $this->APIResponse([
             'content' => [
-                'table' => $this->getView('components/data-table', [
+                'table' => $this->getView('_components/data-table', [
                     'headers' => [
                         'actions' => ['text' => _('Ações')],
                         'street_number' => ['text' => _('Rua'), 'sort' => true],
-                        'start_position' => ['text' => _('Pos. Inicial'), 'sort' => true],
-                        'end_position' => ['text' => _('Pos. Final'), 'sort' => true],
+                        'start_position' => ['text' => _('Posição Inicial'), 'sort' => true],
+                        'end_position' => ['text' => _('Posição Final'), 'sort' => true],
                         'max_height' => ['text' => _('Altura Máxima'), 'sort' => true],
                         'profile' => ['text' => _('Perfil'), 'sort' => true],
-                        'max_plts' => ['text' => _('Capacidade Máxima'), 'sort' => true],
+                        'max_pallets' => ['text' => _('Capacidade Máxima'), 'sort' => true],
                         'obs' => ['text' => _('Observações'), 'sort' => true],
                         'is_limitless' => ['text' => _('Bloqueio?'), 'sort' => true]
                     ],
@@ -142,7 +142,7 @@ class StreetsController extends TemplateController
                     ],
                     'data' => $content
                 ]),
-                'pagination' => $this->getView('components/pagination', [
+                'pagination' => $this->getView('_components/pagination', [
                     'pages' => $pages,
                     'currPage' => $page,
                     'results' => $count,
@@ -180,7 +180,7 @@ class StreetsController extends TemplateController
                     _('Posição Final') => $dbStreet->end_position ?? '---',
                     _('Altura Máxima') => $dbStreet->max_height ?? '---',
                     _('Perfil') => $dbStreet->profile ?? '---',
-                    _('Capacidade Máxima de Pallets') => $dbStreet->max_plts ?? '---',
+                    _('Capacidade Máxima de Pallets') => $dbStreet->max_pallets ?? '---',
                     _('Observações') => $dbStreet->obs ?? '---',
                     _('Rua de Bloqueio?') => $dbStreet->isLimitless() ? _('Sim') : _('Não')
                 ];

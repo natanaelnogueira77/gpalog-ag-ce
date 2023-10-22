@@ -5,10 +5,10 @@
     ]);
 ?>
 
-<p><?= _('Separação') ?></p>
+<p><?= $CSF->hasEAN() ? sprintf(_('Separação - ID %s'), $CSF->separation->id) : _('Separação') ?></p>
 
-<form action="<?= $router->route('user.conference.separation') ?>" 
-    method="<?= $CSF->hasAmount() ? 'post' : 'get' ?>">
+<form action="<?= $router->route('user.conference.separation') ?>" method="<?= $CSF->hasAmount() ? 'post' : 'get' ?>" 
+    <?= $CSF->hasEAN() ? "onSubmit=\"return document.getElementById('amount').value != {$CSF->separationItem->amount} ? confirm('" . _('A quantidade colocada não corresponde à quantidade solicitada! Deseja continuar mesmo assim?') . "') : null;\"" : '' ?>>
     <input type="hidden" name="step" value="<?= $nextStep ?>">
 
     <div>
@@ -20,7 +20,7 @@
         <input type="submit" value="<?= _('Finalizar') ?>">
         <?php endif; ?>
         <input type="button" value="<?= _('Voltar') ?>"
-            onclick="window.location.href='<?= !$CSF->hasEAN() ? $router->route('user.conference.index') : $router->route('user.conference.separation', ($CSF->hasAmount() ? ['ean' => $CSF->ean] : []) + ($CSF->hasDock() ? ['amount' => $CSF->amount] : [])) ?>'">
+            onclick="window.location.href='<?= !$CSF->hasEAN() ? $router->route('user.conference.index') : $router->route('user.conference.separation', ['step' => $previousStep] + ($CSF->hasAmount() ? ['address' => $CSF->address, 'ean' => $CSF->ean] : []) + ($CSF->hasDock() ? ['amount' => $CSF->amount] : [])) ?>'">
     </div>
 
     <table>
@@ -57,10 +57,10 @@
             </tr>
             <?php if($CSF->hasEAN()): ?>
             <tr>
-                <td><?= $CSF->separationEAN->isBoxesType() ? _('Qtde. CX Físico') : _('Qtde. Unidade') ?></td>
+                <td><?= $CSF->separationItem->isBoxesType() ? _('Qtde. CX Físico') : _('Qtde. Unidade') ?></td>
                 <td>
                     <?php if(!$CSF->hasAmount()): ?>
-                    <input type="text" name="amount" value="<?= $CSF->amount ?>" style="max-width: 100px;">
+                    <input type="number" id="amount" name="amount" value="<?= $CSF->amount ?>" style="max-width: 100px;">
                     <br>
                     <small style="color: red;">
                         <?= $CSF->hasError('amount') ? $CSF->getFirstError('amount') : '' ?>
@@ -87,3 +87,14 @@
         </tbody>
     </table>
 </form>
+
+<?php if(!$CSF->hasAmount()): ?>
+<script>
+    const amount_field = document.getElementById('amount');
+    const checkAmount = function () {
+        return amount_field.value != <?php echo json_encode($CSF->separationItem->amount) ?> 
+            ? confirm(<?php echo json_encode(_('A quantidade colocada não corresponde à quantidade solicitada! Deseja continuar mesmo assim?')) ?>) 
+            : null;
+    };
+</script>
+<?php endif; ?>

@@ -15,12 +15,7 @@ class MenuData
                 ->setType(MenuItem::T_ITEM)
                 ->setIcon('nav-link-icon fa fa-home')
                 ->setURL($user && $user->isAdmin() ? $router->route('admin.index') : $router->route('user.index'))
-                ->setText(_('Início')),
-            (new MenuItem())
-                ->setType(MenuItem::T_ITEM)
-                ->setIcon('nav-link-icon fa fa-phone')
-                ->setURL($router->route('contact.index'))
-                ->setText(_('Contato'))
+                ->setText(_('Início'))
         ];
     }
 

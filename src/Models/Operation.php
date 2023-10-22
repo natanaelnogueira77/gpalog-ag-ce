@@ -34,8 +34,8 @@ class Operation extends DBModel
         return [
             'usu_id', 
             'for_id', 
-            'occurrence_number', 
-            'password_number', 
+            'loading_password', 
+            'ga_password', 
             'order_number', 
             'invoice_number', 
             'plate', 
@@ -56,11 +56,11 @@ class Operation extends DBModel
             'for_id' => [
                 [self::RULE_REQUIRED, 'message' => _('O fornecedor é obrigatório!')]
             ],
-            'occurrence_number' => [
-                [self::RULE_REQUIRED, 'message' => _('O número da ocorrência é obrigatório!')],
-                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('O número da ocorrência deve conter no máximo %s caractéres!'), 20)]
+            'loading_password' => [
+                [self::RULE_REQUIRED, 'message' => _('A senha de carregamento é obrigatória!')],
+                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A senha de carregamento deve conter no máximo %s caractéres!'), 20)]
             ],
-            'password_number' => [
+            'ga_password' => [
                 [self::RULE_REQUIRED, 'message' => _('A senha de G.A é obrigatória!')],
                 [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A senha de G.A deve conter no máximo %s caractéres!'), 20)]
             ],
@@ -82,10 +82,10 @@ class Operation extends DBModel
                         $model->addError('service_types', _('Pelo menos um serviço precisa ser escolhido!'));
                     }
 
-                    if(!$model->hasError('occurrence_number')) {
-                        if((new self())->get(['occurrence_number' => $model->occurrence_number] 
+                    if(!$model->hasError('loading_password')) {
+                        if((new self())->get(['loading_password' => $model->loading_password] 
                             + (isset($model->id) ? ['!=' => ['id' => $model->id]] : []))->count()) {
-                            $model->addError('occurrence_number', _('A senha de carregamento informada já está em uso! Tente outra.'));
+                            $model->addError('loading_password', _('A senha de carregamento informada já está em uso! Tente outra.'));
                         }
                     }
 

@@ -37,8 +37,8 @@ class ConferenceInput extends DBModel
             'usu_id', 
             'pro_id', 
             'package', 
-            'physic_boxes_amount', 
-            'closed_plts_amount', 
+            'boxes_amount', 
+            'pallets_amount', 
             'units_amount', 
             'service_type', 
             'pallet_height', 
@@ -61,10 +61,10 @@ class ConferenceInput extends DBModel
             'package' => [
                 [self::RULE_REQUIRED, 'message' => _('A embalagem é obrigatória!')]
             ],
-            'physic_boxes_amount' => [
+            'boxes_amount' => [
                 [self::RULE_REQUIRED, 'message' => _('A quantidade de caixas físicas é obrigatório!')]
             ],
-            'closed_plts_amount' => [
+            'pallets_amount' => [
                 [self::RULE_REQUIRED, 'message' => _('A quantidade de caixas físicas é obrigatório!')]
             ],
             'units_amount' => [

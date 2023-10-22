@@ -2,10 +2,8 @@
     $this->layout("themes/architect-ui/_theme", [
         'title' => sprintf(_('Histórico de Entradas e Separação | %s'), $appData['app_name'])
     ]);
-?>
 
-<?php 
-    $this->insert('themes/architect-ui/components/title', [
+    $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Histórico de Entrada e Separação'),
         'subtitle' => _('Veja abaixo o histórico de operação de entradas e separação. 
             Você pode gerar o PDF das etiquetas de entrada ou de separação.'),
@@ -34,7 +32,7 @@
 
     <div class="card-body">
         <form id="filters">
-            <?php $this->insert('components/data-table-filters', ['formId' => 'filters']); ?>
+            <?php $this->insert('_components/data-table-filters', ['formId' => 'filters']); ?>
             <div class="form-row"> 
                 <div class="form-group col-md-4 col-sm-6">
                     <label><?= _('Ordem de Serviço') ?></label>
@@ -54,34 +52,12 @@
     </div>
 </div>
 
-<?php $this->start('scripts'); ?>
-<script>
-    $(function () {
-        const app = new App();
-        const table = $("#input-output-history");
-        const filters_form = $("#filters");
-
-        const export_excel_btn = $("#export-excel");
-        const export_history_form = $("#export-history");
-        const export_history_modal = $("#export-history-modal");
-
-        const dataTable = app.table(table, table.data('action'));
-        dataTable.defaultParams(app.objectifyForm(filters_form)).filtersForm(filters_form)
-        .setMsgFunc((msg) => app.showMessage(msg.message, msg.type)).loadOnChange().load();
-
-        export_excel_btn.click(function () {
-            var data = $(this).data();
-
-            export_history_form.attr('action', data.action);
-            export_history_form.attr('method', data.method);
-            export_history_modal.modal('show');
-        });
-    });
-</script>
-<?php $this->end(); ?>
-
 <?php 
+    $this->start('scripts'); 
+    $this->insert('user/input-output-history/_scripts/index.js');
+    $this->end();
+    
     $this->start('modals');
-    $this->insert('user/input-output-history/components/export-modal');
+    $this->insert('user/input-output-history/_components/export-modal');
     $this->end();
 ?>

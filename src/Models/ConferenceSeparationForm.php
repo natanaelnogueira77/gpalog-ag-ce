@@ -5,7 +5,8 @@ namespace Src\Models;
 use GTG\MVC\Model;
 use Src\Models\Pallet;
 use Src\Models\Product;
-use Src\Models\SeparationEAN;
+use Src\Models\Separation;
+use Src\Models\SeparationItem;
 
 class ConferenceSeparationForm extends Model 
 {
@@ -20,7 +21,8 @@ class ConferenceSeparationForm extends Model
     public int $step = 0;
     public ?Pallet $pallet = null;
     public ?Product $product = null;
-    public ?SeparationEAN $separationEAN = null;
+    public ?Separation $separation = null;
+    public ?SeparationItem $separationItem = null;
     private bool $has_ean = false;
     private bool $has_amount = false;
     private bool $has_dock = false;
@@ -66,15 +68,16 @@ class ConferenceSeparationForm extends Model
             return false;
         }
 
-        if(!$this->separationEAN = (new SeparationEAN())->get([
+        if(!$this->separationItem = (new SeparationItem())->get([
             'pro_id' => $this->product->id, 
-            's_status' => SeparationEAN::S_LISTED
+            's_status' => SeparationItem::S_LISTED
             ])->fetch(false)) {
             $this->addError('sep_id', _('Nenhum registro de separação foi encontrado por este EAN e ID de separação!'));
             $this->addError('ean', _('Nenhum registro de separação foi encontrado por este EAN e ID de separação!'));
             return false;
         }
 
+        $this->separation = $this->separationItem->separation();
         $this->has_ean = true;
         return true;
     }

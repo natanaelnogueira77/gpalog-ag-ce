@@ -2,10 +2,8 @@
     $this->layout("themes/architect-ui/_theme", [
         'title' => sprintf($dbUser ? _('Editar Usuário | %s') : _('Cadastrar Usuário | %s'), $appData['app_name'])
     ]);
-?>
 
-<?php 
-    $this->insert('themes/architect-ui/components/title', [
+    $this->insert('themes/architect-ui/_components/title', [
         'title' => ($dbUser ? sprintf(_("Editar Usuário \"%s\""), $dbUser->name) : _('Cadastrar Usuário')),
         'subtitle' => $dbUser 
             ? _('Preencha os dados abaixo para alterar o usuário, e então clique em "Atualizar Usuário"') 
@@ -149,38 +147,8 @@
     </div>
 </form>
 
-<?php $this->start('scripts'); ?>
-<script>
-    $(function () {
-        const app = new App();
-        const form = $("#save-user");
-        const update_password = $("input[name$='update_password']");
-        const password_area = $("#password");
-
-        const user_type = $("select[name$='utip_id']");
-        const registration_number_area = $("#registration-number-area");
-
-        update_password.change(function () {
-            if($('#update_password1').is(':checked')) {
-                password_area.show('fast');
-            }
-
-            if($('#update_password2').is(':checked')) {
-                password_area.hide('fast');
-            }
-        });
-
-        user_type.change(function () {
-            if($(this).val() == 3) {
-                registration_number_area.show('fast');
-            } else {
-                registration_number_area.hide('fast');
-            }
-        });
-
-        app.form(form, function (response) {
-            if(response.link) window.location.href = response.link;
-        });
-    });
-</script>
-<?php $this->end(); ?>
+<?php 
+    $this->start('scripts'); 
+    $this->insert('admin/users/_scripts/save.js');
+    $this->end(); 
+?>

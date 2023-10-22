@@ -93,34 +93,34 @@
                 <td><?= _('Qtde. CX Físico') ?></td>
                 <td>
                     <?php if(!$conferenceInputForm->isCompleted()): ?>
-                    <input type="number" id="physic_boxes_amount" name="physic_boxes_amount" 
-                        value="<?= $conferenceInputForm->physic_boxes_amount ?>" style="max-width: 100px;">
+                    <input type="number" id="boxes_amount" name="boxes_amount" 
+                        value="<?= $conferenceInputForm->boxes_amount ?>" style="max-width: 100px;">
                     <br>
                     <small style="color: red;">
-                        <?= $conferenceInputForm->hasError('physic_boxes_amount') ? $conferenceInputForm->getFirstError('physic_boxes_amount') : '' ?>
+                        <?= $conferenceInputForm->hasError('boxes_amount') ? $conferenceInputForm->getFirstError('boxes_amount') : '' ?>
                     </small>
                     <?php else: ?>
-                    <input type="hidden" name="physic_boxes_amount" value="<?= $conferenceInputForm->physic_boxes_amount ?>">
-                    <?= $conferenceInputForm->physic_boxes_amount ?>
+                    <input type="hidden" name="boxes_amount" value="<?= $conferenceInputForm->boxes_amount ?>">
+                    <?= $conferenceInputForm->boxes_amount ?>
                     <?php endif; ?>
                 </td>
             </tr>
             <tr>
                 <td><?= _('Qtde. Unidade') ?></td>
-                <td><?= $conferenceInputForm->isCompleted() ? $conferenceInputForm->physic_boxes_amount * $dbProduct->emb_fb : '' ?></td>
+                <td><?= $conferenceInputForm->isCompleted() ? $conferenceInputForm->boxes_amount * $dbProduct->emb_fb : '' ?></td>
             </tr>
             <tr>
                 <td><?= _('Qtde. Plts Fechados') ?></td>
                 <td>
                     <?php if(!$conferenceInputForm->isCompleted()): ?>
-                    <input type="number" name="closed_plts_amount" value="<?= $conferenceInputForm->closed_plts_amount ?>" style="max-width: 100px;">
+                    <input type="number" name="pallets_amount" value="<?= $conferenceInputForm->pallets_amount ?>" style="max-width: 100px;">
                     <br>
                     <small style="color: red;">
-                        <?= $conferenceInputForm->hasError('closed_plts_amount') ? $conferenceInputForm->getFirstError('closed_plts_amount') : '' ?>
+                        <?= $conferenceInputForm->hasError('pallets_amount') ? $conferenceInputForm->getFirstError('pallets_amount') : '' ?>
                     </small>
                     <?php else: ?>
-                    <input type="hidden" name="closed_plts_amount" value="<?= $conferenceInputForm->closed_plts_amount ?>">
-                    <?= $conferenceInputForm->closed_plts_amount ?>
+                    <input type="hidden" name="pallets_amount" value="<?= $conferenceInputForm->pallets_amount ?>">
+                    <?= $conferenceInputForm->pallets_amount ?>
                     <?php endif; ?>
                 </td>
             </tr>

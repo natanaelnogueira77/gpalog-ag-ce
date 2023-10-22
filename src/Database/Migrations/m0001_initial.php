@@ -32,8 +32,8 @@ class m0001_initial extends Migration
             $table->integer('usu_id');
             $table->integer('pro_id');
             $table->integer('package');
-            $table->integer('physic_boxes_amount');
-            $table->integer('closed_plts_amount');
+            $table->integer('boxes_amount');
+            $table->integer('pallets_amount');
             $table->integer('units_amount');
             $table->integer('service_type');
             $table->float('pallet_height', 10, 2);
@@ -52,8 +52,8 @@ class m0001_initial extends Migration
             $table->id();
             $table->integer('usu_id');
             $table->integer('for_id');
-            $table->string('occurrence_number', 20);
-            $table->string('password_number', 20);
+            $table->string('loading_password', 20);
+            $table->string('ga_password', 20);
             $table->string('order_number', 20);
             $table->string('invoice_number', 20);
             $table->string('plate', 20);
@@ -71,7 +71,9 @@ class m0001_initial extends Migration
             $table->integer('pro_id');
             $table->integer('store_usu_id');
             $table->integer('package');
-            $table->integer('physic_boxes_amount');
+            $table->integer('start_boxes_amount');
+            $table->integer('boxes_amount');
+            $table->integer('start_units_amount');
             $table->integer('units_amount');
             $table->integer('service_type');
             $table->float('pallet_height', 10, 2);
@@ -79,11 +81,8 @@ class m0001_initial extends Migration
             $table->integer('position');
             $table->integer('height');
             $table->string('code', 20);
-            $table->integer('sai_id')->nullable();
             $table->integer('release_usu_id')->nullable();
             $table->dateTime('release_date')->nullable();
-            $table->string('load_plate', 20)->nullable();
-            $table->string('dock', 20)->nullable();
             $table->integer('p_status');
             $table->timestamps();
         });
@@ -124,7 +123,7 @@ class m0001_initial extends Migration
             $table->integer('end_position')->nullable();
             $table->integer('max_height')->nullable();
             $table->float('profile', 10, 2)->nullable();
-            $table->integer('max_plts')->nullable();
+            $table->integer('max_pallets')->nullable();
             $table->string('obs', 500)->nullable();
             $table->tinyInteger('is_limitless')->default('FALSE');
             $table->timestamps();
@@ -140,7 +139,7 @@ class m0001_initial extends Migration
             $table->timestamps();
         });
 
-        $this->db->createTable('separacao_ean', function ($table) {
+        $this->db->createTable('separacao_item', function ($table) {
             $table->id();
             $table->integer('adm_usu_id');
             $table->integer('pro_id');
@@ -149,11 +148,18 @@ class m0001_initial extends Migration
             $table->integer('sep_id')->nullable();
             $table->integer('separation_usu_id')->nullable();
             $table->string('address', 50)->nullable();
-            $table->integer('sep_amount')->nullable();
+            $table->integer('separation_amount')->nullable();
             $table->string('dispatch_dock', 20)->nullable();
             $table->integer('conf_usu_id')->nullable();
             $table->integer('conf_amount')->nullable();
             $table->integer('s_status');
+            $table->timestamps();
+        });
+        
+        $this->db->createTable('separacao_item_pallet', function ($table) {
+            $table->id();
+            $table->integer('site_id');
+            $table->integer('pal_id');
             $table->timestamps();
         });
 
@@ -197,9 +203,15 @@ class m0001_initial extends Migration
             $procedure->integer('amount_type');
             $procedure->statement("
                 IF amount_type = 1 THEN 
-                    UPDATE pallet SET physic_boxes_amount = physic_boxes_amount + amount_add WHERE id = id_pallet;
+                    UPDATE pallet 
+                    SET boxes_amount = boxes_amount + amount_add, 
+                        units_amount = units_amount + amount_add * package 
+                    WHERE id = id_pallet;
                 ELSEIF amount_type = 2 THEN 
-                    UPDATE pallet SET units_amount = units_amount + amount_add WHERE id = id_pallet;
+                    UPDATE pallet 
+                    SET boxes_amount = FLOOR((units_amount + amount_add) / package), 
+                        units_amount = units_amount + amount_add
+                    WHERE id = id_pallet;
                 END IF;
             ");
         });
@@ -207,8 +219,8 @@ class m0001_initial extends Migration
         $this->db->createTrigger('TRG_PalletFromTo_AI', function ($trigger) {
             $trigger->event('AFTER INSERT ON `pallet_depara` FOR EACH ROW');
             $trigger->statement("
-                CALL SP_UpdatePalletStock (new.to_pal_id, new.amount, new.a_type);
-                CALL SP_UpdatePalletStock (new.from_pal_id, new.amount * -1, new.a_type);
+                CALL SP_UpdatePalletStock(new.to_pal_id, new.amount, new.a_type);
+                CALL SP_UpdatePalletStock(new.from_pal_id, new.amount * -1, new.a_type);
             ");
         });
 
@@ -216,11 +228,11 @@ class m0001_initial extends Migration
             $trigger->event('AFTER UPDATE ON `pallet_depara` FOR EACH ROW');
             $trigger->statement("
                 IF old.a_type = new.a_type THEN 
-                    CALL SP_UpdatePalletStock (new.to_pal_id, new.amount - old.amount, new.a_type);
-                    CALL SP_UpdatePalletStock (new.from_pal_id, old.amount - new.amount, new.a_type);
+                    CALL SP_UpdatePalletStock(new.to_pal_id, new.amount - old.amount, new.a_type);
+                    CALL SP_UpdatePalletStock(new.from_pal_id, old.amount - new.amount, new.a_type);
                 ELSE 
-                    CALL SP_UpdatePalletStock (new.from_pal_id, old.amount * -1, old.a_type);
-                    CALL SP_UpdatePalletStock (new.from_pal_id, new.amount, new.a_type);
+                    CALL SP_UpdatePalletStock(new.from_pal_id, old.amount * -1, old.a_type);
+                    CALL SP_UpdatePalletStock(new.from_pal_id, new.amount, new.a_type);
                 END IF;
             ");
         });
@@ -228,8 +240,8 @@ class m0001_initial extends Migration
         $this->db->createTrigger('TRG_PalletFromTo_AD', function ($trigger) {
             $trigger->event('AFTER DELETE ON `pallet_depara` FOR EACH ROW');
             $trigger->statement("
-                CALL SP_UpdatePalletStock (old.to_pal_id, old.amount, old.a_type);
-                CALL SP_UpdatePalletStock (old.from_pal_id, old.amount * -1, old.a_type);
+                CALL SP_UpdatePalletStock(old.to_pal_id, old.amount * -1, old.a_type);
+                CALL SP_UpdatePalletStock(old.from_pal_id, old.amount, old.a_type);
             ");
         });
     }
@@ -250,7 +262,8 @@ class m0001_initial extends Migration
         $this->db->dropTableIfExists('produto');
         $this->db->dropTableIfExists('rua');
         $this->db->dropTableIfExists('separacao');
-        $this->db->dropTableIfExists('separacao_ean');
+        $this->db->dropTableIfExists('separacao_item');
+        $this->db->dropTableIfExists('separacao_item_pallet');
         $this->db->dropTableIfExists('social_usuario');
         $this->db->dropTableIfExists('usuario');
         $this->db->dropTableIfExists('usuario_meta');

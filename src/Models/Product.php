@@ -4,6 +4,7 @@ namespace Src\Models;
 
 use DateTime;
 use GTG\MVC\DB\DBModel;
+use Src\Components\Barcode;
 
 class Product extends DBModel 
 {
@@ -128,5 +129,10 @@ class Product extends DBModel
     public function getUpdatedAtDateTime(): DateTime 
     {
         return new DateTime($this->updated_at);
+    }
+
+    public function getEANBarcodePNG() 
+    {
+        return (new Barcode())->getBarcodePNG($this->ean);
     }
 }

@@ -5,7 +5,7 @@ namespace Src\Models;
 use GTG\MVC\Model;
 use Src\Models\Product;
 use Src\Models\Separation;
-use Src\Models\SeparationEAN;
+use Src\Models\SeparationItem;
 
 class ConferenceExpeditionForm extends Model 
 {
@@ -18,7 +18,7 @@ class ConferenceExpeditionForm extends Model
     public int $step = 0;
     public ?Product $product = null;
     public ?Separation $separation = null;
-    public ?SeparationEAN $separationEAN = null;
+    public ?SeparationItem $separationItem = null;
     private bool $has_ean = false;
     private bool $has_completion = false;
 
@@ -45,13 +45,13 @@ class ConferenceExpeditionForm extends Model
                     }
                     
                     if(!$model->hasError('sep_id') && !$model->hasError('ean')) {
-                        if(!$model->separationEAN = (new SeparationEAN())->get([
+                        if(!$model->separationItem = (new SeparationItem())->get([
                             'sep_id' => $model->sep_id, 
                             'pro_id' => $model->product->id
                             ])->fetch(false)) {
                             $model->addError('sep_id', _('Nenhum registro de separação foi encontrado por este EAN e ID de separação!'));
                             $model->addError('ean', _('Nenhum registro de separação foi encontrado por este EAN e ID de separação!'));
-                        } elseif(!$model->separationEAN->isSeparated()) {
+                        } elseif(!$model->separationItem->isSeparated()) {
                             $model->addError('sep_id', _('Este produto ainda não foi separado pelo operador!'));
                             $model->addError('ean', _('Este produto ainda não foi separado pelo operador!'));
                         }

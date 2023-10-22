@@ -9,6 +9,7 @@ use Src\Models\Conference;
 use Src\Models\Output;
 use Src\Models\Pallet;
 use Src\Models\Product;
+use Src\Models\SeparationItemPallet;
 use Src\Models\Street;
 use Src\Models\User;
 
@@ -20,11 +21,11 @@ class Pallet extends DBModel
     const ST_IMPORTED = 4;
 
     const PS_STORED = 1;
-    const PS_SEPARATED = 2;
-    const PS_RELEASED = 3;
+    const PS_RELEASED = 2;
 
     public ?Conference $conference = null;
     public ?Output $output = null;
+    public ?SeparationItemPallet $pivotSeparationItem = null;
     public ?Product $product = null;
     public ?User $releaseUser = null;
     public ?User $storeUser = null;
@@ -47,7 +48,9 @@ class Pallet extends DBModel
             'pro_id', 
             'store_usu_id', 
             'package', 
-            'physic_boxes_amount', 
+            'start_boxes_amount', 
+            'boxes_amount', 
+            'start_units_amount', 
             'units_amount', 
             'service_type', 
             'pallet_height', 
@@ -55,18 +58,15 @@ class Pallet extends DBModel
             'position', 
             'height', 
             'code', 
-            'sai_id', 
             'release_usu_id', 
             'release_date', 
-            'load_plate', 
-            'dock', 
             'p_status'
         ];
     }
 
     public function rules(): array 
     {
-        return [
+        return array_merge([
             'con_id' => [
                 [self::RULE_REQUIRED, 'message' => _('O ID de conferência é obrigatório!')]
             ],
@@ -79,11 +79,17 @@ class Pallet extends DBModel
             'package' => [
                 [self::RULE_REQUIRED, 'message' => _('A embalagem é obrigatória!')]
             ],
-            'physic_boxes_amount' => [
-                [self::RULE_REQUIRED, 'message' => _('A quantidade de caixas físicas é obrigatório!')]
+            'start_boxes_amount' => [
+                [self::RULE_REQUIRED, 'message' => _('A quantidade de caixas físicas inicial é obrigatória!')]
+            ],
+            'boxes_amount' => [
+                [self::RULE_REQUIRED, 'message' => _('A quantidade de caixas físicas atual é obrigatória!')]
+            ],
+            'start_units_amount' => [
+                [self::RULE_REQUIRED, 'message' => _('A quantidade de unidades inicial é obrigatória!')]
             ],
             'units_amount' => [
-                [self::RULE_REQUIRED, 'message' => _('A quantidade de unidades é obrigatório!')]
+                [self::RULE_REQUIRED, 'message' => _('A quantidade de unidades final é obrigatória!')]
             ],
             'service_type' => [
                 [self::RULE_REQUIRED, 'message' => _('O tipo de serviço é obrigatório!')],
@@ -109,45 +115,22 @@ class Pallet extends DBModel
                 [self::RULE_REQUIRED, 'message' => _('O status é obrigatório!')],
                 [self::RULE_IN, 'values' => array_keys(self::getStates()), 'message' => _('O status é inválido!')],
             ]
-        ] + (
-            $this->isSeparated() 
-            ? [
-                'sai_id' => [
-                    [self::RULE_REQUIRED, 'message' => _('O ID de separação é obrigatório!')]
-                ]
+        ], $this->isReleased() ? [
+            'release_usu_id' => [
+                [self::RULE_REQUIRED, 'message' => _('O usuário que liberou é obrigatório!')]
+            ],
+            'release_date' => [
+                [self::RULE_REQUIRED, 'message' => _('A data de saída é obrigatória!')],
+                [self::RULE_DATETIME, 'pattern' => 'Y-m-d H:i:s', 'message' => _('A data de saída deve seguir o padrão dd/mm/yyyy hh/mm/ss!')]
             ]
-            : []
-        ) + (
-            $this->isReleased() 
-            ? [
-                'release_usu_id' => [
-                    [self::RULE_REQUIRED, 'message' => _('O usuário que liberou é obrigatório!')]
-                ],
-                'release_date' => [
-                    [self::RULE_REQUIRED, 'message' => _('A data de saída é obrigatória!')],
-                    [self::RULE_DATETIME, 'pattern' => 'Y-m-d H:i:s', 'message' => _('A data de saída deve seguir o padrão dd/mm/yyyy hh/mm/ss!')]
-                ],
-                'load_plate' => [
-                    [self::RULE_REQUIRED, 'message' => _('A placa de carregamento é obrigatória!')],
-                    [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A placa de carregamento deve conter no máximo %s caractéres!'), 20)]
-                ],
-                'dock' => [
-                    [self::RULE_REQUIRED, 'message' => _('A doca é obrigatória!')],
-                    [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A doca deve conter no máximo %s caractéres!'), 20)]
-                ]
-            ]
-            : []
-        );
+        ] : []);
     }
 
     public function save(): bool 
     {
         $this->p_status = $this->p_status ? $this->p_status : self::PS_STORED;
-        $this->sai_id = $this->isSeparated() || $this->isReleased() ? $this->sai_id : null;
         $this->release_usu_id = $this->isReleased() ? $this->release_usu_id : null;
         $this->release_date = $this->isReleased() ? $this->release_date : null;
-        $this->load_plate = $this->isReleased() ? $this->load_plate : null;
-        $this->dock = $this->isReleased() ? $this->dock : null;
         return parent::save();
     }
 
@@ -171,7 +154,9 @@ class Pallet extends DBModel
 
     public function releaseUser(string $columns = '*'): ?User 
     {
-        $this->releaseUser = $this->release_usu_id ? $this->belongsTo(User::class, 'release_usu_id', 'id', $columns)->fetch(false) : null;
+        $this->releaseUser = $this->release_usu_id 
+            ? $this->belongsTo(User::class, 'release_usu_id', 'id', $columns)->fetch(false) 
+            : null;
         return $this->releaseUser;
     }
 
@@ -270,7 +255,7 @@ class Pallet extends DBModel
     {
         return (new self())->get([
             'code' => $code, 
-            'in' => ['p_status' => [self::PS_STORED, self::PS_SEPARATED]]
+            'p_status' => self::PS_STORED
         ], $columns)->fetch(false);
     }
 
@@ -303,7 +288,6 @@ class Pallet extends DBModel
     {
         return [
             self::PS_STORED => _('Alocado'),
-            self::PS_SEPARATED => _('Separado'),
             self::PS_RELEASED => _('Liberado')
         ];
     }
@@ -379,12 +363,23 @@ class Pallet extends DBModel
         $skippedPlaces = [];
         $skippedPickingPlaces = [];
 
+        $palletsOnPicking = (new self())->get([
+            'in' => ['pro_id' => self::getPropertyValues($pallets, 'pro_id')], 
+            'height' => 1,
+            'p_status' => self::PS_STORED
+        ])->fetch(true);
+        if($palletsOnPicking) {
+            foreach($palletsOnPicking as $pallet) {
+                $isProductOnPicking[$pallet->pro_id] = true;
+            }
+        }
+
         foreach($pallets as $pallet) {
             if(!isset($isProductOnPicking[$pallet->pro_id])) {
                 $isProductOnPicking[$pallet->pro_id] = false;
             }
 
-            if(!$pallet->isStored() && !$pallet->isSeparated() && !$pallet->isReleased()) {
+            if(!$pallet->isStored() && !$pallet->isReleased()) {
                 if($pallet->pallet_height == 1.4) {
                     $profile = '1.40';
                 } elseif($pallet->pallet_height == 2.2) {
@@ -393,7 +388,7 @@ class Pallet extends DBModel
 
                 $i = 0;
                 $hasSkippedPlaces = false;
-                if(!$isProductOnPicking[$pallet->pro_id] || !$pallet->isProductOnPicking()) {
+                if(!$isProductOnPicking[$pallet->pro_id]) {
                     while($availablePlaces[$profile][$i]['height'] != 1) {
                         $hasSkippedPlaces = true;
                         $i++;
@@ -401,7 +396,7 @@ class Pallet extends DBModel
                 }
 
                 if($availablePlaces[$profile][$i]['height'] == 1) {
-                    if($isProductOnPicking[$pallet->pro_id] || $pallet->isProductOnPicking()) {
+                    if($isProductOnPicking[$pallet->pro_id]) {
                         while($availablePlaces[$profile][$i]['height'] == 1) {
                             $hasSkippedPlaces = true;
                             $i++;
@@ -433,15 +428,19 @@ class Pallet extends DBModel
         return Pallet::saveMany($pallets) ? true : false;
     }
 
+    public static function getPalletsTotalBoxesAmount(array $objects): int 
+    {
+        return intval(array_sum(array_map(fn($o) => $o->boxes_amount, $objects)));
+    }
+
+    public static function getPalletsTotalUnitsAmount(array $objects): int 
+    {
+        return intval(array_sum(array_map(fn($o) => $o->units_amount, $objects)));
+    }
+
     public function setAsStored(): self 
     {
         $this->p_status = self::PS_STORED;
-        return $this;
-    }
-
-    public function setAsSeparated(): self 
-    {
-        $this->p_status = self::PS_SEPARATED;
         return $this;
     }
 
@@ -476,11 +475,6 @@ class Pallet extends DBModel
         return $this->p_status == self::PS_STORED;
     }
 
-    public function isSeparated(): bool 
-    {
-        return $this->p_status == self::PS_SEPARATED;
-    }
-
     public function isReleased(): bool 
     {
         return $this->p_status == self::PS_RELEASED;
@@ -494,7 +488,8 @@ class Pallet extends DBModel
 
         $this->isProductOnPicking = (new self())->get([
             'pro_id' => $this->pro_id, 
-            'height' => 1
+            'height' => 1,
+            'p_status' => self::PS_STORED
         ])->count() ? true : false;
 
         return $this->isProductOnPicking;

@@ -2,10 +2,8 @@
     $this->layout("themes/architect-ui/_theme", [
         'title' => sprintf(_('Administrador | %s'), $appData['app_name'])
     ]);
-?>
 
-<?php 
-    $this->insert('themes/architect-ui/components/title', [
+    $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Painel do Administrador'),
         'subtitle' => _('Relatórios e gerenciamento do sistema'),
         'icon' => 'pe-7s-home',
@@ -80,7 +78,7 @@
     
     <div class="card-body">
         <form id="filters">
-            <?php $this->insert('components/data-table-filters', ['formId' => 'filters']); ?>
+            <?php $this->insert('_components/data-table-filters', ['formId' => 'filters']); ?>
             <div class="form-row"> 
                 <div class="form-group col-md-4 col-sm-6">
                     <label><?= _('Nível de Usuário') ?></label>
@@ -223,88 +221,8 @@
     </form>
 </div>
 
-<?php $this->start('scripts'); ?>
-<script>
-    $(function () {
-        const app = new App();
-        const table = $("#users");
-        const filters_form = $("#filters");
-
-        const mediaLibrary = new MediaLibrary();
-        const dataTable = app.table(table, table.data('action'));
-        dataTable.defaultParams(app.objectifyForm(filters_form)).filtersForm(filters_form)
-        .setMsgFunc((msg) => app.showMessage(msg.message, msg.type)).loadOnChange().addAction((table) => {
-            table.find("[data-act=delete]").click(function () {
-                var data = $(this).data();
-
-                if(confirm(<?php echo json_encode(_('Deseja realmente excluir este usuário?')) ?>)) {
-                    app.callAjax({
-                        url: data.action,
-                        type: data.method,
-                        success: function (response) {
-                            dataTable.load();
-                        }
-                    });
-                }
-            });
-        }).load();
-
-        $("#logo_upload").click(function () {
-            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png']).setSuccess(function (path) {
-                $("#logo").val(path);
-                $("img#logo_view").attr("src", `${mediaLibrary.path}/${path}`);
-            }).open();
-        });
-
-        $("#logo_remove").each(function () {
-            $(this).click(function () {
-                $(this).parent().children("#logo").val('');
-                $(this).parent().parent().find("#logo_view").attr("src", '');
-            });
-        });
-
-        $("#logo_icon_upload").click(function () {
-            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png']).setSuccess(function (path) {
-                $("#logo_icon").val(path);
-                $("img#logo_icon_view").attr("src", `${mediaLibrary.path}/${path}`);
-            }).open();
-        });
-
-        $("#logo_icon_remove").each(function () {
-            $(this).click(function () {
-                $(this).parent().children("#logo_icon").val('');
-                $(this).parent().parent().find("#logo_icon_view").attr("src", '');
-            });
-        });
-
-        $("#login_img_upload").click(function () {
-            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png']).setSuccess(function (path) {
-                $("#login_img").val(path);
-                $("img#login_img_view").attr("src", `${mediaLibrary.path}/${path}`);
-            }).open();
-        });
-
-        $("#login_img_remove").each(function () {
-            $(this).click(function () {
-                $(this).parent().children("#login_img").val('');
-                $(this).parent().parent().find("#login_img_view").attr("src", '');
-            });
-        });
-
-        app.form($("#system"), function (response) { });
-
-        $("[data-info=users]").click(function() {
-            var data = $(this).data();
-            $("#panel_users").show('fast');
-            
-            dataTable.params({
-                user_type: data.id
-            }).load();
-
-            $('html,body').animate({
-                scrollTop: $("#panels_top").offset().top},
-                'slow');
-        });
-    });
-</script>
-<?php $this->end(); ?>
+<?php 
+    $this->start('scripts');
+    $this->insert('admin/_scripts/index.js');
+    $this->end(); 
+?>

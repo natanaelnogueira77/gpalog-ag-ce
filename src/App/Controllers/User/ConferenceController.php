@@ -16,6 +16,7 @@ use Src\Models\Operation;
 use Src\Models\Pallet;
 use Src\Models\PalletFromTo;
 use Src\Models\Provider;
+use Src\Models\SeparationItem;
 use Src\Utils\ErrorMessages;
 
 class ConferenceController extends TemplateController 
@@ -103,8 +104,8 @@ class ConferenceController extends TemplateController
                 $conferenceInputForm->loadData([
                     'package' => $dbProduct->emb_fb,
                     'barcode' => $data['barcode'] ? $data['barcode'] : null,
-                    'physic_boxes_amount' => $data['physic_boxes_amount'] ? $data['physic_boxes_amount'] : null,
-                    'closed_plts_amount' => $data['closed_plts_amount'] ? $data['closed_plts_amount'] : null,
+                    'boxes_amount' => $data['boxes_amount'] ? $data['boxes_amount'] : null,
+                    'pallets_amount' => $data['pallets_amount'] ? $data['pallets_amount'] : null,
                     'service_type' => $data['service_type'] ? $data['service_type'] : null,
                     'pallet_height' => $data['pallet_height'] ? floatval($data['pallet_height']) : null
                 ]);
@@ -119,9 +120,9 @@ class ConferenceController extends TemplateController
                         'barcode' => $conferenceInputForm->barcode,
                         'pro_id' => $dbProduct->id, 
                         'package' => $conferenceInputForm->package, 
-                        'physic_boxes_amount' => $conferenceInputForm->physic_boxes_amount, 
-                        'closed_plts_amount' => $conferenceInputForm->closed_plts_amount, 
-                        'units_amount' => $conferenceInputForm->physic_boxes_amount * $conferenceInputForm->package, 
+                        'boxes_amount' => $conferenceInputForm->boxes_amount, 
+                        'pallets_amount' => $conferenceInputForm->pallets_amount, 
+                        'units_amount' => $conferenceInputForm->boxes_amount * $conferenceInputForm->package, 
                         'service_type' => $conferenceInputForm->service_type, 
                         'pallet_height' => $conferenceInputForm->pallet_height
                     ]);
@@ -270,29 +271,26 @@ class ConferenceController extends TemplateController
                 $nextStep = ConferenceSeparationForm::STEP_DOCK;
                 $previousStep = ConferenceSeparationForm::STEP_AMOUNT;
             } else {
-                $CSF->separationEAN->loadData([
+                $CSF->separationItem->loadData([
                     'separation_usu_id' => $this->session->getAuth()->id,
                     'address' => $CSF->address,
-                    'sep_amount' => $CSF->amount,
+                    'separation_amount' => $CSF->amount,
                     'dispatch_dock' => $CSF->dispatch_dock
                 ]);
 
-                if(!$CSF->separationEAN->setAsSeparated()->save()) {
+                if(!$CSF->separation->isInSeparation() && !$CSF->separation->setAsInSeparation()->save()) {
                     $this->session->setFlash('error', ErrorMessages::requisition());
                 } else {
-                    $palletFromTo = (new PalletFromTo())->loadData([
-                        'usu_id' => $this->session->getAuth()->id,
-                        'amount' => $CSF->amount,
-                        'a_type' => $CSF->separationEAN->a_type,
-                        'from_pal_id' => $CSF->pallet->id
-                    ]);
-    
-                    if(!$palletFromTo->save()) {
+                    if(!$CSF->separationItem->setAsSeparated()->save()) {
                         $this->session->setFlash('error', ErrorMessages::requisition());
+                    } else {
+                        if(!$CSF->separationItem->separate($CSF->amount, $this->session->getAuth()->id)) {
+                            $this->session->setFlash('error', ErrorMessages::requisition());
+                        }
+    
+                        $this->session->setFlash('success', _('A quantidade foi separada com sucesso!'));
+                        $this->redirect('user.conference.separation');
                     }
-
-                    $this->session->setFlash('success', _('A quantidade foi separada com sucesso!'));
-                    $this->redirect('user.conference.separation');
                 }
             }
         }
@@ -339,16 +337,20 @@ class ConferenceController extends TemplateController
                 $nextStep = ConferenceExpeditionForm::STEP_COMPLETION;
                 $previousStep = ConferenceExpeditionForm::STEP_EAN;
             } else {
-                $CEF->separationEAN->loadData([
+                $CEF->separationItem->loadData([
                     'conf_usu_id' => $this->session->getAuth()->id,
                     'conf_amount' => $CEF->amount
                 ]);
 
-                if(!$CEF->separationEAN->setAsChecked()->save()) {
+                if(!$CEF->separation->isInExpeditionConference() && !$CEF->separation->setAsInExpeditionConference()->save()) {
                     $this->session->setFlash('error', ErrorMessages::requisition());
                 } else {
-                    $this->session->setFlash('success', _('A conferência de expedição foi realizada com sucesso!'));
-                    $this->redirect('user.conference.expedition');
+                    if(!$CEF->separationItem->setAsChecked()->save()) {
+                        $this->session->setFlash('error', ErrorMessages::requisition());
+                    } else {
+                        $this->session->setFlash('success', _('A conferência de expedição foi realizada com sucesso!'));
+                        $this->redirect('user.conference.expedition');
+                    }
                 }
             }
         }
@@ -404,6 +406,14 @@ class ConferenceController extends TemplateController
                 if(!$CLF->separation->setAsInLoading()->save()) {
                     $this->session->setFlash('error', ErrorMessages::requisition());
                 } else {
+                    if($dbSeparationItems = $CLF->separation->separationItems()) {
+                        foreach($dbSeparationItems as $dbSeparationItem) {
+                            $dbSeparationItem->setAsFinished();
+                        }
+
+                        SeparationItem::saveMany($dbSeparationItems);
+                    }
+
                     $this->session->setFlash(
                         'success', 
                         sprintf(_('A lista de separação de ID %s foi carregada com sucesso!'), $CLF->separation->id)

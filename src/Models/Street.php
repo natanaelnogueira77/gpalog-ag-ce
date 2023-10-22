@@ -31,7 +31,7 @@ class Street extends DBModel
             'end_position', 
             'max_height', 
             'profile', 
-            'max_plts', 
+            'max_pallets', 
             'obs', 
             'is_limitless'
         ];
@@ -64,7 +64,7 @@ class Street extends DBModel
                 'profile' => [
                     [self::RULE_REQUIRED, 'message' => _('O perfil é obrigatório!')]
                 ],
-                'max_plts' => [
+                'max_pallets' => [
                     [self::RULE_REQUIRED, 'message' => _('A capacidade máxima é obrigatória!')]
                 ]
             ] : []
@@ -77,7 +77,7 @@ class Street extends DBModel
         $this->end_position = !$this->isLimitless() ? $this->end_position : null;
         $this->max_height = !$this->isLimitless() ? $this->max_height : null;
         $this->profile = !$this->isLimitless() ? $this->profile : null;
-        $this->max_plts = !$this->isLimitless() ? $this->max_plts : null;
+        $this->max_pallets = !$this->isLimitless() ? $this->max_pallets : null;
         $this->obs = $this->obs ? $this->obs : null;
         $this->is_limitless = $this->is_limitless ? 1 : 0;
         return parent::save();
@@ -93,7 +93,7 @@ class Street extends DBModel
                 $object->end_position = !$object->isLimitless() ? $object->end_position : null;
                 $object->max_height = !$object->isLimitless() ? $object->max_height : null;
                 $object->profile = !$object->isLimitless() ? $object->profile : null;
-                $object->max_plts = !$object->isLimitless() ? $object->max_plts : null;
+                $object->max_pallets = !$object->isLimitless() ? $object->max_pallets : null;
                 $object->obs = $object->obs ? $object->obs : null;
                 $object->is_limitless = $object->is_limitless ? 1 : 0;
             }
@@ -144,7 +144,7 @@ class Street extends DBModel
         }
 
         $pallets = (new Pallet())->get([
-            'in' => ['p_status' => [Pallet::PS_STORED, Pallet::PS_SEPARATED]], 
+            'p_status' => Pallet::PS_STORED,
             'raw' => "pallet_height = {$height}"
         ], 'street_number, position, height')->fetch(true);
 
@@ -169,7 +169,7 @@ class Street extends DBModel
             if(!$street->isLimitless()) {
                 for($i = $street->start_position + ($street->start_position % 2 == 0 ? 1 : 0); $i <= $street->end_position; $i += 2) {
                     for($j = 1; $j <= $street->max_height; $j++) {
-                        if($street->max_plts <= $palletsCount[$street->street_number] 
+                        if($street->max_pallets <= $palletsCount[$street->street_number] 
                             + count(array_filter($availablePlaces, fn($p) => $p['street_number'] == $street->street_number))) {
                             continue 3;
                         }
@@ -191,7 +191,7 @@ class Street extends DBModel
 
                 for($i = $street->start_position + ($street->start_position % 2 == 1 ? 1 : 0); $i <= $street->end_position; $i += 2) {
                     for($j = 1; $j <= $street->max_height; $j++) {
-                        if($street->max_plts <= $palletsCount[$street->street_number] 
+                        if($street->max_pallets <= $palletsCount[$street->street_number] 
                             + count(array_filter($availablePlaces, fn($p) => $p['street_number'] == $street->street_number))) {
                             continue 3;
                         }
