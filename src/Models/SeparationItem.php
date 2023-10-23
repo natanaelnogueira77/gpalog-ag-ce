@@ -514,12 +514,16 @@ class SeparationItem extends DBModel
             }
         }
 
-        if(!Pallet::saveMany($dbPallets)) {
-            return false;
+        if($dbPallets) {
+            if(!Pallet::saveMany($dbPallets)) {
+                return false;
+            }
         }
 
-        if(!PalletFromTo::insertMany($palletsFromTo)) {
-            return false;
+        if($palletsFromTo) {
+            if(!PalletFromTo::insertMany($palletsFromTo)) {
+                return false;
+            }
         }
 
         return true;
