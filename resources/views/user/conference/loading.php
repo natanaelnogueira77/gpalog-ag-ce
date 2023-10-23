@@ -26,7 +26,7 @@
                 <td><?= _('ID de Separação') ?></td>
                 <td>
                     <?php if(!$CLF->hasSeparationId()): ?>
-                    <input type="text" name="sep_id" value="<?= $CLF->sep_id ?>" style="max-width: 100px;">
+                    <input type="number" name="sep_id" value="<?= $CLF->sep_id ?>" style="max-width: 100px;">
                     <br>
                     <small style="color: red;">
                         <?= $CLF->hasError('sep_id') ? $CLF->getFirstError('sep_id') : '' ?>

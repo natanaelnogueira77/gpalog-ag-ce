@@ -56,7 +56,7 @@
                 <td><?= _('Quantidade') ?></td>
                 <td>
                     <?php if(!$CEF->hasEAN()): ?>
-                    <input type="text" name="amount" value="<?= $CEF->amount ?>" style="max-width: 100px;">
+                    <input type="number" name="amount" value="<?= $CEF->amount ?>" style="max-width: 100px;">
                     <br>
                     <small style="color: red;">
                         <?= $CEF->hasError('amount') ? $CEF->getFirstError('amount') : '' ?>

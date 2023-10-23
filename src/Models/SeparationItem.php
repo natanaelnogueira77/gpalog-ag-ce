@@ -397,16 +397,30 @@ class SeparationItem extends DBModel
         return $unitsAmount;
     }
 
+    public function getFromToTotal(): array 
+    {
+        if(!$this->separationItemPallets) {
+            $this->pallets();
+        }
+
+        return [
+            'boxes' => $this->separationItemPallets ? array_sum(array_map(fn($o) => $o->boxes_amount, $this->separationItemPallets)) : 0,
+            'units' => $this->separationItemPallets ? array_sum(array_map(fn($o) => $o->units_amount, $this->separationItemPallets)) : 0
+        ];
+    }
+
     public function needsFromTo(): bool 
     {
         $pickingPallet = (new Pallet())->get([
             'pro_id' => $this->pro_id,
             'height' => 1,
             'p_status' => Pallet::PS_STORED
-        ]);
+        ])->fetch(false);
 
-        if(($this->isBoxesType() && $this->amount > $pickingPallet->boxes_amount - self::getToBeSeparatedBoxesByProductId($this->pro_id)) 
-            || ($this->isUnitsType() && $this->amount > $pickingPallet->units_amount - self::getToBeSeparatedUnitsByProductId($this->pro_id))) {
+        if(($this->isBoxesType() && $pickingPallet->boxes_amount - self::getToBeSeparatedBoxesByProductId($this->pro_id) 
+            + $this->getFromToTotal()['boxes'] < 0) 
+            || ($this->isUnitsType() && $pickingPallet->units_amount - self::getToBeSeparatedUnitsByProductId($this->pro_id) 
+            + $this->getFromToTotal()['units'] < 0)) {
             return true;
         }
 

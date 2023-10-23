@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-10-21 22:54-0300\n"
-"PO-Revision-Date: 2023-10-21 22:56-0300\n"
+"POT-Creation-Date: 2023-10-23 14:26-0300\n"
+"PO-Revision-Date: 2023-10-23 14:26-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -962,8 +962,7 @@ msgstr "Informações do Pallet"
 #: resources/views/user/separations/_components/list.php:6
 #: resources/views/user/storage/_components/pallets-list-table.php:4
 #: src/App/Controllers/User/InputOutputHistoryController.php:301
-#: src/App/Controllers/User/SeparationItemsController.php:336
-#: src/App/Controllers/User/SeparationItemsController.php:337
+#: src/App/Controllers/User/SeparationItemsController.php:338
 #: src/App/Controllers/User/SeparationsController.php:301
 msgid "Número do Pallet"
 msgstr "Número do Pallet"
@@ -985,6 +984,7 @@ msgstr "Horário de Entrada"
 #: resources/views/user/separations/_components/updated-pdf.php:87
 #: resources/views/user/storage/_components/pallets-list-modal.php:6
 #: src/App/Controllers/User/SeparationItemsController.php:239
+#: src/App/Controllers/User/SeparationItemsController.php:341
 #: src/App/Controllers/User/StreetsController.php:130
 msgid "Rua"
 msgstr "Rua"
@@ -997,7 +997,7 @@ msgstr "Rua"
 #: resources/views/user/storage/_components/pallets-list-table.php:7
 #: src/App/Controllers/User/InputOutputHistoryController.php:319
 #: src/App/Controllers/User/SeparationItemsController.php:240
-#: src/App/Controllers/User/SeparationItemsController.php:338
+#: src/App/Controllers/User/SeparationItemsController.php:342
 #: src/App/Controllers/User/SeparationsController.php:317
 msgid "Posição"
 msgstr "Posição"
@@ -1013,7 +1013,7 @@ msgstr "Posição"
 #: src/App/Controllers/User/ProductsController.php:151
 #: src/App/Controllers/User/ProductsController.php:265
 #: src/App/Controllers/User/SeparationItemsController.php:241
-#: src/App/Controllers/User/SeparationItemsController.php:339
+#: src/App/Controllers/User/SeparationItemsController.php:343
 #: src/App/Controllers/User/SeparationsController.php:318
 msgid "Altura"
 msgstr "Altura"
@@ -1542,7 +1542,7 @@ msgid "Fornecedores"
 msgstr "Fornecedores"
 
 #: resources/views/user/separation-items/_components/bond-pallets-modal.php:6
-#: src/App/Controllers/User/SeparationItemsController.php:324
+#: src/App/Controllers/User/SeparationItemsController.php:326
 msgid "Fazer De Para"
 msgstr "Fazer De Para"
 
@@ -1717,18 +1717,20 @@ msgid "Produto"
 msgstr "Produto"
 
 #: resources/views/user/storage/_components/pallets-list-table.php:10
+#: src/App/Controllers/User/SeparationItemsController.php:339
 #: src/Models/PalletFromTo.php:152 src/Models/SeparationItem.php:308
 msgid "Caixas"
 msgstr "Caixas"
 
 #: resources/views/user/storage/_components/pallets-list-table.php:11
+#: src/App/Controllers/User/SeparationItemsController.php:340
 #: src/Models/PalletFromTo.php:153 src/Models/SeparationItem.php:309
 msgid "Unidades"
 msgstr "Unidades"
 
 #: resources/views/user/storage/_components/pallets-list-table.php:31
-#: src/App/Controllers/User/SeparationItemsController.php:367
-#: src/App/Controllers/User/SeparationItemsController.php:396
+#: src/App/Controllers/User/SeparationItemsController.php:371
+#: src/App/Controllers/User/SeparationItemsController.php:400
 msgid "Nenhum pallet foi encontrado!"
 msgstr "Nenhum pallet foi encontrado!"
 
@@ -2006,7 +2008,7 @@ msgstr "Os dados do usuário \"%s\" foram alterados com sucesso!"
 #: src/App/Controllers/User/SeparationItemsController.php:201
 #: src/App/Controllers/User/SeparationItemsController.php:204
 #: src/App/Controllers/User/SeparationItemsController.php:234
-#: src/App/Controllers/User/SeparationItemsController.php:340
+#: src/App/Controllers/User/SeparationItemsController.php:344
 #: src/App/Controllers/User/SeparationsController.php:109
 #: src/App/Controllers/User/SeparationsController.php:112
 #: src/App/Controllers/User/SeparationsController.php:141
@@ -2465,26 +2467,26 @@ msgstr "Excluir Item"
 msgid "Código"
 msgstr "Código"
 
-#: src/App/Controllers/User/SeparationItemsController.php:318
+#: src/App/Controllers/User/SeparationItemsController.php:320
 msgid "Remover De Para"
 msgstr "Remover De Para"
 
-#: src/App/Controllers/User/SeparationItemsController.php:363
+#: src/App/Controllers/User/SeparationItemsController.php:367
 msgid ""
 "Não foi possível fazer o de para pois a quantidade separada já foi alcançada!"
 msgstr ""
 "Não foi possível fazer o de para pois a quantidade separada já foi alcançada!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:388
+#: src/App/Controllers/User/SeparationItemsController.php:392
 #, php-format
 msgid "O de para do pallet de código \"%s\" foi adicionado com sucesso."
 msgstr "O de para do pallet de código \"%s\" foi adicionado com sucesso."
 
-#: src/App/Controllers/User/SeparationItemsController.php:405
+#: src/App/Controllers/User/SeparationItemsController.php:409
 msgid "Não foi possível remover este de para!"
 msgstr "Não foi possível remover este de para!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:411
+#: src/App/Controllers/User/SeparationItemsController.php:415
 #, php-format
 msgid "O de para do pallet de código \"%s\" foi cancelado com sucesso."
 msgstr "O de para do pallet de código \"%s\" foi cancelado com sucesso."

@@ -308,6 +308,8 @@ class SeparationItemsController extends TemplateController
                 ];
                 $content[] = [
                     'code' => $pallet->code,
+                    'boxes_amount' => $pallet->boxes_amount,
+                    'units_amount' => $pallet->units_amount,
                     'street_number' => $pallet->street_number,
                     'position' => $pallet->position,
                     'height' => $pallet->height,
@@ -334,7 +336,9 @@ class SeparationItemsController extends TemplateController
                 'table' => $this->getView('_components/data-table', [
                     'headers' => [
                         'code' => ['text' => _('Número do Pallet'), 'sort' => true],
-                        'street_number' => ['text' => _('Número do Pallet'), 'sort' => true],
+                        'boxes_amount' => ['text' => _('Caixas'), 'sort' => true],
+                        'units_amount' => ['text' => _('Unidades'), 'sort' => true],
+                        'street_number' => ['text' => _('Rua'), 'sort' => true],
                         'position' => ['text' => _('Posição'), 'sort' => true],
                         'height' => ['text' => _('Altura'), 'sort' => true],
                         'actions' => ['text' => _('Ações')]
