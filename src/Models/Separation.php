@@ -34,6 +34,7 @@ class Separation extends DBModel
         return [
             'adm_usu_id',
             'loading_usu_id',
+            'loading_date',
             'plate',
             'dock',
             's_status'
@@ -42,16 +43,33 @@ class Separation extends DBModel
 
     public function rules(): array 
     {
-        return [
+        return array_merge([
             'adm_usu_id' => [
                 [self::RULE_REQUIRED, 'message' => _('O usuário ADM é obrigatório!')]
             ]
-        ];
+        ], $this->isInLoading() ? [
+            'loading_usu_id' => [
+                [self::RULE_REQUIRED, 'message' => _('O usuário que carregou é obrigatório!')]
+            ],
+            'plate' => [
+                [self::RULE_REQUIRED, 'message' => _('A placa é obrigatória!')],
+                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A placa deve conter no máximo %s caractéres!'), 20)]
+            ],
+            'dock' => [
+                [self::RULE_REQUIRED, 'message' => _('A doca é obrigatória!')],
+                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A doca deve conter no máximo %s caractéres!'), 20)]
+            ],
+            'loading_date' => [
+                [self::RULE_REQUIRED, 'message' => _('A data de carregamento é obrigatória!')],
+                [self::RULE_DATETIME, 'pattern' => 'Y-m-d H:i:s', 'message' => _('A data de carregamento deve seguir o padrão dd/mm/yyyy hh:mm:ss!')]
+            ]
+        ] : []);
     }
 
     public function save(): bool 
     {
         $this->loading_usu_id = $this->isInLoading() ? $this->loading_usu_id : null;
+        $this->loading_date = $this->isInLoading() ? $this->loading_date : null;
         $this->plate = $this->isInLoading() ? $this->plate : null;
         $this->dock = $this->isInLoading() ? $this->dock : null;
         return parent::save();
@@ -141,6 +159,11 @@ class Separation extends DBModel
     public function getUpdatedAtDateTime(): DateTime 
     {
         return new DateTime($this->updated_at);
+    }
+
+    public function getLoadingDateTime(): ?DateTime 
+    {
+        return $this->loading_date ? new DateTime($this->loading_date) : null;
     }
 
     public static function getStates(): array 

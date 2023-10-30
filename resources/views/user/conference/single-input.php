@@ -1,6 +1,7 @@
 <?php 
+    $theme->title = sprintf(_('Entrada | %s'), $appData['app_name']);
     $this->layout("themes/black-screen/_theme", [
-        'title' => sprintf(_('Entrada | %s'), $appData['app_name']),
+        'theme' => $theme,
         'message' => $message
     ]);
 ?>
@@ -33,8 +34,10 @@
     method="post">
     <input type="button" value="<?= _('Incluir Produto') ?>" 
         onclick="window.location.href='<?= $router->route('user.conference.singleInput', ['conference_id' => $dbConference->id, 'include_product' => true]) ?>'">
+    <br>
     <input type="button" value="<?= _('Ver Produtos') ?>" 
         onclick="window.location.href='<?= $router->route('user.conference.inputProducts', ['conference_id' => $dbConference->id]) ?>'">
+    <br>
     <?php if($dbConferenceInputs): ?>
     <input type="hidden" name="finish_conference">
     <input type="submit" value="<?= _('Finalizar Conferência') ?>">
@@ -90,7 +93,7 @@
                 <td><?= $dbProduct->emb_fb ?></td>
             </tr>
             <tr>
-                <td><?= _('Qtde. CX Físico') ?></td>
+                <td><?= _('Quantidade de Caixas') ?></td>
                 <td>
                     <?php if(!$conferenceInputForm->isCompleted()): ?>
                     <input type="number" id="boxes_amount" name="boxes_amount" 
@@ -106,11 +109,11 @@
                 </td>
             </tr>
             <tr>
-                <td><?= _('Qtde. Unidade') ?></td>
+                <td><?= _('Quantidade de Unidades') ?></td>
                 <td><?= $conferenceInputForm->isCompleted() ? $conferenceInputForm->boxes_amount * $dbProduct->emb_fb : '' ?></td>
             </tr>
             <tr>
-                <td><?= _('Qtde. Plts Fechados') ?></td>
+                <td><?= _('Quantidade de Pallets Fechados') ?></td>
                 <td>
                     <?php if(!$conferenceInputForm->isCompleted()): ?>
                     <input type="number" name="pallets_amount" value="<?= $conferenceInputForm->pallets_amount ?>" style="max-width: 100px;">
@@ -168,6 +171,22 @@
                     <?php else: ?>
                     <input type="hidden" name="pallet_height" value="<?= $conferenceInputForm->pallet_height ?>">
                     <?= $conferenceInputForm->pallet_height ?>
+                    <?php endif; ?>
+                </td>
+            </tr>
+            <tr>
+                <td><?= _('Data de Validade') ?></td>
+                <td>
+                    <?php if(!$conferenceInputForm->isCompleted()): ?>
+                    <input type="date" name="expiration_date" style="max-width: 100px;" 
+                        value="<?= $conferenceInputForm->expiration_date ?>">
+                    <br>
+                    <small style="color: red;">
+                        <?= $conferenceInputForm->hasError('expiration_date') ? $conferenceInputForm->getFirstError('expiration_date') : '' ?>
+                    </small>
+                    <?php else: ?>
+                    <input type="hidden" name="expiration_date" value="<?= $conferenceInputForm->expiration_date ?>">
+                    <?= $conferenceInputForm->getExpirationDateTime()->format('d/m/Y') ?>
                     <?php endif; ?>
                 </td>
             </tr>

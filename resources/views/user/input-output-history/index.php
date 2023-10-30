@@ -1,8 +1,7 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Histórico de Entradas e Separação | %s'), $appData['app_name'])
-    ]);
-
+    $theme->title = sprintf(_('Histórico de Entradas e Separação | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
+    
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Histórico de Entrada e Separação'),
         'subtitle' => _('Veja abaixo o histórico de operação de entradas e separação. 
@@ -16,16 +15,22 @@
     <div class="card-header-tab card-header-tab-animation card-header brt-15">    
         <div class="card-header-title">
             <i class="header-icon icofont-calendar icon-gradient bg-info"> </i>
-            <?= _('Conferências') ?>
+            <?= _('Conferências de Entrada') ?>
         </div>
 
         <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
-                <button type="button" id="export-excel" class="btn btn-outline-success btn-lg" 
+                <button type="button" id="export-excel" class="btn btn-success btn-lg" 
                     data-action="<?= $router->route('user.inputOutputHistory.export') ?>" data-method="get">
                     <i class="icofont-file-excel"></i>
-                    <?= _('Exportar Excel') ?>
+                    <?= _('Exportar Histórico de Conferências') ?>
                 </button>
+                
+                <a class="btn btn-primary btn-lg" href="<?= $router->route('user.inputOutputHistory.expeditionReportExport') ?>" 
+                    target="_blank">
+                    <i class="icofont-file-excel"></i>
+                    <?= _('Exportar Relatório de Expedição') ?>
+                </a>
             </div>
         </div>
     </div>

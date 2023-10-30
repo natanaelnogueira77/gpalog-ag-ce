@@ -1,7 +1,6 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Produtos | %s'), $appData['app_name'])
-    ]);
+    $theme->title = sprintf(_('Produtos | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
 
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Lista de Produtos'),
@@ -25,13 +24,13 @@
                     <?= _('Cadastrar Produto') ?>
                 </button>
 
-                <button type="button" id="import-csv" class="btn btn-lg btn-outline-info" data-method="post" 
+                <button type="button" id="import-csv" class="btn btn-lg btn-info" data-method="post" 
                     data-action="<?= $router->route('user.products.import') ?>">
                     <i class="icofont-file-excel"></i>
                     <?= _('Importar Produtos') ?>
                 </button>
 
-                <a class="btn btn-lg btn-outline-success" href="<?= $router->route('user.products.export') ?>"
+                <a class="btn btn-lg btn-success" href="<?= $router->route('user.products.export') ?>"
                     target="_blank">
                     <i class="icofont-file-excel"></i>
                     <?= _('Exportar Excel') ?>
@@ -41,6 +40,16 @@
     </div>
 
     <div class="card-body">
+        <?php if($importErrors): ?>
+        <div class="alert alert-danger">
+            <?php 
+                foreach($importErrors as $index => $error) {
+                    echo sprintf(_('Linha %s: %s'), end(explode('_', $index)) + 1, $error) . '<br>';
+                }
+            ?>
+        </div>
+        <?php endif; ?>
+
         <form id="filters">
             <?php $this->insert('_components/data-table-filters', ['formId' => 'filters']); ?>
         </form>

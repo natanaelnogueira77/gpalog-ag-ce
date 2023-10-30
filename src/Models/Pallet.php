@@ -6,9 +6,9 @@ use DateTime;
 use GTG\MVC\DB\DBModel;
 use Src\Components\Barcode;
 use Src\Models\Conference;
-use Src\Models\Output;
 use Src\Models\Pallet;
 use Src\Models\Product;
+use Src\Models\Separation;
 use Src\Models\SeparationItemPallet;
 use Src\Models\Street;
 use Src\Models\User;
@@ -24,10 +24,10 @@ class Pallet extends DBModel
     const PS_RELEASED = 2;
 
     public ?Conference $conference = null;
-    public ?Output $output = null;
     public ?SeparationItemPallet $pivotSeparationItem = null;
     public ?Product $product = null;
     public ?User $releaseUser = null;
+    public ?Separation $separation = null;
     public ?User $storeUser = null;
     private bool $isProductOnPicking = false;
 
@@ -53,11 +53,13 @@ class Pallet extends DBModel
             'start_units_amount', 
             'units_amount', 
             'service_type', 
+            'expiration_date',
             'pallet_height', 
             'street_number', 
             'position', 
             'height', 
             'code', 
+            'sep_id',
             'release_usu_id', 
             'release_date', 
             'p_status'
@@ -95,6 +97,10 @@ class Pallet extends DBModel
                 [self::RULE_REQUIRED, 'message' => _('O tipo de serviço é obrigatório!')],
                 [self::RULE_IN, 'values' => array_keys(self::getServiceTypes()), 'message' => _('O tipo de serviço é inválido!')]
             ],
+            'expiration_date' => [
+                [self::RULE_REQUIRED, 'message' => _('A data de validade é obrigatória!')],
+                [self::RULE_DATETIME, 'pattern' => 'Y-m-d', 'message' => _('A data de validade deve seguir o padrão dd/mm/yyyy!')]
+            ],
             'pallet_height' => [
                 [self::RULE_REQUIRED, 'message' => _('A altura do pallet é obrigatória!')]
             ],
@@ -116,6 +122,9 @@ class Pallet extends DBModel
                 [self::RULE_IN, 'values' => array_keys(self::getStates()), 'message' => _('O status é inválido!')],
             ]
         ], $this->isReleased() ? [
+            'sep_id' => [
+                [self::RULE_REQUIRED, 'message' => _('O ID de separação é obrigatório!')]
+            ],
             'release_usu_id' => [
                 [self::RULE_REQUIRED, 'message' => _('O usuário que liberou é obrigatório!')]
             ],
@@ -129,6 +138,7 @@ class Pallet extends DBModel
     public function save(): bool 
     {
         $this->p_status = $this->p_status ? $this->p_status : self::PS_STORED;
+        $this->sep_id = $this->isReleased() ? $this->sep_id : null;
         $this->release_usu_id = $this->isReleased() ? $this->release_usu_id : null;
         $this->release_date = $this->isReleased() ? $this->release_date : null;
         return parent::save();
@@ -138,12 +148,6 @@ class Pallet extends DBModel
     {
         $this->conference = $this->belongsTo(Conference::class, 'con_id', 'id', $columns)->fetch(false);
         return $this->conference;
-    }
-
-    public function output(string $columns = '*'): ?Output 
-    {
-        $this->output = $this->sai_id ? $this->belongsTo(Output::class, 'sai_id', 'id', $columns)->fetch(false) : null;
-        return $this->output;
     }
 
     public function product(string $columns = '*'): ?Product 
@@ -159,6 +163,14 @@ class Pallet extends DBModel
             : null;
         return $this->releaseUser;
     }
+    
+    public function separation(string $columns = '*'): ?Separation 
+    {
+        $this->separation = $this->sep_id 
+            ? $this->belongsTo(Separation::class, 'sep_id', 'id', $columns)->fetch(false) 
+            : null;
+        return $this->separation;
+    }
 
     public function storeUser(string $columns = '*'): ?User 
     {
@@ -173,19 +185,6 @@ class Pallet extends DBModel
             Conference::class, 
             'con_id', 
             'conference', 
-            'id', 
-            $filters, 
-            $columns
-        );
-    }
-
-    public static function withOutput(array $objects, array $filters = [], string $columns = '*'): array
-    {
-        return self::withBelongsTo(
-            $objects, 
-            Output::class, 
-            'sai_id', 
-            'output', 
             'id', 
             $filters, 
             $columns
@@ -218,6 +217,19 @@ class Pallet extends DBModel
         );
     }
 
+    public static function withSeparation(array $objects, array $filters = [], string $columns = '*'): array
+    {
+        return self::withBelongsTo(
+            $objects, 
+            Separation::class, 
+            'sep_id', 
+            'separation', 
+            'id', 
+            $filters, 
+            $columns
+        );
+    }
+
     public static function withStoreUser(array $objects, array $filters = [], string $columns = '*'): array
     {
         return self::withBelongsTo(
@@ -244,6 +256,11 @@ class Pallet extends DBModel
     public static function getByReleaseUserId(int $userId, string $columns = '*'): ?array 
     {
         return (new self())->get(['release_usu_id' => $userId], $columns)->fetch(true);
+    }
+
+    public static function getBySeparationId(int $separationId, string $columns = '*'): ?array 
+    {
+        return (new self())->get(['sep_id' => $separationId], $columns)->fetch(true);
     }
 
     public static function getByStoreUserId(int $userId, string $columns = '*'): ?array 
@@ -436,6 +453,11 @@ class Pallet extends DBModel
     public static function getPalletsTotalUnitsAmount(array $objects): int 
     {
         return intval(array_sum(array_map(fn($o) => $o->units_amount, $objects)));
+    }
+
+    public function getExpirationDateTime(): DateTime
+    {
+        return new DateTime($this->expiration_date);
     }
 
     public function setAsStored(): self 

@@ -1,10 +1,7 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Painel do Usuário | %s'), $appData['app_name'])
-    ]);
-?>
-
-<?php 
+    $theme->title = sprintf(_('Painel do Usuário | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
+    
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Painel do Usuário'),
         'subtitle' => _('Informações sobre sua atividade no sistema'),

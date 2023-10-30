@@ -42,4 +42,9 @@ class ErrorMessages
     {
         return _('Lamentamos, mas o PDF não pôde ser gerado!');
     }
+
+    public static function csvImport(): string 
+    {
+        return _('Lamentamos, mas houveram erros na importação do CSV!');
+    }
 }

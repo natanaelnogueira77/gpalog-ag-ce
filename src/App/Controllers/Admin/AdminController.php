@@ -49,6 +49,7 @@ class AdminController extends TemplateController
             return;
         }
         
-        $this->setMessage('success', _('Configurações atualizadas com sucesso!'))->APIResponse([], 200);
+        $this->session->setFlash('success', _('Configurações atualizadas com sucesso!'));
+        $this->APIResponse([], 200);
     }
 }

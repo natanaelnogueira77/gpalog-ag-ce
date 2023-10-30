@@ -15,7 +15,12 @@ class ErrorHandler
     protected $line = 0;
     private static ?string $errorUrl = null;
     
-    public function __construct(int $type, string $msg, ?string $file = null, ?int $line = null) 
+    public function __construct(
+        int $type, 
+        string $msg, 
+        ?string $file = null, 
+        ?int $line = null
+    ) 
     {
         $this->monolog = new Logger('web');
         $this->monolog->pushHandler(new StreamHandler(Application::$ROOT_DIR . '/errors.log', Logger::ERROR));
@@ -34,7 +39,12 @@ class ErrorHandler
         $this->line = $line;
     }
 
-    public static function control(int $type, string $msg, ?string $file = null, ?int $line = null): string 
+    public static function control(
+        int $type, 
+        string $msg, 
+        ?string $file = null, 
+        ?int $line = null
+    ): string 
     {
         $instance = new self($type, $msg, $file, $line);
         if(in_array($type, [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR, E_USER_ERROR, E_STRICT, E_RECOVERABLE_ERROR, E_DEPRECATED, E_USER_DEPRECATED])) {

@@ -1,10 +1,12 @@
 <?php 
+    use Src\Components\Theme;
     $this->layout("themes/courses-master/_theme", [
-        'title' => sprintf(_('Entrar | %s'), $appData['app_name']),
-        'noHeader' => true,
-        'noFooter' => true,
-        'shortcutIcon' => $shortcutIcon,
-        'preloader' => ['shortcutIcon' => $shortcutIcon]
+        'theme' => (new Theme())->loadData([
+            'title' => sprintf(_('Entrar | %s'), $appData['app_name']),
+            'has_header' => false,
+            'has_footer' => false,
+            'logo_icon' => $shortcutIcon
+        ])
     ]);
 ?>
 

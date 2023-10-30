@@ -24,12 +24,13 @@ class SeparationItem extends DBModel
 
     public ?User $ADMUser = null;
     public ?User $conferenceUser = null;
+    private ?bool $hasAmountInStock = null;
     public ?Pallet $pallet = null;
+    public ?SeparationItemPallet $pivotPallet = null;
     public ?Product $product = null;
     public ?Separation $separation = null;
-    public ?User $separationUser = null;
-    public ?SeparationItemPallet $pivotPallet = null;
     public ?array $separationItemPallets = null;
+    public ?User $separationUser = null;
 
     public static function tableName(): string 
     {
@@ -46,14 +47,18 @@ class SeparationItem extends DBModel
         return [
             'adm_usu_id',
             'pro_id', 
+            'pal_id', 
             'a_type', 
-            'amount', 
+            'amount',
+            'order_number', 
             'sep_id',
             'separation_usu_id',
+            'separation_date',
             'address',
             'separation_amount',
             'dispatch_dock',
             'conf_usu_id',
+            'conf_date',
             'conf_amount',
             's_status'
         ];
@@ -68,6 +73,9 @@ class SeparationItem extends DBModel
             'pro_id' => [
                 [self::RULE_REQUIRED, 'message' => _('O produto é obrigatório!')]
             ],
+            'pal_id' => [
+                [self::RULE_REQUIRED, 'message' => _('O pallet é obrigatório!')]
+            ],
             'a_type' => [
                 [self::RULE_REQUIRED, 'message' => _('O tipo de quantidade é obrigatório!')],
                 [self::RULE_IN, 'values' => array_keys(self::getAmountTypes()), 'message' => _('O tipo de quantidade é inválido!')],
@@ -75,6 +83,10 @@ class SeparationItem extends DBModel
             'amount' => [
                 [self::RULE_REQUIRED, 'message' => _('A quantidade é obrigatória!')],
                 [self::RULE_LARGER_THAN, 'value' => 0, 'message' => sprintf(_('A quantidade precisa ser maior ou igual a %s!'), 0)]
+            ],
+            'order_number' => [
+                [self::RULE_REQUIRED, 'message' => _('O número do pedido é obrigatório!')],
+                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('O número do pedido deve conter no máximo %s caractéres!'), 20)]
             ],
             's_status' => [
                 [self::RULE_REQUIRED, 'message' => _('O status é obrigatório!')],
@@ -88,6 +100,10 @@ class SeparationItem extends DBModel
         $this->isSeparated() ? [
             'separation_usu_id' => [
                 [self::RULE_REQUIRED, 'message' => _('O separador é obrigatório!')]
+            ],
+            'separation_date' => [
+                [self::RULE_REQUIRED, 'message' => _('A data de separação é obrigatória!')],
+                [self::RULE_DATETIME, 'pattern' => 'Y-m-d H:i:s', 'message' => _('A data de separação deve seguir o padrão dd/mm/yyyy hh:mm:ss!')]
             ],
             'address' => [
                 [self::RULE_REQUIRED, 'message' => _('O endereçamento é obrigatório!')],
@@ -105,22 +121,81 @@ class SeparationItem extends DBModel
             'conf_usu_id' => [
                 [self::RULE_REQUIRED, 'message' => _('O conferente é obrigatório!')]
             ],
+            'conf_date' => [
+                [self::RULE_REQUIRED, 'message' => _('A data de conferência é obrigatória!')],
+                [self::RULE_DATETIME, 'pattern' => 'Y-m-d H:i:s', 'message' => _('A data de conferência deve seguir o padrão dd/mm/yyyy hh:mm:ss!')]
+            ],
             'conf_amount' => [
                 [self::RULE_REQUIRED, 'message' => _('A quantidade conferida é obrigatória!')]
             ]
-        ] : []);
+        ] : [], 
+        [
+            self::RULE_RAW => [
+                function ($model) {
+                    if(!$model->hasError('amount') && $model->isWaiting() && !$model->hasAmountInStock()) {
+                        $model->addError('amount', _('A quantidade selecionada ultrapassa a quantidade que está no estoque!'));
+                    }
+                }
+            ]
+        ]);
     }
 
     public function save(): bool 
     {
         $this->sep_id = $this->isListed() || $this->isSeparated() || $this->isChecked() || $this->isFinished() ? $this->sep_id : null;
         $this->separation_usu_id = $this->isSeparated() || $this->isChecked() || $this->isFinished() ? $this->separation_usu_id : null;
+        $this->separation_date = $this->isSeparated() || $this->isChecked() || $this->isFinished() ? $this->separation_date : null;
         $this->address = $this->isSeparated() || $this->isChecked() || $this->isFinished() ? $this->address : null;
         $this->separation_amount = $this->isSeparated() || $this->isChecked() || $this->isFinished() ? $this->separation_amount : null;
         $this->dispatch_dock = $this->isSeparated() || $this->isChecked() || $this->isFinished() ? $this->dispatch_dock : null;
         $this->conf_usu_id = $this->isChecked() || $this->isFinished() ? $this->conf_usu_id : null;
+        $this->conf_date = $this->isChecked() || $this->isFinished() ? $this->conf_date : null;
         $this->conf_amount = $this->isChecked() || $this->isFinished() ? $this->conf_amount : null;
         return parent::save();
+    }
+
+    public static function insertMany(array $objects): array|false 
+    {
+        $allValidated = true;
+        if(count($objects) > 0) {
+            foreach($objects as $object) {
+                if(is_array($object)) $object = (new self())->loadData($object);
+
+                $object->sep_id = $object->isListed() || $object->isSeparated() || $object->isChecked() || $object->isFinished() ? $object->sep_id : null;
+                $object->separation_usu_id = $object->isSeparated() || $object->isChecked() || $object->isFinished() ? $object->separation_usu_id : null;
+                $object->separation_date = $object->isSeparated() || $object->isChecked() || $object->isFinished() ? $object->separation_date : null;
+                $object->address = $object->isSeparated() || $object->isChecked() || $object->isFinished() ? $object->address : null;
+                $object->separation_amount = $object->isSeparated() || $object->isChecked() || $object->isFinished() ? $object->separation_amount : null;
+                $object->dispatch_dock = $object->isSeparated() || $object->isChecked() || $object->isFinished() ? $object->dispatch_dock : null;
+                $object->conf_usu_id = $object->isChecked() || $object->isFinished() ? $object->conf_usu_id : null;
+                $object->conf_date = $object->isChecked() || $object->isFinished() ? $object->conf_date : null;
+                $object->conf_amount = $object->isChecked() || $object->isFinished() ? $object->conf_amount : null;
+
+                if(!$object->validate()) {
+                    $allValidated = false;
+                }
+            }
+        }
+
+        if(!$allValidated) {
+            return $objects;
+        }
+
+        for($i = 0; $i <= count($objects) - 1; $i += 1000) {
+            if($objects) {
+                parent::insertMany(array_slice($objects, $i, 1000));
+            }
+        }
+
+        return $objects;
+    }
+
+    public function destroy(): bool 
+    {
+        if($this->pallets()) {
+            SeparationItemPallet::deleteByObjects($this->pallets);
+        }
+        return parent::destroy();
     }
 
     public function ADMUser(string $columns = '*'): ?User 
@@ -132,20 +207,14 @@ class SeparationItem extends DBModel
     public function conferenceUser(string $columns = '*'): ?User 
     {
         $this->conferenceUser = $this->conf_usu_id 
-            ? $this->belongsTo(User::class, 'adm_usu_id', 'id', $columns)->fetch(false)
+            ? $this->belongsTo(User::class, 'conf_usu_id', 'id', $columns)->fetch(false)
             : null;
         return $this->conferenceUser;
     }
 
     public function pallet(string $columns = '*'): ?Pallet 
     {
-        $this->pallet = $this->address 
-            ? Pallet::getByCode($this->address, $columns) 
-            : (new Pallet())->get([
-                'pro_id' => $this->pro_id,
-                'height' => 1,
-                'p_status' => Pallet::PS_STORED
-            ])->fetch(false);
+        $this->pallet = $this->belongsTo(Pallet::class, 'pal_id', 'id', $columns)->fetch(false);
         return $this->pallet;
     }
 
@@ -180,7 +249,7 @@ class SeparationItem extends DBModel
 
     public function separationUser(string $columns = '*'): ?User 
     {
-        $this->separationUser = $this->conf_usu_id 
+        $this->separationUser = $this->separation_usu_id 
             ? $this->belongsTo(User::class, 'separation_usu_id', 'id', $columns)->fetch(false)
             : null;
         return $this->separationUser;
@@ -214,30 +283,15 @@ class SeparationItem extends DBModel
 
     public static function withPallet(array $objects, array $filters = [], string $columns = '*'): array
     {
-        $addresses = array_filter(self::getPropertyValues($objects, 'address'), fn($o) => !is_null($o));
-        $palletsOnPicking = (new Pallet())->get([
-            'in' => ['pro_id' => self::getPropertyValues($objects, 'pro_id')],
-            'height' => 1,
-            'p_status' => Pallet::PS_STORED
-        ])->fetch(true);
-
-        if($palletsOnPicking) {
-            $palletsOnPicking = Pallet::getGroupedBy($palletsOnPicking, 'pro_id');
-        }
-
-        if($registries = (new Pallet())->get(['in' => ['code' => $addresses]] + $filters, $columns)->fetch(true)) {
-            $registries = Pallet::getGroupedBy($registries, 'code');
-        }
-
-        foreach($objects as $index => $object) {
-            if($object->address) {
-                $objects[$index]->pallet = $registries[$object->address];
-            } else {
-                $objects[$index]->pallet = $palletsOnPicking[$object->pro_id];
-            }
-        }
-
-        return $objects;
+        return self::withBelongsTo(
+            $objects, 
+            Pallet::class, 
+            'pal_id', 
+            'pallet', 
+            'id', 
+            $filters, 
+            $columns
+        );
     }
 
     public static function withPallets(
@@ -356,6 +410,16 @@ class SeparationItem extends DBModel
     {
         return new DateTime($this->updated_at);
     }
+    
+    public function getSeparationDateTime(): ?DateTime 
+    {
+        return $this->separation_date ? new DateTime($this->separation_date) : null;
+    }
+
+    public function getConferenceDateTime(): ?DateTime 
+    {
+        return $this->conf_date ? new DateTime($this->conf_date) : null;
+    }
 
     public static function getToBeSeparatedBoxesByProductId(int $productId): int
     {
@@ -411,16 +475,26 @@ class SeparationItem extends DBModel
 
     public function needsFromTo(): bool 
     {
+        $tnPallet = Pallet::tableName();
+        $tnSeparationItemPallet = SeparationItemPallet::tableName();
         $pickingPallet = (new Pallet())->get([
             'pro_id' => $this->pro_id,
             'height' => 1,
             'p_status' => Pallet::PS_STORED
         ])->fetch(false);
 
+        $pallets = (new Pallet())->join($tnSeparationItemPallet, [
+            'raw' => "{$tnSeparationItemPallet}.pal_id = {$tnPallet}.id"
+        ])->get([
+            "{$tnPallet}.pro_id" => $this->pro_id,
+            "{$tnPallet}.p_status" => Pallet::PS_STORED,
+            '!=' => ["{$tnSeparationItemPallet}.site_id" => $this->id]
+        ], "{$tnPallet}.*")->fetch(true);
+
         if(($this->isBoxesType() && $pickingPallet->boxes_amount - self::getToBeSeparatedBoxesByProductId($this->pro_id) 
-            + $this->getFromToTotal()['boxes'] < 0) 
+            + $this->getFromToTotal()['boxes'] + ($pallets ? array_sum(array_map(fn($o) => $o->boxes_amount, $pallets)) : 0) < 0) 
             || ($this->isUnitsType() && $pickingPallet->units_amount - self::getToBeSeparatedUnitsByProductId($this->pro_id) 
-            + $this->getFromToTotal()['units'] < 0)) {
+            + $this->getFromToTotal()['units'] + ($pallets ? array_sum(array_map(fn($o) => $o->units_amount, $pallets)) : 0) < 0)) {
             return true;
         }
 
@@ -429,6 +503,10 @@ class SeparationItem extends DBModel
 
     public function hasAmountInStock(): bool
     {
+        if(!is_null($this->hasAmountInStock)) {
+            return $this->hasAmountInStock;
+        }
+
         $amountInStock = 0;
         $amountToBeSeparated = 0;
 
@@ -446,7 +524,7 @@ class SeparationItem extends DBModel
         }
 
         $awaitingSeparationItems = (new self())->get([
-            'pro_id' => $productId,
+            'pro_id' => $this->pro_id,
             'in' => ['s_status' => [self::S_WAITING, self::S_LISTED]]
         ])->fetch(true);
         if($awaitingSeparationItems) {
@@ -485,6 +563,7 @@ class SeparationItem extends DBModel
         if($dbPallets = $this->pallets()) {
             foreach($dbPallets as $index => $pallet) {
                 $separationAmount += $this->isBoxesType() ? $pallet->boxes_amount : $pallet->units_amount;
+                $dbPallets[$index]->sep_id = $this->sep_id;
                 $dbPallets[$index]->release_usu_id = $userId;
                 $dbPallets[$index]->release_date = date('Y-m-d H:i:s');
                 $dbPallets[$index]->setAsReleased();
@@ -506,6 +585,7 @@ class SeparationItem extends DBModel
             ]);
 
             if($amount >= $separationAmount + ($this->isBoxesType() ? $this->pallet->boxes_amount : $this->pallet->units_amount)) {
+                $this->pallet->sep_id = $this->sep_id;
                 $this->pallet->release_usu_id = $userId;
                 $this->pallet->release_date = date('Y-m-d H:i:s');
                 $this->pallet->setAsReleased();
@@ -556,6 +636,18 @@ class SeparationItem extends DBModel
     public function setAsFinished(): self 
     {
         $this->s_status = self::S_FINISHED;
+        return $this;
+    }
+
+    public function setAsHavingAmountInStock(): self 
+    {
+        $this->hasAmountInStock = true;
+        return $this;
+    }
+
+    public function setAsNotHavingAmountInStock(): self 
+    {
+        $this->hasAmountInStock = false;
         return $this;
     }
 

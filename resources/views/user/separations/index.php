@@ -1,7 +1,6 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Separação | %s'), $appData['app_name'])
-    ]);
+    $theme->title = sprintf(_('Separação | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
     
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Separação'),
@@ -16,7 +15,6 @@
         <div class="card-header-title">
             <i class="header-icon icofont-logout icon-gradient bg-info"> </i>
             <?= _('Nova Lista de Separação') ?>
-            
         </div>
 
         <div class="btn-actions-pane-right">
@@ -24,6 +22,12 @@
                 <button type="button" id="create-separation-item" class="btn btn-lg btn-primary" 
                     data-action="<?= $router->route('user.separationItems.store') ?>" data-method="post">
                     <?= _('Adicionar Produto à Lista') ?>
+                </button>
+
+                <button type="button" id="import-csv" class="btn btn-lg btn-info" data-method="post" 
+                    data-action="<?= $router->route('user.separationItems.import') ?>">
+                    <i class="icofont-file-excel"></i>
+                    <?= _('Importar Lista') ?>
                 </button>
                 
                 <button type="button" id="generate-separation-list" class="btn btn-lg btn-danger" 
@@ -35,6 +39,16 @@
     </div>
 
     <div class="card-body">
+        <?php if($importErrors): ?>
+        <div class="alert alert-danger">
+            <?php 
+                foreach($importErrors as $index => $error) {
+                    echo sprintf(_('Linha %s: %s'), end(explode('_', $index)) + 1, $error) . '<br>';
+                }
+            ?>
+        </div>
+        <?php endif; ?>
+        
         <form id="filters">
             <?php $this->insert('_components/data-table-filters', ['formId' => 'filters']); ?>
         </form>
@@ -100,5 +114,6 @@
     $this->insert('user/separations/_components/send-list-modal');
     $this->insert('user/separation-items/_components/bond-pallets-modal', ['v' => $this]);
     $this->insert('user/separations/_components/list-modal');
+    $this->insert('user/separation-items/_components/import-modal');
     $this->end();
 ?>

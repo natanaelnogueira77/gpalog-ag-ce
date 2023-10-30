@@ -55,7 +55,7 @@ class Event
     {
         $sql = '';
         if($this->action == 'create') {
-            $sql .= "CREATE EVENT `{$this->event}` ON SCHEDULE " . $this->schedule . " DO " . $this->statement . ";";
+            $sql .= "CREATE EVENT `{$this->event}` ON SCHEDULE " . $this->schedule . ' DO ' . $this->statement . ';';
         } elseif($this->action == 'drop') {
             $sql .= "DROP EVENT `{$this->event}`";
         } elseif($this->action == 'drop_if_exists') {

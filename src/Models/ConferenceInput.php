@@ -41,6 +41,7 @@ class ConferenceInput extends DBModel
             'pallets_amount', 
             'units_amount', 
             'service_type', 
+            'expiration_date',
             'pallet_height', 
             'barcode'
         ];
@@ -73,6 +74,10 @@ class ConferenceInput extends DBModel
             'service_type' => [
                 [self::RULE_REQUIRED, 'message' => _('O tipo de serviço é obrigatório!')],
                 [self::RULE_IN, 'values' => array_keys(self::getServiceTypes()), 'message' => _('O tipo de serviço é inválido!')]
+            ],
+            'expiration_date' => [
+                [self::RULE_REQUIRED, 'message' => _('A data de validade é obrigatória!')],
+                [self::RULE_DATETIME, 'pattern' => 'Y-m-d', 'message' => _('A data de validade deve seguir o padrão dd/mm/yyyy!')]
             ],
             'pallet_height' => [
                 [self::RULE_REQUIRED, 'message' => _('A altura do pallet é obrigatória!')]
@@ -179,6 +184,11 @@ class ConferenceInput extends DBModel
     public function getUpdatedAtDateTime(): DateTime 
     {
         return new DateTime($this->updated_at);
+    }
+
+    public function getExpirationDateTime(): DateTime
+    {
+        return new DateTime($this->expiration_date);
     }
 
     public function isPalletization(): bool 

@@ -1,6 +1,7 @@
 <?php 
+    $theme->title = sprintf(_('Entrada | %s'), $appData['app_name']);
     $this->layout("themes/black-screen/_theme", [
-        'title' => sprintf(_('Entrada | %s'), $appData['app_name']),
+        'theme' => $theme,
         'message' => $message
     ]);
 ?>
@@ -38,7 +39,7 @@
             <td><?= $dbConferenceInput->product->name ?></td>
         </tr>
         <tr>
-            <td><?= _('Qtde. CX Físico') ?></td>
+            <td><?= _('Quantidade de Caixas') ?></td>
             <td><?= $dbConferenceInput->boxes_amount ?></td>
         </tr>
         <tr>

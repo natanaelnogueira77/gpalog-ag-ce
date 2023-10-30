@@ -1,7 +1,6 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Ruas | %s'), $appData['app_name'])
-    ]);
+    $theme->title = sprintf(_('Ruas | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
 
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Lista de Ruas'),
@@ -25,7 +24,7 @@
                     <?= _('Cadastrar Rua') ?>
                 </button>
 
-                <a class="btn btn-lg btn-outline-success" href="<?= $router->route('user.streets.export') ?>"
+                <a class="btn btn-lg btn-success" href="<?= $router->route('user.streets.export') ?>"
                     target="_blank">
                     <i class="icofont-file-excel"></i>
                     <?= _('Exportar Excel') ?>

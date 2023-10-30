@@ -1,20 +1,22 @@
+<?php use Src\Components\Constants; ?>
 <script>
     $(function () {
         tinymce.init({
             selector:'textarea.tinymce',
             language: <?php echo json_encode($session->getLanguage()[1] == 'es_ES' ? 'es' : $session->getLanguage()[1]) ?>,
             plugins: ['image', 'table'],
-            relative_urls : false,
-            remove_script_host : false,
-            convert_urls : false,
+            relative_urls: false,
+            remove_script_host: false,
+            convert_urls: false,
             a11y_advanced_options: true,
             images_file_types: 'jpg,jpeg,png,svg,webp',
+            <?php if($session->getAuth()): ?>
             images_upload_handler: function (blobInfo, success, failure, progress) {
                 var xhr, formData;
 
                 xhr = new XMLHttpRequest();
                 xhr.withCredentials = false;
-                xhr.open('POST', <?php echo json_encode($mlAdd) ?>);
+                xhr.open('POST', <?php echo json_encode($router->route('mediaLibrary.add')) ?>);
 
                 xhr.upload.onprogress = function (e) {
                     progress(e.loaded / e.total * 100);
@@ -40,7 +42,7 @@
                         return;
                     }
 
-                    success(<?php echo json_encode($path . '/' . $storeAt . '/') ?> + json.filename);
+                    success(<?php echo json_encode(Constants::getUserStorageURL($session->getAuth()) . '/') ?> + json.filename);
                 };
 
                 xhr.onerror = function () {
@@ -49,18 +51,18 @@
 
                 formData = new FormData();
                 formData.append('file', blobInfo.blob(), blobInfo.filename());
-                formData.append('root', <?php echo json_encode($storeAt) ?>);
+                formData.append('root', <?php echo json_encode(Constants::getUserStorageRoot($session->getAuth())) ?>);
 
                 xhr.send(formData);
             },
-            images_upload_base_path: <?php echo json_encode($path . '/' . $storeAt) ?>,
+            images_upload_base_path: <?php echo json_encode(Constants::getUserStorageURL($session->getAuth())) ?>,
             image_list: function (list_success) {
                 const images = [];
                 $.ajax({
-                    url: <?php echo json_encode($mlLoad) ?>,
+                    url: <?php echo json_encode($router->route('mediaLibrary.load')) ?>,
                     type: 'get',
                     data: {
-                        root: <?php echo json_encode($storeAt) ?>,
+                        root: <?php echo json_encode(Constants::getUserStorageRoot($session->getAuth())) ?>,
                         limit: 1000,
                         page: 1
                     },
@@ -70,7 +72,7 @@
                             for(var i = 0; i < response.files.length; i++) {
                                 images.push({
                                     title: response.files[i], 
-                                    value: <?php echo json_encode($path . '/' . $storeAt . '/') ?> + response.files[i]
+                                    value: <?php echo json_encode(Constants::getUserStorageURL($session->getAuth()) . '/') ?> + response.files[i]
                                 });
                             }
                         }
@@ -79,6 +81,7 @@
                     }
                 });
             },
+            <?php endif; ?>
             style_formats: [
                 {
                     title: 'Headers', 

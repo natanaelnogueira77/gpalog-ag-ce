@@ -132,7 +132,7 @@ class Table
     private function addColumn(string $columnName, string $type = '', array $params = []): ColumnDefinition 
     {
         if($this->action == 'alter') {
-            if(isset($this->columnAction)) {
+            if(isset($this->columnAction) && $this->columnAction != '') {
                 $params['command'] = $this->columnAction;
             } else {
                 $params['command'] = 'add_column';
@@ -141,6 +141,8 @@ class Table
             if($this->columnParams) {
                 $params = array_merge($params, $this->columnParams);
             }
+
+            $this->columnAction = '';
             $this->columnParams = [];
         }
 

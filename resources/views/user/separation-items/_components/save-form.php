@@ -1,6 +1,6 @@
 <form id="save-separation-item">
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <label>
                 <?= _('EAN') ?> 
                 <span data-toggle="tooltip" data-placement="top" 
@@ -13,7 +13,20 @@
             <div class="invalid-feedback"></div>
         </div>
         
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
+            <label>
+                <?= _('Número do Pedido') ?> 
+                <span data-toggle="tooltip" data-placement="top" 
+                    title='<?= _('Digite o número do pedido referente ao cliente.') ?>'>
+                    <i class="icofont-question-circle" style="font-size: 1.1rem;"></i>
+                </span>
+            </label>
+            <input type="text" name="order_number" class="form-control" 
+                placeholder="<?= _('Digite o número do pedido...') ?>">
+            <div class="invalid-feedback"></div>
+        </div>
+        
+        <div class="form-group col-md-6">
             <label>
                 <?= _('Tipo de Quantidade') ?> 
                 <span data-toggle="tooltip" data-placement="top" 
@@ -34,7 +47,7 @@
             <div class="invalid-feedback"></div>
         </div>
         
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <label>
                 <?= _('Quantidade') ?> 
                 <span data-toggle="tooltip" data-placement="top" title='<?= _('Digite a quantidade.') ?>'>

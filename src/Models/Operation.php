@@ -66,15 +66,15 @@ class Operation extends DBModel
             ],
             'order_number' => [
                 [self::RULE_REQUIRED, 'message' => _('O número do pedido/TR é obrigatório!')],
-                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('O número do pedido deve conter no máximo %s caractéres!'), 20)]
+                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('O número do pedido/TR deve conter no máximo %s caractéres!'), 20)]
             ],
             'invoice_number' => [
                 [self::RULE_REQUIRED, 'message' => _('O número da nota fiscal é obrigatório!')],
-                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A nota fiscal deve conter no máximo %s caractéres!'), 20)]
+                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('O número da nota fiscal deve conter no máximo %s caractéres!'), 20)]
             ],
             'plate' => [
                 [self::RULE_REQUIRED, 'message' => _('A placa é obrigatória!')],
-                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('O nome deve conter no máximo %s caractéres!'), 20)]
+                [self::RULE_MAX, 'max' => 20, 'message' => sprintf(_('A placa deve conter no máximo %s caractéres!'), 20)]
             ],
             self::RULE_RAW => [
                 function ($model) {

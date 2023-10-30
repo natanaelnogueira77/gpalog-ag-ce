@@ -81,6 +81,10 @@
                     <td><h1 style="font-size: 48px;"><?= $dbPallets[$i]->code ?></h1></td>
                 </tr>
                 <tr>
+                    <td><?= _('ID de Separação') ?></td>
+                    <td><?= $dbPallets[$i]->sep_id ?></td>
+                </tr>
+                <tr>
                     <td><?= _('Data de Saída') ?></td>
                     <td><?= $dbPallets[$i]->getReleaseDateTime()->format('d/m/Y') ?></td>
                 </tr>

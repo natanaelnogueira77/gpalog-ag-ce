@@ -134,11 +134,12 @@ $app->router->post('/ean/{se_id}/add-pallet/{pallet_id}', 'SeparationItemsContro
 $app->router->delete('/ean/{se_id}/remove-pallet/{pallet_id}', 'SeparationItemsController:removePallet', 'user.separationItems.removePallet');
 
 $app->router->get('/ean/list', 'SeparationItemsController:list', 'user.separationItems.list');
+$app->router->post('/ean/import', 'SeparationItemsController:import', 'user.separationItems.import');
+
 $app->router->get('/separacao/{separation_id}/operator-pdf', 'SeparationsController:getOperatorPDF', 'user.separations.getOperatorPDF');
 $app->router->get('/separacao/{separation_id}/updated-pdf', 'SeparationsController:getUpdatedPDF', 'user.separations.getUpdatedPDF');
 $app->router->get('/list', 'SeparationsController:list', 'user.separations.list');
 $app->router->get('/tabela', 'SeparationsController:getSeparationTable', 'user.separations.getSeparationTable');
-$app->router->get('/export', 'SeparationsController:export', 'user.separations.export');
 
 $app->router->group('u/historico-entrada-saida', \Src\App\Middlewares\ADMUserMiddleware::class);
 $app->router->get('/', 'InputOutputHistoryController:index', 'user.inputOutputHistory.index');
@@ -146,6 +147,7 @@ $app->router->get('/{conference_id}/input-pdf', 'InputOutputHistoryController:ge
 $app->router->get('/{conference_id}/output-pdf', 'InputOutputHistoryController:getOutputPDF', 'user.inputOutputHistory.getOutputPDF');
 $app->router->get('/list', 'InputOutputHistoryController:list', 'user.inputOutputHistory.list');
 $app->router->get('/export', 'InputOutputHistoryController:export', 'user.inputOutputHistory.export');
+$app->router->get('/expedition-report-export', 'InputOutputHistoryController:expeditionReportExport', 'user.inputOutputHistory.expeditionReportExport');
 
 $app->router->group('u/conferencia', \Src\App\Middlewares\OperatorMiddleware::class);
 $app->router->get('/', 'ConferenceController:index', 'user.conference.index');

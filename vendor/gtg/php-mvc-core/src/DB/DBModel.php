@@ -295,11 +295,18 @@ abstract class DBModel extends DataLayer
         }
 
         $sql[strlen($sql) - 1] = ' ';
-        $stmt = Application::$app->db->prepare($sql);
+        
+        $pdo = Application::$app->db->getConnection();
+        $stmt = $pdo->prepare($sql);
         if(!$stmt->execute($vars)) {
             return false;
         }
 
+        $firstId = $pdo->lastInsertId();
+        foreach($objects as $index => $object) {
+            $objects[$index]->{static::primaryKey()} = $firstId;
+            $firstId++;
+        }
         return $objects;
     }
 
@@ -502,17 +509,33 @@ abstract class DBModel extends DataLayer
         return [$terms, $params];
     }
 
-    protected function hasOne(string $model, string $foreign, string $key = 'id', string $columns = '*'): DataLayer 
+    protected function hasOne(
+        string $model, 
+        string $foreign, 
+        string $key = 'id', 
+        string $columns = '*'
+    ): DataLayer 
     {
         return (new $model())->get([$foreign => $this->$key], $columns);
     }
 
-    protected function hasMany(string $model, string $foreign, string $key = 'id', array $filters = [], string $columns = '*'): DataLayer
+    protected function hasMany(
+        string $model, 
+        string $foreign, 
+        string $key = 'id', 
+        array $filters = [], 
+        string $columns = '*'
+    ): DataLayer
     {
         return (new $model())->get([$foreign => $this->$key] + $filters, $columns);
     }
 
-    protected function belongsTo(string $model, string $foreign, string $key = 'id', string $columns = '*'): DataLayer 
+    protected function belongsTo(
+        string $model, 
+        string $foreign, 
+        string $key = 'id', 
+        string $columns = '*'
+    ): DataLayer 
     {
         return (new $model())->get([$key => $this->$foreign], $columns);
     }

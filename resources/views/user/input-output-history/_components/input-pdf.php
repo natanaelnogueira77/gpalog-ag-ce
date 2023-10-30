@@ -132,6 +132,10 @@
                     <td><?= _('Altura do Pallet') ?></td>
                     <td><?= $dbPallets[$i]->pallet_height ?></td>
                 </tr>
+                <tr>
+                    <td><?= _('Data de Validade') ?></td>
+                    <td><?= $dbPallets[$i]->getExpirationDateTime()->format('d/m/Y') ?></td>
+                </tr>
             </tbody>
         </table>
 

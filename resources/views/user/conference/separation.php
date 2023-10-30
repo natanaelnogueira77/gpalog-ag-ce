@@ -1,6 +1,7 @@
 <?php 
+    $theme->title = sprintf(_('Separação | %s'), $appData['app_name']);
     $this->layout("themes/black-screen/_theme", [
-        'title' => sprintf(_('Separação | %s'), $appData['app_name']),
+        'theme' => $theme,
         'message' => $message
     ]);
 ?>
@@ -57,7 +58,11 @@
             </tr>
             <?php if($CSF->hasEAN()): ?>
             <tr>
-                <td><?= $CSF->separationItem->isBoxesType() ? _('Qtde. CX Físico') : _('Qtde. Unidade') ?></td>
+                <td><?= _('Número do Pedido') ?></td>
+                <td><?= $CSF->separationItem->order_number ?></td>
+            </tr>
+            <tr>
+                <td><?= $CSF->separationItem->isBoxesType() ? _('Quantidade de Caixas') : _('Quantidade de Unidades') ?></td>
                 <td>
                     <?php if(!$CSF->hasAmount()): ?>
                     <input type="number" id="amount" name="amount" value="<?= $CSF->amount ?>" style="max-width: 100px;">

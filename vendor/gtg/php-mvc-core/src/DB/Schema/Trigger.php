@@ -55,7 +55,7 @@ class Trigger
     {
         $sql = '';
         if($this->action == 'create') {
-            $sql .= "CREATE TRIGGER `{$this->trigger}` " . $this->event . " BEGIN " . $this->statement . " END;";
+            $sql .= "CREATE TRIGGER `{$this->trigger}` " . $this->event . ' BEGIN ' . $this->statement . ' END;';
         } elseif($this->action == 'drop') {
             $sql .= "DROP TRIGGER `{$this->trigger}`";
         } elseif($this->action == 'drop_if_exists') {

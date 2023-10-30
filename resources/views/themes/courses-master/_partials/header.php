@@ -5,7 +5,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo">
-                            <a href="#"><img src="<?= $logo ?>" alt="" height="60px"></a>
+                            <a href="#"><img src="<?= $theme->logo ?>" alt="" height="60px"></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10">
@@ -14,9 +14,9 @@
                                 <nav>
                                     <ul id="navigation">
                                         <?php 
-                                        if($menu):
-                                            foreach($menu as $menuItem): 
-                                            ?>                                                                                  
+                                        if($theme->header && $theme->header['menu']):
+                                            foreach($theme->header['menu'] as $menuItem): 
+                                            ?>
                                             <li>
                                                 <a href="<?= $menuItem->getURL() ?>"><?= $menuItem->getText() ?></a>
                                             </li>
@@ -25,15 +25,15 @@
                                         endif;
                                         ?>
 
-                                        <?php if($right['languages']): ?>
+                                        <?php if($theme->header && $theme->header['right']['languages']): ?>
                                         <li>
                                             <a href="#">
                                                 <img width="42" class="rounded-circle" src="<?= $right['languages']['curr_img'] ?>" alt="">
                                             </a>
-                                            <?php if($right["languages"]['items']): ?>
+                                            <?php if($theme->header['right']['languages']['items']): ?>
                                             <ul class="submenu">
-                                                <li><?= $right['languages']['heading'] ?></li>
-                                                <?php foreach($right["languages"]['items'] as $language): ?>
+                                                <li><?= $theme->header['right']['languages']['heading'] ?></li>
+                                                <?php foreach($theme->header['right']['languages']['items'] as $language): ?>
                                                 <li>
                                                     <a href="<?= $language['url'] ?>"><?= $language["desc"] ?></a>
                                                 </li>
@@ -44,8 +44,8 @@
                                         <?php endif; ?>
 
                                         <?php 
-                                        if($right["items"]):
-                                            foreach($right["items"] as $menuItem):
+                                        if($theme->header['right']['items']):
+                                            foreach($theme->header['right']['items'] as $menuItem):
                                             ?>
                                             <li class="button-header">
                                                 <a href="<?= $menuItem->getURL() ?>" class="btn btn3">

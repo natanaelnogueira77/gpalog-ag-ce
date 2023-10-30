@@ -19,10 +19,12 @@ class SeparationsController extends TemplateController
 {
     public function index(array $data): void 
     {
+        $data = array_merge($data, filter_input_array(INPUT_GET, FILTER_DEFAULT));
         $this->addData();
         $this->render('user/separations/index', [
             'amountTypes' => SeparationItem::getAmountTypes(),
             'states' => Separation::getStates(),
+            'importErrors' => $data['import_errors'],
             'dbConference' => $dbConference,
             'dbPallets' => $dbPallets
         ]);
@@ -52,6 +54,7 @@ class SeparationsController extends TemplateController
 
         foreach($dbSeparationItems as $dbSeparationItem) {
             $dbSeparationItem->sep_id = $dbSeparation->id;
+            $dbSeparationItem->setAsHavingAmountInStock();
             $dbSeparationItem->setAsListed();
         }
 
@@ -99,6 +102,7 @@ class SeparationsController extends TemplateController
                     'id' => $separation->id,
                     'adm_usu_id' => $separation->ADMUser ? $separation->ADMUser->name : '---',
                     'loading_usu_id' => $separation->loadingUser ? $separation->loadingUser->name : '---',
+                    'loading_date' => $separation->getLoadingDateTime()?->format('d/m/Y H:i') ?? '--/--/---- --:--',
                     'plate' => $separation->plate ?? '---',
                     'dock' => $separation->dock ?? '---',
                     's_status' => "<div class=\"badge badge-{$separation->getStatusColor()}\">{$separation->getStatus()}</div>",
@@ -141,6 +145,7 @@ class SeparationsController extends TemplateController
                         'actions' => ['text' => _('Ações')],
                         'adm_usu_id' => ['text' => _('ADM'), 'sort' => false],
                         'loading_usu_id' => ['text' => _('Carregador'), 'sort' => false],
+                        'loading_date' => ['text' => _('Data de Carregamento'), 'sort' => false],
                         'plate' => ['text' => _('Placa'), 'sort' => true],
                         'dock' => ['text' => _('Doca'), 'sort' => true],
                         's_status' => ['text' => _('Status'), 'sort' => true]
@@ -240,104 +245,6 @@ class SeparationsController extends TemplateController
 
         $dompdf = $PDFRender->getDompdf();
         $dompdf->stream($filename, ['Attachment' => false]);
-    }
-
-    public function export(array $data): void 
-    {
-        $data = array_merge($data, filter_input_array(INPUT_GET, FILTER_DEFAULT));
-
-        $excelData = [];
-
-        $tnOperation = Operation::tableName();
-        $tnPallet = Pallet::tableName();
-        $tnProduct = Product::tableName();
-        $tnProvider = Provider::tableName();
-        $tnSeparation = Separation::tableName();
-        $tnUser = User::tableName();
-
-        $dbSeparations = (new Separation())->join("{$tnOperation} t2", [
-            'raw' => "t2.id = {$tnSeparation}.ope_id"
-        ])->join("{$tnUser} t3", [
-            'raw' => "t3.id = {$tnSeparation}.usu_id"
-        ])->leftJoin("{$tnPallet} t4", [
-            'raw' => "t4.sai_id = {$tnSeparation}.id"
-        ])->leftJoin("{$tnUser} t5", [
-            'raw' => "t5.id = t4.release_usu_id"
-        ])->leftJoin("{$tnProduct} t6", [
-            'raw' => "t6.id = t4.pro_id"
-        ])->get([], "
-            {$tnSeparation}.*,
-            t2.id AS operation_id,
-            t2.plate AS operation_plate,
-            t3.name AS adm_name,
-            t4.created_at AS p_created_at,
-            t4.code AS p_code,
-            t4.package AS p_package,
-            t4.boxes_amount AS p_boxes_amount,
-            t4.units_amount AS p_units_amount,
-            t4.service_type AS p_service_type,
-            t4.pallet_height AS p_pallet_height,
-            t4.street_number AS p_street_number,
-            t4.position AS p_position,
-            t4.height AS p_height,
-            t4.sai_id AS p_sai_id,
-            t4.release_date AS p_release_date,
-            t4.load_plate AS p_load_plate,
-            t4.dock AS p_dock,
-            t4.p_status AS p_p_status,
-            t5.name AS release_user_name,
-            t6.name AS product_name,
-            t6.prov_name AS product_prov_name,
-            t6.ean AS product_ean
-        ")->fetch(true);
-
-        if($dbSeparations) {
-            foreach($dbSeparations as $dbOutput) {
-                $excelData[] = [
-                    _('ID de Separação') => $dbOutput->operation_plate,
-                    _('ADM') => $dbOutput->adm_name,
-                    _('ID de Operação') => $dbOutput->operation_id,
-                    _('Placa') => $dbOutput->operation_plate,
-                    _('Número do Pallet') => $dbOutput->p_code ?? '---',
-                    _('Data de Entrada') => $dbOutput->p_created_at 
-                        ? $this->getDateTime($dbOutput->p_created_at)->format('d/m/Y') 
-                        : '--/--/----',
-                    _('Hora de Entrada') => $dbOutput->p_created_at 
-                        ? $this->getDateTime($dbOutput->p_created_at)->format('H:i:s') 
-                        : '--:--:--',
-                    _('Embalagem') => $dbOutput->p_package ?? '---',
-                    _('Produto') => $dbOutput->product_name ?? '---',
-                    _('Código EAN') => $dbOutput->product_ean ?? '---',
-                    _('Fornecedor') => $dbOutput->product_prov_name ?? '---',
-                    _('Quantidade de Caixas Físicas') => $dbOutput->p_boxes_amount ?? '---',
-                    _('Quantidade de Unidades') => $dbOutput->p_units_amount ?? '---',
-                    _('Tipo de Serviço') => Pallet::getServiceTypes()[$dbOutput->p_service_type],
-                    _('Altura do Pallet') => $dbOutput->p_pallet_height ?? '---',
-                    _('Número da Rua') => $dbOutput->p_street_number ?? '---',
-                    _('Posição') => $dbOutput->p_position ?? '---',
-                    _('Altura') => $dbOutput->p_height ?? '---',
-                    _('ID de Separação') => $dbOutput->p_sai_id ?? '---',
-                    _('Operador que fez Saída') => $dbOutput->release_user_name ?? '---',
-                    _('Data de Saída') => $dbOutput->p_release_date 
-                        ? $this->getDateTime($dbOutput->p_release_date)->format('d/m/Y') 
-                        : '--/--/----',
-                    _('Hora de Saída') => $dbOutput->p_release_date 
-                        ? $this->getDateTime($dbOutput->p_release_date)->format('H:i:s') 
-                        : '--:--:--',
-                    _('Placa de Carregamento') => $dbOutput->p_load_plate ?? '---',
-                    _('Doca') => $dbOutput->p_dock ?? '---',
-                    _('Status') => Pallet::getStates()[$dbOutput->p_p_status]
-                ];
-            }
-        }
-
-        $excel = (new ExcelGenerator($excelData, _('Separação')));
-        if(!$excel->render()) {
-            $this->session->setFlash('error', ErrorMessages::excel());
-            $this->redirect('user.separations.index');
-        }
-
-        $excel->stream();
     }
 
     public function getSeparationTable(array $data): void 

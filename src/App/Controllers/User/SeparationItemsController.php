@@ -9,6 +9,7 @@ use Src\Models\Product;
 use Src\Models\Separation;
 use Src\Models\SeparationItem;
 use Src\Models\SeparationItemPallet;
+use Src\Models\SeparationItemsImport;
 use Src\Models\User;
 use Src\Utils\ErrorMessages;
 
@@ -71,18 +72,20 @@ class SeparationItemsController extends TemplateController
     public function store(array $data): void 
     {
         if(!$dbProduct = $this->isOnPicking($data['ean'] ?? '')) return;
-        $dbSeparationItem = (new SeparationItem())->loadData([
-            'adm_usu_id' => $this->session->getAuth()->id,
+        $filters = [
             'pro_id' => $dbProduct->id,
+            'pal_id' => $this->pallet->id,
             'a_type' => $data['a_type'],
-            'amount' => $data['amount']
-        ]);
+            'order_number' => $data['order_number']
+        ];
 
-        if($dbSeparationItem->amount && !$dbSeparationItem->hasAmountInStock()) {
-            $this->setMessage(
-                'error', _('A quantidade selecionada ultrapassa a quantidade que está no estoque!')
-            )->setErrors($dbSeparationItem->getFirstErrors())->APIResponse([], 422);
-            return;
+        if($dbSeparationItem = (new SeparationItem())->get($filters + ['s_status' => SeparationItem::S_WAITING])->fetch(false)) {
+            $dbSeparationItem->amount += $data['amount'];
+        } else {
+            $dbSeparationItem = (new SeparationItem())->loadData($filters + [
+                'adm_usu_id' => $this->session->getAuth()->id,
+                'amount' => $data['amount']
+            ]);
         }
 
         if(!$dbSeparationItem->setAsWaiting()->save()) {
@@ -113,16 +116,11 @@ class SeparationItemsController extends TemplateController
 
         $dbSeparationItem->loadData([
             'pro_id' => $dbProduct->id,
+            'pal_id' => $this->pallet->id,
             'a_type' => $data['a_type'],
-            'amount' => $data['amount']
+            'amount' => $data['amount'],
+            'order_number' => $data['order_number']
         ]);
-
-        if($dbSeparationItem->amount && !$dbSeparationItem->hasAmountInStock()) {
-            $this->setMessage(
-                'error', _('A quantidade selecionada ultrapassa a quantidade que está no estoque!')
-            )->setErrors($dbSeparationItem->getFirstErrors())->APIResponse([], 422);
-            return;
-        }
 
         if(!$dbSeparationItem->save()) {
             $this->setMessage('error', ErrorMessages::form())->setErrors($dbSeparationItem->getFirstErrors())->APIResponse([], 422);
@@ -175,14 +173,7 @@ class SeparationItemsController extends TemplateController
         $pages = ceil($count / $limit);
         
         if($objects = $separationItems->fetch(true)) {
-            $productIds = SeparationItem::getPropertyValues($objects, 'pro_id');
-            $pallets = (new Pallet())->get([
-                'in' => ['pro_id' => $productIds],
-                'height' => 1,
-                'p_status' => Pallet::PS_STORED
-            ])->fetch(true);
-            $pallets = Pallet::getGroupedBy($pallets, 'pro_id');
-            
+            $objects = SeparationItem::withPallet($objects);
             $objects = SeparationItem::withProduct($objects);
             foreach($objects as $separationItem) {
                 $params = ['se_id' => $separationItem->id];
@@ -190,10 +181,14 @@ class SeparationItemsController extends TemplateController
                     'ean' => $separationItem->product->ean,
                     'a_type' => $separationItem->getAmountType(),
                     'amount' => $separationItem->amount,
-                    'code' => $pallets[$separationItem->pro_id]->code,
-                    'street_number' => $pallets[$separationItem->pro_id]->street_number,
-                    'position' => $pallets[$separationItem->pro_id]->position,
-                    'height' => $pallets[$separationItem->pro_id]->height,
+                    'order_number' => $separationItem->order_number,
+                    'code' => $separationItem->pallet->code,
+                    'street_number' => $separationItem->pallet->street_number,
+                    'position' => $separationItem->pallet->position,
+                    'height' => $separationItem->pallet->height,
+                    'needs_from_to' => $separationItem->needsFromTo() 
+                        ? "<div class=\"badge badge-danger\">" . _('Sim') . "</div>" 
+                        : "<div class=\"badge badge-success\">" . _('Não') . "</div>",
                     'actions' => "
                         <div class=\"dropup d-inline-block\">
                             <button type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\" 
@@ -235,10 +230,12 @@ class SeparationItemsController extends TemplateController
                         'ean' => ['text' => _('EAN'), 'sort' => true],
                         'a_type' => ['text' => _('Tipo de Quantidade'), 'sort' => true],
                         'amount' => ['text' => _('Quantidade'), 'sort' => true],
+                        'order_number' => ['text' => _('Número do Pedido'), 'sort' => true],
                         'code' => ['text' => _('Código'), 'sort' => false],
                         'street_number' => ['text' => _('Rua'), 'sort' => false],
                         'position' => ['text' => _('Posição'), 'sort' => false],
-                        'height' => ['text' => _('Altura'), 'sort' => false]
+                        'height' => ['text' => _('Altura'), 'sort' => false],
+                        'needs_from_to' => ['text' => _('Precisa de De Para'), 'sort' => false]
                     ],
                     'order' => [
                         'selected' => $order,
@@ -287,12 +284,14 @@ class SeparationItemsController extends TemplateController
             }
         }
 
-        $filters['pro_id'] = $this->separationItem->pro_id;
-        $filters['!='] = ['height' => 1];
+        $filters["{$tnPallet}.p_status"] = Pallet::PS_STORED;
+        $filters["{$tnPallet}.pro_id"] = $this->separationItem->pro_id;
+        $filters['!='] = ["{$tnPallet}.height" => 1];
+        $filters['raw'] = "({$tnSeparationItemPallet}.id IS NULL 
+            OR {$tnSeparationItemPallet}.site_id = {$this->separationItem->id})";
 
         $pallets = (new Pallet())->leftJoin($tnSeparationItemPallet, [
-            'raw' => "{$tnSeparationItemPallet}.pal_id = {$tnPallet}.id 
-                AND {$tnSeparationItemPallet}.site_id = {$this->separationItem->id}"
+            'raw' => "{$tnSeparationItemPallet}.pal_id = {$tnPallet}.id"
         ])->get($filters, "
             {$tnPallet}.*, 
             {$tnSeparationItemPallet}.id AS sip_id
@@ -376,15 +375,18 @@ class SeparationItemsController extends TemplateController
             'site_id' => $this->separationItem->id,
             'pal_id' => $dbPallet->id
         ])->fetch(false);
-        if(!$dbSeparationItemPallet) {
-            $dbSeparationItemPallet = new SeparationItemPallet();
-            if(!$dbSeparationItemPallet->loadData([
-                'site_id' => $this->separationItem->id,
-                'pal_id' => $dbPallet->id
-                ])->save()) {
-                $this->setMessage('error', ErrorMessages::form())->setErrors($dbSeparationItemPallet->getFirstErrors())->APIResponse([], 422);
-                return;
-            }
+        if($dbSeparationItemPallet) {
+            $this->setMessage('error', _('Este pallet já foi usado em um de para!'))->APIResponse([], 422);
+            return;
+        }
+
+        $dbSeparationItemPallet = new SeparationItemPallet();
+        if(!$dbSeparationItemPallet->loadData([
+            'site_id' => $this->separationItem->id,
+            'pal_id' => $dbPallet->id
+            ])->save()) {
+            $this->setMessage('error', ErrorMessages::form())->setErrors($dbSeparationItemPallet->getFirstErrors())->APIResponse([], 422);
+            return;
         }
 
         $this->setMessage(
@@ -414,5 +416,58 @@ class SeparationItemsController extends TemplateController
             'success', 
             sprintf(_('O de para do pallet de código "%s" foi cancelado com sucesso.'), $dbPallet->code)
         )->APIResponse([], 200);
+    }
+
+    public function import(array $data): void 
+    {
+        ini_set('memory_limit', '256M');
+        set_time_limit(300);
+
+        $user = $this->session->getAuth();
+        $excelTypes = [
+            'text/x-comma-separated-values',
+            'text/comma-separated-values',
+            'application/octet-stream',
+            'application/vnd.ms-excel',
+            'application/x-csv',
+            'text/x-csv',
+            'text/csv',
+            'application/csv',
+            'application/excel',
+            'application/vnd.msexcel',
+            'text/plain'
+        ];
+
+        if(empty($_FILES['csv']['name'])) {
+            $this->session->setFlash('error', _('Nenhum arquivo foi selecionado!'));
+            $this->redirect('user.separations.index');
+        } elseif(!in_array($_FILES['csv']['type'], $excelTypes)) {
+            $this->session->setFlash('error', _('O arquivo precisa ser um excel CSV!'));
+            $this->redirect('user.separations.index');
+        }
+        
+        if($file = $_FILES['csv']['tmp_name']) {
+            $handle = fopen($file, 'r');
+            while(($csv = fgetcsv($handle, 1000, ';')) !== false) {
+                $rows[] = $csv;
+            }
+            fclose($handle);
+            
+            if($rows) {
+                $separationItemsImport = (new SeparationItemsImport())->loadData(['rows' => $rows]);
+                if(!$separationItemsImport->validate() 
+                    || !$separationItemsImport->generateSeparationItems($user->id) 
+                    || !$separationItemsImport->generateSeparationItemPallets($data['auto_from_to'] ? true : false) 
+                    || !$separationItemsImport->insertData()) {
+                    $this->session->setFlash('error', _('Houveram erros no excel!'));
+                    $this->redirect('user.separations.index', ['import_errors' => $separationItemsImport->getFirstErrors()]);
+                }
+
+                $this->session->setFlash(
+                    'success', sprintf(_('Todas as separações foram importadas com sucesso!'), $rows ? count($rows) : 0)
+                );
+                $this->redirect('user.separations.index');
+            }
+        }
     }
 }

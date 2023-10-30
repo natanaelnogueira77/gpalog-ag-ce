@@ -24,11 +24,11 @@ class ProcedureParamDefinition
     {
         $sql .= "`{$this->columnName}`";
         if($this->type == 'integer') {
-            $sql .= " INT(1)";
+            $sql .= ' INT(1)';
         } elseif($this->type == 'tinyInteger') {
-            $sql .= " BOOLEAN";
+            $sql .= ' BOOLEAN';
         } elseif($this->type == 'bigInteger') {
-            $sql .= " BIGINT";
+            $sql .= ' BIGINT';
         } elseif($this->type == 'float') {
             $sql .= " FLOAT({$this->getParam('total')}, {$this->getParam('places')})";
         } elseif($this->type == 'char') {
@@ -36,21 +36,21 @@ class ProcedureParamDefinition
         } elseif($this->type == 'string') {
             $sql .= " VARCHAR({$this->getParam('length')})";
         } elseif($this->type == 'tinyText') {
-            $sql .= " TINYTEXT";
+            $sql .= ' TINYTEXT';
         } elseif($this->type == 'text') {
-            $sql .= " TEXT";
+            $sql .= ' TEXT';
         } elseif($this->type == 'mediumText') {
-            $sql .= " MEDIUMTEXT";
+            $sql .= ' MEDIUMTEXT';
         } elseif($this->type == 'longText') {
-            $sql .= " LONGTEXT";
+            $sql .= ' LONGTEXT';
         } elseif($this->type == 'date') {
-            $sql .= " DATE";
+            $sql .= ' DATE';
         } elseif($this->type == 'time') {
-            $sql .= " TIME";
+            $sql .= ' TIME';
         } elseif($this->type == 'dateTime') {
-            $sql .= " DATETIME";
+            $sql .= ' DATETIME';
         } elseif($this->type == 'timestamp') {
-            $sql .= " TIMESTAMP";
+            $sql .= ' TIMESTAMP';
         }
 
         return $sql;

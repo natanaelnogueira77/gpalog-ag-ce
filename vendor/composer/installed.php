@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'pc/gpalog-ag-ce',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '7108ff0ab6268ded0b3f2995ff1a1b5792a3e956',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -47,9 +47,9 @@
             'dev_requirement' => false,
         ),
         'gtg/php-mvc-core' => array(
-            'pretty_version' => 'v1.0.9',
-            'version' => '1.0.9.0',
-            'reference' => '1fd7ab52011c48e55c48ccadb765de410700df19',
+            'pretty_version' => 'v1.0.11',
+            'version' => '1.0.11.0',
+            'reference' => 'a5c880a1c330c3e7b539fdc20dbe56cf71bf4f2a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../gtg/php-mvc-core',
             'aliases' => array(),
@@ -83,9 +83,9 @@
             'dev_requirement' => false,
         ),
         'pc/gpalog-ag-ce' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '7108ff0ab6268ded0b3f2995ff1a1b5792a3e956',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

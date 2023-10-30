@@ -1,6 +1,7 @@
 <?php 
+    $theme->title = sprintf(_('Carregamento | %s'), $appData['app_name']);
     $this->layout("themes/black-screen/_theme", [
-        'title' => sprintf(_('Carregamento | %s'), $appData['app_name']),
+        'theme' => $theme,
         'message' => $message
     ]);
 ?>

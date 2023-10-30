@@ -11,9 +11,7 @@
             </div>
 
             <form id="send-separation-item-list-form"></form>
-            <div class="modal-body">
-
-            </div>
+            <div class="modal-body"></div>
             
             <div class="modal-footer d-block text-center">
                 <input form="send-separation-item-list-form" type="submit" class="btn btn-success btn-lg" value="<?= _('Enviar') ?>">

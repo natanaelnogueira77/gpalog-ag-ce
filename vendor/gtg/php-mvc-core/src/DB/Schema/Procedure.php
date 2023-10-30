@@ -139,7 +139,7 @@ class Procedure
                 $sql .= ')'; 
             }
 
-            $sql .= " BEGIN " . $this->statement . " END";
+            $sql .= ' BEGIN ' . $this->statement . ' END;';
         } elseif($this->action == 'drop') {
             $sql .= "DROP PROCEDURE `{$this->procedure}`";
         } elseif($this->action == 'drop_if_exists') {

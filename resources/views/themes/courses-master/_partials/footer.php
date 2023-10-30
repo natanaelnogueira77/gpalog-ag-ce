@@ -8,14 +8,14 @@
                         <div class="single-footer-caption mb-50">
                             <div class="single-footer-caption mb-30">
                                 <div class="footer-logo mb-25">
-                                    <a href="#"><img src="<?= $logo ?>" alt="" height="120px"></a>
+                                    <a href="#"><img src="<?= $theme->logo ?>" alt="" height="120px"></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera"></div>
                                 </div>
-                                <?php if($socials): ?>
+                                <?php if($theme->footer && $theme->footer['socials']): ?>
                                 <div class="footer-social">
-                                    <?php foreach($socials as $social): ?>
+                                    <?php foreach($theme->footer['socials'] as $social): ?>
                                     <a href="<?= $social['url'] ?>"><i class="fab <?= $social['icon'] ?>"></i></a>
                                     <?php endforeach ?>
                                 </div>
@@ -24,16 +24,18 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
+                        <?php if($theme->header && $theme->header['menu']): ?>
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
                                 <h4><?= _('Menu') ?></h4>
                                 <ul>
-                                    <?php foreach($items as $menuItem): ?>   
+                                    <?php foreach($theme->header['menu'] as $menuItem): ?>   
                                     <li><a href="<?= $menuItem->getURL() ?>"><?= $menuItem->getText() ?></a></li>
-                                    <?php endforeach ?>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

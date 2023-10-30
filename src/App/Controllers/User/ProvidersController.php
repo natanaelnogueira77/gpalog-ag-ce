@@ -11,8 +11,11 @@ class ProvidersController extends TemplateController
 {
     public function index(array $data): void 
     {
+        $data = array_merge($data, filter_input_array(INPUT_GET, FILTER_DEFAULT));
         $this->addData();
-        $this->render('user/providers/index');
+        $this->render('user/providers/index', [
+            'importErrors' => $data['import_errors']
+        ]);
     }
 
     public function show(array $data): void 
@@ -198,12 +201,8 @@ class ProvidersController extends TemplateController
                     $this->session->setFlash('error', ErrorMessages::requisition());
                     $this->redirect('user.providers.index');
                 } elseif($errors = Provider::getErrorsFromMany($objects)) {
-                    $message = '';
-                    foreach($errors as $rowNumber => $error) {
-                        $message .= sprintf(_('Linha %s: '), $rowNumber);
-                    }
-                    $this->session->setFlash('error', sprintf(_('Houveram erros no excel! %s'), $message));
-                    $this->redirect('user.providers.index');
+                    $this->session->setFlash('error', ErrorMessages::csvImport());
+                    $this->redirect('user.providers.index', ['import_errors' => $errors]);
                 }
 
                 $this->session->setFlash(

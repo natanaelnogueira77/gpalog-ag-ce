@@ -2,6 +2,7 @@
 
 namespace Src\Models;
 
+use DateTime;
 use GTG\MVC\Model;
 use Src\Models\Product;
 
@@ -16,6 +17,7 @@ class ConferenceInputForm extends Model
     public ?int $pallets_amount = null;
     public ?int $service_type = null;
     public ?float $pallet_height = null;
+    public ?string $expiration_date = null;
 
     public function rules(): array 
     {
@@ -43,6 +45,10 @@ class ConferenceInputForm extends Model
                 ],
                 'pallet_height' => [
                     [self::RULE_REQUIRED, 'message' => _('A altura é obrigatória!')]
+                ],
+                'expiration_date' => [
+                    [self::RULE_REQUIRED, 'message' => _('A data de validade é obrigatória!')],
+                    [self::RULE_DATETIME, 'pattern' => 'Y-m-d', 'message' => _('A data de validade deve seguir o padrão dd/mm/yyyy!')]
                 ]
             ] : []
         );
@@ -71,6 +77,11 @@ class ConferenceInputForm extends Model
 
         $this->is_completed = true;
         return true;
+    }
+
+    public function getExpirationDateTime(): DateTime
+    {
+        return new DateTime($this->expiration_date);
     }
 
     public function hasStarted(): bool 

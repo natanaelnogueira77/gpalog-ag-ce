@@ -43,7 +43,7 @@ class MediaLibraryController extends Controller
             $count++;
         }
 
-        $callback['pages'] = ceil((count($files) - 2) / $limit);
+        $callback['pages'] = ceil(count($files) / $limit);
 
         $callback['success'] = true;
         $this->APIResponse($callback, 200);
@@ -59,22 +59,26 @@ class MediaLibraryController extends Controller
         $file = $_FILES['file'];
         $root = $this->getStorageFolderRoot($data['root']);
 
-        $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $basename = slugify(pathinfo($file['name'], PATHINFO_FILENAME));
-
-        $files = scandir($root);
-        while($files && in_array($basename . '.' . $extension, $files)) {
-            $basename .= '-1';
+        if($file['name'] == 'blob') {
+            $filename = $this->getImageCaptureFilename();
+        } else {
+            $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+            $basename = slugify(pathinfo($file['name'], PATHINFO_FILENAME));
+    
+            $files = scandir($root);
+            while($files && in_array($basename . '.' . $extension, $files)) {
+                $basename .= '-1';
+            }
+    
+            $filename = $basename . '.' . $extension;
         }
-
-        $filename = $basename . '.' . $extension;
 
         if(!is_dir($root)) {
             mkdir($root);
         }
 
         if(!move_uploaded_file($file['tmp_name'], $root . '/' . $filename)) {
-            $this->setMessage('error', _('Lamentamos, mas parece que ocorreu um erro no upload do seu arquivo.'))->APIResponse([], 422);
+            $this->setMessage('error', _('Lamentamos, mas parece que ocorreu um erro no upload do seu arquivo.') . $filename)->APIResponse([], 422);
             return;
         }
 
@@ -103,5 +107,10 @@ class MediaLibraryController extends Controller
     private function getStorageFolderRoot(string $root): string 
     {
         return dirname(__FILE__, 4) . '/' . $root;
+    }
+
+    private function getImageCaptureFilename(): string 
+    {
+        return 'image-capture' . time() . '.png';
     }
 }

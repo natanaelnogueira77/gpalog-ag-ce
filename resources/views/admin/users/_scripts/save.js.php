@@ -1,3 +1,4 @@
+<?php use Src\Models\User; ?>
 <script>
     $(function () {
         const app = new App();
@@ -19,7 +20,7 @@
         });
 
         user_type.change(function () {
-            if($(this).val() == 3) {
+            if($(this).val() == <?php echo json_encode(User::UT_OPERATOR) ?>) {
                 registration_number_area.show('fast');
             } else {
                 registration_number_area.hide('fast');

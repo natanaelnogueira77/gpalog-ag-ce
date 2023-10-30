@@ -265,7 +265,8 @@ class Conference extends DBModel
                     'boxes_amount' => $conferenceInput->boxes_amount, 
                     'units_amount' => $conferenceInput->units_amount, 
                     'service_type' => $conferenceInput->service_type, 
-                    'pallet_height' => $conferenceInput->pallet_height
+                    'pallet_height' => $conferenceInput->pallet_height,
+                    'expiration_date' => $conferenceInput->expiration_date
                 ]);
             }
         }

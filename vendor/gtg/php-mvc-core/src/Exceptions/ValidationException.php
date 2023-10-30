@@ -9,7 +9,12 @@ class ValidationException extends AppException
 {
     private $errors = [];
 
-    public function __construct(array $errors, string $message, int $code = 0, ?Throwable $previous = null) 
+    public function __construct(
+        array $errors, 
+        string $message, 
+        int $code = 0, 
+        ?Throwable $previous = null
+    ) 
     {
         parent::__construct($message, $code, $previous);
         $this->errors = $errors;

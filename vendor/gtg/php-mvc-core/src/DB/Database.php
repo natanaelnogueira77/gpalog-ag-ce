@@ -93,13 +93,13 @@ class Database
 
     public function createMigrationsTable(): void 
     {
-        $this->exec("
+        $this->exec('
             CREATE TABLE IF NOT EXISTS migrations (
                 id INT(1) AUTO_INCREMENT PRIMARY KEY,
                 migration VARCHAR(255),
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             ) ENGINE=INNODB;
-        ");
+        ');
     }
 
     public function getAppliedMigrations(): array 
@@ -237,6 +237,11 @@ class Database
         $trigger = new Trigger($triggerName);
         $trigger->dropIfExists();
         return $this->exec($trigger->build());
+    }
+
+    public function getConnection(): ?PDO 
+    {
+        return Connect::getInstance($this->dbInfo);
     }
 
     public function prepare(string $sql): PDOStatement|false

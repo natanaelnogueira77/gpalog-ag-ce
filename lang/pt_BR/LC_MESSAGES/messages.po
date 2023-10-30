@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-10-23 20:55-0300\n"
-"PO-Revision-Date: 2023-10-23 20:55-0300\n"
+"POT-Creation-Date: 2023-10-30 12:13-0300\n"
+"PO-Revision-Date: 2023-10-30 12:13-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -40,46 +40,47 @@ msgstr "Buscar por"
 msgid "Nenhum dado correspondente foi encontrado!"
 msgstr "Nenhum dado correspondente foi encontrado!"
 
-#: resources/views/_components/expired-session.php:42
+#: resources/views/_components/expired-session.php:7
 msgid "Sessão expirada, faça login"
 msgstr "Sessão expirada, faça login"
 
-#: resources/views/_components/expired-session.php:47
-#: resources/views/admin/users/save.php:42
-#: resources/views/auth/reset-password.php:24 resources/views/user/edit.php:62
+#: resources/views/_components/expired-session.php:12
+#: resources/views/admin/users/save.php:41
+#: resources/views/auth/reset-password.php:26 resources/views/user/edit.php:61
 #: src/App/Controllers/Admin/UsersController.php:228
 msgid "Email"
 msgstr "Email"
 
-#: resources/views/_components/expired-session.php:49
+#: resources/views/_components/expired-session.php:14
 msgid "Informe seu email..."
 msgstr "Informe seu email..."
 
-#: resources/views/_components/expired-session.php:54
-#: resources/views/admin/users/save.php:116
-#: resources/views/auth/operator-login.php:42 resources/views/user/edit.php:98
+#: resources/views/_components/expired-session.php:19
+#: resources/views/admin/users/save.php:115
+#: resources/views/auth/operator-login.php:42 resources/views/user/edit.php:97
 msgid "Senha"
 msgstr "Senha"
 
-#: resources/views/_components/expired-session.php:55
+#: resources/views/_components/expired-session.php:20
 msgid "Informe sua senha..."
 msgstr "Informe sua senha..."
 
-#: resources/views/_components/expired-session.php:61
-#: resources/views/auth/login.php:23 resources/views/auth/login.php:49
+#: resources/views/_components/expired-session.php:26
+#: resources/views/auth/login.php:25 resources/views/auth/login.php:51
 #: resources/views/auth/operator-login.php:52 src/Data/MenuData.php:108
 msgid "Entrar"
 msgstr "Entrar"
 
-#: resources/views/_components/expired-session.php:63
-#: resources/views/admin/users/save.php:144 resources/views/error/index.php:11
-#: resources/views/user/conference/expedition.php:19
-#: resources/views/user/conference/input-products.php:30
-#: resources/views/user/conference/input.php:11
-#: resources/views/user/conference/loading.php:19
-#: resources/views/user/conference/separation.php:22
-#: resources/views/user/conference/single-input.php:57
-#: resources/views/user/edit.php:125
+#: resources/views/_components/expired-session.php:28
+#: resources/views/_components/media-library.php:135
+#: resources/views/admin/users/save.php:143 resources/views/error/index.php:11
+#: resources/views/user/conference/expedition.php:22
+#: resources/views/user/conference/input-products.php:31
+#: resources/views/user/conference/input.php:12
+#: resources/views/user/conference/loading.php:20
+#: resources/views/user/conference/separation.php:23
+#: resources/views/user/conference/single-input.php:60
+#: resources/views/user/edit.php:124
 #: resources/views/user/input-output-history/_components/export-modal.php:21
 #: resources/views/user/operations/_components/save-modal.php:19
 #: resources/views/user/operations/_components/save-modal.php:34
@@ -88,84 +89,65 @@ msgstr "Entrar"
 #: resources/views/user/providers/_components/import-modal.php:28
 #: resources/views/user/providers/_components/save-modal.php:19
 #: resources/views/user/separation-items/_components/bond-pallets-modal.php:34
+#: resources/views/user/separation-items/_components/import-modal.php:46
 #: resources/views/user/separation-items/_components/save-modal.php:19
 #: resources/views/user/separations/_components/list-modal.php:16
-#: resources/views/user/separations/_components/send-list-modal.php:20
+#: resources/views/user/separations/_components/send-list-modal.php:18
 #: resources/views/user/storage/_components/pallets-list-modal.php:16
 #: resources/views/user/streets/_components/save-modal.php:19
 msgid "Voltar"
 msgstr "Voltar"
 
-#: resources/views/_components/media-library.php:84
-#, php-format
-msgid "Tamanho máximo permitido: %sMB"
-msgstr "Tamanho máximo permitido: %sMB"
-
-#: resources/views/_components/media-library.php:138
-#, php-format
-msgid ""
-"A extensão do arquivo que você selecionou não é permitida aqui! Extensões "
-"permitidas: %s"
-msgstr ""
-"A extensão do arquivo que você selecionou não é permitida aqui! Extensões "
-"permitidas: %s"
-
-#: resources/views/_components/media-library.php:167
-#, php-format
-msgid "O arquivo que você tentou enviar é maior do que %sMB!"
-msgstr "O arquivo que você tentou enviar é maior do que %sMB!"
-
-#: resources/views/_components/media-library.php:212
-msgid "Lamentamos, mas houve uma falha na leitura do arquivo!"
-msgstr "Lamentamos, mas houve uma falha na leitura do arquivo!"
-
-#: resources/views/_components/media-library.php:231
-#, php-format
-msgid ""
-"A extensão do arquivo que você tentou enviar não é permitida aqui! Extensões "
-"permitidas: %s"
-msgstr ""
-"A extensão do arquivo que você tentou enviar não é permitida aqui! Extensões "
-"permitidas: %s"
-
-#: resources/views/_components/media-library.php:419
-#: resources/views/_components/media-library.php:422
-#: resources/views/_components/pagination.php:19
-msgid "Anterior"
-msgstr "Anterior"
-
-#: resources/views/_components/media-library.php:454
-#: resources/views/_components/media-library.php:457
-#: resources/views/_components/pagination.php:46
-msgid "Próxima"
-msgstr "Próxima"
-
-#: resources/views/_components/media-library.php:491
-#: resources/views/_components/media-library.php:503
+#: resources/views/_components/media-library.php:7
+#: resources/views/_components/media-library.php:24
 msgid "Biblioteca de Mídia"
 msgstr "Biblioteca de Mídia"
 
-#: resources/views/_components/media-library.php:498
-msgid "Upload de Arquivos"
-msgstr "Upload de Arquivos"
+#: resources/views/_components/media-library.php:14
+msgid "Upload"
+msgstr "Upload"
 
-#: resources/views/_components/media-library.php:515
+#: resources/views/_components/media-library.php:19
+msgid "Tirar Foto"
+msgstr "Tirar Foto"
+
+#: resources/views/_components/media-library.php:36
 msgid "Clique para selecionar ou"
 msgstr "Clique para selecionar ou"
 
-#: resources/views/_components/media-library.php:516
+#: resources/views/_components/media-library.php:37
 msgid "arraste o(s) arquivo(s)"
 msgstr "arraste o(s) arquivo(s)"
 
-#: resources/views/_components/media-library.php:535
+#: resources/views/_components/media-library.php:57
+msgid "Selecione a Câmera"
+msgstr "Selecione a Câmera"
+
+#: resources/views/_components/media-library.php:64
+msgid "Câmera Atual"
+msgstr "Câmera Atual"
+
+#: resources/views/_components/media-library.php:73
+msgid "Capturar"
+msgstr "Capturar"
+
+#: resources/views/_components/media-library.php:77
+msgid "Salvar Captura"
+msgstr "Salvar Captura"
+
+#: resources/views/_components/media-library.php:83
+msgid "Foto Capturada"
+msgstr "Foto Capturada"
+
+#: resources/views/_components/media-library.php:96
 msgid "Pesquisar..."
 msgstr "Pesquisar..."
 
-#: resources/views/_components/media-library.php:552
+#: resources/views/_components/media-library.php:123
 msgid "Escolher"
 msgstr "Escolher"
 
-#: resources/views/_components/media-library.php:555
+#: resources/views/_components/media-library.php:127
 msgid "Cancelar"
 msgstr "Cancelar"
 
@@ -174,243 +156,282 @@ msgstr "Cancelar"
 msgid "Mostrando %s à %s de %s resultado(s)"
 msgstr "Mostrando %s à %s de %s resultado(s)"
 
-#: resources/views/_components/tinymce.php:27
-#: resources/views/_components/tinymce.php:32
+#: resources/views/_components/pagination.php:19
+#: resources/views/_scripts/media-library.js.php:614
+#: resources/views/_scripts/media-library.js.php:617
+msgid "Anterior"
+msgstr "Anterior"
+
+#: resources/views/_components/pagination.php:46
+#: resources/views/_scripts/media-library.js.php:649
+#: resources/views/_scripts/media-library.js.php:652
+msgid "Próxima"
+msgstr "Próxima"
+
+#: resources/views/_components/tinymce.php:29
+#: resources/views/_components/tinymce.php:34
 msgid "Erro de HTTP: "
 msgstr "Erro de HTTP: "
 
-#: resources/views/_components/tinymce.php:39
+#: resources/views/_components/tinymce.php:41
 msgid "JSON Inválido: "
 msgstr "JSON Inválido: "
 
-#: resources/views/_components/tinymce.php:47
+#: resources/views/_components/tinymce.php:49
 msgid "O upload da imagem falhou! Código: "
 msgstr "O upload da imagem falhou! Código: "
 
-#: resources/views/admin/_scripts/index.js.php:14
+#: resources/views/_scripts/media-library.js.php:130
+#, php-format
+msgid "Tamanho máximo permitido: %sMB"
+msgstr "Tamanho máximo permitido: %sMB"
+
+#: resources/views/_scripts/media-library.js.php:196
+#, php-format
+msgid ""
+"A extensão do arquivo que você selecionou não é permitida aqui! Extensões "
+"permitidas: %s"
+msgstr ""
+"A extensão do arquivo que você selecionou não é permitida aqui! Extensões "
+"permitidas: %s"
+
+#: resources/views/_scripts/media-library.js.php:351
+#, php-format
+msgid "O arquivo que você tentou enviar é maior do que %sMB!"
+msgstr "O arquivo que você tentou enviar é maior do que %sMB!"
+
+#: resources/views/_scripts/media-library.js.php:396
+msgid "Lamentamos, mas houve uma falha na leitura do arquivo!"
+msgstr "Lamentamos, mas houve uma falha na leitura do arquivo!"
+
+#: resources/views/_scripts/media-library.js.php:417
+#, php-format
+msgid ""
+"A extensão do arquivo que você tentou enviar não é permitida aqui! Extensões "
+"permitidas: %s"
+msgstr ""
+"A extensão do arquivo que você tentou enviar não é permitida aqui! Extensões "
+"permitidas: %s"
+
+#: resources/views/admin/_scripts/index.js.php:50
 #: resources/views/admin/users/_scripts/index.js.php:13
 msgid "Deseja realmente excluir este usuário?"
 msgstr "Deseja realmente excluir este usuário?"
 
-#: resources/views/admin/index.php:3
+#: resources/views/admin/index.php:2
 #, php-format
 msgid "Administrador | %s"
 msgstr "Administrador | %s"
 
-#: resources/views/admin/index.php:7
+#: resources/views/admin/index.php:6
 msgid "Painel do Administrador"
 msgstr "Painel do Administrador"
 
-#: resources/views/admin/index.php:8
+#: resources/views/admin/index.php:7
 msgid "Relatórios e gerenciamento do sistema"
 msgstr "Relatórios e gerenciamento do sistema"
 
-#: resources/views/admin/index.php:20
+#: resources/views/admin/index.php:19
 msgid "Informações da Aplicação"
 msgstr "Informações da Aplicação"
 
-#: resources/views/admin/index.php:25
+#: resources/views/admin/index.php:24
 #, php-format
 msgid "Versão: <strong>%s</strong>"
 msgstr "Versão: <strong>%s</strong>"
 
-#: resources/views/admin/index.php:42
+#: resources/views/admin/index.php:41
 #, php-format
 msgid "%s do sistema"
 msgstr "%s do sistema"
 
-#: resources/views/admin/index.php:55
+#: resources/views/admin/index.php:54
 #, php-format
 msgid "Ver %s"
 msgstr "Ver %s"
 
-#: resources/views/admin/index.php:75 resources/views/admin/users/index.php:18
+#: resources/views/admin/index.php:74 resources/views/admin/users/index.php:17
 #: src/Data/MenuData.php:35 src/Data/MenuData.php:40
 msgid "Usuários"
 msgstr "Usuários"
 
-#: resources/views/admin/index.php:84 resources/views/admin/users/index.php:35
+#: resources/views/admin/index.php:83 resources/views/admin/users/index.php:34
 msgid "Nível de Usuário"
 msgstr "Nível de Usuário"
 
-#: resources/views/admin/index.php:86 resources/views/admin/users/index.php:37
+#: resources/views/admin/index.php:85 resources/views/admin/users/index.php:36
 msgid "Todos os Usuários"
 msgstr "Todos os Usuários"
 
-#: resources/views/admin/index.php:113
+#: resources/views/admin/index.php:112
 msgid "Configurações do Sistema"
 msgstr "Configurações do Sistema"
 
-#: resources/views/admin/index.php:122
+#: resources/views/admin/index.php:121
 msgid "Tema"
 msgstr "Tema"
 
-#: resources/views/admin/index.php:123
+#: resources/views/admin/index.php:122
 msgid "Escolha o tema de cores do sistema."
 msgstr "Escolha o tema de cores do sistema."
 
-#: resources/views/admin/index.php:128
+#: resources/views/admin/index.php:127
 msgid "Escolha o tema de cores do sistema..."
 msgstr "Escolha o tema de cores do sistema..."
 
-#: resources/views/admin/index.php:130
+#: resources/views/admin/index.php:129
 msgid "Tema Claro"
 msgstr "Tema Claro"
 
-#: resources/views/admin/index.php:133
+#: resources/views/admin/index.php:132
 msgid "Tema Escuro"
 msgstr "Tema Escuro"
 
-#: resources/views/admin/index.php:141
+#: resources/views/admin/index.php:140
 msgid "Imagem de Fundo (Login)"
 msgstr "Imagem de Fundo (Login)"
 
-#: resources/views/admin/index.php:142
+#: resources/views/admin/index.php:141
 msgid "Escolha a imagem que ficará de fundo na página de login."
 msgstr "Escolha a imagem que ficará de fundo na página de login."
 
-#: resources/views/admin/index.php:154 resources/views/admin/index.php:181
-#: resources/views/admin/index.php:206
-msgid "Escolher Imagem"
-msgstr "Escolher Imagem"
-
-#: resources/views/admin/index.php:158 resources/views/admin/index.php:185
-#: resources/views/admin/index.php:210
-msgid "Remover Imagem"
-msgstr "Remover Imagem"
-
-#: resources/views/admin/index.php:168
+#: resources/views/admin/index.php:153
 msgid "Logo"
 msgstr "Logo"
 
-#: resources/views/admin/index.php:169
+#: resources/views/admin/index.php:154
 msgid "Escolha a imagem que ficará como logo do sistema."
 msgstr "Escolha a imagem que ficará como logo do sistema."
 
-#: resources/views/admin/index.php:193
+#: resources/views/admin/index.php:164
 msgid "Ícone (Tamanho Recomendado: 512 x 512)"
 msgstr "Ícone (Tamanho Recomendado: 512 x 512)"
 
-#: resources/views/admin/index.php:194
+#: resources/views/admin/index.php:165
 msgid "Escolha a imagem que ficará como ícone do sistema."
 msgstr "Escolha a imagem que ficará como ícone do sistema."
 
-#: resources/views/admin/index.php:219
+#: resources/views/admin/index.php:176
 msgid "Salvar Configurações"
 msgstr "Salvar Configurações"
 
-#: resources/views/admin/users/index.php:3
+#: resources/views/admin/users/index.php:2
 #, php-format
 msgid "Usuários | %s"
 msgstr "Usuários | %s"
 
-#: resources/views/admin/users/index.php:7
+#: resources/views/admin/users/index.php:6
 msgid "Lista de Usuários"
 msgstr "Lista de Usuários"
 
-#: resources/views/admin/users/index.php:8
+#: resources/views/admin/users/index.php:7
 msgid "Segue abaixo a lista de usuários do sistema"
 msgstr "Segue abaixo a lista de usuários do sistema"
 
-#: resources/views/admin/users/index.php:24
-#: resources/views/admin/users/save.php:7
-#: resources/views/admin/users/save.php:142 src/Data/MenuData.php:45
+#: resources/views/admin/users/index.php:23
+#: resources/views/admin/users/save.php:6
+#: resources/views/admin/users/save.php:141 src/Data/MenuData.php:45
 msgid "Cadastrar Usuário"
 msgstr "Cadastrar Usuário"
 
-#: resources/views/admin/users/save.php:3
+#: resources/views/admin/users/save.php:2
 #, php-format
 msgid "Editar Usuário | %s"
 msgstr "Editar Usuário | %s"
 
-#: resources/views/admin/users/save.php:3
+#: resources/views/admin/users/save.php:2
 #, php-format
 msgid "Cadastrar Usuário | %s"
 msgstr "Cadastrar Usuário | %s"
 
-#: resources/views/admin/users/save.php:7
+#: resources/views/admin/users/save.php:6
 #, php-format
 msgid "Editar Usuário \"%s\""
 msgstr "Editar Usuário \"%s\""
 
+#: resources/views/admin/users/save.php:8
+msgid ""
+"Preencha os dados abaixo para alterar o usuário, e então clique em "
+"\"Atualizar Usuário\""
+msgstr ""
+"Preencha os dados abaixo para alterar o usuário, e então clique em "
+"\"Atualizar Usuário\""
+
 #: resources/views/admin/users/save.php:9
 msgid ""
-"Preencha os dados abaixo para alterar o usuário, e então clique em "
-"\"Atualizar Usuário\""
-msgstr ""
-"Preencha os dados abaixo para alterar o usuário, e então clique em "
-"\"Atualizar Usuário\""
-
-#: resources/views/admin/users/save.php:10
-msgid ""
 "Preencha os dados abaixo para cadastrar um usuário, e então clique em "
 "\"Cadastrar Usuário\""
 msgstr ""
 "Preencha os dados abaixo para cadastrar um usuário, e então clique em "
 "\"Cadastrar Usuário\""
 
-#: resources/views/admin/users/save.php:22 resources/views/user/edit.php:19
+#: resources/views/admin/users/save.php:21 resources/views/user/edit.php:18
 msgid "Informações da Conta"
 msgstr "Informações da Conta"
 
-#: resources/views/admin/users/save.php:30 resources/views/user/edit.php:31
+#: resources/views/admin/users/save.php:29 resources/views/user/edit.php:30
 #: resources/views/user/providers/_components/save-form.php:4
 #: src/App/Controllers/Admin/UsersController.php:227
-#: src/App/Controllers/User/ProductsController.php:148
-#: src/App/Controllers/User/ProductsController.php:256
-#: src/App/Controllers/User/ProvidersController.php:135
-#: src/App/Controllers/User/ProvidersController.php:226
+#: src/App/Controllers/User/ProductsController.php:151
+#: src/App/Controllers/User/ProductsController.php:255
+#: src/App/Controllers/User/ProvidersController.php:138
+#: src/App/Controllers/User/ProvidersController.php:225
 msgid "Nome"
 msgstr "Nome"
 
-#: resources/views/admin/users/save.php:31
+#: resources/views/admin/users/save.php:30
 msgid "Digite o nome e sobrenome."
 msgstr "Digite o nome e sobrenome."
 
-#: resources/views/admin/users/save.php:35 resources/views/user/edit.php:36
+#: resources/views/admin/users/save.php:34 resources/views/user/edit.php:35
 msgid "Informe um nome..."
 msgstr "Informe um nome..."
 
-#: resources/views/admin/users/save.php:43
+#: resources/views/admin/users/save.php:42
 msgid "Digite um email válido."
 msgstr "Digite um email válido."
 
-#: resources/views/admin/users/save.php:47 resources/views/user/edit.php:67
+#: resources/views/admin/users/save.php:46 resources/views/user/edit.php:66
 msgid "Informe um email..."
 msgstr "Informe um email..."
 
-#: resources/views/admin/users/save.php:56
+#: resources/views/admin/users/save.php:55
 msgid "Nível do Usuário"
 msgstr "Nível do Usuário"
 
-#: resources/views/admin/users/save.php:57
+#: resources/views/admin/users/save.php:56
 msgid "Escolha o nível do usuário."
 msgstr "Escolha o nível do usuário."
 
-#: resources/views/admin/users/save.php:62
-#: resources/views/user/conference/single-input.php:132
+#: resources/views/admin/users/save.php:61
+#: resources/views/user/conference/single-input.php:135
 #: resources/views/user/operations/_components/save-form.php:13
-#: resources/views/user/separation-items/_components/save-form.php:25
+#: resources/views/user/separation-items/_components/save-form.php:38
 msgid "Selecionar..."
 msgstr "Selecionar..."
 
-#: resources/views/admin/users/save.php:76
+#: resources/views/admin/users/save.php:75
 msgid "Número de Matrícula"
 msgstr "Número de Matrícula"
 
-#: resources/views/admin/users/save.php:77
+#: resources/views/admin/users/save.php:76
 msgid "O número de matrícula será usado para o operador entrar."
 msgstr "O número de matrícula será usado para o operador entrar."
 
-#: resources/views/admin/users/save.php:82
+#: resources/views/admin/users/save.php:81
 msgid "Informe o número de matrícula..."
 msgstr "Informe o número de matrícula..."
 
-#: resources/views/admin/users/save.php:92 resources/views/user/edit.php:77
+#: resources/views/admin/users/save.php:91 resources/views/user/edit.php:76
 msgid "Deseja alterar a senha?"
 msgstr "Deseja alterar a senha?"
 
-#: resources/views/admin/users/save.php:97 resources/views/user/edit.php:82
+#: resources/views/admin/users/save.php:96 resources/views/user/edit.php:81
+#: src/App/Controllers/User/InputOutputHistoryController.php:673
+#: src/App/Controllers/User/InputOutputHistoryController.php:674
+#: src/App/Controllers/User/InputOutputHistoryController.php:675
+#: src/App/Controllers/User/InputOutputHistoryController.php:676
+#: src/App/Controllers/User/InputOutputHistoryController.php:677
 #: src/App/Controllers/User/OperationsController.php:101
 #: src/App/Controllers/User/OperationsController.php:229
 #: src/App/Controllers/User/OperationsController.php:230
@@ -418,13 +439,19 @@ msgstr "Deseja alterar a senha?"
 #: src/App/Controllers/User/OperationsController.php:232
 #: src/App/Controllers/User/OperationsController.php:233
 #: src/App/Controllers/User/OperationsController.php:234
+#: src/App/Controllers/User/SeparationItemsController.php:190
 #: src/App/Controllers/User/StorageController.php:93
 #: src/App/Controllers/User/StreetsController.php:97
 #: src/App/Controllers/User/StreetsController.php:185
 msgid "Sim"
 msgstr "Sim"
 
-#: resources/views/admin/users/save.php:105 resources/views/user/edit.php:88
+#: resources/views/admin/users/save.php:104 resources/views/user/edit.php:87
+#: src/App/Controllers/User/InputOutputHistoryController.php:673
+#: src/App/Controllers/User/InputOutputHistoryController.php:674
+#: src/App/Controllers/User/InputOutputHistoryController.php:675
+#: src/App/Controllers/User/InputOutputHistoryController.php:676
+#: src/App/Controllers/User/InputOutputHistoryController.php:677
 #: src/App/Controllers/User/OperationsController.php:102
 #: src/App/Controllers/User/OperationsController.php:229
 #: src/App/Controllers/User/OperationsController.php:230
@@ -432,54 +459,55 @@ msgstr "Sim"
 #: src/App/Controllers/User/OperationsController.php:232
 #: src/App/Controllers/User/OperationsController.php:233
 #: src/App/Controllers/User/OperationsController.php:234
+#: src/App/Controllers/User/SeparationItemsController.php:191
 #: src/App/Controllers/User/StorageController.php:93
 #: src/App/Controllers/User/StreetsController.php:98
 #: src/App/Controllers/User/StreetsController.php:185
 msgid "Não"
 msgstr "Não"
 
-#: resources/views/admin/users/save.php:117
+#: resources/views/admin/users/save.php:116
 msgid "Digite a nova senha de acesso à conta."
 msgstr "Digite a nova senha de acesso à conta."
 
-#: resources/views/admin/users/save.php:122 resources/views/user/edit.php:104
+#: resources/views/admin/users/save.php:121 resources/views/user/edit.php:103
 msgid "Digite uma senha..."
 msgstr "Digite uma senha..."
 
-#: resources/views/admin/users/save.php:128 resources/views/user/edit.php:110
+#: resources/views/admin/users/save.php:127 resources/views/user/edit.php:109
 msgid "Confirmar Senha"
 msgstr "Confirmar Senha"
 
-#: resources/views/admin/users/save.php:129
+#: resources/views/admin/users/save.php:128
 msgid "Digite novamente a nova senha de acesso à conta."
 msgstr "Digite novamente a nova senha de acesso à conta."
 
-#: resources/views/admin/users/save.php:134 resources/views/user/edit.php:116
+#: resources/views/admin/users/save.php:133 resources/views/user/edit.php:115
 msgid "Digite novamente a senha..."
 msgstr "Digite novamente a senha..."
 
-#: resources/views/admin/users/save.php:142
+#: resources/views/admin/users/save.php:141
 msgid "Atualizar Usuário"
 msgstr "Atualizar Usuário"
 
-#: resources/views/auth/login.php:3
+#: resources/views/auth/login.php:5
 #, php-format
 msgid "Entrar | %s"
 msgstr "Entrar | %s"
 
-#: resources/views/auth/login.php:27
+#: resources/views/auth/login.php:29
 msgid "Área de Operação"
 msgstr "Área de Operação"
 
-#: resources/views/auth/login.php:33 resources/views/auth/reset-password.php:25
+#: resources/views/auth/login.php:35 resources/views/auth/reset-password.php:27
 msgid "Digite seu email"
 msgstr "Digite seu email"
 
-#: resources/views/auth/login.php:41 resources/views/auth/operator-login.php:44
+#: resources/views/auth/login.php:43 resources/views/auth/operator-login.php:44
 msgid "Digite sua senha"
 msgstr "Digite sua senha"
 
-#: resources/views/auth/login.php:53
+#: resources/views/auth/login.php:55
 msgid "Esqueceu a senha?"
 msgstr "Esqueceu a senha?"
 
@@ -491,40 +519,40 @@ msgstr "Número da Matrícula"
 msgid "Digite o número da matrícula"
 msgstr "Digite o número da matrícula"
 
-#: resources/views/auth/reset-password.php:3
+#: resources/views/auth/reset-password.php:5
 #, php-format
 msgid "Redefinir Senha | %s"
 msgstr "Redefinir Senha | %s"
 
-#: resources/views/auth/reset-password.php:19
+#: resources/views/auth/reset-password.php:21
 #: resources/views/emails/reset-password.php:14
 #: src/App/Controllers/Auth/ResetPasswordController.php:30
 msgid "Redefinir Senha"
 msgstr "Redefinir Senha"
 
-#: resources/views/auth/reset-password.php:35
-#: resources/views/user/conference/single-input.php:51
-#: resources/views/user/separations/_components/send-list-modal.php:19
+#: resources/views/auth/reset-password.php:37
+#: resources/views/user/conference/single-input.php:54
+#: resources/views/user/separations/_components/send-list-modal.php:17
 msgid "Enviar"
 msgstr "Enviar"
 
-#: resources/views/auth/reset-password.php:42
+#: resources/views/auth/reset-password.php:44
 msgid "Nova Senha"
 msgstr "Nova Senha"
 
-#: resources/views/auth/reset-password.php:43
+#: resources/views/auth/reset-password.php:45
 msgid "Digite sua nova senha"
 msgstr "Digite sua nova senha"
 
-#: resources/views/auth/reset-password.php:51
+#: resources/views/auth/reset-password.php:53
 msgid "Confirmar Nova Senha"
 msgstr "Confirmar Nova Senha"
 
-#: resources/views/auth/reset-password.php:54
+#: resources/views/auth/reset-password.php:56
 msgid "Digite novamente a nova senha"
 msgstr "Digite novamente a nova senha"
 
-#: resources/views/auth/reset-password.php:61
+#: resources/views/auth/reset-password.php:63
 msgid "Redefinir"
 msgstr "Redefinir"
 
@@ -566,218 +594,226 @@ msgstr "Email:"
 msgid "Senha:"
 msgstr "Senha:"
 
-#: resources/views/user/conference/expedition.php:3
+#: resources/views/user/conference/expedition.php:2
 #, php-format
 msgid "Conferência de Expedição | %s"
 msgstr "Conferência de Expedição | %s"
 
-#: resources/views/user/conference/expedition.php:8
-#: resources/views/user/conference/index.php:15
+#: resources/views/user/conference/expedition.php:9
+#: resources/views/user/conference/index.php:16
 msgid "Conferência de Expedição"
 msgstr "Conferência de Expedição"
 
-#: resources/views/user/conference/expedition.php:15
-#: resources/views/user/conference/single-input.php:40
+#: resources/views/user/conference/expedition.php:16
+#: resources/views/user/conference/separation.php:17
+msgid "Próximo"
+msgstr "Próximo"
+
+#: resources/views/user/conference/expedition.php:18
+#: resources/views/user/conference/single-input.php:43
 msgid "Finalizar Conferência"
 msgstr "Finalizar Conferência"
 
-#: resources/views/user/conference/expedition.php:17
-#: resources/views/user/conference/loading.php:17
-#: resources/views/user/conference/single-input.php:54
+#: resources/views/user/conference/expedition.php:20
+#: resources/views/user/conference/loading.php:18
+#: resources/views/user/conference/single-input.php:57
 msgid "Confirmar"
 msgstr "Confirmar"
 
-#: resources/views/user/conference/expedition.php:26
-#: resources/views/user/conference/loading.php:26
+#: resources/views/user/conference/expedition.php:29
+#: resources/views/user/conference/loading.php:27
+#: resources/views/user/input-output-history/_components/output-pdf.php:84
 #: resources/views/user/separations/_components/separation-pdf.php:71
 #: resources/views/user/separations/_components/updated-pdf.php:72
-#: src/App/Controllers/User/SeparationsController.php:297
-#: src/App/Controllers/User/SeparationsController.php:319
 msgid "ID de Separação"
 msgstr "ID de Separação"
 
-#: resources/views/user/conference/expedition.php:41
-#: resources/views/user/conference/separation.php:44
+#: resources/views/user/conference/expedition.php:44
+#: resources/views/user/conference/separation.php:45
 #: resources/views/user/products/_components/save-form.php:59
 #: resources/views/user/separation-items/_components/save-form.php:5
 #: resources/views/user/separations/_components/list.php:3
-#: resources/views/user/separations/_components/separation-pdf.php:90
-#: resources/views/user/separations/_components/updated-pdf.php:91
+#: resources/views/user/separations/_components/separation-pdf.php:91
+#: resources/views/user/separations/_components/updated-pdf.php:92
 #: resources/views/user/storage/_components/pallets-list-table.php:6
-#: src/App/Controllers/User/SeparationItemsController.php:235
+#: src/App/Controllers/User/SeparationItemsController.php:230
 msgid "EAN"
 msgstr "EAN"
 
-#: resources/views/user/conference/expedition.php:56
-#: resources/views/user/separation-items/_components/save-form.php:39
-#: resources/views/user/separations/_components/list.php:5
-#: resources/views/user/separations/_components/separation-pdf.php:91
-#: resources/views/user/separations/_components/updated-pdf.php:94
-#: src/App/Controllers/User/SeparationItemsController.php:237
-msgid "Quantidade"
-msgstr "Quantidade"
+#: resources/views/user/conference/expedition.php:60
+#: resources/views/user/conference/separation.php:61
+#: resources/views/user/separation-items/_components/save-form.php:18
+#: resources/views/user/separations/_components/list.php:4
+#: src/App/Controllers/User/InputOutputHistoryController.php:387
+#: src/App/Controllers/User/SeparationItemsController.php:233
+msgid "Número do Pedido"
+msgstr "Número do Pedido"
 
-#: resources/views/user/conference/expedition.php:66
+#: resources/views/user/conference/expedition.php:64
+#: resources/views/user/conference/input-products.php:42
+#: resources/views/user/conference/separation.php:65
+#: resources/views/user/conference/single-input.php:96
+msgid "Quantidade de Caixas"
+msgstr "Quantidade de Caixas"
+
+#: resources/views/user/conference/expedition.php:64
+#: resources/views/user/conference/separation.php:65
+#: resources/views/user/conference/single-input.php:112
+#: resources/views/user/input-output-history/_components/input-pdf.php:124
+#: src/App/Controllers/User/InputOutputHistoryController.php:345
+msgid "Quantidade de Unidades"
+msgstr "Quantidade de Unidades"
+
+#: resources/views/user/conference/expedition.php:74
 msgid "OK"
 msgstr "OK"
 
-#: resources/views/user/conference/expedition.php:66
+#: resources/views/user/conference/expedition.php:74
 msgid "Diferença"
 msgstr "Diferença"
 
-#: resources/views/user/conference/index.php:3
+#: resources/views/user/conference/index.php:2
 #, php-format
 msgid "Operação | %s"
 msgstr "Operação | %s"
 
-#: resources/views/user/conference/index.php:8
+#: resources/views/user/conference/index.php:9
 msgid "Operação"
 msgstr "Operação"
 
-#: resources/views/user/conference/index.php:11
-#: resources/views/user/conference/input.php:8
-#: resources/views/user/conference/single-input.php:8
+#: resources/views/user/conference/index.php:12
+#: resources/views/user/conference/input.php:9
+#: resources/views/user/conference/single-input.php:9
 msgid "Entrada"
 msgstr "Entrada"
 
-#: resources/views/user/conference/index.php:13
-#: resources/views/user/conference/separation.php:8
+#: resources/views/user/conference/index.php:14
+#: resources/views/user/conference/separation.php:9
 #: resources/views/user/separations/_components/list-modal.php:6
-#: resources/views/user/separations/index.php:7
-#: src/App/Controllers/User/SeparationsController.php:334
-#: src/Data/MenuData.php:80
+#: resources/views/user/separations/index.php:6 src/Data/MenuData.php:80
 msgid "Separação"
 msgstr "Separação"
 
-#: resources/views/user/conference/index.php:17
-#: resources/views/user/conference/loading.php:8
+#: resources/views/user/conference/index.php:18
+#: resources/views/user/conference/loading.php:9
 msgid "Carregamento"
 msgstr "Carregamento"
 
-#: resources/views/user/conference/index.php:19
-#: resources/views/user/conference/input.php:12 src/Data/MenuData.php:104
+#: resources/views/user/conference/index.php:20
+#: resources/views/user/conference/input.php:13 src/Data/MenuData.php:104
 msgid "Sair"
 msgstr "Sair"
 
-#: resources/views/user/conference/input-products.php:3
-#: resources/views/user/conference/input.php:3
-#: resources/views/user/conference/single-input.php:3
+#: resources/views/user/conference/input-products.php:2
+#: resources/views/user/conference/input.php:2
+#: resources/views/user/conference/single-input.php:2
 #, php-format
 msgid "Entrada | %s"
 msgstr "Entrada | %s"
 
-#: resources/views/user/conference/input-products.php:8
-#: resources/views/user/products/index.php:18
-#: src/App/Controllers/User/ProductsController.php:273 src/Data/MenuData.php:65
+#: resources/views/user/conference/input-products.php:9
+#: resources/views/user/products/index.php:17
+#: src/App/Controllers/User/ProductsController.php:272 src/Data/MenuData.php:65
 msgid "Produtos"
 msgstr "Produtos"
-
-#: resources/views/user/conference/input-products.php:12
-#: resources/views/user/conference/input.php:17
-#: resources/views/user/conference/single-input.php:12
-#: src/App/Controllers/Admin/UsersController.php:226
-msgid "ID"
-msgstr "ID"
 
 #: resources/views/user/conference/input-products.php:13
 #: resources/views/user/conference/input.php:18
 #: resources/views/user/conference/single-input.php:13
-msgid "OC"
-msgstr "OC"
+#: src/App/Controllers/Admin/UsersController.php:226
+msgid "ID"
+msgstr "ID"
 
 #: resources/views/user/conference/input-products.php:14
 #: resources/views/user/conference/input.php:19
 #: resources/views/user/conference/single-input.php:14
+msgid "OC"
+msgstr "OC"
+
+#: resources/views/user/conference/input-products.php:15
+#: resources/views/user/conference/input.php:20
+#: resources/views/user/conference/single-input.php:15
 #: resources/views/user/operations/_components/save-form.php:137
-#: src/App/Controllers/User/InputOutputHistoryController.php:118
-#: src/App/Controllers/User/InputOutputHistoryController.php:284
+#: src/App/Controllers/User/InputOutputHistoryController.php:122
+#: src/App/Controllers/User/InputOutputHistoryController.php:314
+#: src/App/Controllers/User/InputOutputHistoryController.php:672
 #: src/App/Controllers/User/OperationsController.php:146
 #: src/App/Controllers/User/OperationsController.php:222
-#: src/App/Controllers/User/SeparationsController.php:144
-#: src/App/Controllers/User/SeparationsController.php:300
+#: src/App/Controllers/User/SeparationsController.php:149
 msgid "Placa"
 msgstr "Placa"
 
-#: resources/views/user/conference/input-products.php:16
-#: resources/views/user/conference/input.php:21
-#: resources/views/user/conference/single-input.php:16
+#: resources/views/user/conference/input-products.php:17
+#: resources/views/user/conference/input.php:22
+#: resources/views/user/conference/single-input.php:17
 msgid "Data"
 msgstr "Data"
 
-#: resources/views/user/conference/input-products.php:37
-#: resources/views/user/conference/single-input.php:80
+#: resources/views/user/conference/input-products.php:38
+#: resources/views/user/conference/single-input.php:83
 #: resources/views/user/input-output-history/_components/input-pdf.php:112
-#: resources/views/user/input-output-history/_components/output-pdf.php:124
+#: resources/views/user/input-output-history/_components/output-pdf.php:128
 #: resources/views/user/products/_components/save-form.php:17
-#: resources/views/user/separations/_components/separation-pdf.php:89
-#: resources/views/user/separations/_components/updated-pdf.php:90
+#: resources/views/user/separations/_components/separation-pdf.php:90
+#: resources/views/user/separations/_components/updated-pdf.php:91
 msgid "Nome do Produto"
 msgstr "Nome do Produto"
 
-#: resources/views/user/conference/input-products.php:41
-#: resources/views/user/conference/separation.php:60
-#: resources/views/user/conference/single-input.php:93
-msgid "Qtde. CX Físico"
-msgstr "Qtde. CX Físico"
-
-#: resources/views/user/conference/input-products.php:45
-#: src/App/Controllers/User/InputOutputHistoryController.php:310
-#: src/App/Controllers/User/ProductsController.php:261
-#: src/App/Controllers/User/SeparationsController.php:310
+#: resources/views/user/conference/input-products.php:46
+#: src/App/Controllers/User/InputOutputHistoryController.php:340
+#: src/App/Controllers/User/ProductsController.php:260
 msgid "Código EAN"
 msgstr "Código EAN"
 
-#: resources/views/user/conference/input.php:20
+#: resources/views/user/conference/input.php:21
 #: resources/views/user/operations/_components/save-form.php:5
-#: src/App/Controllers/User/InputOutputHistoryController.php:119
-#: src/App/Controllers/User/InputOutputHistoryController.php:311
+#: src/App/Controllers/User/InputOutputHistoryController.php:123
+#: src/App/Controllers/User/InputOutputHistoryController.php:341
 #: src/App/Controllers/User/OperationsController.php:147
 #: src/App/Controllers/User/OperationsController.php:224
-#: src/App/Controllers/User/ProductsController.php:147
-#: src/App/Controllers/User/SeparationsController.php:311
+#: src/App/Controllers/User/ProductsController.php:150
 msgid "Fornecedor"
 msgstr "Fornecedor"
 
-#: resources/views/user/conference/input.php:22
+#: resources/views/user/conference/input.php:23
 msgid "Ação"
 msgstr "Ação"
 
-#: resources/views/user/conference/input.php:36
+#: resources/views/user/conference/input.php:37
 msgid "Ir Conf."
 msgstr "Ir Conf."
 
-#: resources/views/user/conference/loading.php:3
+#: resources/views/user/conference/loading.php:2
 #, php-format
 msgid "Carregamento | %s"
 msgstr "Carregamento | %s"
 
-#: resources/views/user/conference/loading.php:15
+#: resources/views/user/conference/loading.php:16
 msgid "Carregar"
 msgstr "Carregar"
 
-#: resources/views/user/conference/loading.php:41
+#: resources/views/user/conference/loading.php:42
 msgid "Placa do Carregamento"
 msgstr "Placa do Carregamento"
 
-#: resources/views/user/conference/loading.php:56
-#: src/App/Controllers/User/SeparationsController.php:145
-#: src/App/Controllers/User/SeparationsController.php:328
+#: resources/views/user/conference/loading.php:57
+#: src/App/Controllers/User/SeparationsController.php:150
 msgid "Doca"
 msgstr "Doca"
 
-#: resources/views/user/conference/separation.php:3
-#: resources/views/user/separations/index.php:3
+#: resources/views/user/conference/separation.php:2
+#: resources/views/user/separations/index.php:2
 #, php-format
 msgid "Separação | %s"
 msgstr "Separação | %s"
 
-#: resources/views/user/conference/separation.php:8
+#: resources/views/user/conference/separation.php:9
 #, php-format
 msgid "Separação - ID %s"
 msgstr "Separação - ID %s"
 
-#: resources/views/user/conference/separation.php:11
-#: resources/views/user/conference/separation.php:96
+#: resources/views/user/conference/separation.php:12
+#: resources/views/user/conference/separation.php:101
 msgid ""
 "A quantidade colocada não corresponde à quantidade solicitada! Deseja "
 "continuar mesmo assim?"
@@ -785,90 +821,88 @@ msgstr ""
 "A quantidade colocada não corresponde à quantidade solicitada! Deseja "
 "continuar mesmo assim?"
 
-#: resources/views/user/conference/separation.php:16
-msgid "Próximo"
-msgstr "Próximo"
-
-#: resources/views/user/conference/separation.php:18
+#: resources/views/user/conference/separation.php:19
 msgid "Finalizar Separação"
 msgstr "Finalizar Separação"
 
-#: resources/views/user/conference/separation.php:20
+#: resources/views/user/conference/separation.php:21
 msgid "Finalizar"
 msgstr "Finalizar"
 
-#: resources/views/user/conference/separation.php:29
+#: resources/views/user/conference/separation.php:30
 msgid "Endereçamento"
 msgstr "Endereçamento"
 
-#: resources/views/user/conference/separation.php:60
-#: resources/views/user/conference/single-input.php:109
-msgid "Qtde. Unidade"
-msgstr "Qtde. Unidade"
-
-#: resources/views/user/conference/separation.php:77
-#: resources/views/user/separations/_components/updated-pdf.php:92
+#: resources/views/user/conference/separation.php:82
+#: resources/views/user/separations/_components/updated-pdf.php:93
+#: src/App/Controllers/User/InputOutputHistoryController.php:700
 msgid "Doca de Despacho"
 msgstr "Doca de Despacho"
 
-#: resources/views/user/conference/single-input.php:32
+#: resources/views/user/conference/single-input.php:33
 msgid "Você tem certeza que deseja finalizar?"
 msgstr "Você tem certeza que deseja finalizar?"
 
-#: resources/views/user/conference/single-input.php:34
+#: resources/views/user/conference/single-input.php:35
 msgid "Incluir Produto"
 msgstr "Incluir Produto"
 
-#: resources/views/user/conference/single-input.php:36
+#: resources/views/user/conference/single-input.php:38
 msgid "Ver Produtos"
 msgstr "Ver Produtos"
 
-#: resources/views/user/conference/single-input.php:49
+#: resources/views/user/conference/single-input.php:52
 msgid "Buscar"
 msgstr "Buscar"
 
-#: resources/views/user/conference/single-input.php:63
+#: resources/views/user/conference/single-input.php:66
 msgid "Código de Barras"
 msgstr "Código de Barras"
 
-#: resources/views/user/conference/single-input.php:89
+#: resources/views/user/conference/single-input.php:92
 #: resources/views/user/input-output-history/_components/input-pdf.php:116
-#: resources/views/user/input-output-history/_components/output-pdf.php:108
+#: resources/views/user/input-output-history/_components/output-pdf.php:112
 #: resources/views/user/storage/_components/pallets-list-table.php:9
-#: src/App/Controllers/User/InputOutputHistoryController.php:308
-#: src/App/Controllers/User/ProductsController.php:260
-#: src/App/Controllers/User/SeparationsController.php:308
+#: src/App/Controllers/User/InputOutputHistoryController.php:338
+#: src/App/Controllers/User/InputOutputHistoryController.php:653
+#: src/App/Controllers/User/ProductsController.php:259
 msgid "Embalagem"
 msgstr "Embalagem"
 
-#: resources/views/user/conference/single-input.php:113
-msgid "Qtde. Plts Fechados"
-msgstr "Qtde. Plts Fechados"
+#: resources/views/user/conference/single-input.php:116
+msgid "Quantidade de Pallets Fechados"
+msgstr "Quantidade de Pallets Fechados"
 
-#: resources/views/user/conference/single-input.php:128
-#: resources/views/user/separations/_components/updated-pdf.php:96
+#: resources/views/user/conference/single-input.php:131
+#: resources/views/user/separations/_components/updated-pdf.php:97
 #: resources/views/user/storage/_components/pallets-list-table.php:12
+#: src/App/Controllers/User/InputOutputHistoryController.php:654
 msgid "Serviço"
 msgstr "Serviço"
 
-#: resources/views/user/conference/single-input.php:153
+#: resources/views/user/conference/single-input.php:156
 msgid "Altura Plt"
 msgstr "Altura Plt"
 
-#: resources/views/user/edit.php:3
+#: resources/views/user/conference/single-input.php:178
+#: resources/views/user/input-output-history/_components/input-pdf.php:136
+msgid "Data de Validade"
+msgstr "Data de Validade"
+
+#: resources/views/user/edit.php:2
 #, php-format
 msgid "Editar Conta | %s"
 msgstr "Editar Conta | %s"
 
-#: resources/views/user/edit.php:7
+#: resources/views/user/edit.php:6
 msgid "Editar Conta"
 msgstr "Editar Conta"
 
-#: resources/views/user/edit.php:8
+#: resources/views/user/edit.php:7
 msgid "Edite os detalhes de sua conta logo abaixo"
 msgstr "Edite os detalhes de sua conta logo abaixo"
 
-#: resources/views/user/edit.php:21
+#: resources/views/user/edit.php:20
 msgid ""
 "Preencha os campos abaixo para editar os dados de sua conta. Então, clique "
 "em \"Salvar\"."
@@ -876,73 +910,72 @@ msgstr ""
 "Preencha os campos abaixo para editar os dados de sua conta. Então, clique "
 "em \"Salvar\"."
 
-#: resources/views/user/edit.php:32
+#: resources/views/user/edit.php:31
 msgid "Digite o seu nome e sobrenome."
 msgstr "Digite o seu nome e sobrenome."
 
-#: resources/views/user/edit.php:43
+#: resources/views/user/edit.php:42
 msgid "Apelido"
 msgstr "Apelido"
 
-#: resources/views/user/edit.php:44
+#: resources/views/user/edit.php:43
 msgid "Digite um apelido seu."
 msgstr "Digite um apelido seu."
 
-#: resources/views/user/edit.php:52
+#: resources/views/user/edit.php:51
 msgid "Informe um apelido..."
 msgstr "Informe um apelido..."
 
-#: resources/views/user/edit.php:63
+#: resources/views/user/edit.php:62
 msgid "Digite um email válido seu."
 msgstr "Digite um email válido seu."
 
-#: resources/views/user/edit.php:99
+#: resources/views/user/edit.php:98
 msgid "Digite a nova senha de acesso à sua conta."
 msgstr "Digite a nova senha de acesso à sua conta."
 
-#: resources/views/user/edit.php:111
+#: resources/views/user/edit.php:110
 msgid "Digite novamente a nova senha de acesso à sua conta."
 msgstr "Digite novamente a nova senha de acesso à sua conta."
 
-#: resources/views/user/edit.php:123
+#: resources/views/user/edit.php:122
 msgid "Atualizar"
 msgstr "Atualizar"
 
-#: resources/views/user/index.php:3
+#: resources/views/user/index.php:2
 #, php-format
 msgid "Painel do Usuário | %s"
 msgstr "Painel do Usuário | %s"
 
-#: resources/views/user/index.php:9
+#: resources/views/user/index.php:6
 msgid "Painel do Usuário"
 msgstr "Painel do Usuário"
 
-#: resources/views/user/index.php:10
+#: resources/views/user/index.php:7
 msgid "Informações sobre sua atividade no sistema"
 msgstr "Informações sobre sua atividade no sistema"
 
 #: resources/views/user/input-output-history/_components/export-modal.php:6
 #: resources/views/user/input-output-history/_components/export-modal.php:20
-#: resources/views/user/input-output-history/index.php:27
-#: resources/views/user/operations/index.php:31
-#: resources/views/user/products/index.php:37
-#: resources/views/user/providers/index.php:37
-#: resources/views/user/storage/index.php:26
-#: resources/views/user/streets/index.php:31
+#: resources/views/user/operations/index.php:30
+#: resources/views/user/products/index.php:36
+#: resources/views/user/providers/index.php:36
+#: resources/views/user/storage/index.php:25
+#: resources/views/user/streets/index.php:30
 msgid "Exportar Excel"
 msgstr "Exportar Excel"
 
 #: resources/views/user/input-output-history/_components/export-modal.php:12
 #: resources/views/user/input-output-history/_components/input-pdf.php:104
-#: resources/views/user/input-output-history/_components/output-pdf.php:104
-#: resources/views/user/input-output-history/index.php:38
+#: resources/views/user/input-output-history/_components/output-pdf.php:108
+#: resources/views/user/input-output-history/index.php:43
 msgid "Ordem de Serviço"
 msgstr "Ordem de Serviço"
 
 #: resources/views/user/input-output-history/_components/export-modal.php:14
-#: resources/views/user/input-output-history/index.php:40
+#: resources/views/user/input-output-history/index.php:45
 #: resources/views/user/separation-items/_components/save-form.php:12
-#: resources/views/user/separation-items/_components/save-form.php:45
+#: resources/views/user/separation-items/_components/save-form.php:58
 msgid "Digite a ordem de serviço..."
 msgstr "Digite a ordem de serviço..."
 
@@ -959,17 +992,16 @@ msgstr "Informações do Pallet"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:80
 #: resources/views/user/input-output-history/_components/output-pdf.php:80
-#: resources/views/user/separations/_components/list.php:6
+#: resources/views/user/separations/_components/list.php:7
 #: resources/views/user/storage/_components/pallets-list-table.php:4
-#: src/App/Controllers/User/InputOutputHistoryController.php:301
-#: src/App/Controllers/User/SeparationItemsController.php:338
-#: src/App/Controllers/User/SeparationsController.php:301
+#: src/App/Controllers/User/InputOutputHistoryController.php:331
+#: src/App/Controllers/User/InputOutputHistoryController.php:648
+#: src/App/Controllers/User/SeparationItemsController.php:337
 msgid "Número do Pallet"
 msgstr "Número do Pallet"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:84
-#: src/App/Controllers/User/InputOutputHistoryController.php:302
-#: src/App/Controllers/User/SeparationsController.php:302
+#: src/App/Controllers/User/InputOutputHistoryController.php:332
 msgid "Data de Entrada"
 msgstr "Data de Entrada"
 
@@ -978,79 +1010,72 @@ msgid "Horário de Entrada"
 msgstr "Horário de Entrada"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:92
-#: resources/views/user/input-output-history/_components/output-pdf.php:92
-#: resources/views/user/separations/_components/list.php:7
+#: resources/views/user/input-output-history/_components/output-pdf.php:96
+#: resources/views/user/separations/_components/list.php:8
 #: resources/views/user/separations/_components/separation-pdf.php:86
 #: resources/views/user/separations/_components/updated-pdf.php:87
 #: resources/views/user/storage/_components/pallets-list-modal.php:6
-#: src/App/Controllers/User/SeparationItemsController.php:239
-#: src/App/Controllers/User/SeparationItemsController.php:341
+#: src/App/Controllers/User/InputOutputHistoryController.php:649
+#: src/App/Controllers/User/SeparationItemsController.php:235
+#: src/App/Controllers/User/SeparationItemsController.php:340
 #: src/App/Controllers/User/StreetsController.php:130
 msgid "Rua"
 msgstr "Rua"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:96
-#: resources/views/user/input-output-history/_components/output-pdf.php:96
-#: resources/views/user/separations/_components/list.php:8
+#: resources/views/user/input-output-history/_components/output-pdf.php:100
+#: resources/views/user/separations/_components/list.php:9
 #: resources/views/user/separations/_components/separation-pdf.php:87
 #: resources/views/user/separations/_components/updated-pdf.php:88
 #: resources/views/user/storage/_components/pallets-list-table.php:7
-#: src/App/Controllers/User/InputOutputHistoryController.php:319
-#: src/App/Controllers/User/SeparationItemsController.php:240
-#: src/App/Controllers/User/SeparationItemsController.php:342
-#: src/App/Controllers/User/SeparationsController.php:317
+#: src/App/Controllers/User/InputOutputHistoryController.php:349
+#: src/App/Controllers/User/InputOutputHistoryController.php:650
+#: src/App/Controllers/User/SeparationItemsController.php:236
+#: src/App/Controllers/User/SeparationItemsController.php:341
 msgid "Posição"
 msgstr "Posição"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:100
-#: resources/views/user/input-output-history/_components/output-pdf.php:100
+#: resources/views/user/input-output-history/_components/output-pdf.php:104
 #: resources/views/user/products/_components/save-form.php:136
-#: resources/views/user/separations/_components/list.php:9
+#: resources/views/user/separations/_components/list.php:10
 #: resources/views/user/separations/_components/separation-pdf.php:88
 #: resources/views/user/separations/_components/updated-pdf.php:89
 #: resources/views/user/storage/_components/pallets-list-table.php:8
-#: src/App/Controllers/User/InputOutputHistoryController.php:320
-#: src/App/Controllers/User/ProductsController.php:151
-#: src/App/Controllers/User/ProductsController.php:265
-#: src/App/Controllers/User/SeparationItemsController.php:241
-#: src/App/Controllers/User/SeparationItemsController.php:343
-#: src/App/Controllers/User/SeparationsController.php:318
+#: src/App/Controllers/User/InputOutputHistoryController.php:350
+#: src/App/Controllers/User/InputOutputHistoryController.php:651
+#: src/App/Controllers/User/ProductsController.php:154
+#: src/App/Controllers/User/ProductsController.php:264
+#: src/App/Controllers/User/SeparationItemsController.php:237
+#: src/App/Controllers/User/SeparationItemsController.php:342
 msgid "Altura"
 msgstr "Altura"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:108
-#: resources/views/user/input-output-history/_components/output-pdf.php:120
+#: resources/views/user/input-output-history/_components/output-pdf.php:124
 msgid "Código do Produto"
 msgstr "Código do Produto"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:120
-#: src/App/Controllers/User/InputOutputHistoryController.php:313
-#: src/App/Controllers/User/SeparationsController.php:312
+#: src/App/Controllers/User/InputOutputHistoryController.php:343
 msgid "Quantidade de Caixas Físicas"
 msgstr "Quantidade de Caixas Físicas"
 
-#: resources/views/user/input-output-history/_components/input-pdf.php:124
-#: src/App/Controllers/User/InputOutputHistoryController.php:315
-#: src/App/Controllers/User/SeparationsController.php:313
-msgid "Quantidade de Unidades"
-msgstr "Quantidade de Unidades"
-
 #: resources/views/user/input-output-history/_components/input-pdf.php:128
-#: resources/views/user/input-output-history/_components/output-pdf.php:112
+#: resources/views/user/input-output-history/_components/output-pdf.php:116
 #: resources/views/user/operations/_components/save-form.php:33
-#: src/App/Controllers/User/InputOutputHistoryController.php:316
-#: src/App/Controllers/User/SeparationsController.php:314
+#: src/App/Controllers/User/InputOutputHistoryController.php:346
 msgid "Tipo de Serviço"
 msgstr "Tipo de Serviço"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:132
-#: resources/views/user/input-output-history/_components/output-pdf.php:116
-#: src/App/Controllers/User/InputOutputHistoryController.php:317
-#: src/App/Controllers/User/SeparationsController.php:315
+#: resources/views/user/input-output-history/_components/output-pdf.php:120
+#: src/App/Controllers/User/InputOutputHistoryController.php:347
+#: src/App/Controllers/User/InputOutputHistoryController.php:652
 msgid "Altura do Pallet"
 msgstr "Altura do Pallet"
 
-#: resources/views/user/input-output-history/_components/input-pdf.php:146
+#: resources/views/user/input-output-history/_components/input-pdf.php:150
 msgid "Não houve nenhuma entrada de pallet!"
 msgstr "Não houve nenhuma entrada de pallet!"
 
@@ -1063,30 +1088,29 @@ msgstr "Baixar Etiqueta"
 msgid "Baixa de Etiqueta - %s"
 msgstr "Baixa de Etiqueta - %s"
 
-#: resources/views/user/input-output-history/_components/output-pdf.php:84
-#: src/App/Controllers/User/InputOutputHistoryController.php:322
-#: src/App/Controllers/User/SeparationsController.php:321
+#: resources/views/user/input-output-history/_components/output-pdf.php:88
+#: src/App/Controllers/User/InputOutputHistoryController.php:352
 msgid "Data de Saída"
 msgstr "Data de Saída"
 
-#: resources/views/user/input-output-history/_components/output-pdf.php:88
+#: resources/views/user/input-output-history/_components/output-pdf.php:92
 msgid "Horário de Saída"
 msgstr "Horário de Saída"
 
-#: resources/views/user/input-output-history/_components/output-pdf.php:138
+#: resources/views/user/input-output-history/_components/output-pdf.php:142
 msgid "Não houve nenhuma saída de pallet!"
 msgstr "Não houve nenhuma saída de pallet!"
 
-#: resources/views/user/input-output-history/index.php:3
+#: resources/views/user/input-output-history/index.php:2
 #, php-format
 msgid "Histórico de Entradas e Separação | %s"
 msgstr "Histórico de Entradas e Separação | %s"
 
-#: resources/views/user/input-output-history/index.php:7
+#: resources/views/user/input-output-history/index.php:6
 msgid "Histórico de Entrada e Separação"
 msgstr "Histórico de Entrada e Separação"
 
-#: resources/views/user/input-output-history/index.php:8
+#: resources/views/user/input-output-history/index.php:7
 msgid ""
 "Veja abaixo o histórico de operação de entradas e separação. \n"
 "            Você pode gerar o PDF das etiquetas de entrada ou de separação."
@@ -1094,9 +1118,17 @@ msgstr ""
 "Veja abaixo o histórico de operação de entradas e separação. \n"
 "            Você pode gerar o PDF das etiquetas de entrada ou de separação."
 
-#: resources/views/user/input-output-history/index.php:19
-msgid "Conferências"
-msgstr "Conferências"
+#: resources/views/user/input-output-history/index.php:18
+msgid "Conferências de Entrada"
+msgstr "Conferências de Entrada"
+
+#: resources/views/user/input-output-history/index.php:26
+msgid "Exportar Histórico de Conferências"
+msgstr "Exportar Histórico de Conferências"
+
+#: resources/views/user/input-output-history/index.php:32
+msgid "Exportar Relatório de Expedição"
+msgstr "Exportar Relatório de Expedição"
 
 #: resources/views/user/operations/_components/save-form.php:7
 msgid "Selecione o fornecedor, ou cadastre um novo, clicando em \"Cadastrar\"."
@@ -1112,34 +1144,35 @@ msgid "Selecione o(s) tipo(s) de serviço para essa operação."
 msgstr "Selecione o(s) tipo(s) de serviço para essa operação."
 
 #: resources/views/user/operations/_components/save-form.php:41
-#: src/Models/ConferenceInput.php:162 src/Models/Operation.php:197
-#: src/Models/Pallet.php:275
+#: src/Models/ConferenceInput.php:167 src/Models/Operation.php:197
+#: src/Models/Pallet.php:292
 msgid "Paletização"
 msgstr "Paletização"
 
 #: resources/views/user/operations/_components/save-form.php:45
-#: src/Models/ConferenceInput.php:163 src/Models/Operation.php:198
-#: src/Models/Pallet.php:276
+#: src/Models/ConferenceInput.php:168 src/Models/Operation.php:198
+#: src/Models/Pallet.php:293
 msgid "Retrabalho"
 msgstr "Retrabalho"
 
 #: resources/views/user/operations/_components/save-form.php:49
-#: resources/views/user/storage/index.php:7
-#: resources/views/user/storage/index.php:18
+#: resources/views/user/storage/index.php:6
+#: resources/views/user/storage/index.php:17
 #: src/App/Controllers/User/StorageController.php:103 src/Data/MenuData.php:75
-#: src/Models/ConferenceInput.php:164 src/Models/Operation.php:199
-#: src/Models/Pallet.php:277
+#: src/Models/ConferenceInput.php:169 src/Models/Operation.php:199
+#: src/Models/Pallet.php:294
 msgid "Armazenagem"
 msgstr "Armazenagem"
 
 #: resources/views/user/operations/_components/save-form.php:53
-#: src/Models/ConferenceInput.php:165 src/Models/Operation.php:200
-#: src/Models/Pallet.php:278
+#: src/Models/ConferenceInput.php:170 src/Models/Operation.php:200
+#: src/Models/Pallet.php:295
 msgid "Importado"
 msgstr "Importado"
 
 #: resources/views/user/operations/_components/save-form.php:62
-#: src/App/Controllers/User/InputOutputHistoryController.php:120
+#: src/App/Controllers/User/InputOutputHistoryController.php:124
+#: src/App/Controllers/User/InputOutputHistoryController.php:668
 #: src/App/Controllers/User/OperationsController.php:148
 #: src/App/Controllers/User/OperationsController.php:225
 msgid "Senha de Carregamento"
@@ -1190,6 +1223,7 @@ msgid "Informe o número do pedido..."
 msgstr "Informe o número do pedido..."
 
 #: resources/views/user/operations/_components/save-form.php:124
+#: src/App/Controllers/User/InputOutputHistoryController.php:671
 #: src/App/Controllers/User/OperationsController.php:228
 msgid "Nota Fiscal"
 msgstr "Nota Fiscal"
@@ -1225,7 +1259,7 @@ msgstr "Salvar"
 
 #: resources/views/user/operations/_components/save-modal.php:25
 #: resources/views/user/providers/_scripts/index.js.php:67
-#: resources/views/user/providers/index.php:25
+#: resources/views/user/providers/index.php:24
 msgid "Cadastrar Fornecedor"
 msgstr "Cadastrar Fornecedor"
 
@@ -1243,37 +1277,38 @@ msgid "Editar Operação - %s"
 msgstr "Editar Operação - %s"
 
 #: resources/views/user/operations/_scripts/index.js.php:83
-#: resources/views/user/operations/index.php:25
+#: resources/views/user/operations/index.php:24
 #, php-format
 msgid "Dar Entrada"
 msgstr "Dar Entrada"
 
-#: resources/views/user/operations/index.php:3
+#: resources/views/user/operations/index.php:2
 #, php-format
 msgid "Operações | %s"
 msgstr "Operações | %s"
 
-#: resources/views/user/operations/index.php:7
+#: resources/views/user/operations/index.php:6
 msgid "Lista de Operações"
 msgstr "Lista de Operações"
 
-#: resources/views/user/operations/index.php:8
+#: resources/views/user/operations/index.php:7
 msgid "Segue abaixo a lista de operações do sistema"
 msgstr "Segue abaixo a lista de operações do sistema"
 
-#: resources/views/user/operations/index.php:18
+#: resources/views/user/operations/index.php:17
 #: src/App/Controllers/User/OperationsController.php:239
 #: src/Data/MenuData.php:55
 msgid "Operações"
 msgstr "Operações"
 
 #: resources/views/user/products/_components/import-modal.php:6
-#: resources/views/user/products/index.php:31
+#: resources/views/user/products/index.php:30
 msgid "Importar Produtos"
 msgstr "Importar Produtos"
 
 #: resources/views/user/products/_components/import-modal.php:13
 #: resources/views/user/providers/_components/import-modal.php:13
+#: resources/views/user/separation-items/_components/import-modal.php:13
 msgid "Importar Arquivo CSV"
 msgstr "Importar Arquivo CSV"
 
@@ -1295,11 +1330,12 @@ msgstr ""
 
 #: resources/views/user/products/_components/import-modal.php:28
 #: resources/views/user/providers/_components/import-modal.php:26
+#: resources/views/user/separation-items/_components/import-modal.php:44
 msgid "Importar"
 msgstr "Importar"
 
 #: resources/views/user/products/_components/save-form.php:5
-#: src/App/Controllers/User/ProductsController.php:259
+#: src/App/Controllers/User/ProductsController.php:258
 msgid "ID do Produto"
 msgstr "ID do Produto"
 
@@ -1320,7 +1356,7 @@ msgid "Informe o nome do produto..."
 msgstr "Informe o nome do produto..."
 
 #: resources/views/user/products/_components/save-form.php:32
-#: src/App/Controllers/User/ProductsController.php:257
+#: src/App/Controllers/User/ProductsController.php:256
 msgid "ID do Fornecedor"
 msgstr "ID do Fornecedor"
 
@@ -1333,7 +1369,7 @@ msgid "Informe o ID do fornecedor..."
 msgstr "Informe o ID do fornecedor..."
 
 #: resources/views/user/products/_components/save-form.php:44
-#: src/App/Controllers/User/ProductsController.php:258
+#: src/App/Controllers/User/ProductsController.php:257
 msgid "Nome do Fornecedor"
 msgstr "Nome do Fornecedor"
 
@@ -1366,7 +1402,7 @@ msgid "Digite o código Dun14..."
 msgstr "Digite o código Dun14..."
 
 #: resources/views/user/products/_components/save-form.php:83
-#: src/App/Controllers/User/ProductsController.php:268
+#: src/App/Controllers/User/ProductsController.php:267
 msgid "PLU"
 msgstr "PLU"
 
@@ -1395,8 +1431,8 @@ msgid "Digite o Emb Fb..."
 msgstr "Digite o Emb Fb..."
 
 #: resources/views/user/products/_components/save-form.php:110
-#: src/App/Controllers/User/ProductsController.php:149
-#: src/App/Controllers/User/ProductsController.php:263
+#: src/App/Controllers/User/ProductsController.php:152
+#: src/App/Controllers/User/ProductsController.php:262
 msgid "Comprimento"
 msgstr "Comprimento"
 
@@ -1409,8 +1445,8 @@ msgid "Digite o comprimento..."
 msgstr "Digite o comprimento..."
 
 #: resources/views/user/products/_components/save-form.php:122
-#: src/App/Controllers/User/ProductsController.php:150
-#: src/App/Controllers/User/ProductsController.php:264
+#: src/App/Controllers/User/ProductsController.php:153
+#: src/App/Controllers/User/ProductsController.php:263
 msgid "Largura"
 msgstr "Largura"
 
@@ -1431,8 +1467,8 @@ msgid "Digite a altura..."
 msgstr "Digite a altura..."
 
 #: resources/views/user/products/_components/save-form.php:148
-#: src/App/Controllers/User/ProductsController.php:152
-#: src/App/Controllers/User/ProductsController.php:266
+#: src/App/Controllers/User/ProductsController.php:155
+#: src/App/Controllers/User/ProductsController.php:265
 msgid "Base"
 msgstr "Base"
 
@@ -1445,8 +1481,8 @@ msgid "Digite a base..."
 msgstr "Digite a base..."
 
 #: resources/views/user/products/_components/save-form.php:160
-#: src/App/Controllers/User/ProductsController.php:153
-#: src/App/Controllers/User/ProductsController.php:267
+#: src/App/Controllers/User/ProductsController.php:156
+#: src/App/Controllers/User/ProductsController.php:266
 msgid "Peso"
 msgstr "Peso"
 
@@ -1473,25 +1509,32 @@ msgid "Editar Produto - %s"
 msgstr "Editar Produto - %s"
 
 #: resources/views/user/products/_scripts/index.js.php:67
-#: resources/views/user/products/index.php:25
+#: resources/views/user/products/index.php:24
 msgid "Cadastrar Produto"
 msgstr "Cadastrar Produto"
 
-#: resources/views/user/products/index.php:3
+#: resources/views/user/products/index.php:2
 #, php-format
 msgid "Produtos | %s"
 msgstr "Produtos | %s"
 
-#: resources/views/user/products/index.php:7
+#: resources/views/user/products/index.php:6
 msgid "Lista de Produtos"
 msgstr "Lista de Produtos"
 
-#: resources/views/user/products/index.php:8
+#: resources/views/user/products/index.php:7
 msgid "Segue abaixo a lista de produtos do sistema"
 msgstr "Segue abaixo a lista de produtos do sistema"
 
+#: resources/views/user/products/index.php:47
+#: resources/views/user/providers/index.php:47
+#: resources/views/user/separations/index.php:46
+#, php-format
+msgid "Linha %s: %s"
+msgstr "Linha %s: %s"
+
 #: resources/views/user/providers/_components/import-modal.php:6
-#: resources/views/user/providers/index.php:31
+#: resources/views/user/providers/index.php:30
 msgid "Importar Fornecedores"
 msgstr "Importar Fornecedores"
 
@@ -1522,27 +1565,27 @@ msgstr "Deseja realmente excluir este fornecedor?"
 msgid "Editar Fornecedor - %s"
 msgstr "Editar Fornecedor - %s"
 
-#: resources/views/user/providers/index.php:3
+#: resources/views/user/providers/index.php:2
 #, php-format
 msgid "Fornecedores | %s"
 msgstr "Fornecedores | %s"
 
-#: resources/views/user/providers/index.php:7
+#: resources/views/user/providers/index.php:6
 msgid "Lista de Fornecedores"
 msgstr "Lista de Fornecedores"
 
-#: resources/views/user/providers/index.php:8
+#: resources/views/user/providers/index.php:7
 msgid "Segue abaixo a lista de fornecedores do sistema"
 msgstr "Segue abaixo a lista de fornecedores do sistema"
 
-#: resources/views/user/providers/index.php:18
-#: src/App/Controllers/User/ProvidersController.php:231
+#: resources/views/user/providers/index.php:17
+#: src/App/Controllers/User/ProvidersController.php:230
 #: src/Data/MenuData.php:70
 msgid "Fornecedores"
 msgstr "Fornecedores"
 
 #: resources/views/user/separation-items/_components/bond-pallets-modal.php:6
-#: src/App/Controllers/User/SeparationItemsController.php:326
+#: src/App/Controllers/User/SeparationItemsController.php:325
 msgid "Fazer De Para"
 msgstr "Fazer De Para"
 
@@ -1562,21 +1605,64 @@ msgstr "Apenas vinculadas"
 msgid "Apenas não vinculadas"
 msgstr "Apenas não vinculadas"
 
+#: resources/views/user/separation-items/_components/import-modal.php:6
+#: resources/views/user/separations/index.php:30
+msgid "Importar Lista"
+msgstr "Importar Lista"
+
+#: resources/views/user/separation-items/_components/import-modal.php:15
+msgid ""
+"Importe um arquivo CSV com as colunas na seguinte ordem: número do pedido, "
+"EAN do produto, \n"
+"                                    quantidade de caixas e quantidade de "
+"unidades."
+msgstr ""
+"Importe um arquivo CSV com as colunas na seguinte ordem: número do pedido, "
+"EAN do produto, \n"
+"                                    quantidade de caixas e quantidade de "
+"unidades."
+
+#: resources/views/user/separation-items/_components/import-modal.php:32
+msgid "De Para Automático?"
+msgstr "De Para Automático?"
+
+#: resources/views/user/separation-items/_components/import-modal.php:34
+msgid ""
+"Se deseja que o De Para seja feito automaticamente, marque a caixa ao lado."
+msgstr ""
+"Se deseja que o De Para seja feito automaticamente, marque a caixa ao lado."
+
 #: resources/views/user/separation-items/_components/save-form.php:7
 msgid "Digite o número do EAN referente ao produto."
 msgstr "Digite o número do EAN referente ao produto."
 
-#: resources/views/user/separation-items/_components/save-form.php:18
-#: resources/views/user/separations/_components/list.php:4
-#: src/App/Controllers/User/SeparationItemsController.php:236
+#: resources/views/user/separation-items/_components/save-form.php:20
+msgid "Digite o número do pedido referente ao cliente."
+msgstr "Digite o número do pedido referente ao cliente."
+
+#: resources/views/user/separation-items/_components/save-form.php:25
+msgid "Digite o número do pedido..."
+msgstr "Digite o número do pedido..."
+
+#: resources/views/user/separation-items/_components/save-form.php:31
+#: resources/views/user/separations/_components/list.php:5
+#: src/App/Controllers/User/SeparationItemsController.php:231
 msgid "Tipo de Quantidade"
 msgstr "Tipo de Quantidade"
 
-#: resources/views/user/separation-items/_components/save-form.php:20
+#: resources/views/user/separation-items/_components/save-form.php:33
 msgid "Escolha o tipo de quantidade à ser conferida."
 msgstr "Escolha o tipo de quantidade à ser conferida."
 
-#: resources/views/user/separation-items/_components/save-form.php:40
+#: resources/views/user/separation-items/_components/save-form.php:52
+#: resources/views/user/separations/_components/list.php:6
+#: resources/views/user/separations/_components/separation-pdf.php:92
+#: resources/views/user/separations/_components/updated-pdf.php:95
+#: src/App/Controllers/User/SeparationItemsController.php:232
+msgid "Quantidade"
+msgstr "Quantidade"
+
+#: resources/views/user/separation-items/_components/save-form.php:53
 msgid "Digite a quantidade."
 msgstr "Digite a quantidade."
 
@@ -1602,8 +1688,8 @@ msgstr "Confira os dados abaixo e clique em \"Enviar\"."
 
 #: resources/views/user/separations/_components/separation-pdf.php:55
 #: resources/views/user/separations/_components/separation-pdf.php:63
-#: src/App/Controllers/User/SeparationsController.php:180
-#: src/App/Controllers/User/SeparationsController.php:222
+#: src/App/Controllers/User/SeparationsController.php:185
+#: src/App/Controllers/User/SeparationsController.php:227
 #, php-format
 msgid "Lista de Separação - ID %s"
 msgstr "Lista de Separação - ID %s"
@@ -1628,8 +1714,15 @@ msgstr "Horário de Separação"
 msgid "Nº do Pallet"
 msgstr "Nº do Pallet"
 
-#: resources/views/user/separations/_components/separation-pdf.php:142
-#: resources/views/user/separations/_components/updated-pdf.php:149
+#: resources/views/user/separations/_components/separation-pdf.php:89
+#: resources/views/user/separations/_components/updated-pdf.php:90
+#: src/App/Controllers/User/InputOutputHistoryController.php:125
+#: src/App/Controllers/User/OperationsController.php:149
+msgid "Nº do Pedido"
+msgstr "Nº do Pedido"
+
+#: resources/views/user/separations/_components/separation-pdf.php:144
+#: resources/views/user/separations/_components/updated-pdf.php:151
 #, php-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -1637,72 +1730,70 @@ msgstr "%s %s"
 #: resources/views/user/separations/_components/updated-pdf.php:56
 #: resources/views/user/separations/_components/updated-pdf.php:64
 #, php-format
-msgid "Separação de Produto - %s"
-msgstr "Separação de Produto - %s"
+msgid "Separação de Produto - ID %s"
+msgstr "Separação de Produto - ID %s"
 
-#: resources/views/user/separations/_components/updated-pdf.php:93
-#: src/App/Controllers/User/SeparationsController.php:327
+#: resources/views/user/separations/_components/updated-pdf.php:94
+#: src/App/Controllers/User/InputOutputHistoryController.php:707
 msgid "Placa de Carregamento"
 msgstr "Placa de Carregamento"
 
-#: resources/views/user/separations/_components/updated-pdf.php:95
-#: resources/views/user/separations/index.php:65
-#: src/App/Controllers/User/InputOutputHistoryController.php:122
-#: src/App/Controllers/User/InputOutputHistoryController.php:328
-#: src/App/Controllers/User/SeparationsController.php:146
-#: src/App/Controllers/User/SeparationsController.php:329
+#: resources/views/user/separations/_components/updated-pdf.php:96
+#: resources/views/user/separations/index.php:79
+#: src/App/Controllers/User/InputOutputHistoryController.php:126
+#: src/App/Controllers/User/SeparationsController.php:151
 msgid "Status"
 msgstr "Status"
 
-#: resources/views/user/separations/_scripts/index.js.php:46
+#: resources/views/user/separations/_scripts/index.js.php:51
 msgid "Deseja realmente excluir esta separação?"
 msgstr "Deseja realmente excluir esta separação?"
 
-#: resources/views/user/separations/_scripts/index.js.php:74
+#: resources/views/user/separations/_scripts/index.js.php:79
 #, php-format
 msgid "Editar EAN - %s"
 msgstr "Editar EAN - %s"
 
-#: resources/views/user/separations/_scripts/index.js.php:86
+#: resources/views/user/separations/_scripts/index.js.php:91
 #, php-format
 msgid "Fazer De Para - %s"
 msgstr "Fazer De Para - %s"
 
-#: resources/views/user/separations/_scripts/index.js.php:101
+#: resources/views/user/separations/_scripts/index.js.php:106
 msgid "Deseja realmente excluir esta lista de separação?"
 msgstr "Deseja realmente excluir esta lista de separação?"
 
-#: resources/views/user/separations/_scripts/index.js.php:124
+#: resources/views/user/separations/_scripts/index.js.php:129
 #, php-format
 msgid "Separação - %s"
 msgstr "Separação - %s"
 
-#: resources/views/user/separations/_scripts/index.js.php:141
+#: resources/views/user/separations/_scripts/index.js.php:146
 #, php-format
 msgid "Fazer Separação"
 msgstr "Fazer Separação"
 
-#: resources/views/user/separations/index.php:8
+#: resources/views/user/separations/index.php:7
 msgid "Gere a lista de separação dos produtos."
 msgstr "Gere a lista de separação dos produtos."
 
-#: resources/views/user/separations/index.php:18
+#: resources/views/user/separations/index.php:17
 msgid "Nova Lista de Separação"
 msgstr "Nova Lista de Separação"
 
-#: resources/views/user/separations/index.php:26
+#: resources/views/user/separations/index.php:24
 msgid "Adicionar Produto à Lista"
 msgstr "Adicionar Produto à Lista"
 
-#: resources/views/user/separations/index.php:31
+#: resources/views/user/separations/index.php:35
 msgid "Enviar Para Separação"
 msgstr "Enviar Para Separação"
 
-#: resources/views/user/separations/index.php:56
+#: resources/views/user/separations/index.php:70
 msgid "Listas de Separação"
 msgstr "Listas de Separação"
 
-#: resources/views/user/separations/index.php:67
+#: resources/views/user/separations/index.php:81
 msgid "Todos os Status"
 msgstr "Todos os Status"
 
@@ -1711,26 +1802,25 @@ msgid "Confira os pallets que estão armazenados na rua."
 msgstr "Confira os pallets que estão armazenados na rua."
 
 #: resources/views/user/storage/_components/pallets-list-table.php:5
-#: src/App/Controllers/User/InputOutputHistoryController.php:309
-#: src/App/Controllers/User/SeparationsController.php:309
+#: src/App/Controllers/User/InputOutputHistoryController.php:339
 msgid "Produto"
 msgstr "Produto"
 
 #: resources/views/user/storage/_components/pallets-list-table.php:10
-#: src/App/Controllers/User/SeparationItemsController.php:339
-#: src/Models/PalletFromTo.php:152 src/Models/SeparationItem.php:308
+#: src/App/Controllers/User/SeparationItemsController.php:338
+#: src/Models/PalletFromTo.php:152 src/Models/SeparationItem.php:362
 msgid "Caixas"
 msgstr "Caixas"
 
 #: resources/views/user/storage/_components/pallets-list-table.php:11
-#: src/App/Controllers/User/SeparationItemsController.php:340
-#: src/Models/PalletFromTo.php:153 src/Models/SeparationItem.php:309
+#: src/App/Controllers/User/SeparationItemsController.php:339
+#: src/Models/PalletFromTo.php:153 src/Models/SeparationItem.php:363
 msgid "Unidades"
 msgstr "Unidades"
 
 #: resources/views/user/storage/_components/pallets-list-table.php:31
-#: src/App/Controllers/User/SeparationItemsController.php:371
-#: src/App/Controllers/User/SeparationItemsController.php:400
+#: src/App/Controllers/User/SeparationItemsController.php:370
+#: src/App/Controllers/User/SeparationItemsController.php:402
 msgid "Nenhum pallet foi encontrado!"
 msgstr "Nenhum pallet foi encontrado!"
 
@@ -1739,63 +1829,63 @@ msgstr "Nenhum pallet foi encontrado!"
 msgid "Rua %s - Pallets"
 msgstr "Rua %s - Pallets"
 
-#: resources/views/user/storage/index.php:3
+#: resources/views/user/storage/index.php:2
 #, php-format
 msgid "Armazenagem | %s"
 msgstr "Armazenagem | %s"
 
-#: resources/views/user/storage/index.php:8
+#: resources/views/user/storage/index.php:7
 msgid "Veja abaixo como está o armazenamento atualmente"
 msgstr "Veja abaixo como está o armazenamento atualmente"
 
-#: resources/views/user/storage/index.php:36
+#: resources/views/user/storage/index.php:35
 msgid "Ver"
 msgstr "Ver"
 
-#: resources/views/user/storage/index.php:37
-#: resources/views/user/streets/index.php:18
+#: resources/views/user/storage/index.php:36
+#: resources/views/user/streets/index.php:17
 #: src/App/Controllers/User/StreetsController.php:190 src/Data/MenuData.php:60
 msgid "Ruas"
 msgstr "Ruas"
 
-#: resources/views/user/storage/index.php:38
+#: resources/views/user/storage/index.php:37
 msgid "Armazenamento"
 msgstr "Armazenamento"
 
-#: resources/views/user/storage/index.php:39
+#: resources/views/user/storage/index.php:38
 #: src/App/Controllers/User/StorageController.php:94
 msgid "Livre"
 msgstr "Livre"
 
-#: resources/views/user/storage/index.php:40
+#: resources/views/user/storage/index.php:39
 #: src/App/Controllers/User/StorageController.php:95
 msgid "Ocupado"
 msgstr "Ocupado"
 
-#: resources/views/user/storage/index.php:41
+#: resources/views/user/storage/index.php:40
 #: src/App/Controllers/User/StorageController.php:96
 msgid "Total"
 msgstr "Total"
 
-#: resources/views/user/storage/index.php:54
+#: resources/views/user/storage/index.php:53
 #, php-format
 msgid "Rua %s"
 msgstr "Rua %s"
 
-#: resources/views/user/storage/index.php:71
+#: resources/views/user/storage/index.php:70
 #, php-format
 msgid "Capacidade Total: %s"
 msgstr "Capacidade Total: %s"
 
-#: resources/views/user/storage/index.php:71
+#: resources/views/user/storage/index.php:70
 msgid "Bloqueio"
 msgstr "Bloqueio"
 
-#: resources/views/user/storage/index.php:86
+#: resources/views/user/storage/index.php:85
 msgid "Totais"
 msgstr "Totais"
 
-#: resources/views/user/storage/index.php:88
+#: resources/views/user/storage/index.php:87
 #, php-format
 msgid "Total Para Armazenagem: %s"
 msgstr "Total Para Armazenagem: %s"
@@ -1813,8 +1903,7 @@ msgstr ""
 "lado."
 
 #: resources/views/user/streets/_components/save-form.php:24
-#: src/App/Controllers/User/InputOutputHistoryController.php:318
-#: src/App/Controllers/User/SeparationsController.php:316
+#: src/App/Controllers/User/InputOutputHistoryController.php:348
 #: src/App/Controllers/User/StorageController.php:87
 #: src/App/Controllers/User/StreetsController.php:178
 msgid "Número da Rua"
@@ -1925,20 +2014,20 @@ msgid "Deseja realmente excluir esta rua?"
 msgstr "Deseja realmente excluir esta rua?"
 
 #: resources/views/user/streets/_scripts/index.js.php:72
-#: resources/views/user/streets/index.php:25
+#: resources/views/user/streets/index.php:24
 msgid "Cadastrar Rua"
 msgstr "Cadastrar Rua"
 
-#: resources/views/user/streets/index.php:3
+#: resources/views/user/streets/index.php:2
 #, php-format
 msgid "Ruas | %s"
 msgstr "Ruas | %s"
 
-#: resources/views/user/streets/index.php:7
+#: resources/views/user/streets/index.php:6
 msgid "Lista de Ruas"
 msgstr "Lista de Ruas"
 
-#: resources/views/user/streets/index.php:8
+#: resources/views/user/streets/index.php:7
 msgid "Segue abaixo a lista de ruas do sistema"
 msgstr "Segue abaixo a lista de ruas do sistema"
 
@@ -1946,18 +2035,18 @@ msgstr "Segue abaixo a lista de ruas do sistema"
 msgid "Configurações atualizadas com sucesso!"
 msgstr "Configurações atualizadas com sucesso!"
 
-#: src/App/Controllers/Admin/TemplateController.php:38
-#: src/App/Controllers/User/TemplateController.php:38
+#: src/App/Controllers/Admin/TemplateController.php:28
+#: src/App/Controllers/User/TemplateController.php:28
 msgid "Aguarde, carregando..."
 msgstr "Aguarde, carregando..."
 
-#: src/App/Controllers/Admin/TemplateController.php:54
-#: src/App/Controllers/User/TemplateController.php:54
+#: src/App/Controllers/Admin/TemplateController.php:42
+#: src/App/Controllers/User/TemplateController.php:42
 msgid "Linguagens"
 msgstr "Linguagens"
 
-#: src/App/Controllers/Admin/TemplateController.php:57
-#: src/App/Controllers/User/TemplateController.php:57
+#: src/App/Controllers/Admin/TemplateController.php:45
+#: src/App/Controllers/User/TemplateController.php:45
 msgid "Português"
 msgstr "Português"
 
@@ -1993,25 +2082,25 @@ msgstr "Os dados do usuário \"%s\" foram alterados com sucesso!"
 #: src/App/Controllers/Admin/UsersController.php:200
 #: src/App/Controllers/Admin/UsersController.php:203
 #: src/App/Controllers/Admin/UsersController.php:225
-#: src/App/Controllers/User/InputOutputHistoryController.php:88
-#: src/App/Controllers/User/InputOutputHistoryController.php:91
-#: src/App/Controllers/User/InputOutputHistoryController.php:117
+#: src/App/Controllers/User/InputOutputHistoryController.php:92
+#: src/App/Controllers/User/InputOutputHistoryController.php:95
+#: src/App/Controllers/User/InputOutputHistoryController.php:121
 #: src/App/Controllers/User/OperationsController.php:107
 #: src/App/Controllers/User/OperationsController.php:110
 #: src/App/Controllers/User/OperationsController.php:145
-#: src/App/Controllers/User/ProductsController.php:120
 #: src/App/Controllers/User/ProductsController.php:123
-#: src/App/Controllers/User/ProductsController.php:146
-#: src/App/Controllers/User/ProvidersController.php:108
+#: src/App/Controllers/User/ProductsController.php:126
+#: src/App/Controllers/User/ProductsController.php:149
 #: src/App/Controllers/User/ProvidersController.php:111
-#: src/App/Controllers/User/ProvidersController.php:134
-#: src/App/Controllers/User/SeparationItemsController.php:201
-#: src/App/Controllers/User/SeparationItemsController.php:204
-#: src/App/Controllers/User/SeparationItemsController.php:234
-#: src/App/Controllers/User/SeparationItemsController.php:344
-#: src/App/Controllers/User/SeparationsController.php:109
-#: src/App/Controllers/User/SeparationsController.php:112
-#: src/App/Controllers/User/SeparationsController.php:141
+#: src/App/Controllers/User/ProvidersController.php:114
+#: src/App/Controllers/User/ProvidersController.php:137
+#: src/App/Controllers/User/SeparationItemsController.php:196
+#: src/App/Controllers/User/SeparationItemsController.php:199
+#: src/App/Controllers/User/SeparationItemsController.php:229
+#: src/App/Controllers/User/SeparationItemsController.php:343
+#: src/App/Controllers/User/SeparationsController.php:113
+#: src/App/Controllers/User/SeparationsController.php:116
+#: src/App/Controllers/User/SeparationsController.php:145
 #: src/App/Controllers/User/StreetsController.php:103
 #: src/App/Controllers/User/StreetsController.php:106
 #: src/App/Controllers/User/StreetsController.php:129
@@ -2040,18 +2129,18 @@ msgid "O usuário \"%s\" foi excluído com sucesso."
 msgstr "O usuário \"%s\" foi excluído com sucesso."
 
 #: src/App/Controllers/Auth/AuthController.php:29
-#: src/App/Controllers/Auth/OperatorLoginController.php:28
+#: src/App/Controllers/Auth/OperatorLoginController.php:29
 #, php-format
 msgid "Seja bem-vindo(a), %s!"
 msgstr "Seja bem-vindo(a), %s!"
 
 #: src/App/Controllers/Auth/AuthController.php:40
 #: src/App/Controllers/Auth/AuthController.php:63
-#: src/App/Controllers/Auth/OperatorLoginController.php:35
+#: src/App/Controllers/Auth/OperatorLoginController.php:36
 msgid "Usuário e/ou senha inválidos!"
 msgstr "Usuário e/ou senha inválidos!"
 
-#: src/App/Controllers/Auth/OperatorLoginController.php:40
+#: src/App/Controllers/Auth/OperatorLoginController.php:42
 #, php-format
 msgid "Entrar - Operação | %s"
 msgstr "Entrar - Operação | %s"
@@ -2078,59 +2167,59 @@ msgstr "Lamentamos, mas ocorreu um erro inesperado. Clique abaixo para voltar."
 msgid "Nenhum arquivo foi escolhido!"
 msgstr "Nenhum arquivo foi escolhido!"
 
-#: src/App/Controllers/MediaLibraryController.php:77
+#: src/App/Controllers/MediaLibraryController.php:81
 msgid "Lamentamos, mas parece que ocorreu um erro no upload do seu arquivo."
 msgstr "Lamentamos, mas parece que ocorreu um erro no upload do seu arquivo."
 
-#: src/App/Controllers/MediaLibraryController.php:81
+#: src/App/Controllers/MediaLibraryController.php:85
 msgid "O arquivo foi carregado com sucesso!"
 msgstr "O arquivo foi carregado com sucesso!"
 
-#: src/App/Controllers/MediaLibraryController.php:87
+#: src/App/Controllers/MediaLibraryController.php:91
 msgid "Nenhum nome de arquivo foi declarado!"
 msgstr "Nenhum nome de arquivo foi declarado!"
 
-#: src/App/Controllers/MediaLibraryController.php:100
+#: src/App/Controllers/MediaLibraryController.php:104
 msgid "O arquivo foi excluído com sucesso."
 msgstr "O arquivo foi excluído com sucesso."
 
 #: src/App/Controllers/User/ConferenceController.php:67
-#: src/App/Controllers/User/ConferenceController.php:202
-#: src/App/Controllers/User/InputOutputHistoryController.php:148
-#: src/App/Controllers/User/InputOutputHistoryController.php:190
+#: src/App/Controllers/User/ConferenceController.php:204
+#: src/App/Controllers/User/InputOutputHistoryController.php:152
+#: src/App/Controllers/User/InputOutputHistoryController.php:194
 msgid "A conferência não foi encontrada!"
 msgstr "A conferência não foi encontrada!"
 
 #: src/App/Controllers/User/ConferenceController.php:70
-#: src/App/Controllers/User/ConferenceController.php:205
+#: src/App/Controllers/User/ConferenceController.php:207
 msgid "Esta conferência já foi finalizada!"
 msgstr "Esta conferência já foi finalizada!"
 
-#: src/App/Controllers/User/ConferenceController.php:137
+#: src/App/Controllers/User/ConferenceController.php:139
 #, php-format
 msgid ""
 "A entrada do produto \"%s\" na conferência de ID %s foi feita com sucesso!"
 msgstr ""
 "A entrada do produto \"%s\" na conferência de ID %s foi feita com sucesso!"
 
-#: src/App/Controllers/User/ConferenceController.php:151
+#: src/App/Controllers/User/ConferenceController.php:153
 msgid "Não há pallets para serem armazenados!"
 msgstr "Não há pallets para serem armazenados!"
 
-#: src/App/Controllers/User/ConferenceController.php:159
+#: src/App/Controllers/User/ConferenceController.php:161
 #, php-format
 msgid "A conferência de ID %s foi finalizada com sucesso!"
 msgstr "A conferência de ID %s foi finalizada com sucesso!"
 
-#: src/App/Controllers/User/ConferenceController.php:291
+#: src/App/Controllers/User/ConferenceController.php:294
 msgid "A quantidade foi separada com sucesso!"
 msgstr "A quantidade foi separada com sucesso!"
 
-#: src/App/Controllers/User/ConferenceController.php:351
+#: src/App/Controllers/User/ConferenceController.php:366
 msgid "A conferência de expedição foi realizada com sucesso!"
 msgstr "A conferência de expedição foi realizada com sucesso!"
 
-#: src/App/Controllers/User/ConferenceController.php:419
+#: src/App/Controllers/User/ConferenceController.php:436
 #, php-format
 msgid "A lista de separação de ID %s foi carregada com sucesso!"
 msgstr "A lista de separação de ID %s foi carregada com sucesso!"
@@ -2139,95 +2228,353 @@ msgstr "A lista de separação de ID %s foi carregada com sucesso!"
 msgid "Seus dados foram atualizados com sucesso!"
 msgstr "Seus dados foram atualizados com sucesso!"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:97
+#: src/App/Controllers/User/InputOutputHistoryController.php:101
 msgid "Gerar Etiquetas de Entrada"
 msgstr "Gerar Etiquetas de Entrada"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:102
+#: src/App/Controllers/User/InputOutputHistoryController.php:106
 msgid "Gerar Etiquetas de Saída"
 msgstr "Gerar Etiquetas de Saída"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:121
-#: src/App/Controllers/User/OperationsController.php:149
-msgid "Nº do Pedido"
-msgstr "Nº do Pedido"
-
-#: src/App/Controllers/User/InputOutputHistoryController.php:151
-#: src/App/Controllers/User/InputOutputHistoryController.php:193
+#: src/App/Controllers/User/InputOutputHistoryController.php:155
+#: src/App/Controllers/User/InputOutputHistoryController.php:197
 msgid "Esta conferência ainda não foi finalizada!"
 msgstr "Esta conferência ainda não foi finalizada!"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:159
+#: src/App/Controllers/User/InputOutputHistoryController.php:163
 #, php-format
 msgid "Etiqueta de Entrada - %s"
 msgstr "Etiqueta de Entrada - %s"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:201
+#: src/App/Controllers/User/InputOutputHistoryController.php:205
 #, php-format
 msgid "Etiqueta de Saída - %s"
 msgstr "Etiqueta de Saída - %s"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:285
+#: src/App/Controllers/User/InputOutputHistoryController.php:315
 #: src/App/Controllers/User/OperationsController.php:223
-#: src/App/Controllers/User/SeparationsController.php:142
-#: src/App/Controllers/User/SeparationsController.php:298
+#: src/App/Controllers/User/SeparationsController.php:146
 msgid "ADM"
 msgstr "ADM"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:286
+#: src/App/Controllers/User/InputOutputHistoryController.php:316
 msgid "Operador que Iniciou"
 msgstr "Operador que Iniciou"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:287
+#: src/App/Controllers/User/InputOutputHistoryController.php:317
 msgid "Data de Início"
 msgstr "Data de Início"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:290
+#: src/App/Controllers/User/InputOutputHistoryController.php:320
 msgid "Hora de Início"
 msgstr "Hora de Início"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:293
+#: src/App/Controllers/User/InputOutputHistoryController.php:323
 msgid "Operador que Finalizou"
 msgstr "Operador que Finalizou"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:294
+#: src/App/Controllers/User/InputOutputHistoryController.php:324
 msgid "Data de Término"
 msgstr "Data de Término"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:297
+#: src/App/Controllers/User/InputOutputHistoryController.php:327
 msgid "Hora de Término"
 msgstr "Hora de Término"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:300
+#: src/App/Controllers/User/InputOutputHistoryController.php:330
 msgid "Status da Conferência"
 msgstr "Status da Conferência"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:305
-#: src/App/Controllers/User/SeparationsController.php:305
+#: src/App/Controllers/User/InputOutputHistoryController.php:335
 msgid "Hora de Entrada"
 msgstr "Hora de Entrada"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:312
+#: src/App/Controllers/User/InputOutputHistoryController.php:342
 msgid "Quantidade de Caixas Físicas Inicial"
 msgstr "Quantidade de Caixas Físicas Inicial"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:314
+#: src/App/Controllers/User/InputOutputHistoryController.php:344
 msgid "Quantidade de Unidades Inicial"
 msgstr "Quantidade de Unidades Inicial"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:321
-#: src/App/Controllers/User/SeparationsController.php:320
+#: src/App/Controllers/User/InputOutputHistoryController.php:351
 msgid "Operador que fez Saída"
 msgstr "Operador que fez Saída"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:325
-#: src/App/Controllers/User/SeparationsController.php:324
+#: src/App/Controllers/User/InputOutputHistoryController.php:355
 msgid "Hora de Saída"
 msgstr "Hora de Saída"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:333
+#: src/App/Controllers/User/InputOutputHistoryController.php:358
+msgid "ID Separação"
+msgstr "ID Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:359
+msgid "ADM que Separou"
+msgstr "ADM que Separou"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:360
+msgid "Data de Separação do ADM"
+msgstr "Data de Separação do ADM"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:363
+msgid "Hora de Separação do ADM"
+msgstr "Hora de Separação do ADM"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:366
+msgid "Operador que Separou"
+msgstr "Operador que Separou"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:367
+msgid "Data de Separação do Operator"
+msgstr "Data de Separação do Operator"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:370
+msgid "Hora de Separação do Operator"
+msgstr "Hora de Separação do Operator"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:373
+msgid "Operador que Conferiu"
+msgstr "Operador que Conferiu"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:374
+msgid "Data de Conferência do Operator"
+msgstr "Data de Conferência do Operator"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:377
+msgid "Hora de Conferência do Operator"
+msgstr "Hora de Conferência do Operator"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:380
+msgid "Operador que Carregou"
+msgstr "Operador que Carregou"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:381
+#: src/App/Controllers/User/InputOutputHistoryController.php:705
+#: src/App/Controllers/User/SeparationsController.php:148
+msgid "Data de Carregamento"
+msgstr "Data de Carregamento"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:384
+#: src/App/Controllers/User/InputOutputHistoryController.php:706
+msgid "Hora de Carregamento"
+msgstr "Hora de Carregamento"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:388
+#: src/App/Controllers/User/InputOutputHistoryController.php:662
+msgid "Status do Pallet"
+msgstr "Status do Pallet"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:393
 msgid "Histórico de Conferências"
 msgstr "Histórico de Conferências"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:647
+msgid "ID do Pallet"
+msgstr "ID do Pallet"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:655
+msgid "Quantidade Inicial de Caixas"
+msgstr "Quantidade Inicial de Caixas"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:656
+msgid "Quantidade Atual de Caixas"
+msgstr "Quantidade Atual de Caixas"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:657
+msgid "Quantidade Inicial de Unidades"
+msgstr "Quantidade Inicial de Unidades"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:658
+msgid "Quantidade Atual de Unidades"
+msgstr "Quantidade Atual de Unidades"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:659
+msgid "Operador que Fez a Entrada do Pallet"
+msgstr "Operador que Fez a Entrada do Pallet"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:660
+msgid "Data de Entrada do Pallet"
+msgstr "Data de Entrada do Pallet"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:661
+msgid "Hora de Entrada do Pallet"
+msgstr "Hora de Entrada do Pallet"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:663
+msgid "ID de Operação de Entrada"
+msgstr "ID de Operação de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:664
+msgid "Data de Início da Operação"
+msgstr "Data de Início da Operação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:665
+msgid "Hora de Início da Operação"
+msgstr "Hora de Início da Operação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:666
+msgid "ADM de Entrada"
+msgstr "ADM de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:667
+msgid "Fornecedor da Operação"
+msgstr "Fornecedor da Operação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:669
+msgid "Senha G.A"
+msgstr "Senha G.A"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:670
+msgid "Número do Pedido/TR"
+msgstr "Número do Pedido/TR"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:673
+#: src/App/Controllers/User/OperationsController.php:230
+msgid "Paletização?"
+msgstr "Paletização?"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:674
+#: src/App/Controllers/User/OperationsController.php:231
+msgid "Retrabalho?"
+msgstr "Retrabalho?"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:675
+#: src/App/Controllers/User/OperationsController.php:232
+msgid "Armazenagem?"
+msgstr "Armazenagem?"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:676
+msgid "Importação?"
+msgstr "Importação?"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:677
+msgid "TR?"
+msgstr "TR?"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:678
+msgid "ID de Conferência de Entrada"
+msgstr "ID de Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:679
+msgid "Data de Liberação da Conferência de Entrada"
+msgstr "Data de Liberação da Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:680
+msgid "Hora de Liberação da Conferência de Entrada"
+msgstr "Hora de Liberação da Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:681
+msgid "ADM que Liberou a Conferência de Entrada"
+msgstr "ADM que Liberou a Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:682
+msgid "Operador que Iniciou a Conferência de Entrada"
+msgstr "Operador que Iniciou a Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:683
+msgid "Data de Início da Conferência de Entrada"
+msgstr "Data de Início da Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:684
+msgid "Hora de Início da Conferência de Entrada"
+msgstr "Hora de Início da Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:685
+msgid "Operador que Finalizou a Conferência de Entrada"
+msgstr "Operador que Finalizou a Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:686
+msgid "Data de Término da Conferência de Entrada"
+msgstr "Data de Término da Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:687
+msgid "Hora de Término da Conferência de Entrada"
+msgstr "Hora de Término da Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:688
+msgid "Status da Conferência de Entrada"
+msgstr "Status da Conferência de Entrada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:689
+msgid "ID da Lista de Separação"
+msgstr "ID da Lista de Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:690
+msgid "ADM que Gerou a Lista de Separação"
+msgstr "ADM que Gerou a Lista de Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:691
+msgid "Data de Geração da Lista de Separação"
+msgstr "Data de Geração da Lista de Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:692
+msgid "Hora de Geração da Lista de Separação"
+msgstr "Hora de Geração da Lista de Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:693
+msgid "Status da Lista de Separação"
+msgstr "Status da Lista de Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:694
+msgid "Tipo de Quantidade Separada"
+msgstr "Tipo de Quantidade Separada"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:695
+msgid "Quantidade Solicitada pela ADM"
+msgstr "Quantidade Solicitada pela ADM"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:696
+msgid "Operador que Fez a Separação"
+msgstr "Operador que Fez a Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:697
+msgid "Data de Separação do Operador"
+msgstr "Data de Separação do Operador"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:698
+msgid "Hora de Separação do Operador"
+msgstr "Hora de Separação do Operador"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:699
+msgid "Quantidade Separada pelo Operador"
+msgstr "Quantidade Separada pelo Operador"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:701
+msgid "Operador que Fez a Conferência"
+msgstr "Operador que Fez a Conferência"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:702
+msgid "Data de Conferência do Operador"
+msgstr "Data de Conferência do Operador"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:703
+msgid "Hora de Conferência do Operador"
+msgstr "Hora de Conferência do Operador"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:704
+msgid "Operador que Fez o Carregamento"
+msgstr "Operador que Fez o Carregamento"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:708
+msgid "Doca de Carregamento"
+msgstr "Doca de Carregamento"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:709
+msgid "Operador que Fez a Expedição"
+msgstr "Operador que Fez a Expedição"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:710
+msgid "Data de Expedição"
+msgstr "Data de Expedição"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:711
+msgid "Hora de Expedição"
+msgstr "Hora de Expedição"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:716
+msgid "Relatório de Exportação"
+msgstr "Relatório de Exportação"
 
 #: src/App/Controllers/User/OperationsController.php:26
 #: src/App/Controllers/User/OperationsController.php:54
@@ -2288,18 +2635,6 @@ msgstr ""
 msgid "Possui TR?"
 msgstr "Possui TR?"
 
-#: src/App/Controllers/User/OperationsController.php:230
-msgid "Paletização?"
-msgstr "Paletização?"
-
-#: src/App/Controllers/User/OperationsController.php:231
-msgid "Retrabalho?"
-msgstr "Retrabalho?"
-
-#: src/App/Controllers/User/OperationsController.php:232
-msgid "Armazenagem?"
-msgstr "Armazenagem?"
-
 #: src/App/Controllers/User/OperationsController.php:233
 msgid "Importado?"
 msgstr "Importado?"
@@ -2308,231 +2643,229 @@ msgstr "Importado?"
 msgid "Conferência Liberada?"
 msgstr "Conferência Liberada?"
 
-#: src/App/Controllers/User/ProductsController.php:21
-#: src/App/Controllers/User/ProductsController.php:49
-#: src/App/Controllers/User/ProductsController.php:65
-#: src/Models/ConferenceInputForm.php:58
+#: src/App/Controllers/User/ProductsController.php:24
+#: src/App/Controllers/User/ProductsController.php:52
+#: src/App/Controllers/User/ProductsController.php:68
+#: src/Models/ConferenceInputForm.php:64
 msgid "Nenhum produto foi encontrado!"
 msgstr "Nenhum produto foi encontrado!"
 
-#: src/App/Controllers/User/ProductsController.php:42
+#: src/App/Controllers/User/ProductsController.php:45
 #, php-format
 msgid "O produto \"%s\" foi cadastrado com sucesso!"
 msgstr "O produto \"%s\" foi cadastrado com sucesso!"
 
-#: src/App/Controllers/User/ProductsController.php:58
+#: src/App/Controllers/User/ProductsController.php:61
 #, php-format
 msgid "Os dados do produto \"%s\" foram alterados com sucesso!"
 msgstr "Os dados do produto \"%s\" foram alterados com sucesso!"
 
-#: src/App/Controllers/User/ProductsController.php:68
+#: src/App/Controllers/User/ProductsController.php:71
 msgid "Não foi possível excluir o produto!"
 msgstr "Não foi possível excluir o produto!"
 
-#: src/App/Controllers/User/ProductsController.php:72
+#: src/App/Controllers/User/ProductsController.php:75
 #, php-format
 msgid "O produto \"%s\" foi excluído com sucesso."
 msgstr "O produto \"%s\" foi excluído com sucesso."
 
-#: src/App/Controllers/User/ProductsController.php:127
+#: src/App/Controllers/User/ProductsController.php:130
 msgid "Editar Produto"
 msgstr "Editar Produto"
 
-#: src/App/Controllers/User/ProductsController.php:133
+#: src/App/Controllers/User/ProductsController.php:136
 msgid "Excluir Produto"
 msgstr "Excluir Produto"
 
-#: src/App/Controllers/User/ProductsController.php:192
-#: src/App/Controllers/User/ProvidersController.php:174
+#: src/App/Controllers/User/ProductsController.php:195
+#: src/App/Controllers/User/ProvidersController.php:177
+#: src/App/Controllers/User/SeparationItemsController.php:442
 msgid "Nenhum arquivo foi selecionado!"
 msgstr "Nenhum arquivo foi selecionado!"
 
-#: src/App/Controllers/User/ProductsController.php:195
-#: src/App/Controllers/User/ProvidersController.php:177
+#: src/App/Controllers/User/ProductsController.php:198
+#: src/App/Controllers/User/ProvidersController.php:180
+#: src/App/Controllers/User/SeparationItemsController.php:445
 msgid "O arquivo precisa ser um excel CSV!"
 msgstr "O arquivo precisa ser um excel CSV!"
 
-#: src/App/Controllers/User/ProductsController.php:233
-#: src/App/Controllers/User/ProvidersController.php:203
-#, php-format
-msgid "Linha %s: "
-msgstr "Linha %s: "
-
-#: src/App/Controllers/User/ProductsController.php:235
-#: src/App/Controllers/User/ProvidersController.php:205
-#, php-format
-msgid "Houveram erros no excel! %s"
-msgstr "Houveram erros no excel! %s"
-
-#: src/App/Controllers/User/ProductsController.php:240
-#: src/App/Controllers/User/ProvidersController.php:210
+#: src/App/Controllers/User/ProductsController.php:239
+#: src/App/Controllers/User/ProvidersController.php:209
 #, php-format
 msgid "Todos os %s registros foram importados com sucesso!"
 msgstr "Todos os %s registros foram importados com sucesso!"
 
-#: src/App/Controllers/User/ProductsController.php:262
+#: src/App/Controllers/User/ProductsController.php:261
 msgid "Código Dun14"
 msgstr "Código Dun14"
 
-#: src/App/Controllers/User/ProvidersController.php:21
-#: src/App/Controllers/User/ProvidersController.php:49
-#: src/App/Controllers/User/ProvidersController.php:65
+#: src/App/Controllers/User/ProvidersController.php:24
+#: src/App/Controllers/User/ProvidersController.php:52
+#: src/App/Controllers/User/ProvidersController.php:68
 msgid "Nenhum fornecedor foi encontrado!"
 msgstr "Nenhum fornecedor foi encontrado!"
 
-#: src/App/Controllers/User/ProvidersController.php:42
+#: src/App/Controllers/User/ProvidersController.php:45
 #, php-format
 msgid "O fornecedor \"%s\" foi cadastrado com sucesso!"
 msgstr "O fornecedor \"%s\" foi cadastrado com sucesso!"
 
-#: src/App/Controllers/User/ProvidersController.php:58
+#: src/App/Controllers/User/ProvidersController.php:61
 #, php-format
 msgid "Os dados do fornecedor \"%s\" foram alterados com sucesso!"
 msgstr "Os dados do fornecedor \"%s\" foram alterados com sucesso!"
 
-#: src/App/Controllers/User/ProvidersController.php:68
+#: src/App/Controllers/User/ProvidersController.php:71
 msgid "Não foi possível excluir o fornecedor!"
 msgstr "Não foi possível excluir o fornecedor!"
 
-#: src/App/Controllers/User/ProvidersController.php:72
+#: src/App/Controllers/User/ProvidersController.php:75
 #, php-format
 msgid "O fornecedor \"%s\" foi excluído com sucesso."
 msgstr "O fornecedor \"%s\" foi excluído com sucesso."
 
-#: src/App/Controllers/User/ProvidersController.php:115
+#: src/App/Controllers/User/ProvidersController.php:118
 msgid "Editar Fornecedor"
 msgstr "Editar Fornecedor"
 
-#: src/App/Controllers/User/ProvidersController.php:121
+#: src/App/Controllers/User/ProvidersController.php:124
 msgid "Excluir Fornecedor"
 msgstr "Excluir Fornecedor"
 
-#: src/App/Controllers/User/SeparationItemsController.php:24
+#: src/App/Controllers/User/SeparationItemsController.php:25
 msgid "Nenhum produto foi encontrado por este EAN!"
 msgstr "Nenhum produto foi encontrado por este EAN!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:33
+#: src/App/Controllers/User/SeparationItemsController.php:34
 msgid "Este produto não foi encontrado em posição de picking!"
 msgstr "Este produto não foi encontrado em posição de picking!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:44
+#: src/App/Controllers/User/SeparationItemsController.php:45
 msgid "Nenhum item de separação foi encontrado!"
 msgstr "Nenhum item de separação foi encontrado!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:54
-#: src/App/Controllers/User/SeparationItemsController.php:102
-#: src/App/Controllers/User/SeparationItemsController.php:140
+#: src/App/Controllers/User/SeparationItemsController.php:55
+#: src/App/Controllers/User/SeparationItemsController.php:105
+#: src/App/Controllers/User/SeparationItemsController.php:138
 msgid "Nenhum EAN foi encontrado!"
 msgstr "Nenhum EAN foi encontrado!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:83
-#: src/App/Controllers/User/SeparationItemsController.php:122
-msgid "A quantidade selecionada ultrapassa a quantidade que está no estoque!"
-msgstr "A quantidade selecionada ultrapassa a quantidade que está no estoque!"
-
-#: src/App/Controllers/User/SeparationItemsController.php:93
+#: src/App/Controllers/User/SeparationItemsController.php:96
 msgid "O EAN foi separado com sucesso!"
 msgstr "O EAN foi separado com sucesso!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:110
+#: src/App/Controllers/User/SeparationItemsController.php:113
 msgid "O EAN já foi enviado para separação!"
 msgstr "O EAN já foi enviado para separação!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:132
+#: src/App/Controllers/User/SeparationItemsController.php:130
 msgid "Os dados da separação do EAN foram atualizados com sucesso!"
 msgstr "Os dados da separação do EAN foram atualizados com sucesso!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:143
+#: src/App/Controllers/User/SeparationItemsController.php:141
 msgid "Não foi possível excluir a EAN!"
 msgstr "Não foi possível excluir a EAN!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:148
+#: src/App/Controllers/User/SeparationItemsController.php:146
 #, php-format
 msgid "A EAN \"%s\" foi removida da separação com sucesso."
 msgstr "A EAN \"%s\" foi removida da separação com sucesso."
 
-#: src/App/Controllers/User/SeparationItemsController.php:208
+#: src/App/Controllers/User/SeparationItemsController.php:203
 msgid "Ver os De Para"
 msgstr "Ver os De Para"
 
-#: src/App/Controllers/User/SeparationItemsController.php:215
+#: src/App/Controllers/User/SeparationItemsController.php:210
 msgid "Editar Item"
 msgstr "Editar Item"
 
-#: src/App/Controllers/User/SeparationItemsController.php:221
+#: src/App/Controllers/User/SeparationItemsController.php:216
 msgid "Excluir Item"
 msgstr "Excluir Item"
 
-#: src/App/Controllers/User/SeparationItemsController.php:238
+#: src/App/Controllers/User/SeparationItemsController.php:234
 msgid "Código"
 msgstr "Código"
 
-#: src/App/Controllers/User/SeparationItemsController.php:320
+#: src/App/Controllers/User/SeparationItemsController.php:238
+msgid "Precisa de De Para"
+msgstr "Precisa de De Para"
+
+#: src/App/Controllers/User/SeparationItemsController.php:319
 msgid "Remover De Para"
 msgstr "Remover De Para"
 
-#: src/App/Controllers/User/SeparationItemsController.php:367
+#: src/App/Controllers/User/SeparationItemsController.php:366
 msgid ""
 "Não foi possível fazer o de para pois a quantidade separada já foi alcançada!"
 msgstr ""
 "Não foi possível fazer o de para pois a quantidade separada já foi alcançada!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:392
+#: src/App/Controllers/User/SeparationItemsController.php:379
+msgid "Este pallet já foi usado em um de para!"
+msgstr "Este pallet já foi usado em um de para!"
+
+#: src/App/Controllers/User/SeparationItemsController.php:394
 #, php-format
 msgid "O de para do pallet de código \"%s\" foi adicionado com sucesso."
 msgstr "O de para do pallet de código \"%s\" foi adicionado com sucesso."
 
-#: src/App/Controllers/User/SeparationItemsController.php:409
+#: src/App/Controllers/User/SeparationItemsController.php:411
 msgid "Não foi possível remover este de para!"
 msgstr "Não foi possível remover este de para!"
 
-#: src/App/Controllers/User/SeparationItemsController.php:415
+#: src/App/Controllers/User/SeparationItemsController.php:417
 #, php-format
 msgid "O de para do pallet de código \"%s\" foi cancelado com sucesso."
 msgstr "O de para do pallet de código \"%s\" foi cancelado com sucesso."
 
-#: src/App/Controllers/User/SeparationsController.php:34
-#: src/App/Controllers/User/SeparationsController.php:350
+#: src/App/Controllers/User/SeparationItemsController.php:462
+msgid "Houveram erros no excel!"
+msgstr "Houveram erros no excel!"
+
+#: src/App/Controllers/User/SeparationItemsController.php:467
+#, php-format
+msgid "Todas as separações foram importadas com sucesso!"
+msgstr "Todas as separações foram importadas com sucesso!"
+
+#: src/App/Controllers/User/SeparationsController.php:36
+#: src/App/Controllers/User/SeparationsController.php:257
 msgid "Não há nenhum produto para separação!"
 msgstr "Não há nenhum produto para separação!"
 
-#: src/App/Controllers/User/SeparationsController.php:41
+#: src/App/Controllers/User/SeparationsController.php:43
 msgid "Esta separação ainda possui ao menos um item que precisa de um de para!"
 msgstr ""
 "Esta separação ainda possui ao menos um item que precisa de um de para!"
 
-#: src/App/Controllers/User/SeparationsController.php:63
+#: src/App/Controllers/User/SeparationsController.php:66
 msgid "A separação foi gerada com sucesso!"
 msgstr "A separação foi gerada com sucesso!"
 
-#: src/App/Controllers/User/SeparationsController.php:115
+#: src/App/Controllers/User/SeparationsController.php:119
 msgid "Gerar PDF de Separação"
 msgstr "Gerar PDF de Separação"
 
-#: src/App/Controllers/User/SeparationsController.php:121
+#: src/App/Controllers/User/SeparationsController.php:125
 msgid "Gerar PDF Atualizado"
 msgstr "Gerar PDF Atualizado"
 
-#: src/App/Controllers/User/SeparationsController.php:128
+#: src/App/Controllers/User/SeparationsController.php:132
 msgid "Ver Lista de Separação"
 msgstr "Ver Lista de Separação"
 
-#: src/App/Controllers/User/SeparationsController.php:143
+#: src/App/Controllers/User/SeparationsController.php:147
 msgid "Carregador"
 msgstr "Carregador"
 
-#: src/App/Controllers/User/SeparationsController.php:170
-#: src/App/Controllers/User/SeparationsController.php:209
+#: src/App/Controllers/User/SeparationsController.php:175
+#: src/App/Controllers/User/SeparationsController.php:214
 msgid "A separação não foi encontrada!"
 msgstr "A separação não foi encontrada!"
 
-#: src/App/Controllers/User/SeparationsController.php:212
+#: src/App/Controllers/User/SeparationsController.php:217
 msgid "Este ID de separação ainda tem EANs para serem separados!"
 msgstr "Este ID de separação ainda tem EANs para serem separados!"
-
-#: src/App/Controllers/User/SeparationsController.php:299
-msgid "ID de Operação"
-msgstr "ID de Operação"
 
 #: src/App/Controllers/User/StorageController.php:41
 #: src/App/Controllers/User/StreetsController.php:21
@@ -2631,17 +2964,17 @@ msgstr "Voltar ao Início"
 msgid "O ID de operação é obrigatório!"
 msgstr "O ID de operação é obrigatório!"
 
-#: src/Models/Conference.php:55 src/Models/SeparationItem.php:66
+#: src/Models/Conference.php:55 src/Models/SeparationItem.php:71
 msgid "O ADM é obrigatório!"
 msgstr "O ADM é obrigatório!"
 
-#: src/Models/Conference.php:58 src/Models/Pallet.php:115
-#: src/Models/SeparationItem.php:80
+#: src/Models/Conference.php:58 src/Models/Pallet.php:121
+#: src/Models/SeparationItem.php:92
 msgid "O status é obrigatório!"
 msgstr "O status é obrigatório!"
 
-#: src/Models/Conference.php:59 src/Models/Pallet.php:116
-#: src/Models/SeparationItem.php:81
+#: src/Models/Conference.php:59 src/Models/Pallet.php:122
+#: src/Models/SeparationItem.php:93
 msgid "O status é inválido!"
 msgstr "O status é inválido!"
 
@@ -2669,8 +3002,8 @@ msgstr "A data de término é obrigatória!"
 msgid "A data de término deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
 msgstr "A data de término deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
 
-#: src/Models/Conference.php:238 src/Models/Separation.php:149
-#: src/Models/SeparationItem.php:321
+#: src/Models/Conference.php:238 src/Models/Separation.php:172
+#: src/Models/SeparationItem.php:375
 msgid "Aguardando"
 msgstr "Aguardando"
 
@@ -2682,105 +3015,116 @@ msgstr "Iniciada"
 msgid "Finalizada"
 msgstr "Finalizada"
 
-#: src/Models/ConferenceExpeditionForm.php:29
-#: src/Models/ConferenceLoadingForm.php:24 src/Models/SeparationItem.php:85
+#: src/Models/ConferenceExpeditionForm.php:31
+#: src/Models/ConferenceLoadingForm.php:24 src/Models/Pallet.php:126
+#: src/Models/SeparationItem.php:97
 msgid "O ID de separação é obrigatório!"
 msgstr "O ID de separação é obrigatório!"
 
-#: src/Models/ConferenceExpeditionForm.php:32
+#: src/Models/ConferenceExpeditionForm.php:34
 #: src/Models/ConferenceSeparationForm.php:37
 msgid "O EAN é obrigatório!"
 msgstr "O EAN é obrigatório!"
 
-#: src/Models/ConferenceExpeditionForm.php:35
+#: src/Models/ConferenceExpeditionForm.php:38
 #: src/Models/ConferenceSeparationForm.php:41 src/Models/PalletFromTo.php:47
-#: src/Models/SeparationItem.php:76 src/Models/SeparationItem.php:97
+#: src/Models/SeparationItem.php:84 src/Models/SeparationItem.php:113
 msgid "A quantidade é obrigatória!"
 msgstr "A quantidade é obrigatória!"
 
-#: src/Models/ConferenceExpeditionForm.php:40
+#: src/Models/ConferenceExpeditionForm.php:50
 #: src/Models/ConferenceLoadingForm.php:35
 msgid "Este ID de separação não foi gerado!"
 msgstr "Este ID de separação não foi gerado!"
 
-#: src/Models/ConferenceExpeditionForm.php:44
+#: src/Models/ConferenceExpeditionForm.php:54
 #: src/Models/ConferenceSeparationForm.php:62
 msgid "Nenhum produto foi encontrado a partir deste EAN!"
 msgstr "Nenhum produto foi encontrado a partir deste EAN!"
 
-#: src/Models/ConferenceExpeditionForm.php:52
-#: src/Models/ConferenceExpeditionForm.php:53
-#: src/Models/ConferenceSeparationForm.php:75
-#: src/Models/ConferenceSeparationForm.php:76
+#: src/Models/ConferenceExpeditionForm.php:63
+#: src/Models/ConferenceExpeditionForm.php:64
 msgid ""
-"Nenhum registro de separação foi encontrado por este EAN e ID de separação!"
+"Nenhum item de separação para ser conferido foi encontrado por este EAN e ID "
+"de separação!"
 msgstr ""
-"Nenhum registro de separação foi encontrado por este EAN e ID de separação!"
+"Nenhum item de separação para ser conferido foi encontrado por este EAN e ID "
+"de separação!"
 
-#: src/Models/ConferenceExpeditionForm.php:55
-#: src/Models/ConferenceExpeditionForm.php:56
+#: src/Models/ConferenceExpeditionForm.php:66
+#: src/Models/ConferenceExpeditionForm.php:67
 msgid "Este produto ainda não foi separado pelo operador!"
 msgstr "Este produto ainda não foi separado pelo operador!"
 
-#: src/Models/ConferenceInput.php:53 src/Models/Pallet.php:71
+#: src/Models/ConferenceInput.php:54 src/Models/Pallet.php:73
 #: src/Models/PalletFromTo.php:44
 msgid "O ID de conferência é obrigatório!"
 msgstr "O ID de conferência é obrigatório!"
 
-#: src/Models/ConferenceInput.php:56
+#: src/Models/ConferenceInput.php:57
 msgid "O ID do usuário é obrigatório!"
 msgstr "O ID do usuário é obrigatório!"
 
-#: src/Models/ConferenceInput.php:59 src/Models/Pallet.php:74
+#: src/Models/ConferenceInput.php:60 src/Models/Pallet.php:76
 #: src/Models/Product.php:55
 msgid "O ID do produto é obrigatório!"
 msgstr "O ID do produto é obrigatório!"
 
-#: src/Models/ConferenceInput.php:62 src/Models/ConferenceInputForm.php:30
-#: src/Models/Pallet.php:80
+#: src/Models/ConferenceInput.php:63 src/Models/ConferenceInputForm.php:32
+#: src/Models/Pallet.php:82
 msgid "A embalagem é obrigatória!"
 msgstr "A embalagem é obrigatória!"
 
-#: src/Models/ConferenceInput.php:65 src/Models/ConferenceInput.php:68
+#: src/Models/ConferenceInput.php:66 src/Models/ConferenceInput.php:69
 msgid "A quantidade de caixas físicas é obrigatório!"
 msgstr "A quantidade de caixas físicas é obrigatório!"
 
-#: src/Models/ConferenceInput.php:71
+#: src/Models/ConferenceInput.php:72
 msgid "A quantidade de unidades é obrigatório!"
 msgstr "A quantidade de unidades é obrigatório!"
 
-#: src/Models/ConferenceInput.php:74 src/Models/ConferenceInputForm.php:42
-#: src/Models/Pallet.php:95
+#: src/Models/ConferenceInput.php:75 src/Models/ConferenceInputForm.php:44
+#: src/Models/Pallet.php:97
 msgid "O tipo de serviço é obrigatório!"
 msgstr "O tipo de serviço é obrigatório!"
 
-#: src/Models/ConferenceInput.php:75 src/Models/Pallet.php:96
+#: src/Models/ConferenceInput.php:76 src/Models/Pallet.php:98
 msgid "O tipo de serviço é inválido!"
 msgstr "O tipo de serviço é inválido!"
 
-#: src/Models/ConferenceInput.php:78 src/Models/Pallet.php:99
+#: src/Models/ConferenceInput.php:79 src/Models/ConferenceInputForm.php:50
+#: src/Models/Pallet.php:101
+msgid "A data de validade é obrigatória!"
+msgstr "A data de validade é obrigatória!"
+
+#: src/Models/ConferenceInput.php:80 src/Models/ConferenceInputForm.php:51
+#: src/Models/Pallet.php:102
+msgid "A data de validade deve seguir o padrão dd/mm/yyyy!"
+msgstr "A data de validade deve seguir o padrão dd/mm/yyyy!"
+
+#: src/Models/ConferenceInput.php:83 src/Models/Pallet.php:105
 msgid "A altura do pallet é obrigatória!"
 msgstr "A altura do pallet é obrigatória!"
 
-#: src/Models/ConferenceInput.php:81 src/Models/ConferenceInputForm.php:24
-#: src/Models/ConferenceInputForm.php:33
+#: src/Models/ConferenceInput.php:86 src/Models/ConferenceInputForm.php:26
+#: src/Models/ConferenceInputForm.php:35
 msgid "O código de barras é obrigatório!"
 msgstr "O código de barras é obrigatório!"
 
-#: src/Models/ConferenceInput.php:82
+#: src/Models/ConferenceInput.php:87
 #, php-format
 msgid "O código de barras deve conter no máximo %s caractéres!"
 msgstr "O código de barras deve conter no máximo %s caractéres!"
 
-#: src/Models/ConferenceInputForm.php:36
+#: src/Models/ConferenceInputForm.php:38
 msgid "A quantidade de caixas no físico é obrigatória!"
 msgstr "A quantidade de caixas no físico é obrigatória!"
 
-#: src/Models/ConferenceInputForm.php:39
+#: src/Models/ConferenceInputForm.php:41
 msgid "A quantidade de pallets fechados é obrigatória!"
 msgstr "A quantidade de pallets fechados é obrigatória!"
 
-#: src/Models/ConferenceInputForm.php:45
+#: src/Models/ConferenceInputForm.php:47
 msgid "A altura é obrigatória!"
 msgstr "A altura é obrigatória!"
 
@@ -2788,7 +3132,7 @@ msgstr "A altura é obrigatória!"
 msgid "A placa de carregamento é obrigatória!"
 msgstr "A placa de carregamento é obrigatória!"
 
-#: src/Models/ConferenceLoadingForm.php:30
+#: src/Models/ConferenceLoadingForm.php:30 src/Models/Separation.php:59
 msgid "A doca é obrigatória!"
 msgstr "A doca é obrigatória!"
 
@@ -2800,11 +3144,11 @@ msgstr "Este ID de separação ainda tem EANs para serem conferidos!"
 msgid "Este ID de separação já está em carregamento!"
 msgstr "Este ID de separação já está em carregamento!"
 
-#: src/Models/ConferenceSeparationForm.php:34 src/Models/SeparationItem.php:93
+#: src/Models/ConferenceSeparationForm.php:34 src/Models/SeparationItem.php:109
 msgid "O endereçamento é obrigatório!"
 msgstr "O endereçamento é obrigatório!"
 
-#: src/Models/ConferenceSeparationForm.php:45 src/Models/SeparationItem.php:100
+#: src/Models/ConferenceSeparationForm.php:45 src/Models/SeparationItem.php:116
 msgid "A doca de despacho é obrigatória!"
 msgstr "A doca de despacho é obrigatória!"
 
@@ -2815,6 +3159,13 @@ msgstr "Nenhum pallet foi encontrado por este endereçamento!"
 #: src/Models/ConferenceSeparationForm.php:67
 msgid "O EAN de separação não é o mesmo que o do produto que está no pallet!"
 msgstr "O EAN de separação não é o mesmo que o do produto que está no pallet!"
+
+#: src/Models/ConferenceSeparationForm.php:75
+#: src/Models/ConferenceSeparationForm.php:76
+msgid ""
+"Nenhum registro de separação foi encontrado por este EAN e ID de separação!"
+msgstr ""
+"Nenhum registro de separação foi encontrado por este EAN e ID de separação!"
 
 #: src/Models/Config.php:45 src/Models/UserMeta.php:40
 msgid "O metadado é obrigatório!"
@@ -2962,8 +3313,8 @@ msgstr "O número do pedido/TR é obrigatório!"
 
 #: src/Models/Operation.php:69
 #, php-format
-msgid "O número do pedido deve conter no máximo %s caractéres!"
-msgstr "O número do pedido deve conter no máximo %s caractéres!"
+msgid "O número do pedido/TR deve conter no máximo %s caractéres!"
+msgstr "O número do pedido/TR deve conter no máximo %s caractéres!"
 
 #: src/Models/Operation.php:72
 msgid "O número da nota fiscal é obrigatório!"
@@ -2971,18 +3322,17 @@ msgstr "O número da nota fiscal é obrigatório!"
 
 #: src/Models/Operation.php:73
 #, php-format
-msgid "A nota fiscal deve conter no máximo %s caractéres!"
-msgstr "A nota fiscal deve conter no máximo %s caractéres!"
+msgid "O número da nota fiscal deve conter no máximo %s caractéres!"
+msgstr "O número da nota fiscal deve conter no máximo %s caractéres!"
 
-#: src/Models/Operation.php:76
+#: src/Models/Operation.php:76 src/Models/Separation.php:55
 msgid "A placa é obrigatória!"
 msgstr "A placa é obrigatória!"
 
-#: src/Models/Operation.php:77 src/Models/Product.php:45
-#: src/Models/Provider.php:39 src/Models/User.php:61 src/Models/UserForm.php:27
+#: src/Models/Operation.php:77 src/Models/Separation.php:56
 #, php-format
-msgid "O nome deve conter no máximo %s caractéres!"
-msgstr "O nome deve conter no máximo %s caractéres!"
+msgid "A placa deve conter no máximo %s caractéres!"
+msgstr "A placa deve conter no máximo %s caractéres!"
 
 #: src/Models/Operation.php:82
 msgid "Pelo menos um serviço precisa ser escolhido!"
@@ -3012,74 +3362,80 @@ msgstr "O número da matrícula ou a senha estão incorretos!"
 msgid "Essa conta não possui permissão para entrar nessa área!"
 msgstr "Essa conta não possui permissão para entrar nessa área!"
 
-#: src/Models/Pallet.php:77
+#: src/Models/Pallet.php:79
 msgid "O usuário que alocou é obrigatório!"
 msgstr "O usuário que alocou é obrigatório!"
 
-#: src/Models/Pallet.php:83
+#: src/Models/Pallet.php:85
 msgid "A quantidade de caixas físicas inicial é obrigatória!"
 msgstr "A quantidade de caixas físicas inicial é obrigatória!"
 
-#: src/Models/Pallet.php:86
+#: src/Models/Pallet.php:88
 msgid "A quantidade de caixas físicas atual é obrigatória!"
 msgstr "A quantidade de caixas físicas atual é obrigatória!"
 
-#: src/Models/Pallet.php:89
+#: src/Models/Pallet.php:91
 msgid "A quantidade de unidades inicial é obrigatória!"
 msgstr "A quantidade de unidades inicial é obrigatória!"
 
-#: src/Models/Pallet.php:92
+#: src/Models/Pallet.php:94
 msgid "A quantidade de unidades final é obrigatória!"
 msgstr "A quantidade de unidades final é obrigatória!"
 
-#: src/Models/Pallet.php:102 src/Models/Street.php:47
+#: src/Models/Pallet.php:108 src/Models/Street.php:47
 msgid "O número da rua é obrigatório!"
 msgstr "O número da rua é obrigatório!"
 
-#: src/Models/Pallet.php:105
+#: src/Models/Pallet.php:111
 msgid "A posição da rua é obrigatório!"
 msgstr "A posição da rua é obrigatório!"
 
-#: src/Models/Pallet.php:108
+#: src/Models/Pallet.php:114
 msgid "A altura da rua é obrigatória!"
 msgstr "A altura da rua é obrigatória!"
 
-#: src/Models/Pallet.php:111
+#: src/Models/Pallet.php:117
 msgid "O código é obrigatório!"
 msgstr "O código é obrigatório!"
 
-#: src/Models/Pallet.php:112
+#: src/Models/Pallet.php:118
 #, php-format
 msgid "O código deve conter no máximo %s caractéres!"
 msgstr "O código deve conter no máximo %s caractéres!"
 
-#: src/Models/Pallet.php:120
+#: src/Models/Pallet.php:129
 msgid "O usuário que liberou é obrigatório!"
 msgstr "O usuário que liberou é obrigatório!"
 
-#: src/Models/Pallet.php:123
+#: src/Models/Pallet.php:132
 msgid "A data de saída é obrigatória!"
 msgstr "A data de saída é obrigatória!"
 
-#: src/Models/Pallet.php:124
+#: src/Models/Pallet.php:133
 msgid "A data de saída deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
 msgstr "A data de saída deve seguir o padrão dd/mm/yyyy hh/mm/ss!"
 
-#: src/Models/Pallet.php:290
+#: src/Models/Pallet.php:307
 msgid "Alocado"
 msgstr "Alocado"
 
-#: src/Models/Pallet.php:291
+#: src/Models/Pallet.php:308
 msgid "Liberado"
 msgstr "Liberado"
 
-#: src/Models/PalletFromTo.php:50 src/Models/SeparationItem.php:72
+#: src/Models/PalletFromTo.php:50 src/Models/SeparationItem.php:80
 msgid "O tipo de quantidade é obrigatório!"
 msgstr "O tipo de quantidade é obrigatório!"
 
-#: src/Models/PalletFromTo.php:51 src/Models/SeparationItem.php:73
+#: src/Models/PalletFromTo.php:51 src/Models/SeparationItem.php:81
 msgid "O tipo de quantidade é inválido!"
 msgstr "O tipo de quantidade é inválido!"
+
+#: src/Models/Product.php:45 src/Models/Provider.php:39 src/Models/User.php:61
+#: src/Models/UserForm.php:27
+#, php-format
+msgid "O nome deve conter no máximo %s caractéres!"
+msgstr "O nome deve conter no máximo %s caractéres!"
 
 #: src/Models/Product.php:48
 msgid "O ID do fornecedor é obrigatório!"
@@ -3123,23 +3479,40 @@ msgstr "A confirmação de senha é obrigatória!"
 msgid "As senhas não correspondem!"
 msgstr "As senhas não correspondem!"
 
-#: src/Models/Separation.php:47
+#: src/Models/Separation.php:48
 msgid "O usuário ADM é obrigatório!"
 msgstr "O usuário ADM é obrigatório!"
 
+#: src/Models/Separation.php:52
+msgid "O usuário que carregou é obrigatório!"
+msgstr "O usuário que carregou é obrigatório!"
+
+#: src/Models/Separation.php:60
+#, php-format
+msgid "A doca deve conter no máximo %s caractéres!"
+msgstr "A doca deve conter no máximo %s caractéres!"
+
 #: src/Models/Separation.php:63
+msgid "A data de carregamento é obrigatória!"
+msgstr "A data de carregamento é obrigatória!"
+
+#: src/Models/Separation.php:64
+msgid "A data de carregamento deve seguir o padrão dd/mm/yyyy hh:mm:ss!"
+msgstr "A data de carregamento deve seguir o padrão dd/mm/yyyy hh:mm:ss!"
+
+#: src/Models/Separation.php:81
 msgid "Você não pode excluir uma ordem de separação vinculada à um EAN!"
 msgstr "Você não pode excluir uma ordem de separação vinculada à um EAN!"
 
-#: src/Models/Separation.php:150
+#: src/Models/Separation.php:173
 msgid "Em Separação"
 msgstr "Em Separação"
 
-#: src/Models/Separation.php:151
+#: src/Models/Separation.php:174
 msgid "Em Conferência de Expedição"
 msgstr "Em Conferência de Expedição"
 
-#: src/Models/Separation.php:152
+#: src/Models/Separation.php:175
 msgid "Em Carregamento"
 msgstr "Em Carregamento"
 
@@ -3156,50 +3529,83 @@ msgstr "A ordem de serviço precisa ter no máximo %s caractéres!"
 msgid "Nenhuma operação foi encontrada a partir dessa ordem de serviço!"
 msgstr "Nenhuma operação foi encontrada a partir dessa ordem de serviço!"
 
-#: src/Models/SeparationItem.php:69
+#: src/Models/SeparationItem.php:74
 msgid "O produto é obrigatório!"
 msgstr "O produto é obrigatório!"
 
-#: src/Models/SeparationItem.php:77
+#: src/Models/SeparationItem.php:77 src/Models/SeparationItemPallet.php:42
+msgid "O pallet é obrigatório!"
+msgstr "O pallet é obrigatório!"
+
+#: src/Models/SeparationItem.php:85
 #, php-format
 msgid "A quantidade precisa ser maior ou igual a %s!"
 msgstr "A quantidade precisa ser maior ou igual a %s!"
 
-#: src/Models/SeparationItem.php:90
+#: src/Models/SeparationItem.php:88 src/Models/SeparationItemsImport.php:25
+msgid "O número do pedido é obrigatório!"
+msgstr "O número do pedido é obrigatório!"
+
+#: src/Models/SeparationItem.php:89
+#, php-format
+msgid "O número do pedido deve conter no máximo %s caractéres!"
+msgstr "O número do pedido deve conter no máximo %s caractéres!"
+
+#: src/Models/SeparationItem.php:102
 msgid "O separador é obrigatório!"
 msgstr "O separador é obrigatório!"
 
-#: src/Models/SeparationItem.php:94
+#: src/Models/SeparationItem.php:105
+msgid "A data de separação é obrigatória!"
+msgstr "A data de separação é obrigatória!"
+
+#: src/Models/SeparationItem.php:106
+msgid "A data de separação deve seguir o padrão dd/mm/yyyy hh:mm:ss!"
+msgstr "A data de separação deve seguir o padrão dd/mm/yyyy hh:mm:ss!"
+
+#: src/Models/SeparationItem.php:110
 #, php-format
 msgid "O endereçamento deve conter no máximo %s caractéres!"
 msgstr "O endereçamento deve conter no máximo %s caractéres!"
 
-#: src/Models/SeparationItem.php:101
+#: src/Models/SeparationItem.php:117
 #, php-format
 msgid "A doca de despacho deve conter no máximo %s caractéres!"
 msgstr "A doca de despacho deve conter no máximo %s caractéres!"
 
-#: src/Models/SeparationItem.php:106
+#: src/Models/SeparationItem.php:122
 msgid "O conferente é obrigatório!"
 msgstr "O conferente é obrigatório!"
 
-#: src/Models/SeparationItem.php:109
+#: src/Models/SeparationItem.php:125
+msgid "A data de conferência é obrigatória!"
+msgstr "A data de conferência é obrigatória!"
+
+#: src/Models/SeparationItem.php:126
+msgid "A data de conferência deve seguir o padrão dd/mm/yyyy hh:mm:ss!"
+msgstr "A data de conferência deve seguir o padrão dd/mm/yyyy hh:mm:ss!"
+
+#: src/Models/SeparationItem.php:129
 msgid "A quantidade conferida é obrigatória!"
 msgstr "A quantidade conferida é obrigatória!"
 
-#: src/Models/SeparationItem.php:322
+#: src/Models/SeparationItem.php:136
+msgid "A quantidade selecionada ultrapassa a quantidade que está no estoque!"
+msgstr "A quantidade selecionada ultrapassa a quantidade que está no estoque!"
+
+#: src/Models/SeparationItem.php:376
 msgid "Listado"
 msgstr "Listado"
 
-#: src/Models/SeparationItem.php:323
+#: src/Models/SeparationItem.php:377
 msgid "Separado"
 msgstr "Separado"
 
-#: src/Models/SeparationItem.php:324
+#: src/Models/SeparationItem.php:378
 msgid "Conferido"
 msgstr "Conferido"
 
-#: src/Models/SeparationItem.php:325
+#: src/Models/SeparationItem.php:379
 msgid "Finalizado"
 msgstr "Finalizado"
 
@@ -3207,9 +3613,21 @@ msgstr "Finalizado"
 msgid "O item de separação é obrigatório!"
 msgstr "O item de separação é obrigatório!"
 
-#: src/Models/SeparationItemPallet.php:42
-msgid "O pallet é obrigatório!"
-msgstr "O pallet é obrigatório!"
+#: src/Models/SeparationItemsImport.php:29
+msgid "O EAN do produto é obrigatório!"
+msgstr "O EAN do produto é obrigatório!"
+
+#: src/Models/SeparationItemsImport.php:33
+msgid "Ao menos uma das quantidades é obrigatória!"
+msgstr "Ao menos uma das quantidades é obrigatória!"
+
+#: src/Models/SeparationItemsImport.php:68
+msgid "Este EAN não encontrou nenhum produto!"
+msgstr "Este EAN não encontrou nenhum produto!"
+
+#: src/Models/SeparationItemsImport.php:70
+msgid "Este EAN não está em posição de picking!"
+msgstr "Este EAN não está em posição de picking!"
 
 #: src/Models/SocialUser.php:40
 msgid "O ID da rede social é obrigatório!"
@@ -3384,6 +3802,31 @@ msgstr "Lamentamos, mas o excel não pôde ser gerado!"
 msgid "Lamentamos, mas o PDF não pôde ser gerado!"
 msgstr "Lamentamos, mas o PDF não pôde ser gerado!"
 
+#: src/Utils/ErrorMessages.php:48
+msgid "Lamentamos, mas houveram erros na importação do CSV!"
+msgstr "Lamentamos, mas houveram erros na importação do CSV!"
+
+#~ msgid "Qtde. CX Físico"
+#~ msgstr "Qtde. CX Físico"
+
+#~ msgid "Qtde. Unidade"
+#~ msgstr "Qtde. Unidade"
+
+#~ msgid "Número de Pedido"
+#~ msgstr "Número de Pedido"
+
+#~ msgid "Upload de Arquivos"
+#~ msgstr "Upload de Arquivos"
+
+#~ msgid "Escolher Imagem"
+#~ msgstr "Escolher Imagem"
+
+#~ msgid "Remover Imagem"
+#~ msgstr "Remover Imagem"
+
+#~ msgid "Conferências"
+#~ msgstr "Conferências"
+
 #~ msgid "Nova Separação"
 #~ msgstr "Nova Separação"
 
@@ -3453,10 +3896,6 @@ msgstr "Lamentamos, mas o PDF não pôde ser gerado!"
 #, php-format
 #~ msgid "O número da ocorrência deve conter no máximo %s caractéres!"
 #~ msgstr "O número da ocorrência deve conter no máximo %s caractéres!"
-
-#, php-format
-#~ msgid "A doca deve conter no máximo %s caractéres!"
-#~ msgstr "A doca deve conter no máximo %s caractéres!"
 
 #, fuzzy
 #~| msgid "A data de início é obrigatória!"
@@ -3746,11 +4185,6 @@ msgstr "Lamentamos, mas o PDF não pôde ser gerado!"
 #, php-format
 #~ msgid "O número de senha deve conter no máximo %s caractéres!"
 #~ msgstr "O número de senha deve conter no máximo %s caractéres!"
-
-#, fuzzy
-#~| msgid "Número do Pedido/TR"
-#~ msgid "Número do Pedido/TR/OS"
-#~ msgstr "Número do Pedido/TR"
 
 #~ msgid "Incluir?"
 #~ msgstr "Incluir?"

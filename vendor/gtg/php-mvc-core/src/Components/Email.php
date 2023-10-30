@@ -38,7 +38,12 @@ class Email
         $this->mail->Password = Application::$SMTP_INFO['password'];
     }
 
-    public function add(string $subject, string $body, string $recipientName, string $recipientEmail): self 
+    public function add(
+        string $subject, 
+        string $body, 
+        string $recipientName, 
+        string $recipientEmail
+    ): self 
     {
         $this->data->subject = $subject;
         $this->data->body = $body;

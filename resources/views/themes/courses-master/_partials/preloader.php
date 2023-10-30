@@ -4,7 +4,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="<?= $shortcutIcon ?>" alt="">
+                <img src="<?= $theme->logo_icon ?>" alt="">
             </div>
         </div>
     </div>

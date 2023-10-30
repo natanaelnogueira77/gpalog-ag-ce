@@ -21,6 +21,10 @@
         
         const separation_item_list_modal = $("#separation-item-list-modal");
 
+        const import_csv_btn = $("#import-csv");
+        const import_separation_items_form = $("#import-separation-items");
+        const import_separation_items_modal = $("#import-separation-items-modal");
+
         const DTBondPallets = app.table(bond_pallets_table, bond_pallets_table.data('action'));
         DTBondPallets.defaultParams(app.objectifyForm(bond_pallets_filters_form)).filtersForm(bond_pallets_filters_form)
         .setMsgFunc((msg) => app.showMessage(msg.message, msg.type)).loadOnChange().addAction((table) => {
@@ -32,6 +36,7 @@
                     type: data.method,
                     success: function (response) {
                         DTBondPallets.load();
+                        DTSeparationItems.load();
                     }
                 });
             });
@@ -157,6 +162,14 @@
                     send_separation_item_list_modal.modal('show');
                 }
             });
+        });
+
+        import_csv_btn.click(function () {
+            var data = $(this).data();
+
+            import_separation_items_form.attr('action', data.action);
+            import_separation_items_form.attr('method', data.method);
+            import_separation_items_modal.modal('show');
         });
 
         app.form(send_separation_item_list_form, function (response) {

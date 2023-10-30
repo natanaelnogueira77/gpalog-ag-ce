@@ -5,6 +5,42 @@
         const filters_form = $("#filters");
 
         const mediaLibrary = new MediaLibrary();
+        const FSLogo = (new FileSelector(
+            '#logo-area', 
+            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png'])
+        ))
+        <?php if($configMetas['logo']): ?>
+        .loadFiles({
+            uri: <?php echo json_encode($configMetas['logo']) ?>,
+            url: <?php echo json_encode(url($configMetas['logo'])) ?>
+        })
+        <?php endif; ?>
+        .render();
+
+        const FSLogoIcon = (new FileSelector(
+            '#logo-icon-area', 
+            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png'])
+        ))
+        <?php if($configMetas['logo_icon']): ?>
+        .loadFiles({
+            uri: <?php echo json_encode($configMetas['logo_icon']) ?>,
+            url: <?php echo json_encode(url($configMetas['logo_icon'])) ?>
+        })
+        <?php endif; ?>
+        .render();
+
+        const FSLoginImg = (new FileSelector(
+            '#login-img-area', 
+            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png'])
+        ))
+        <?php if($configMetas['login_img']): ?>
+        .loadFiles({
+            uri: <?php echo json_encode($configMetas['login_img']) ?>,
+            url: <?php echo json_encode(url($configMetas['login_img'])) ?>
+        })
+        <?php endif; ?>
+        .render();
+
         const dataTable = app.table(table, table.data('action'));
         dataTable.defaultParams(app.objectifyForm(filters_form)).filtersForm(filters_form)
         .setMsgFunc((msg) => app.showMessage(msg.message, msg.type)).loadOnChange().addAction((table) => {
@@ -23,61 +59,40 @@
             });
         }).load();
 
-        $("#logo_upload").click(function () {
-            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png']).setSuccess(function (path) {
-                $("#logo").val(path);
-                $("img#logo_view").attr("src", `${mediaLibrary.path}/${path}`);
-            }).open();
-        });
+        $("#system").submit(function (e) {
+            e.preventDefault();
 
-        $("#logo_remove").each(function () {
-            $(this).click(function () {
-                $(this).parent().children("#logo").val('');
-                $(this).parent().parent().find("#logo_view").attr("src", '');
+            const form = $(this);
+            var formData = app.objectifyForm(form);
+            formData['logo'] = FSLogo.getURIList();
+            formData['logo_icon'] = FSLogoIcon.getURIList();
+            formData['login_img'] = FSLoginImg.getURIList();
+
+            app.callAjax({
+                url: form.attr('action'),
+                type: form.attr('method'),
+                data: formData,
+                success: function (response) {
+                    window.location.reload();
+                }, 
+                error: function (response) {
+                    var errors = [];
+                    if(response.errors) {
+                        errors = response.errors;
+                    }
+
+                    app.showFormErrors(form, errors, 'name');
+                }
             });
         });
-
-        $("#logo_icon_upload").click(function () {
-            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png']).setSuccess(function (path) {
-                $("#logo_icon").val(path);
-                $("img#logo_icon_view").attr("src", `${mediaLibrary.path}/${path}`);
-            }).open();
-        });
-
-        $("#logo_icon_remove").each(function () {
-            $(this).click(function () {
-                $(this).parent().children("#logo_icon").val('');
-                $(this).parent().parent().find("#logo_icon_view").attr("src", '');
-            });
-        });
-
-        $("#login_img_upload").click(function () {
-            mediaLibrary.setFileTypes(['jpg', 'jpeg', 'png']).setSuccess(function (path) {
-                $("#login_img").val(path);
-                $("img#login_img_view").attr("src", `${mediaLibrary.path}/${path}`);
-            }).open();
-        });
-
-        $("#login_img_remove").each(function () {
-            $(this).click(function () {
-                $(this).parent().children("#login_img").val('');
-                $(this).parent().parent().find("#login_img_view").attr("src", '');
-            });
-        });
-
-        app.form($("#system"), function (response) { });
 
         $("[data-info=users]").click(function() {
             var data = $(this).data();
             $("#panel_users").show('fast');
             
-            dataTable.params({
-                user_type: data.id
-            }).load();
+            dataTable.params({ user_type: data.id }).load();
 
-            $('html,body').animate({
-                scrollTop: $("#panels_top").offset().top},
-                'slow');
+            $('html,body').animate({ scrollTop: $("#panels_top").offset().top }, 'slow');
         });
     });
 </script>

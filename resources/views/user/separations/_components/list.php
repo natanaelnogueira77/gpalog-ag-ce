@@ -1,6 +1,7 @@
 <table class="table table-bordered table-striped table-hover">
     <thead>
         <th class="align-middle"><?= _('EAN') ?></th>
+        <th class="align-middle"><?= _('Número do Pedido') ?></th>
         <th class="align-middle"><?= _('Tipo de Quantidade') ?></th>
         <th class="align-middle"><?= _('Quantidade') ?></th>
         <th class="align-middle"><?= _('Número do Pallet') ?></th>
@@ -12,6 +13,7 @@
         <?php foreach($dbSeparationItems as $dbSeparationItem): ?>
         <tr>
             <td class="align-middle"><?= $dbSeparationItem->product->ean ?></td>
+            <td class="align-middle"><?= $dbSeparationItem->order_number ?></td>
             <td class="align-middle"><?= $dbSeparationItem->getAmountType() ?></td>
             <td class="align-middle"><?= $dbSeparationItem->amount ?></td>
             <td class="align-middle">

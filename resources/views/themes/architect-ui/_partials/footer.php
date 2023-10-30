@@ -5,7 +5,7 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link">
-                            <?= $rightText ?>
+                            <?= $theme->footer['right_text'] ?>
                         </a>
                     </li>
                 </ul>

@@ -1,7 +1,6 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Administrador | %s'), $appData['app_name'])
-    ]);
+    $theme->title = sprintf(_('Administrador | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
 
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Painel do Administrador'),
@@ -143,21 +142,7 @@
                             <i class="icofont-question-circle" style="font-size: 1.1rem;"></i>
                         </span>
                     </label>
-                    <div class="d-flex justify-content-around">
-                        <img id="login_img_view" style="max-height: 100px; max-width: 100%;" 
-                            src="<?= url($configMetas['login_img']) ?>">
-                    </div>
-
-                    <div class="d-block text-center mt-2">
-                        <input type="hidden" id="login_img" name="login_img" value="<?= $configMetas['login_img'] ?>">
-                        <button type="button" class="btn btn-outline-primary btn-md" id="login_img_upload">
-                            <i class="icofont-upload-alt"></i> <?= _('Escolher Imagem') ?>
-                        </button>
-                        
-                        <button type="button" class="btn btn-outline-danger btn-md" id="login_img_remove">
-                            <i class="icofont-close"></i> <?= _('Remover Imagem') ?>
-                        </button>
-                    </div>
+                    <div id="login-img-area"></div>
                     <small class="text-danger" data-error="login_img"></small>
                 </div>
             </div>
@@ -170,21 +155,7 @@
                             <i class="icofont-question-circle" style="font-size: 1.1rem;"></i>
                         </span>
                     </label>
-                    <div class="d-flex justify-content-around">
-                        <img id="logo_view" style="max-height: 100px; max-width: 100%;" 
-                            src="<?= url($configMetas['logo']) ?>">
-                    </div>
-
-                    <div class="d-block text-center mt-2">
-                        <input type="hidden" id="logo" name="logo" value="<?= $configMetas['logo'] ?>">
-                        <button type="button" class="btn btn-outline-primary btn-md" id="logo_upload">
-                            <i class="icofont-upload-alt"></i> <?= _('Escolher Imagem') ?>
-                        </button>
-
-                        <button type="button" class="btn btn-outline-danger btn-md" id="logo_remove">
-                            <i class="icofont-close"></i> <?= _('Remover Imagem') ?>
-                        </button>
-                    </div>
+                    <div id="logo-area"></div>
                     <small class="text-danger" data-error="logo"></small>
                 </div>
 
@@ -195,21 +166,7 @@
                             <i class="icofont-question-circle" style="font-size: 1.1rem;"></i>
                         </span>
                     </label>
-                    <div class="d-flex justify-content-around">
-                        <img id="logo_icon_view" style="max-height: 100px; max-width: 100%;" 
-                            src="<?= url($configMetas['logo_icon']) ?>">
-                    </div>
-
-                    <div class="d-block text-center mt-2">
-                        <input type="hidden" id="logo_icon" name="logo_icon" value="<?= $configMetas['logo_icon'] ?>">
-                        <button type="button" class="btn btn-outline-primary btn-md" id="logo_icon_upload">
-                            <i class="icofont-upload-alt"></i> <?= _('Escolher Imagem') ?>
-                        </button>
-                        
-                        <button type="button" class="btn btn-outline-danger btn-md" id="logo_icon_remove">
-                            <i class="icofont-close"></i> <?= _('Remover Imagem') ?>
-                        </button>
-                    </div>
+                    <div id="logo-icon-area"></div>
                     <small class="text-danger" data-error="logo_icon"></small>
                 </div>
             </div>
@@ -222,7 +179,13 @@
 </div>
 
 <?php 
-    $this->start('scripts');
-    $this->insert('admin/_scripts/index.js');
+    $this->start('scripts'); 
+    $this->insert('admin/_scripts/index.js', [
+        'configMetas' => $configMetas
+    ]);
     $this->end(); 
+
+    $this->start('modals');
+    $this->insert('_components/media-library', ['v' => $this]);
+    $this->end();
 ?>

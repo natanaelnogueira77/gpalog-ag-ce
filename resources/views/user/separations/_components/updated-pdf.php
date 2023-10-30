@@ -53,7 +53,7 @@
         }
     </style>
     <link rel="shortcut icon" href="<?= $shortcutIcon ?>" type="image/png">
-    <title><?= sprintf(_('Separação de Produto - %s'), $dbSeparation->id) ?></title>
+    <title><?= sprintf(_('Separação de Produto - ID %s'), $dbSeparation->id) ?></title>
 </head>
 <body>
     <div style="padding: 1.25rem;">
@@ -61,24 +61,24 @@
             <img src="<?= $logo ?>" height="60px" class="logo">
         </div>
 
-        <h1 class="title"><?= sprintf(_('Separação de Produto - %s'), $dbSeparation->id) ?></h1>
+        <h1 class="title"><?= sprintf(_('Separação de Produto - ID %s'), $dbSeparation->id) ?></h1>
         <table class="table">
             <thead>
-                <th colspan="11"><?= _('Informações da Separação') ?></th>
+                <th colspan="12"><?= _('Informações da Separação') ?></th>
             </thead>
             
             <tbody>
                 <tr>
                     <td colspan="6"><?= _('ID de Separação') ?></td>
-                    <td colspan="5"><?= $dbSeparation->id ?></td>
+                    <td colspan="6"><?= $dbSeparation->id ?></td>
                 </tr>
                 <tr>
                     <td colspan="6"><?= _('Data de Separação') ?></td>
-                    <td colspan="5"><?= $dbSeparation->getCreatedAtDateTime()->format('d/m/Y') ?></td>
+                    <td colspan="6"><?= $dbSeparation->getCreatedAtDateTime()->format('d/m/Y') ?></td>
                 </tr>
                 <tr>
                     <td colspan="6"><?= _('Horário de Separação') ?></td>
-                    <td colspan="5"><?= $dbSeparation->getCreatedAtDateTime()->format('H:i:s') ?></td>
+                    <td colspan="6"><?= $dbSeparation->getCreatedAtDateTime()->format('H:i:s') ?></td>
                 </tr>
             </tbody>
 
@@ -87,6 +87,7 @@
                 <th style="text-align: center;"><?= _('Rua') ?></th>
                 <th style="text-align: center;"><?= _('Posição') ?></th>
                 <th style="text-align: center;"><?= _('Altura') ?></th>
+                <th style="text-align: center;"><?= _('Nº do Pedido') ?></th>
                 <th style="text-align: center;"><?= _('Nome do Produto') ?></th>
                 <th style="text-align: center;"><?= _('EAN') ?></th>
                 <th style="text-align: center;"><?= _('Doca de Despacho') ?></th>
@@ -137,6 +138,7 @@
                                 }
                             ?>
                         </td>
+                        <td style="text-align: center;"><?= $dbSeparationItem->order_number ?></td>
                         <td style="text-align: center;"><?= $dbSeparationItem->product->name ?></td>
                         <td style="text-align: center;">
                             <?= $dbSeparationItem->product->getEANBarcodePNG() ?>

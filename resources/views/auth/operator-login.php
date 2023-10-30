@@ -4,8 +4,8 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="<?= url($shortcutIcon) ?>" type="image/png">
-    <title><?= $title ?></title>
+    <link rel="shortcut icon" href="<?= $theme->logo_icon ?>" type="image/png">
+    <title><?= $theme->title ?></title>
 </head>
 <body style="height: 100vh; width: 100%; background-color: black;">
     <?php 

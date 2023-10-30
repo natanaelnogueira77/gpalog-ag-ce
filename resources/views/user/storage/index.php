@@ -1,7 +1,6 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Armazenagem | %s'), $appData['app_name'])
-    ]);
+    $theme->title = sprintf(_('Armazenagem | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
     
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Armazenagem'),
@@ -20,7 +19,7 @@
 
         <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
-                <a class="btn btn-lg btn-outline-success" href="<?= $router->route('user.storage.export') ?>"
+                <a class="btn btn-lg btn-success" href="<?= $router->route('user.storage.export') ?>"
                     target="_blank">
                     <i class="icofont-file-excel"></i>
                     <?= _('Exportar Excel') ?>

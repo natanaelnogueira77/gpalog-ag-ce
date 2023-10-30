@@ -1,8 +1,7 @@
 <?php 
-    $this->layout("themes/architect-ui/_theme", [
-        'title' => sprintf(_('Usuários | %s'), $appData['app_name'])
-    ]);
-
+    $theme->title = sprintf(_('Usuários | %s'), $appData['app_name']);
+    $this->layout("themes/architect-ui/_theme", ['theme' => $theme]);
+    
     $this->insert('themes/architect-ui/_components/title', [
         'title' => _('Lista de Usuários'),
         'subtitle' => _('Segue abaixo a lista de usuários do sistema'),

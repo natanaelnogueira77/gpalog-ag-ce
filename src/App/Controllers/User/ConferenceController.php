@@ -107,7 +107,8 @@ class ConferenceController extends TemplateController
                     'boxes_amount' => $data['boxes_amount'] ? $data['boxes_amount'] : null,
                     'pallets_amount' => $data['pallets_amount'] ? $data['pallets_amount'] : null,
                     'service_type' => $data['service_type'] ? $data['service_type'] : null,
-                    'pallet_height' => $data['pallet_height'] ? floatval($data['pallet_height']) : null
+                    'pallet_height' => $data['pallet_height'] ? floatval($data['pallet_height']) : null,
+                    'expiration_date' => $data['expiration_date'] ? $data['expiration_date'] : null
                 ]);
                 if(!$conferenceInputForm->complete()) {
                     $this->session->setFlash('error', ErrorMessages::form());
@@ -124,7 +125,8 @@ class ConferenceController extends TemplateController
                         'pallets_amount' => $conferenceInputForm->pallets_amount, 
                         'units_amount' => $conferenceInputForm->boxes_amount * $conferenceInputForm->package, 
                         'service_type' => $conferenceInputForm->service_type, 
-                        'pallet_height' => $conferenceInputForm->pallet_height
+                        'pallet_height' => $conferenceInputForm->pallet_height,
+                        'expiration_date' => $conferenceInputForm->expiration_date
                     ]);
     
                     if(!$dbConferenceInput->save()) {
@@ -273,6 +275,7 @@ class ConferenceController extends TemplateController
             } else {
                 $CSF->separationItem->loadData([
                     'separation_usu_id' => $this->session->getAuth()->id,
+                    'separation_date' => date('Y-m-d H:i:s'),
                     'address' => $CSF->address,
                     'separation_amount' => $CSF->amount,
                     'dispatch_dock' => $CSF->dispatch_dock
@@ -282,7 +285,7 @@ class ConferenceController extends TemplateController
                     $this->session->setFlash('error', ErrorMessages::requisition());
                 } else {
                     if(!$CSF->separationItem->setAsSeparated()->save()) {
-                        $this->session->setFlash('error', ErrorMessages::requisition());
+                        $this->session->setFlash('error', ErrorMessages::requisition() . json_encode($CSF->separationItem->getFirstErrors()));
                     } else {
                         if(!$CSF->separationItem->separate($CSF->amount, $this->session->getAuth()->id)) {
                             $this->session->setFlash('error', ErrorMessages::requisition());
@@ -320,14 +323,25 @@ class ConferenceController extends TemplateController
             'has_completion' => $data['has_completion'] ? true : false
         ]);
 
-        if($CEF->isOnEAN() || $CEF->isOnCompletion()) {
+        if($CEF->isOnEAN() || $CEF->isOnAmount() || $CEF->isOnCompletion()) {
             if(!$CEF->getByEAN()) {
                 $this->session->setFlash('error', ErrorMessages::form());
                 $nextStep = ConferenceExpeditionForm::STEP_EAN;
                 $previousStep = 0;
             } else {
-                $nextStep = ConferenceExpeditionForm::STEP_COMPLETION;
+                $nextStep = ConferenceExpeditionForm::STEP_AMOUNT;
                 $previousStep = 0;
+            }
+        }
+
+        if($CEF->isOnAmount() || $CEF->isOnCompletion()) {
+            if(!$CEF->validateAmount()) {
+                $this->session->setFlash('error', ErrorMessages::form());
+                $nextStep = ConferenceExpeditionForm::STEP_AMOUNT;
+                $previousStep = ConferenceExpeditionForm::STEP_EAN;
+            } else {
+                $nextStep = ConferenceExpeditionForm::STEP_COMPLETION;
+                $previousStep = ConferenceExpeditionForm::STEP_EAN;
             }
         }
 
@@ -335,10 +349,11 @@ class ConferenceController extends TemplateController
             if(!$CEF->validateCompletion()) {
                 $this->session->setFlash('error', ErrorMessages::form());
                 $nextStep = ConferenceExpeditionForm::STEP_COMPLETION;
-                $previousStep = ConferenceExpeditionForm::STEP_EAN;
+                $previousStep = ConferenceExpeditionForm::STEP_AMOUNT;
             } else {
                 $CEF->separationItem->loadData([
                     'conf_usu_id' => $this->session->getAuth()->id,
+                    'conf_date' => date('Y-m-d H:i:s'),
                     'conf_amount' => $CEF->amount
                 ]);
 
@@ -399,6 +414,7 @@ class ConferenceController extends TemplateController
             } else {
                 $CLF->separation->loadData([
                     'loading_usu_id' => $this->session->getAuth()->id,
+                    'loading_date' => date('Y-m-d H:i:s'),
                     'plate' => $CLF->plate,
                     'dock' => $CLF->dock
                 ]);
@@ -408,6 +424,7 @@ class ConferenceController extends TemplateController
                 } else {
                     if($dbSeparationItems = $CLF->separation->separationItems()) {
                         foreach($dbSeparationItems as $dbSeparationItem) {
+                            $dbSeparationItem->setAsHavingAmountInStock();
                             $dbSeparationItem->setAsFinished();
                         }
 
