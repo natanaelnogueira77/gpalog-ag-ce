@@ -84,7 +84,7 @@ class InputOutputHistoryController extends TemplateController
                     'provider_name' => $conference->provider_name,
                     'loading_password' => $conference->loading_password,
                     'order_number' => $conference->order_number,
-                    'c_status' => "<div class=\"badge badge-{$stColors[$conference->c_status]}\">" . $conference->getStatus() . "</div>",
+                    'c_status' => "<div class=\"badge badge-{$conference->getStatusColor()}\">{$conference->getStatus()}</div>",
                     'actions' => "
                         <div class=\"dropup d-inline-block\">
                             <button type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\" 
@@ -692,6 +692,7 @@ class InputOutputHistoryController extends TemplateController
                     _('Hora de Geração da Lista de Separação') => $dbPallet->separation?->getCreatedAtDateTime()?->format('H:i') ?? '--:--',
                     _('Status da Lista de Separação') => $dbPallet->separation?->getStatus() ?? '---',
                     _('Tipo de Quantidade Separada') => $dbSeparationItem?->getAmountType() ?? '---',
+                    _('Número do Pedido de Separação') => $dbSeparationItem?->order_number ?? '---',
                     _('Quantidade Solicitada pela ADM') => $dbSeparationItem?->amount ?? '---',
                     _('Operador que Fez a Separação') => $dbSeparationItem?->separationUser?->name ?? '---',
                     _('Data de Separação do Operador') => $dbSeparationItem?->getSeparationDateTime()?->format('d/m/Y') ?? '--/--/----',

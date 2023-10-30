@@ -246,6 +246,20 @@ class Conference extends DBModel
         return isset(self::getStates()[$this->c_status]) ? self::getStates()[$this->c_status] : null;
     }
 
+    public static function getStatesColors(): array 
+    {
+        return [
+            self::CS_WAITING => 'warning',
+            self::CS_STARTED => 'primary',
+            self::CS_FINISHED => 'success'
+        ];
+    }
+
+    public function getStatusColor(): ?string 
+    {
+        return isset(self::getStatesColors()[$this->c_status]) ? self::getStatesColors()[$this->c_status] : null;
+    }
+
     public function generatePallets(): ?array 
     {
         if(!$conferenceInputs = $this->conferenceInputs()) {

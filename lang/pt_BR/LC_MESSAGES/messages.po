@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-10-30 16:05-0300\n"
-"PO-Revision-Date: 2023-10-30 16:05-0300\n"
+"POT-Creation-Date: 2023-10-30 17:14-0300\n"
+"PO-Revision-Date: 2023-10-30 17:15-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -836,7 +836,7 @@ msgstr "Endereçamento"
 
 #: resources/views/user/conference/separation.php:82
 #: resources/views/user/separations/_components/updated-pdf.php:93
-#: src/App/Controllers/User/InputOutputHistoryController.php:700
+#: src/App/Controllers/User/InputOutputHistoryController.php:701
 msgid "Doca de Despacho"
 msgstr "Doca de Despacho"
 
@@ -1735,7 +1735,7 @@ msgid "Separação de Produto - ID %s"
 msgstr "Separação de Produto - ID %s"
 
 #: resources/views/user/separations/_components/updated-pdf.php:94
-#: src/App/Controllers/User/InputOutputHistoryController.php:707
+#: src/App/Controllers/User/InputOutputHistoryController.php:708
 msgid "Placa de Carregamento"
 msgstr "Placa de Carregamento"
 
@@ -2351,13 +2351,13 @@ msgid "Operador que Carregou"
 msgstr "Operador que Carregou"
 
 #: src/App/Controllers/User/InputOutputHistoryController.php:381
-#: src/App/Controllers/User/InputOutputHistoryController.php:705
+#: src/App/Controllers/User/InputOutputHistoryController.php:706
 #: src/App/Controllers/User/SeparationsController.php:148
 msgid "Data de Carregamento"
 msgstr "Data de Carregamento"
 
 #: src/App/Controllers/User/InputOutputHistoryController.php:384
-#: src/App/Controllers/User/InputOutputHistoryController.php:706
+#: src/App/Controllers/User/InputOutputHistoryController.php:707
 msgid "Hora de Carregamento"
 msgstr "Hora de Carregamento"
 
@@ -2522,58 +2522,62 @@ msgid "Tipo de Quantidade Separada"
 msgstr "Tipo de Quantidade Separada"
 
 #: src/App/Controllers/User/InputOutputHistoryController.php:695
+msgid "Número do Pedido de Separação"
+msgstr "Número do Pedido de Separação"
+
+#: src/App/Controllers/User/InputOutputHistoryController.php:696
 msgid "Quantidade Solicitada pela ADM"
 msgstr "Quantidade Solicitada pela ADM"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:696
+#: src/App/Controllers/User/InputOutputHistoryController.php:697
 msgid "Operador que Fez a Separação"
 msgstr "Operador que Fez a Separação"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:697
+#: src/App/Controllers/User/InputOutputHistoryController.php:698
 msgid "Data de Separação do Operador"
 msgstr "Data de Separação do Operador"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:698
+#: src/App/Controllers/User/InputOutputHistoryController.php:699
 msgid "Hora de Separação do Operador"
 msgstr "Hora de Separação do Operador"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:699
+#: src/App/Controllers/User/InputOutputHistoryController.php:700
 msgid "Quantidade Separada pelo Operador"
 msgstr "Quantidade Separada pelo Operador"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:701
+#: src/App/Controllers/User/InputOutputHistoryController.php:702
 msgid "Operador que Fez a Conferência"
 msgstr "Operador que Fez a Conferência"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:702
+#: src/App/Controllers/User/InputOutputHistoryController.php:703
 msgid "Data de Conferência do Operador"
 msgstr "Data de Conferência do Operador"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:703
+#: src/App/Controllers/User/InputOutputHistoryController.php:704
 msgid "Hora de Conferência do Operador"
 msgstr "Hora de Conferência do Operador"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:704
+#: src/App/Controllers/User/InputOutputHistoryController.php:705
 msgid "Operador que Fez o Carregamento"
 msgstr "Operador que Fez o Carregamento"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:708
+#: src/App/Controllers/User/InputOutputHistoryController.php:709
 msgid "Doca de Carregamento"
 msgstr "Doca de Carregamento"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:709
+#: src/App/Controllers/User/InputOutputHistoryController.php:710
 msgid "Operador que Fez a Expedição"
 msgstr "Operador que Fez a Expedição"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:710
+#: src/App/Controllers/User/InputOutputHistoryController.php:711
 msgid "Data de Expedição"
 msgstr "Data de Expedição"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:711
+#: src/App/Controllers/User/InputOutputHistoryController.php:712
 msgid "Hora de Expedição"
 msgstr "Hora de Expedição"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:716
+#: src/App/Controllers/User/InputOutputHistoryController.php:717
 msgid "Relatório de Exportação"
 msgstr "Relatório de Exportação"
 
