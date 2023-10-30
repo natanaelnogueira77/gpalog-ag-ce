@@ -41,7 +41,9 @@
     <?php if($dbConferenceInputs): ?>
     <input type="hidden" name="finish_conference">
     <input type="submit" value="<?= _('Finalizar Conferência') ?>">
+    <br>
     <?php endif; ?>
+    <input type="button" value="<?= _('Voltar') ?>" onclick="window.location.href='<?= $return ?>'">
 </form>
 <?php else: ?>
 <form method="<?= $conferenceInputForm->hasProduct() ? 'post' : 'get' ?>" 

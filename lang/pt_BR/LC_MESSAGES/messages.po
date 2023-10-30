@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-10-30 12:13-0300\n"
-"PO-Revision-Date: 2023-10-30 12:13-0300\n"
+"POT-Creation-Date: 2023-10-30 16:05-0300\n"
+"PO-Revision-Date: 2023-10-30 16:05-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: src\n"
 "X-Poedit-SearchPath-1: resources\n"
@@ -79,7 +79,8 @@ msgstr "Entrar"
 #: resources/views/user/conference/input.php:12
 #: resources/views/user/conference/loading.php:20
 #: resources/views/user/conference/separation.php:23
-#: resources/views/user/conference/single-input.php:60
+#: resources/views/user/conference/single-input.php:46
+#: resources/views/user/conference/single-input.php:62
 #: resources/views/user/edit.php:124
 #: resources/views/user/input-output-history/_components/export-modal.php:21
 #: resources/views/user/operations/_components/save-modal.php:19
@@ -404,7 +405,7 @@ msgid "Escolha o nível do usuário."
 msgstr "Escolha o nível do usuário."
 
 #: resources/views/admin/users/save.php:61
-#: resources/views/user/conference/single-input.php:135
+#: resources/views/user/conference/single-input.php:137
 #: resources/views/user/operations/_components/save-form.php:13
 #: resources/views/user/separation-items/_components/save-form.php:38
 msgid "Selecionar..."
@@ -531,7 +532,7 @@ msgid "Redefinir Senha"
 msgstr "Redefinir Senha"
 
 #: resources/views/auth/reset-password.php:37
-#: resources/views/user/conference/single-input.php:54
+#: resources/views/user/conference/single-input.php:56
 #: resources/views/user/separations/_components/send-list-modal.php:17
 msgid "Enviar"
 msgstr "Enviar"
@@ -616,7 +617,7 @@ msgstr "Finalizar Conferência"
 
 #: resources/views/user/conference/expedition.php:20
 #: resources/views/user/conference/loading.php:18
-#: resources/views/user/conference/single-input.php:57
+#: resources/views/user/conference/single-input.php:59
 msgid "Confirmar"
 msgstr "Confirmar"
 
@@ -652,13 +653,13 @@ msgstr "Número do Pedido"
 #: resources/views/user/conference/expedition.php:64
 #: resources/views/user/conference/input-products.php:42
 #: resources/views/user/conference/separation.php:65
-#: resources/views/user/conference/single-input.php:96
+#: resources/views/user/conference/single-input.php:98
 msgid "Quantidade de Caixas"
 msgstr "Quantidade de Caixas"
 
 #: resources/views/user/conference/expedition.php:64
 #: resources/views/user/conference/separation.php:65
-#: resources/views/user/conference/single-input.php:112
+#: resources/views/user/conference/single-input.php:114
 #: resources/views/user/input-output-history/_components/input-pdf.php:124
 #: src/App/Controllers/User/InputOutputHistoryController.php:345
 msgid "Quantidade de Unidades"
@@ -750,7 +751,7 @@ msgid "Data"
 msgstr "Data"
 
 #: resources/views/user/conference/input-products.php:38
-#: resources/views/user/conference/single-input.php:83
+#: resources/views/user/conference/single-input.php:85
 #: resources/views/user/input-output-history/_components/input-pdf.php:112
 #: resources/views/user/input-output-history/_components/output-pdf.php:128
 #: resources/views/user/products/_components/save-form.php:17
@@ -851,15 +852,15 @@ msgstr "Incluir Produto"
 msgid "Ver Produtos"
 msgstr "Ver Produtos"
 
-#: resources/views/user/conference/single-input.php:52
+#: resources/views/user/conference/single-input.php:54
 msgid "Buscar"
 msgstr "Buscar"
 
-#: resources/views/user/conference/single-input.php:66
+#: resources/views/user/conference/single-input.php:68
 msgid "Código de Barras"
 msgstr "Código de Barras"
 
-#: resources/views/user/conference/single-input.php:92
+#: resources/views/user/conference/single-input.php:94
 #: resources/views/user/input-output-history/_components/input-pdf.php:116
 #: resources/views/user/input-output-history/_components/output-pdf.php:112
 #: resources/views/user/storage/_components/pallets-list-table.php:9
@@ -869,22 +870,22 @@ msgstr "Código de Barras"
 msgid "Embalagem"
 msgstr "Embalagem"
 
-#: resources/views/user/conference/single-input.php:116
+#: resources/views/user/conference/single-input.php:118
 msgid "Quantidade de Pallets Fechados"
 msgstr "Quantidade de Pallets Fechados"
 
-#: resources/views/user/conference/single-input.php:131
+#: resources/views/user/conference/single-input.php:133
 #: resources/views/user/separations/_components/updated-pdf.php:97
 #: resources/views/user/storage/_components/pallets-list-table.php:12
 #: src/App/Controllers/User/InputOutputHistoryController.php:654
 msgid "Serviço"
 msgstr "Serviço"
 
-#: resources/views/user/conference/single-input.php:156
+#: resources/views/user/conference/single-input.php:158
 msgid "Altura Plt"
 msgstr "Altura Plt"
 
-#: resources/views/user/conference/single-input.php:178
+#: resources/views/user/conference/single-input.php:180
 #: resources/views/user/input-output-history/_components/input-pdf.php:136
 msgid "Data de Validade"
 msgstr "Data de Validade"
