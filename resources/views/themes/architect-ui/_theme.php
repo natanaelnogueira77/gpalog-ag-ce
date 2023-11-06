@@ -81,6 +81,11 @@
     <?php 
         $this->insert('_scripts/messages.js');
         $this->insert('_scripts/file-selector.js');
+        if($theme->header['right']['bell']['notifications']) {
+            $this->insert('_scripts/notifications.js', [
+                'dbNotifications' => $theme->header['right']['bell']['notifications']
+            ]);
+        }
         $this->insert('_components/tinymce', ['v' => $this]);
 
         echo $this->section('scripts');
