@@ -38,14 +38,23 @@ class OperationsController extends TemplateController
 
     public function store(array $data): void 
     {
-        $dbOperation = new Operation();
-        if(!$dbOperation->loadData(['usu_id' => $this->session->getAuth()->id] + $data)->save()) {
-            $this->setMessage('error', ErrorMessages::form())->setErrors($dbOperation->getFirstErrors())->APIResponse([], 422);
+        $dbOperation = (new Operation())->loadData([
+            'usu_id' => $this->session->getAuth()->id
+        ] + $data);
+
+        if(!$dbOperation->save()) {
+            $this->setMessage('error', ErrorMessages::form())->setErrors(
+                $dbOperation->getFirstErrors()
+            )->APIResponse([], 422);
             return;
         }
 
-        $this->setMessage('success', sprintf(_('A operação de ID %s foi criada com sucesso!'), $dbOperation->id));
-        $this->APIResponse(['content' => $dbOperation->getData()], 200);
+        $this->setMessage(
+            'success', 
+            sprintf(_('A operação de ID %s foi criada com sucesso!'), $dbOperation->id)
+        )->APIResponse([
+            'content' => $dbOperation->getData()
+        ], 200);
     }
 
     public function update(array $data): void 
@@ -56,12 +65,16 @@ class OperationsController extends TemplateController
         }
 
         if(!$dbOperation->loadData($data)->save()) {
-            $this->setMessage('error', ErrorMessages::form())->setErrors($dbOperation->getFirstErrors())->APIResponse([], 422);
+            $this->setMessage('error', ErrorMessages::form())->setErrors(
+                $dbOperation->getFirstErrors()
+            )->APIResponse([], 422);
             return;
         }
 
-        $this->setMessage('success', sprintf(_('Os dados da operação de ID %s foram alterados com sucesso!'), $dbOperation->id))
-            ->APIResponse([], 200);
+        $this->setMessage(
+            'success', 
+            sprintf(_('Os dados da operação de ID %s foram alterados com sucesso!'), $dbOperation->id)
+        )->APIResponse([], 200);
     }
 
     public function list(array $data): void 
@@ -175,8 +188,10 @@ class OperationsController extends TemplateController
             return;
         }
 
-        $this->setMessage('success', sprintf(_('A operação de ID %s foi excluída com sucesso.'), $dbOperation->id))
-            ->APIResponse([], 200);
+        $this->setMessage(
+            'success', 
+            sprintf(_('A operação de ID %s foi excluída com sucesso.'), $dbOperation->id)
+        )->APIResponse([], 200);
     }
 
     public function createConference(array $data): void 
@@ -193,6 +208,7 @@ class OperationsController extends TemplateController
             'ope_id' => $dbOperation->id,
             'adm_usu_id' => $this->session->getAuth()->id
         ]);
+
         if(!$dbConference->setAsWaiting()->save()) {
             $this->setMessage('error', ErrorMessages::requisition())->APIResponse([], 500);
             return;
@@ -239,7 +255,7 @@ class OperationsController extends TemplateController
         $excel = (new ExcelGenerator($excelData, _('Operações')));
         if(!$excel->render()) {
             $this->session->setFlash('error', ErrorMessages::excel());
-            $this->redirect('user.visits.index');
+            $this->redirect('user.operations.index');
         }
 
         $excel->stream();

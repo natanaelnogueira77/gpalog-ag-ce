@@ -21,13 +21,14 @@
             <div role="group" class="btn-group-sm btn-group">
                 <button type="button" id="create-operation" class="btn btn-lg btn-primary" 
                     data-action="<?= $router->route('user.operations.store') ?>" data-method="post">
+                    <i class="icofont-plus"></i>
                     <?= _('Dar Entrada') ?>
                 </button>
 
                 <a class="btn btn-lg btn-success" href="<?= $router->route('user.operations.export') ?>"
                     target="_blank">
                     <i class="icofont-file-excel"></i>
-                    <?= _('Exportar Excel') ?>
+                    <?= _('Exportar Operações') ?>
                 </a>
             </div>
         </div>

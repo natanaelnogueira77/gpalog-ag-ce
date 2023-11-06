@@ -21,6 +21,7 @@
             <div role="group" class="btn-group-sm btn-group">
                 <button type="button" id="create-street" class="btn btn-lg btn-primary" 
                     data-action="<?= $router->route('user.streets.store') ?>" data-method="post">
+                    <i class="icofont-plus"></i>
                     <?= _('Cadastrar Rua') ?>
                 </button>
 

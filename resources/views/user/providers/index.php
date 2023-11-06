@@ -21,6 +21,7 @@
             <div role="group" class="btn-group-sm btn-group">
                 <button type="button" id="create-provider" class="btn btn-lg btn-primary" 
                     data-action="<?= $router->route('user.providers.store') ?>" data-method="post">
+                    <i class="icofont-plus"></i>
                     <?= _('Cadastrar Fornecedor') ?>
                 </button>
 

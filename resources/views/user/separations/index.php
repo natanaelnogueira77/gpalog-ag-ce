@@ -19,19 +19,21 @@
 
         <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
-                <button type="button" id="create-separation-item" class="btn btn-lg btn-primary" 
+                <button type="button" id="create-separation-item" class="btn btn-sm btn-primary" 
                     data-action="<?= $router->route('user.separationItems.store') ?>" data-method="post">
-                    <?= _('Adicionar Produto à Lista') ?>
+                    <i class="icofont-plus"></i>
+                    <?= _('Adicionar Produto') ?>
                 </button>
 
-                <button type="button" id="import-csv" class="btn btn-lg btn-info" data-method="post" 
+                <button type="button" id="import-csv" class="btn btn-sm btn-info" data-method="post" 
                     data-action="<?= $router->route('user.separationItems.import') ?>">
                     <i class="icofont-file-excel"></i>
-                    <?= _('Importar Lista') ?>
+                    <?= _('Importar') ?>
                 </button>
                 
-                <button type="button" id="generate-separation-list" class="btn btn-lg btn-danger" 
+                <button type="button" id="generate-separation-list" class="btn btn-sm btn-danger" 
                     data-action="<?= $router->route('user.separations.getSeparationTable') ?>" data-method="get">
+                    <i class="icofont-paper-plane"></i>
                     <?= _('Enviar Para Separação') ?>
                 </button>
             </div>

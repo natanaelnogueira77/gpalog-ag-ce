@@ -23,13 +23,13 @@
                 <button type="button" id="export-excel" class="btn btn-success btn-lg" 
                     data-action="<?= $router->route('user.inputOutputHistory.export') ?>" data-method="get">
                     <i class="icofont-file-excel"></i>
-                    <?= _('Exportar Histórico de Conferências') ?>
+                    <?= _('Histórico de Conferências') ?>
                 </button>
                 
                 <a class="btn btn-primary btn-lg" href="<?= $router->route('user.inputOutputHistory.expeditionReportExport') ?>" 
                     target="_blank">
                     <i class="icofont-file-excel"></i>
-                    <?= _('Exportar Relatório de Expedição') ?>
+                    <?= _('Relatório de Expedição') ?>
                 </a>
             </div>
         </div>

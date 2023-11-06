@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-11-06 10:25-0300\n"
-"PO-Revision-Date: 2023-11-06 10:25-0300\n"
+"POT-Creation-Date: 2023-11-06 16:58-0300\n"
+"PO-Revision-Date: 2023-11-06 16:59-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -82,7 +82,7 @@ msgstr "Entrar"
 #: resources/views/user/conference/single-input.php:46
 #: resources/views/user/conference/single-input.php:62
 #: resources/views/user/edit.php:124
-#: resources/views/user/input-output-history/_components/export-modal.php:21
+#: resources/views/user/input-output-history/_components/export-modal.php:26
 #: resources/views/user/operations/_components/save-modal.php:19
 #: resources/views/user/operations/_components/save-modal.php:34
 #: resources/views/user/products/_components/import-modal.php:30
@@ -433,13 +433,13 @@ msgstr "Deseja alterar a senha?"
 #: src/App/Controllers/User/InputOutputHistoryController.php:675
 #: src/App/Controllers/User/InputOutputHistoryController.php:676
 #: src/App/Controllers/User/InputOutputHistoryController.php:677
-#: src/App/Controllers/User/OperationsController.php:101
-#: src/App/Controllers/User/OperationsController.php:229
-#: src/App/Controllers/User/OperationsController.php:230
-#: src/App/Controllers/User/OperationsController.php:231
-#: src/App/Controllers/User/OperationsController.php:232
-#: src/App/Controllers/User/OperationsController.php:233
-#: src/App/Controllers/User/OperationsController.php:234
+#: src/App/Controllers/User/OperationsController.php:114
+#: src/App/Controllers/User/OperationsController.php:245
+#: src/App/Controllers/User/OperationsController.php:246
+#: src/App/Controllers/User/OperationsController.php:247
+#: src/App/Controllers/User/OperationsController.php:248
+#: src/App/Controllers/User/OperationsController.php:249
+#: src/App/Controllers/User/OperationsController.php:250
 #: src/App/Controllers/User/SeparationItemsController.php:190
 #: src/App/Controllers/User/StorageController.php:93
 #: src/App/Controllers/User/StreetsController.php:97
@@ -453,13 +453,13 @@ msgstr "Sim"
 #: src/App/Controllers/User/InputOutputHistoryController.php:675
 #: src/App/Controllers/User/InputOutputHistoryController.php:676
 #: src/App/Controllers/User/InputOutputHistoryController.php:677
-#: src/App/Controllers/User/OperationsController.php:102
-#: src/App/Controllers/User/OperationsController.php:229
-#: src/App/Controllers/User/OperationsController.php:230
-#: src/App/Controllers/User/OperationsController.php:231
-#: src/App/Controllers/User/OperationsController.php:232
-#: src/App/Controllers/User/OperationsController.php:233
-#: src/App/Controllers/User/OperationsController.php:234
+#: src/App/Controllers/User/OperationsController.php:115
+#: src/App/Controllers/User/OperationsController.php:245
+#: src/App/Controllers/User/OperationsController.php:246
+#: src/App/Controllers/User/OperationsController.php:247
+#: src/App/Controllers/User/OperationsController.php:248
+#: src/App/Controllers/User/OperationsController.php:249
+#: src/App/Controllers/User/OperationsController.php:250
 #: src/App/Controllers/User/SeparationItemsController.php:191
 #: src/App/Controllers/User/StorageController.php:93
 #: src/App/Controllers/User/StreetsController.php:98
@@ -738,8 +738,8 @@ msgstr "OC"
 #: src/App/Controllers/User/InputOutputHistoryController.php:122
 #: src/App/Controllers/User/InputOutputHistoryController.php:314
 #: src/App/Controllers/User/InputOutputHistoryController.php:672
-#: src/App/Controllers/User/OperationsController.php:146
-#: src/App/Controllers/User/OperationsController.php:222
+#: src/App/Controllers/User/OperationsController.php:159
+#: src/App/Controllers/User/OperationsController.php:238
 #: src/App/Controllers/User/SeparationsController.php:149
 msgid "Placa"
 msgstr "Placa"
@@ -770,8 +770,8 @@ msgstr "Código EAN"
 #: resources/views/user/operations/_components/save-form.php:5
 #: src/App/Controllers/User/InputOutputHistoryController.php:123
 #: src/App/Controllers/User/InputOutputHistoryController.php:341
-#: src/App/Controllers/User/OperationsController.php:147
-#: src/App/Controllers/User/OperationsController.php:224
+#: src/App/Controllers/User/OperationsController.php:160
+#: src/App/Controllers/User/OperationsController.php:240
 #: src/App/Controllers/User/ProductsController.php:150
 msgid "Fornecedor"
 msgstr "Fornecedor"
@@ -957,28 +957,38 @@ msgid "Informações sobre sua atividade no sistema"
 msgstr "Informações sobre sua atividade no sistema"
 
 #: resources/views/user/input-output-history/_components/export-modal.php:6
-#: resources/views/user/input-output-history/_components/export-modal.php:20
-#: resources/views/user/operations/index.php:30
-#: resources/views/user/products/index.php:36
-#: resources/views/user/providers/index.php:36
-#: resources/views/user/storage/index.php:25
-#: resources/views/user/streets/index.php:30
-msgid "Exportar Excel"
-msgstr "Exportar Excel"
+msgid "Exportar Excel - Histórico de Conferências"
+msgstr "Exportar Excel - Histórico de Conferências"
 
-#: resources/views/user/input-output-history/_components/export-modal.php:12
+#: resources/views/user/input-output-history/_components/export-modal.php:13
 #: resources/views/user/input-output-history/_components/input-pdf.php:104
 #: resources/views/user/input-output-history/_components/output-pdf.php:108
 #: resources/views/user/input-output-history/index.php:43
 msgid "Ordem de Serviço"
 msgstr "Ordem de Serviço"
 
-#: resources/views/user/input-output-history/_components/export-modal.php:14
+#: resources/views/user/input-output-history/_components/export-modal.php:15
+msgid ""
+"Se deseja obter o histórico referente à apenas uma ordem de serviço, digite "
+"ela no campo abaixo."
+msgstr ""
+"Se deseja obter o histórico referente à apenas uma ordem de serviço, digite "
+"ela no campo abaixo."
+
+#: resources/views/user/input-output-history/_components/export-modal.php:19
 #: resources/views/user/input-output-history/index.php:45
 #: resources/views/user/separation-items/_components/save-form.php:12
 #: resources/views/user/separation-items/_components/save-form.php:58
 msgid "Digite a ordem de serviço..."
 msgstr "Digite a ordem de serviço..."
+
+#: resources/views/user/input-output-history/_components/export-modal.php:25
+#: resources/views/user/products/index.php:37
+#: resources/views/user/providers/index.php:37
+#: resources/views/user/storage/index.php:25
+#: resources/views/user/streets/index.php:31
+msgid "Exportar Excel"
+msgstr "Exportar Excel"
 
 #: resources/views/user/input-output-history/_components/input-pdf.php:59
 #: resources/views/user/input-output-history/_components/input-pdf.php:72
@@ -1124,12 +1134,13 @@ msgid "Conferências de Entrada"
 msgstr "Conferências de Entrada"
 
 #: resources/views/user/input-output-history/index.php:26
-msgid "Exportar Histórico de Conferências"
-msgstr "Exportar Histórico de Conferências"
+#: src/App/Controllers/User/InputOutputHistoryController.php:393
+msgid "Histórico de Conferências"
+msgstr "Histórico de Conferências"
 
 #: resources/views/user/input-output-history/index.php:32
-msgid "Exportar Relatório de Expedição"
-msgstr "Exportar Relatório de Expedição"
+msgid "Relatório de Expedição"
+msgstr "Relatório de Expedição"
 
 #: resources/views/user/operations/_components/save-form.php:7
 msgid "Selecione o fornecedor, ou cadastre um novo, clicando em \"Cadastrar\"."
@@ -1174,8 +1185,8 @@ msgstr "Importado"
 #: resources/views/user/operations/_components/save-form.php:62
 #: src/App/Controllers/User/InputOutputHistoryController.php:124
 #: src/App/Controllers/User/InputOutputHistoryController.php:668
-#: src/App/Controllers/User/OperationsController.php:148
-#: src/App/Controllers/User/OperationsController.php:225
+#: src/App/Controllers/User/OperationsController.php:161
+#: src/App/Controllers/User/OperationsController.php:241
 msgid "Senha de Carregamento"
 msgstr "Senha de Carregamento"
 
@@ -1188,7 +1199,7 @@ msgid "Informe a senha de carregamento..."
 msgstr "Informe a senha de carregamento..."
 
 #: resources/views/user/operations/_components/save-form.php:75
-#: src/App/Controllers/User/OperationsController.php:226
+#: src/App/Controllers/User/OperationsController.php:242
 msgid "Senha de G.A"
 msgstr "Senha de G.A"
 
@@ -1209,7 +1220,7 @@ msgid "Se houver TR, marque a caixa ao lado."
 msgstr "Se houver TR, marque a caixa ao lado."
 
 #: resources/views/user/operations/_components/save-form.php:109
-#: src/App/Controllers/User/OperationsController.php:227
+#: src/App/Controllers/User/OperationsController.php:243
 msgid "Número do Pedido / TR / OC"
 msgstr "Número do Pedido / TR / OC"
 
@@ -1225,7 +1236,7 @@ msgstr "Informe o número do pedido..."
 
 #: resources/views/user/operations/_components/save-form.php:124
 #: src/App/Controllers/User/InputOutputHistoryController.php:671
-#: src/App/Controllers/User/OperationsController.php:228
+#: src/App/Controllers/User/OperationsController.php:244
 msgid "Nota Fiscal"
 msgstr "Nota Fiscal"
 
@@ -1260,7 +1271,7 @@ msgstr "Salvar"
 
 #: resources/views/user/operations/_components/save-modal.php:25
 #: resources/views/user/providers/_scripts/index.js.php:67
-#: resources/views/user/providers/index.php:24
+#: resources/views/user/providers/index.php:25
 msgid "Cadastrar Fornecedor"
 msgstr "Cadastrar Fornecedor"
 
@@ -1278,7 +1289,7 @@ msgid "Editar Operação - %s"
 msgstr "Editar Operação - %s"
 
 #: resources/views/user/operations/_scripts/index.js.php:83
-#: resources/views/user/operations/index.php:24
+#: resources/views/user/operations/index.php:25
 #, php-format
 msgid "Dar Entrada"
 msgstr "Dar Entrada"
@@ -1297,13 +1308,17 @@ msgid "Segue abaixo a lista de operações do sistema"
 msgstr "Segue abaixo a lista de operações do sistema"
 
 #: resources/views/user/operations/index.php:17
-#: src/App/Controllers/User/OperationsController.php:239
+#: src/App/Controllers/User/OperationsController.php:255
 #: src/Data/MenuData.php:55
 msgid "Operações"
 msgstr "Operações"
 
+#: resources/views/user/operations/index.php:31
+msgid "Exportar Operações"
+msgstr "Exportar Operações"
+
 #: resources/views/user/products/_components/import-modal.php:6
-#: resources/views/user/products/index.php:30
+#: resources/views/user/products/index.php:31
 msgid "Importar Produtos"
 msgstr "Importar Produtos"
 
@@ -1332,6 +1347,7 @@ msgstr ""
 #: resources/views/user/products/_components/import-modal.php:28
 #: resources/views/user/providers/_components/import-modal.php:26
 #: resources/views/user/separation-items/_components/import-modal.php:44
+#: resources/views/user/separations/index.php:31
 msgid "Importar"
 msgstr "Importar"
 
@@ -1510,7 +1526,7 @@ msgid "Editar Produto - %s"
 msgstr "Editar Produto - %s"
 
 #: resources/views/user/products/_scripts/index.js.php:67
-#: resources/views/user/products/index.php:24
+#: resources/views/user/products/index.php:25
 msgid "Cadastrar Produto"
 msgstr "Cadastrar Produto"
 
@@ -1527,15 +1543,15 @@ msgstr "Lista de Produtos"
 msgid "Segue abaixo a lista de produtos do sistema"
 msgstr "Segue abaixo a lista de produtos do sistema"
 
-#: resources/views/user/products/index.php:47
-#: resources/views/user/providers/index.php:47
-#: resources/views/user/separations/index.php:46
+#: resources/views/user/products/index.php:48
+#: resources/views/user/providers/index.php:48
+#: resources/views/user/separations/index.php:48
 #, php-format
 msgid "Linha %s: %s"
 msgstr "Linha %s: %s"
 
 #: resources/views/user/providers/_components/import-modal.php:6
-#: resources/views/user/providers/index.php:30
+#: resources/views/user/providers/index.php:31
 msgid "Importar Fornecedores"
 msgstr "Importar Fornecedores"
 
@@ -1607,7 +1623,6 @@ msgid "Apenas não vinculadas"
 msgstr "Apenas não vinculadas"
 
 #: resources/views/user/separation-items/_components/import-modal.php:6
-#: resources/views/user/separations/index.php:30
 msgid "Importar Lista"
 msgstr "Importar Lista"
 
@@ -1718,7 +1733,7 @@ msgstr "Nº do Pallet"
 #: resources/views/user/separations/_components/separation-pdf.php:89
 #: resources/views/user/separations/_components/updated-pdf.php:90
 #: src/App/Controllers/User/InputOutputHistoryController.php:125
-#: src/App/Controllers/User/OperationsController.php:149
+#: src/App/Controllers/User/OperationsController.php:162
 msgid "Nº do Pedido"
 msgstr "Nº do Pedido"
 
@@ -1740,7 +1755,7 @@ msgid "Placa de Carregamento"
 msgstr "Placa de Carregamento"
 
 #: resources/views/user/separations/_components/updated-pdf.php:96
-#: resources/views/user/separations/index.php:79
+#: resources/views/user/separations/index.php:81
 #: src/App/Controllers/User/InputOutputHistoryController.php:126
 #: src/App/Controllers/User/SeparationsController.php:151
 msgid "Status"
@@ -1782,19 +1797,19 @@ msgstr "Gere a lista de separação dos produtos."
 msgid "Nova Lista de Separação"
 msgstr "Nova Lista de Separação"
 
-#: resources/views/user/separations/index.php:24
-msgid "Adicionar Produto à Lista"
-msgstr "Adicionar Produto à Lista"
+#: resources/views/user/separations/index.php:25
+msgid "Adicionar Produto"
+msgstr "Adicionar Produto"
 
-#: resources/views/user/separations/index.php:35
+#: resources/views/user/separations/index.php:37
 msgid "Enviar Para Separação"
 msgstr "Enviar Para Separação"
 
-#: resources/views/user/separations/index.php:70
+#: resources/views/user/separations/index.php:72
 msgid "Listas de Separação"
 msgstr "Listas de Separação"
 
-#: resources/views/user/separations/index.php:81
+#: resources/views/user/separations/index.php:83
 msgid "Todos os Status"
 msgstr "Todos os Status"
 
@@ -2015,7 +2030,7 @@ msgid "Deseja realmente excluir esta rua?"
 msgstr "Deseja realmente excluir esta rua?"
 
 #: resources/views/user/streets/_scripts/index.js.php:72
-#: resources/views/user/streets/index.php:24
+#: resources/views/user/streets/index.php:25
 msgid "Cadastrar Rua"
 msgstr "Cadastrar Rua"
 
@@ -2086,9 +2101,9 @@ msgstr "Os dados do usuário \"%s\" foram alterados com sucesso!"
 #: src/App/Controllers/User/InputOutputHistoryController.php:92
 #: src/App/Controllers/User/InputOutputHistoryController.php:95
 #: src/App/Controllers/User/InputOutputHistoryController.php:121
-#: src/App/Controllers/User/OperationsController.php:107
-#: src/App/Controllers/User/OperationsController.php:110
-#: src/App/Controllers/User/OperationsController.php:145
+#: src/App/Controllers/User/OperationsController.php:120
+#: src/App/Controllers/User/OperationsController.php:123
+#: src/App/Controllers/User/OperationsController.php:158
 #: src/App/Controllers/User/ProductsController.php:123
 #: src/App/Controllers/User/ProductsController.php:126
 #: src/App/Controllers/User/ProductsController.php:149
@@ -2253,7 +2268,7 @@ msgid "Etiqueta de Saída - %s"
 msgstr "Etiqueta de Saída - %s"
 
 #: src/App/Controllers/User/InputOutputHistoryController.php:315
-#: src/App/Controllers/User/OperationsController.php:223
+#: src/App/Controllers/User/OperationsController.php:239
 #: src/App/Controllers/User/SeparationsController.php:146
 msgid "ADM"
 msgstr "ADM"
@@ -2366,10 +2381,6 @@ msgstr "Hora de Carregamento"
 msgid "Status do Pallet"
 msgstr "Status do Pallet"
 
-#: src/App/Controllers/User/InputOutputHistoryController.php:393
-msgid "Histórico de Conferências"
-msgstr "Histórico de Conferências"
-
 #: src/App/Controllers/User/InputOutputHistoryController.php:647
 msgid "ID do Pallet"
 msgstr "ID do Pallet"
@@ -2431,17 +2442,17 @@ msgid "Número do Pedido/TR"
 msgstr "Número do Pedido/TR"
 
 #: src/App/Controllers/User/InputOutputHistoryController.php:673
-#: src/App/Controllers/User/OperationsController.php:230
+#: src/App/Controllers/User/OperationsController.php:246
 msgid "Paletização?"
 msgstr "Paletização?"
 
 #: src/App/Controllers/User/InputOutputHistoryController.php:674
-#: src/App/Controllers/User/OperationsController.php:231
+#: src/App/Controllers/User/OperationsController.php:247
 msgid "Retrabalho?"
 msgstr "Retrabalho?"
 
 #: src/App/Controllers/User/InputOutputHistoryController.php:675
-#: src/App/Controllers/User/OperationsController.php:232
+#: src/App/Controllers/User/OperationsController.php:248
 msgid "Armazenagem?"
 msgstr "Armazenagem?"
 
@@ -2582,52 +2593,52 @@ msgid "Relatório de Exportação"
 msgstr "Relatório de Exportação"
 
 #: src/App/Controllers/User/OperationsController.php:26
-#: src/App/Controllers/User/OperationsController.php:54
-#: src/App/Controllers/User/OperationsController.php:171
-#: src/App/Controllers/User/OperationsController.php:185
+#: src/App/Controllers/User/OperationsController.php:63
+#: src/App/Controllers/User/OperationsController.php:184
+#: src/App/Controllers/User/OperationsController.php:200
 msgid "Nenhuma operação foi encontrada!"
 msgstr "Nenhuma operação foi encontrada!"
 
-#: src/App/Controllers/User/OperationsController.php:47
+#: src/App/Controllers/User/OperationsController.php:54
 #, php-format
 msgid "A operação de ID %s foi criada com sucesso!"
 msgstr "A operação de ID %s foi criada com sucesso!"
 
-#: src/App/Controllers/User/OperationsController.php:63
+#: src/App/Controllers/User/OperationsController.php:76
 #, php-format
 msgid "Os dados da operação de ID %s foram alterados com sucesso!"
 msgstr "Os dados da operação de ID %s foram alterados com sucesso!"
 
-#: src/App/Controllers/User/OperationsController.php:118
+#: src/App/Controllers/User/OperationsController.php:131
 msgid "Liberar Para Conferência"
 msgstr "Liberar Para Conferência"
 
-#: src/App/Controllers/User/OperationsController.php:126
+#: src/App/Controllers/User/OperationsController.php:139
 msgid "Editar Operação"
 msgstr "Editar Operação"
 
-#: src/App/Controllers/User/OperationsController.php:132
+#: src/App/Controllers/User/OperationsController.php:145
 msgid "Excluir Operação"
 msgstr "Excluir Operação"
 
-#: src/App/Controllers/User/OperationsController.php:150
+#: src/App/Controllers/User/OperationsController.php:163
 msgid "Liberado para Conferência?"
 msgstr "Liberado para Conferência?"
 
-#: src/App/Controllers/User/OperationsController.php:174
+#: src/App/Controllers/User/OperationsController.php:187
 msgid "Não foi possível excluir a operação!"
 msgstr "Não foi possível excluir a operação!"
 
-#: src/App/Controllers/User/OperationsController.php:178
+#: src/App/Controllers/User/OperationsController.php:193
 #, php-format
 msgid "A operação de ID %s foi excluída com sucesso."
 msgstr "A operação de ID %s foi excluída com sucesso."
 
-#: src/App/Controllers/User/OperationsController.php:188
+#: src/App/Controllers/User/OperationsController.php:203
 msgid "A operação já foi liberada para conferência!"
 msgstr "A operação já foi liberada para conferência!"
 
-#: src/App/Controllers/User/OperationsController.php:204
+#: src/App/Controllers/User/OperationsController.php:220
 #, php-format
 msgid ""
 "A operação de ID %s foi liberada para conferência com sucesso. O ID gerado "
@@ -2636,15 +2647,15 @@ msgstr ""
 "A operação de ID %s foi liberada para conferência com sucesso. O ID gerado "
 "da conferência é %s."
 
-#: src/App/Controllers/User/OperationsController.php:229
+#: src/App/Controllers/User/OperationsController.php:245
 msgid "Possui TR?"
 msgstr "Possui TR?"
 
-#: src/App/Controllers/User/OperationsController.php:233
+#: src/App/Controllers/User/OperationsController.php:249
 msgid "Importado?"
 msgstr "Importado?"
 
-#: src/App/Controllers/User/OperationsController.php:234
+#: src/App/Controllers/User/OperationsController.php:250
 msgid "Conferência Liberada?"
 msgstr "Conferência Liberada?"
 
@@ -3810,6 +3821,9 @@ msgstr "Lamentamos, mas o PDF não pôde ser gerado!"
 #: src/Utils/ErrorMessages.php:48
 msgid "Lamentamos, mas houveram erros na importação do CSV!"
 msgstr "Lamentamos, mas houveram erros na importação do CSV!"
+
+#~ msgid "Exportar Relatório de Expedição"
+#~ msgstr "Exportar Relatório de Expedição"
 
 #~ msgid "Qtde. CX Físico"
 #~ msgstr "Qtde. CX Físico"

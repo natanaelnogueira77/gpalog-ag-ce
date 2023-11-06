@@ -3,15 +3,20 @@
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><?= _('Exportar Excel') ?></h5>
+                <h5 class="modal-title"><?= _('Exportar Excel - Histórico de Conferências') ?></h5>
             </div>
             
             <div class="modal-body">
                 <form id="export-history">
                     <div class="form-group">
-                        <label><?= _('Ordem de Serviço') ?></label>
-                        <input type="text" name="order_number" class="form-control" 
-                            placeholder="<?= _('Digite a ordem de serviço...') ?>">
+                        <label>
+                            <?= _('Ordem de Serviço') ?>
+                            <span data-toggle="tooltip" data-placement="top" 
+                                title='<?= _('Se deseja obter o histórico referente à apenas uma ordem de serviço, digite ela no campo abaixo.') ?>'>
+                                <i class="icofont-question-circle" style="font-size: 1.1rem;"></i>
+                            </span>
+                        </label>
+                        <input type="text" name="order_number" class="form-control" placeholder="<?= _('Digite a ordem de serviço...') ?>">
                     </div>
                 </form>
             </div>
